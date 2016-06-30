@@ -4,7 +4,9 @@
 
 - [ ] Update view base on state (e.g. `isEnabled`) dynamically.
 - [ ] Implement more `Custom` protocols.
+- [ ] Implement `CustomNib` to support loading layout from a nib file.
 - [ ] Support more properties (e.g. `cornerRadius`).
+- [ ] Support `init(frame:)`.
 - [ ] Add `FontGroup`.
 
 ## Example Usage

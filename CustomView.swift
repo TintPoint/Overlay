@@ -1,33 +1,140 @@
+//
+//  CustomView.swift
+//  Look
+//
+//  Created by Justin Jia on 6/29/16.
+//  Copyright © 2016 TintPoint. MIT license.
+//
+
 import UIKit
 
 @IBDesignable
-extension UIView {
+public extension UIView {
 
     public override func awakeFromNib() {
         super.awakeFromNib()
-        customize()
+        refresh()
     }
 
     public override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        customize()
+        refresh()
     }
 
 }
 
 extension UIView {
 
-    func customize() {
-        if var view = self as? CustomTextColor {
-            view.textColor = view.selected(view.textColorStyle)
+    func refresh() {
+        if let style = self as? CustomTintColor {
+            tintColor = style.selected(style.tintColorStyle)
+        }
+        
+        if let style = self as? CustomBackgroundColor {
+            backgroundColor = style.selected(style.backgroundColorStyle)
+        }
+    }
+
+}
+
+extension UIActivityIndicatorView {
+
+    override func refresh() {
+        super.refresh()
+
+        if let style = self as? CustomActivityIndicatorViewColor {
+            color = style.selected(style.colorStyle)
+        }
+    }
+
+}
+
+extension UILabel {
+
+    override func refresh() {
+        super.refresh()
+
+        if let style = self as? CustomFont {
+            font = style.selected(style.fontStyle)
         }
 
-        if var view = self as? CustomBackgroundColor {
-            view.backgroundColor = view.selected(view.backgroundColorStyle)
+        if let style = self as? CustomTextColor {
+            textColor = style.selected(style.textColorStyle, except: [.highlighted])
+            if let colorStyleGroup = style.textColorStyle as? ColorStyleGroup {
+                highlightedTextColor = colorStyleGroup.highlighted()
+            }
         }
 
-        if var view = self as? CustomFont {
-            view.font = view.selected(view.fontStyle)
+        if let style = self as? CustomShadowColor {
+            shadowColor = style.selected(style.shadowColorStyle)
+        }
+    }
+
+}
+
+extension UINavigationBar {
+
+    override func refresh() {
+        super.refresh()
+
+        if let style = self as? CustomBarTintColor {
+            barTintColor = style.selected(style.barTintColorStyle)
+        }
+    }
+
+}
+
+extension UIProgressView {
+
+    override func refresh() {
+        super.refresh()
+
+        if let style = self as? CustomProgressTintColor {
+            progressTintColor = style.selected(style.progressTintColorStyle)
+        }
+
+        if let style = self as? CustomProgressTrackTintColor {
+            trackTintColor = style.selected(style.trackTintColorStyle)
+        }
+    }
+
+}
+
+extension UISearchBar {
+
+    override func refresh() {
+        super.refresh()
+
+        if let style = self as? CustomBarTintColor {
+            barTintColor = style.selected(style.barTintColorStyle)
+        }
+    }
+
+}
+
+extension UITabBar {
+
+    override func refresh() {
+        super.refresh()
+
+        if let style = self as? CustomBarTintColor {
+            barTintColor = style.selected(style.barTintColorStyle)
+        }
+
+        if let style = self as? CustomTabBarUnselectedItemTintColor {
+            unselectedItemTintColor = style.selected(style.unselectedItemTintColorStyle)
+        }
+    }
+
+}
+
+extension UIToolbar {
+
+    override func refresh() {
+        super.refresh()
+
+        if let style = self as? CustomBarTintColor {
+            barTintColor = style.selected(style.barTintColorStyle)
         }
     }
 

@@ -1,87 +1,94 @@
+//
+//  ColorStyle.swift
+//  Look
+//
+//  Created by Justin Jia on 6/29/16.
+//  Copyright © 2016 TintPoint. MIT license.
+//
+
 import UIKit
 
-protocol ColorStyle {
+public protocol ColorStyle {
 
-    func color() -> UIColor
-
-}
-
-protocol ColorStyleGroup: ColorStyle {
-
-    func disabledColor() -> UIColor?
-    func selectedColor() -> UIColor?
-    func highlightedColor() -> UIColor?
-    func focusedColor() -> UIColor?
+    func normal() -> UIColor
 
 }
 
-extension ColorStyleGroup {
+public protocol ColorStyleGroup: ColorStyle {
 
-    func disabledColor() -> UIColor? {
+    func disabled() -> UIColor?
+    func selected() -> UIColor?
+    func highlighted() -> UIColor?
+    func focused() -> UIColor?
+
+}
+
+public extension ColorStyleGroup {
+
+    public func disabled() -> UIColor? {
         return nil
     }
 
-    func selectedColor() -> UIColor? {
+    public func selected() -> UIColor? {
         return nil
     }
 
-    func highlightedColor() -> UIColor? {
+    public func highlighted() -> UIColor? {
         return nil
     }
 
-    func focusedColor() -> UIColor? {
+    public func focused() -> UIColor? {
         return nil
+    }
+    
+}
+
+extension UIColor: ColorStyle {
+
+    public func normal() -> UIColor {
+        return self
     }
 
 }
 
-struct Color: ColorStyle {
+public struct ColorGroup: ColorStyleGroup {
 
-    private let colorStorage: UIColor
-
-    init(_ color: UIColor) {
-        colorStorage = color
+    private let normalStorage: UIColor
+    private let disabledStorage: UIColor?
+    private let selectedStorage: UIColor?
+    private let highlightedStorage: UIColor?
+    private let focusedStorage: UIColor?
+    
+    public init(normal: UIColor, disabled: UIColor? = nil, selected: UIColor? = nil, highlighted: UIColor? = nil, focused: UIColor? = nil) {
+        normalStorage = normal
+        disabledStorage = disabled
+        selectedStorage = selected
+        highlightedStorage = highlighted
+        focusedStorage = focused
     }
 
-    func color() -> UIColor {
-        return colorStorage
-    }
-}
-
-struct ColorGroup: ColorStyleGroup {
-
-    private let normalColorStorage: UIColor
-    private let disabledColorStorage: UIColor?
-    private let selectedColorStorage: UIColor?
-    private let highlightedColorStorage: UIColor?
-    private let focusedColorStorage: UIColor?
-
-    init(normal: ColorStyle, disabled: ColorStyle? = nil, selected: ColorStyle? = nil, highlighted: ColorStyle? = nil, focused: ColorStyle? = nil) {
-        normalColorStorage = normal.color()
-        disabledColorStorage = disabled?.color()
-        selectedColorStorage = selected?.color()
-        highlightedColorStorage = highlighted?.color()
-        focusedColorStorage = focused?.color()
+    public init(normal: ColorStyle, disabled: ColorStyle? = nil, selected: ColorStyle? = nil, highlighted: ColorStyle? = nil, focused: ColorStyle? = nil) {
+        self.init(normal: normal, disabled: disabled, selected: selected, highlighted: highlighted, focused: focused)
     }
 
-    func color() -> UIColor {
-        return normalColorStorage
+    public func normal() -> UIColor {
+        return normalStorage
     }
 
-    func disabledColor() -> UIColor? {
-        return disabledColorStorage
+    public func disabled() -> UIColor? {
+        return disabledStorage
     }
 
-    func selectedColor() -> UIColor? {
-        return selectedColorStorage
+    public func selected() -> UIColor? {
+        return selectedStorage
     }
 
-    func highlightedColor() -> UIColor? {
-        return highlightedColorStorage
+    public func highlighted() -> UIColor? {
+        return highlightedStorage
     }
 
-    func focusedColor() -> UIColor? {
-        return focusedColorStorage
+    public func focused() -> UIColor? {
+        return focusedStorage
     }
-
+    
 }

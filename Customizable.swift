@@ -1,57 +1,91 @@
+//
+//  Customizable.swift
+//  Look
+//
+//  Created by Justin Jia on 6/18/16.
+//  Copyright © 2016 TintPoint. MIT license.
+//
+
 import UIKit
 
 protocol ViewCustomizable {
 
+    // Workaround: Default argument not permitted in a protocol method
     func selected(_ colorStyle: ColorStyle) -> UIColor?
     func selected(_ fontStyle: FontStyle) -> UIFont?
+
+    func selected(_ colorStyle: ColorStyle, except states: [UIControlState]) -> UIColor?
+    func selected(_ fontStyle: FontStyle, except states: [UIControlState]) -> UIFont?
 
 }
 
 extension ViewCustomizable {
 
     func selected(_ colorStyle: ColorStyle) -> UIColor? {
-        guard let colorStyleGroup = colorStyle as? ColorStyleGroup else {
-            return colorStyle.color()
-        }
-
-        if let view = self as? ViewHighlightable where view.isHighlighted {
-            return colorStyleGroup.highlightedColor()
-        } else if let view = self as? ViewSelectable where view.isSelected {
-            return colorStyleGroup.selectedColor()
-        } else if let view = self as? ViewDisable where !view.isEnabled {
-            return colorStyleGroup.disabledColor()
-        } else if let view = self as? ViewFocusable where view.isFocused {
-            return colorStyleGroup.focusedColor()
-        } else {
-            return colorStyleGroup.color()
-        }
+        return selected(colorStyle, except: [])
     }
 
     func selected(_ fontStyle: FontStyle) -> UIFont? {
-        return fontStyle.font()
+        return selected(fontStyle, except: [])
+    }
+
+    func selected(_ colorStyle: ColorStyle, except states: [UIControlState]) -> UIColor? {
+        guard let colorStyleGroup = colorStyle as? ColorStyleGroup else {
+            return colorStyle.normal()
+        }
+
+        if let view = self as? ViewHighlightable where view.isHighlighted && !states.contains(.highlighted) {
+            return colorStyleGroup.highlighted()
+        } else if let view = self as? ViewSelectable where view.isSelected && !states.contains(.selected) {
+            return colorStyleGroup.selected()
+        } else if let view = self as? ViewDisable where !view.isEnabled && !states.contains(.disabled) {
+            return colorStyleGroup.disabled()
+        } else if let view = self as? ViewFocusable where view.isFocused && !states.contains(.focused) {
+            return colorStyleGroup.focused()
+        } else {
+            return colorStyleGroup.normal()
+        }
+    }
+
+    func selected(_ fontStyle: FontStyle, except states: [UIControlState]) -> UIFont? {
+        guard let fontStyleGroup = fontStyle as? FontStyleGroup else {
+            return fontStyle.normal()
+        }
+
+        if let view = self as? ViewHighlightable where view.isHighlighted && !states.contains(.highlighted) {
+            return fontStyleGroup.highlighted()
+        } else if let view = self as? ViewSelectable where view.isSelected && !states.contains(.selected) {
+            return fontStyleGroup.selected()
+        } else if let view = self as? ViewDisable where !view.isEnabled && !states.contains(.disabled) {
+            return fontStyleGroup.disabled()
+        } else if let view = self as? ViewFocusable where view.isFocused && !states.contains(.focused) {
+            return fontStyleGroup.focused()
+        } else {
+            return fontStyleGroup.normal()
+        }
     }
 
 }
 
-protocol ViewFocusable {
+public protocol ViewFocusable {
 
     var isFocused: Bool { get }
 
 }
 
-protocol ViewDisable {
+public protocol ViewDisable {
 
     var isEnabled: Bool { get }
 
 }
 
-protocol ViewSelectable {
+public protocol ViewSelectable {
 
     var isSelected: Bool { get }
 
 }
 
-protocol ViewHighlightable {
+public protocol ViewHighlightable {
 
     var isHighlighted: Bool { get }
 

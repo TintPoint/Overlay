@@ -1,63 +1,90 @@
 # Overlay
 
+**Early Development**
+
+Write your swift UI code in the CSS way.
+
 ## Todo List
 
-- [ ] Update view base on state (e.g. `isEnabled`) dynamically.
-- [ ] Implement more `Custom` protocols.
-- [ ] Support more properties (e.g. `cornerRadius`).
-- [ ] Add `FontGroup`.
+- [x] Support customizing all `*Color` properties.
+- [x] Support customizing all `*Font` properties.
+- [ ] Support customizing all `*image` properties.
+- [ ] Support init from code.
+- [ ] Support loading from `nib` files.
+- [ ] Support `prepareForInterfaceBuilder()`.
+- [ ] Remove the need to call `refresh()` manually (using `KVO` to observe state changes).
 
-## Example Usage
+## Getting Started
+
+Define a custom `UIView` (or other classes) subclass that conforms to corresponding `Custom*` protocols. Then, only the storyboard file and change `Identity Inceptor -> Custom Class` to your custom class.
 
 ```swift
 class CustomView: UIView, CustomBackgroundColor {
 
-    var backgroundColorStyle: ColorStyle = Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+    var backgroundColorStyle: ColorStyle = UIColor.white()
 
 }
 ```
 
+The compiler will emit an error if `UIView` can’t customize its background color or `backgroundColorStyle` is not implemented by the class. In this example, `UIColor` is already conformed to `ColorStyle` so it can be used directly. Font and other properties can be customized using similar ways.
+
 ## Advanced Usage
 
-### Custom Color
+### Custom Style
+
+In order to fully elaborate the power of this framework, it is recommended to define a custom `enum` that conforms to `*Style`. 
 
 ```swift
 enum CustomColor: ColorStyle {
 
     case white, black
 
-    func color() -> UIColor {
+    func normal() -> UIColor {
         switch self {
-        case .white: return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        case .black: return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        case .white: return UIColor.white()
+        case .black: return UIColor.black()
         }
     }
 
 }
 ```
 
-### Color Group
+The above example can therefore be rewritten as the following code.
 
 ```swift
 class CustomView: UIView, CustomBackgroundColor {
+
+    var backgroundColorStyle: ColorStyle = CustomColor.white
+
+}
+```
+
+### Style Group
+
+For views that support state transition (e.g. `UIButton`), it is very common that their design is different for different states. `*StyleGroup` can be used here.
+
+```swift
+class CustomButton: UIButton, CustomBackgroundColor {
 
     var backgroundColorStyle: ColorStyle = ColorGroup(normal: CustomColor.white, disabled: CustomColor.black)
 
 }
 ```
 
-### Custom Font
+Unsupported states will be ignored. Currently, it is required to call `refresh()` after the state is changed.
 
 ```swift
-enum customFont: FontStyle {
+button.isEnabled = true
+button.refresh()
+```
 
-    case standard
+## Reference
 
-    func font() -> UIFont {
-        switch self {
-        case .standard: return UIFont(name: "Avenir", size: 16.0)!
-        }
-    }
+### Supporting States
 
-}
+```
+- ViewFocusable: All Views
+- ViewDisable: UIControl, UIButton, UIDatePicker, UIPageControl, UIRefreshControl, UISegmentedControl, UISlider, UIStepper, UISwitch, UITextField, UILabel
+- ViewSelectable: UIControl, UIButton, UIDatePicker, UIPageControl, UIRefreshControl, UISegmentedControl, UISlider, UIStepper, UISwitch, UITextField, UITableViewCell
+- ViewHighlightable: UIControl, UIButton, UIDatePicker, UIPageControl, UIRefreshControl, UISegmentedControl, UISlider, UIStepper, UISwitch, UITextField, UITableViewCell, UILabel, UIImageView
 ```

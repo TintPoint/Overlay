@@ -9,14 +9,13 @@ Write your swift UI code in the CSS way.
 - [x] Support customizing all `*Color` properties.
 - [x] Support customizing all `*Font` properties.
 - [ ] Support customizing all `*image` properties.
-- [ ] Support init from code.
-- [ ] Support loading from `nib` files.
+- [ ] Support loading layout from `nib` files.
 - [ ] Support `prepareForInterfaceBuilder()`.
 - [ ] Remove the need to call `refresh()` manually (using `KVO` to observe state changes).
 
 ## Getting Started
 
-Define a custom `UIView` (or other classes) subclass that conforms to corresponding `Custom*` protocols. Then, only the storyboard file and change `Identity Inceptor -> Custom Class` to your custom class.
+Define a custom `UIView` (or other classes) subclass that conforms to corresponding `Custom*` protocols.
 
 ```swift
 class CustomView: UIView, CustomBackgroundColor {
@@ -27,6 +26,8 @@ class CustomView: UIView, CustomBackgroundColor {
 ```
 
 The compiler will emit an error if `UIView` can’t customize its background color or `backgroundColorStyle` is not implemented by the class. In this example, `UIColor` is already conformed to `ColorStyle` so it can be used directly. Font and other properties can be customized using similar ways.
+
+Then, open the storyboard file and change `Identity Inceptor -> Custom Class` to previously defined custom class. Manually initialize a view from code is also supported, but make sure to call `refresh()` function after initialization. 
 
 ## Advanced Usage
 

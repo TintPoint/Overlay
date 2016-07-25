@@ -19,7 +19,7 @@ public protocol ViewCustomizable {
 
 }
 
-extension ViewCustomizable {
+public extension ViewCustomizable {
 
     func selected(_ colorStyle: ColorStyle) -> UIColor? {
         return selected(colorStyle, except: [])

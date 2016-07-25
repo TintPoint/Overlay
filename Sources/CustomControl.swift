@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIButton {
+public extension UIButton {
 
     override func refresh() {
         super.refresh()
@@ -34,7 +34,7 @@ extension UIButton {
 
 }
 
-extension UISwitch {
+public extension UISwitch {
 
     override func refresh() {
         super.refresh()
@@ -50,7 +50,7 @@ extension UISwitch {
 
 }
 
-extension UITextField {
+public extension UITextField {
 
     override func refresh() {
         super.refresh()

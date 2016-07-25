@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UITableView {
+public extension UITableView {
 
     override func refresh() {
         super.refresh()
@@ -32,7 +32,7 @@ extension UITableView {
 
 }
 
-extension UITextView {
+public extension UITextView {
 
     override func refresh() {
         super.refresh()

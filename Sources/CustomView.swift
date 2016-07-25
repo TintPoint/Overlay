@@ -23,7 +23,7 @@ public extension UIView {
 
 }
 
-extension UIView {
+public extension UIView {
 
     func refresh() {
         if let style = self as? CustomTintColor {
@@ -37,7 +37,7 @@ extension UIView {
 
 }
 
-extension UIActivityIndicatorView {
+public extension UIActivityIndicatorView {
 
     override func refresh() {
         super.refresh()
@@ -49,7 +49,7 @@ extension UIActivityIndicatorView {
 
 }
 
-extension UILabel {
+public extension UILabel {
 
     override func refresh() {
         super.refresh()
@@ -72,7 +72,7 @@ extension UILabel {
 
 }
 
-extension UINavigationBar {
+public extension UINavigationBar {
 
     override func refresh() {
         super.refresh()
@@ -84,7 +84,7 @@ extension UINavigationBar {
 
 }
 
-extension UIProgressView {
+public extension UIProgressView {
 
     override func refresh() {
         super.refresh()
@@ -100,7 +100,7 @@ extension UIProgressView {
 
 }
 
-extension UISearchBar {
+public extension UISearchBar {
 
     override func refresh() {
         super.refresh()
@@ -112,7 +112,7 @@ extension UISearchBar {
 
 }
 
-extension UITabBar {
+public extension UITabBar {
 
     override func refresh() {
         super.refresh()
@@ -130,7 +130,7 @@ extension UITabBar {
 
 }
 
-extension UIToolbar {
+public extension UIToolbar {
 
     override func refresh() {
         super.refresh()

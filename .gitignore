@@ -2,6 +2,7 @@
 
 .DS_Store
 .Trashes
+
 *.swp
 
 # Swift
@@ -32,7 +33,6 @@ build/
 # Xcode Semi-personal Settings
 
 xcuserdata/
-xcshareddata/
 
 *.xccheckout
 

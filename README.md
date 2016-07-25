@@ -26,7 +26,7 @@ github "TintPoint/Overlay" "master"
 
 ## Getting Started
 
-The example shows how to customize the color of a view. Font and other attributes can be customized use similar ways.
+The example shows how to customize the color of a view. Font and other attributes can also be customized similarity.
 
 Define a custom view class that conforms to corresponding protocols with `Custom` prefix.
 

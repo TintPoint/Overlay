@@ -1,6 +1,6 @@
 //
 //  CustomControl.swift
-//  Look
+//  Overlay
 //
 //  Created by Justin Jia on 6/29/16.
 //  Copyright © 2016 TintPoint. MIT license.

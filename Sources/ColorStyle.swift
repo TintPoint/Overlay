@@ -1,6 +1,6 @@
 //
 //  ColorStyle.swift
-//  Look
+//  Overlay
 //
 //  Created by Justin Jia on 6/29/16.
 //  Copyright © 2016 TintPoint. MIT license.
@@ -40,7 +40,7 @@ public extension ColorStyleGroup {
     public func focused() -> UIColor? {
         return nil
     }
-    
+
 }
 
 extension UIColor: ColorStyle {
@@ -58,7 +58,7 @@ public struct ColorGroup: ColorStyleGroup {
     private let selectedStorage: UIColor?
     private let highlightedStorage: UIColor?
     private let focusedStorage: UIColor?
-    
+
     public init(normal: UIColor, disabled: UIColor? = nil, selected: UIColor? = nil, highlighted: UIColor? = nil, focused: UIColor? = nil) {
         normalStorage = normal
         disabledStorage = disabled
@@ -68,7 +68,7 @@ public struct ColorGroup: ColorStyleGroup {
     }
 
     public init(normal: ColorStyle, disabled: ColorStyle? = nil, selected: ColorStyle? = nil, highlighted: ColorStyle? = nil, focused: ColorStyle? = nil) {
-        self.init(normal: normal, disabled: disabled, selected: selected, highlighted: highlighted, focused: focused)
+        self.init(normal: normal.normal(), disabled: disabled?.normal(), selected: selected?.normal(), highlighted: highlighted?.normal(), focused: focused?.normal())
     }
 
     public func normal() -> UIColor {
@@ -90,5 +90,5 @@ public struct ColorGroup: ColorStyleGroup {
     public func focused() -> UIColor? {
         return focusedStorage
     }
-    
+
 }

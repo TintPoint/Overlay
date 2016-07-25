@@ -1,6 +1,6 @@
 //
 //  CustomScrollView.swift
-//  Look
+//  Overlay
 //
 //  Created by Justin Jia on 7/11/16.
 //  Copyright © 2016 TintPoint. MIT license.
@@ -29,7 +29,7 @@ extension UITableView {
             sectionIndexTrackingBackgroundColor = style.selected(style.sectionIndexTrackingBackgroundColorStyle)
         }
     }
-    
+
 }
 
 extension UITextView {

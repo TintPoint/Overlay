@@ -1,6 +1,6 @@
 # Overlay
 
-**Early Development**
+**Still in Early Development**
 
 Write your swift UI code in the CSS way.
 
@@ -32,7 +32,7 @@ The compiler will emit an error if `UIView` can’t customize its background col
 
 ### Custom Style
 
-In order to fully elaborate the power of this framework, it is recommended to define a custom `enum` that conforms to `*Style`. 
+In order to fully elaborate the power of this framework, it is recommended to define a custom `enum` that conforms to `*Style`.
 
 ```swift
 enum CustomColor: ColorStyle {

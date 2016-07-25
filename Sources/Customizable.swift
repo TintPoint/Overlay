@@ -1,6 +1,6 @@
 //
 //  Customizable.swift
-//  Look
+//  Overlay
 //
 //  Created by Justin Jia on 6/18/16.
 //  Copyright © 2016 TintPoint. MIT license.
@@ -34,13 +34,13 @@ extension ViewCustomizable {
             return colorStyle.normal()
         }
 
-        if let view = self as? ViewHighlightable where view.isHighlighted && !states.contains(.highlighted) {
+        if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
             return colorStyleGroup.highlighted()
-        } else if let view = self as? ViewSelectable where view.isSelected && !states.contains(.selected) {
+        } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
             return colorStyleGroup.selected()
-        } else if let view = self as? ViewDisable where !view.isEnabled && !states.contains(.disabled) {
+        } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
             return colorStyleGroup.disabled()
-        } else if let view = self as? ViewFocusable where view.isFocused && !states.contains(.focused) {
+        } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
             return colorStyleGroup.focused()
         } else {
             return colorStyleGroup.normal()
@@ -52,13 +52,13 @@ extension ViewCustomizable {
             return fontStyle.normal()
         }
 
-        if let view = self as? ViewHighlightable where view.isHighlighted && !states.contains(.highlighted) {
+        if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
             return fontStyleGroup.highlighted()
-        } else if let view = self as? ViewSelectable where view.isSelected && !states.contains(.selected) {
+        } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
             return fontStyleGroup.selected()
-        } else if let view = self as? ViewDisable where !view.isEnabled && !states.contains(.disabled) {
+        } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
             return fontStyleGroup.disabled()
-        } else if let view = self as? ViewFocusable where view.isFocused && !states.contains(.focused) {
+        } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
             return fontStyleGroup.focused()
         } else {
             return fontStyleGroup.normal()

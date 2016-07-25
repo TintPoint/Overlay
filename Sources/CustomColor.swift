@@ -1,6 +1,6 @@
 //
 //  CustomColor.swift
-//  Look
+//  Overlay
 //
 //  Created by Justin Jia on 6/18/16.
 //  Copyright © 2016 TintPoint. MIT license.
@@ -26,7 +26,7 @@ protocol CustomTextColor: ViewCustomizable {
 
     var textColor: UIColor? { get set }
     var textColorStyle: ColorStyle { get }
-    
+
 }
 
 protocol CustomShadowColor: ViewCustomizable {

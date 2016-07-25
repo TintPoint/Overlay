@@ -1,47 +1,5 @@
-# macOS Temporary Files
+# macOS
 
 .DS_Store
 .Trashes
-
 *.swp
-
-# Xcode Temporary Files
-
-*~.nib
-
-# Xcode Build Folder
-
-DerivedData/
-build/
-
-# Xcode Private Settings
-
-*.pbxuser
-*.mode1v3
-*.mode2v3
-*.perspectivev3
-
-!default.pbxuser
-!default.mode1v3
-!default.mode2v3
-!default.perspectivev3
-
-# Xcode Semi-personal Settings
-
-xcuserdata/
-xcshareddata/
-
-*.xccheckout
-
-# Xcode Deprecated Classes
-
-*.moved-aside
-
-# Reference
-# 
-# .DS_Store      http://www.westwind.com/reference/os-x/invisibles.html
-# .pbxuser       http://lists.apple.com/archives/xcode-users/2004/Jan/msg00193.html
-# .mode1v3       http://lists.apple.com/archives/xcode-users/2007/Oct/msg00465.html
-# .mode2v3       http://lists.apple.com/archives/xcode-users/2007/Oct/msg00465.html
-# .perspectivev3 http://stackoverflow.com/questions/5223297/xcode-projects-what-is-a-perspectivev3-file
-# .xccheckout    http://stackoverflow.com/a/19260712/153422

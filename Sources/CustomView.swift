@@ -1,6 +1,6 @@
 //
 //  CustomView.swift
-//  Look
+//  Overlay
 //
 //  Created by Justin Jia on 6/29/16.
 //  Copyright © 2016 TintPoint. MIT license.
@@ -29,7 +29,7 @@ extension UIView {
         if let style = self as? CustomTintColor {
             tintColor = style.selected(style.tintColorStyle)
         }
-        
+
         if let style = self as? CustomBackgroundColor {
             backgroundColor = style.selected(style.backgroundColorStyle)
         }

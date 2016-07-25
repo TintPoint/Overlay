@@ -1,6 +1,8 @@
 # Overlay
 
-**Still in Early Development**
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+**Important: Still in early development. Use as your own risk.**
 
 Write your swift UI code in the CSS way.
 
@@ -12,6 +14,16 @@ Write your swift UI code in the CSS way.
 - [ ] Support loading layout from `nib` files.
 - [ ] Support `prepareForInterfaceBuilder()`.
 - [ ] Remove the need to call `refresh()` manually (using `KVO` to observe state changes).
+
+## Installation
+
+### Carthage
+
+Source is available through [Carthage](https://github.com/Carthage/Carthage). To install it, add the following line to your Cartfile:
+
+```ogdl
+github "TintPoint/Overlay" "master"
+```
 
 ## Getting Started
 

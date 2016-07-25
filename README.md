@@ -75,7 +75,7 @@ class CustomView: UIView, CustomBackgroundColor {
 
 ### Style Group
 
-For views that support state transition (e.g. `UIButton`), it is very common that their design is different for different states. `*StyleGroup` can be used here.
+For view which supports state transition (e.g. `UIButton`), it is very common that its design is different under different states. `ColorGroup` can be used here.
 
 ```swift
 class CustomButton: UIButton, CustomBackgroundColor {
@@ -93,6 +93,15 @@ button.refresh()
 ```
 
 ## Reference
+
+### Supported Protocols
+
+**TODO**
+
+### Supported Styles
+
+- `ColorStyle`
+- `FontStyle`
 
 ### Supporting States
 

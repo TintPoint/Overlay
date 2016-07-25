@@ -121,8 +121,10 @@ extension UITabBar {
             barTintColor = style.selected(style.barTintColorStyle)
         }
 
-        if let style = self as? CustomTabBarUnselectedItemTintColor {
-            unselectedItemTintColor = style.selected(style.unselectedItemTintColorStyle)
+        if #available(iOS 10.0, *) {
+            if let style = self as? CustomTabBarUnselectedItemTintColor {
+                unselectedItemTintColor = style.selected(style.unselectedItemTintColorStyle)
+            }
         }
     }
 

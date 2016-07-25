@@ -120,6 +120,7 @@ protocol CustomTableViewSectionIndexTrackingBackgroundColor: ViewCustomizable {
 
 }
 
+@available(iOS 10.0, *)
 protocol CustomTabBarUnselectedItemTintColor: ViewCustomizable {
 
     var unselectedItemTintColor: UIColor? { get set }

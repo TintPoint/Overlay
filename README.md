@@ -1,6 +1,6 @@
 # Overlay
 
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 ![Early Development](https://img.shields.io/badge/status-early%20development-red.svg)
 
 Write your swift UI code in the CSS way.

@@ -1,6 +1,7 @@
 # Overlay
 
-**Still in Early Development**
+[![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Early Development](https://img.shields.io/badge/status-early%20development-red.svg?style=flat)
 
 Write your swift UI code in the CSS way.
 
@@ -11,11 +12,23 @@ Write your swift UI code in the CSS way.
 - [ ] Support customizing all `*image` properties.
 - [ ] Support loading layout from `nib` files.
 - [ ] Support `prepareForInterfaceBuilder()`.
-- [ ] Remove the need to call `refresh()` manually (using `KVO` to observe state changes).
+- [ ] Remove the need to call `refresh()` manually (use KVO to observe state changes).
+
+## Installation
+
+### Carthage
+
+Source is available through [Carthage](https://github.com/Carthage/Carthage). To install it, add the following line to your Cartfile:
+
+```ogdl
+github "TintPoint/Overlay" "master"
+```
 
 ## Getting Started
 
-Define a custom `UIView` (or other classes) subclass that conforms to corresponding `Custom*` protocols.
+The example shows how to customize the color of a view. Font and other attributes can also be customized similarity.
+
+Define a custom view class that conforms to corresponding protocols with `Custom` prefix.
 
 ```swift
 class CustomView: UIView, CustomBackgroundColor {
@@ -25,15 +38,15 @@ class CustomView: UIView, CustomBackgroundColor {
 }
 ```
 
-The compiler will emit an error if `UIView` can’t customize its background color or `backgroundColorStyle` is not implemented by the class. In this example, `UIColor` is already conformed to `ColorStyle` so it can be used directly. Font and other properties can be customized using similar ways.
+The compiler will emit an error if `CustomView`'s superclass (in this case, `UIView`) doesn't have a `backgroundColor` property or `backgroundColorStyle` is not implemented by `CustomView`. `UIColor` is already conformed to `ColorStyle` protocol so it can be used directly. 
 
-Then, open the storyboard file and change `Identity Inceptor -> Custom Class` to previously defined custom class. Manually initialize a view from code is also supported, but make sure to call `refresh()` function after initialization. 
+Then, open the storyboard file and change `Identity Inceptor -> Custom Class` to `CustomView`. Initialization from code is also supported, but make sure to call `refresh()` after initialization. 
 
 ## Advanced Usage
 
 ### Custom Style
 
-In order to fully elaborate the power of this framework, it is recommended to define a custom `enum` that conforms to `*Style`.
+In order to fully elaborate the power of Swift's type checker, it is recommended to define a custom enum that conforms to `ColorStyle` protocols. 
 
 ```swift
 enum CustomColor: ColorStyle {
@@ -62,7 +75,7 @@ class CustomView: UIView, CustomBackgroundColor {
 
 ### Style Group
 
-For views that support state transition (e.g. `UIButton`), it is very common that their design is different for different states. `*StyleGroup` can be used here.
+For view which supports state transition (e.g. `UIButton`), it is very common that its design is different under different states. `ColorGroup` can be used here.
 
 ```swift
 class CustomButton: UIButton, CustomBackgroundColor {
@@ -80,6 +93,15 @@ button.refresh()
 ```
 
 ## Reference
+
+### Supported Protocols
+
+**TODO**
+
+### Supported Styles
+
+- `ColorStyle`
+- `FontStyle`
 
 ### Supporting States
 

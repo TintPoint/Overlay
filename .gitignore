@@ -7,3 +7,35 @@
 # Swift
 
 .build
+
+# Xcode Temporary Files
+
+*~.nib
+
+# Xcode Build Folder
+
+DerivedData/
+build/
+
+# Xcode Private Settings
+
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+# Xcode Semi-personal Settings
+
+xcuserdata/
+xcshareddata/
+
+*.xccheckout
+
+# Xcode Deprecated Classes
+
+*.moved-aside

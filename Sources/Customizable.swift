@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ViewCustomizable {
+public protocol ViewCustomizable {
 
     // Workaround: Default argument not permitted in a protocol method
     func selected(_ colorStyle: ColorStyle) -> UIColor?

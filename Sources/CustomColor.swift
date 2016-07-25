@@ -8,112 +8,112 @@
 
 import UIKit
 
-protocol CustomTintColor: ViewCustomizable {
+public protocol CustomTintColor: ViewCustomizable {
 
     var tintColor: UIColor! { get set }
     var tintColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomBackgroundColor: ViewCustomizable {
+public protocol CustomBackgroundColor: ViewCustomizable {
 
     var backgroundColor: UIColor? { get set }
     var backgroundColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomTextColor: ViewCustomizable {
+public protocol CustomTextColor: ViewCustomizable {
 
     var textColor: UIColor? { get set }
     var textColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomShadowColor: ViewCustomizable {
+public protocol CustomShadowColor: ViewCustomizable {
 
     var shadowColor: UIColor? { get set }
     var shadowColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomActivityIndicatorViewColor: ViewCustomizable {
+public protocol CustomActivityIndicatorViewColor: ViewCustomizable {
 
     var color: UIColor? { get set }
     var colorStyle: ColorStyle { get }
 
 }
 
-protocol CustomButtonTitleColor: ViewCustomizable {
+public protocol CustomButtonTitleColor: ViewCustomizable {
 
     func setTitleColor(_ color: UIColor?, for state: UIControlState)
     var titleColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomButtonTitleShadowColor: ViewCustomizable {
+public protocol CustomButtonTitleShadowColor: ViewCustomizable {
 
     func setTitleShadowColor(_ color: UIColor?, for state: UIControlState)
     var titleShadowColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomSwitchOnTintColor: ViewCustomizable {
+public protocol CustomSwitchOnTintColor: ViewCustomizable {
 
     var onTintColor: UIColor? { get set }
     var onTintColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomSwitchThumbTintColor: ViewCustomizable {
+public protocol CustomSwitchThumbTintColor: ViewCustomizable {
 
     var thumbTintColor: UIColor? { get set }
     var thumbTintColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomBarTintColor: ViewCustomizable {
+public protocol CustomBarTintColor: ViewCustomizable {
 
     var barTintColor: UIColor? { get set }
     var barTintColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomProgressTintColor: ViewCustomizable {
+public protocol CustomProgressTintColor: ViewCustomizable {
 
     var progressTintColor: UIColor? { get set }
     var progressTintColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomProgressTrackTintColor: ViewCustomizable {
+public protocol CustomProgressTrackTintColor: ViewCustomizable {
 
     var trackTintColor: UIColor? { get set }
     var trackTintColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomTableViewSeparatorColor: ViewCustomizable {
+public protocol CustomTableViewSeparatorColor: ViewCustomizable {
 
     var separatorColor: UIColor? { get set }
     var separatorColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomTableViewSectionIndexColor: ViewCustomizable {
+public protocol CustomTableViewSectionIndexColor: ViewCustomizable {
 
     var sectionIndexColor: UIColor? { get set }
     var sectionIndexColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomTableViewSectionIndexBackgroundColor: ViewCustomizable {
+public protocol CustomTableViewSectionIndexBackgroundColor: ViewCustomizable {
 
     var sectionIndexBackgroundColor: UIColor? { get set }
     var sectionIndexBackgroundColorStyle: ColorStyle { get }
 
 }
 
-protocol CustomTableViewSectionIndexTrackingBackgroundColor: ViewCustomizable {
+public protocol CustomTableViewSectionIndexTrackingBackgroundColor: ViewCustomizable {
 
     var sectionIndexTrackingBackgroundColor: UIColor? { get set }
     var sectionIndexTrackingBackgroundColorStyle: ColorStyle { get }
@@ -121,7 +121,7 @@ protocol CustomTableViewSectionIndexTrackingBackgroundColor: ViewCustomizable {
 }
 
 @available(iOS 10.0, *)
-protocol CustomTabBarUnselectedItemTintColor: ViewCustomizable {
+public protocol CustomTabBarUnselectedItemTintColor: ViewCustomizable {
 
     var unselectedItemTintColor: UIColor? { get set }
     var unselectedItemTintColorStyle: ColorStyle { get }

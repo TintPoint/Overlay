@@ -64,15 +64,15 @@
 			isa = PBXGroup;
 			children = (
 				D0B172AF1D45A2220079A2F2 /* Overlay.h */,
-				D0B172A51D45A2220079A2F2 /* ColorStyle.swift */,
-				D0B172A61D45A2220079A2F2 /* CustomColor.swift */,
-				D0B172A71D45A2220079A2F2 /* CustomControl.swift */,
-				D0B172A81D45A2220079A2F2 /* CustomFont.swift */,
 				D0B172A91D45A2220079A2F2 /* Customizable.swift */,
+				D0B172A51D45A2220079A2F2 /* ColorStyle.swift */,
+				D0B172AD1D45A2220079A2F2 /* FontStyle.swift */,
+				D0B172A61D45A2220079A2F2 /* CustomColor.swift */,
+				D0B172A81D45A2220079A2F2 /* CustomFont.swift */,
+				D0B172AC1D45A2220079A2F2 /* CustomView.swift */,
+				D0B172A71D45A2220079A2F2 /* CustomControl.swift */,
 				D0B172AA1D45A2220079A2F2 /* CustomNib.swift */,
 				D0B172AB1D45A2220079A2F2 /* CustomScrollView.swift */,
-				D0B172AC1D45A2220079A2F2 /* CustomView.swift */,
-				D0B172AD1D45A2220079A2F2 /* FontStyle.swift */,
 			);
 			path = Overlay;
 			sourceTree = "<group>";

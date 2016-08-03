@@ -1,5 +1,5 @@
 //
-//  RefreshView.swift
+//  Refreshing.swift
 //  Overlay
 //
 //  Created by Justin Jia on 6/29/16.
@@ -23,9 +23,9 @@ public extension UIView {
 
 }
 
-public extension UIView {
+extension UIView: ViewCustomizable {
 
-    func refresh() {
+    public func refresh() {
         if let style = self as? CustomTintColor {
             tintColor = style.selected(style.tintColorStyle)
         }
@@ -39,7 +39,7 @@ public extension UIView {
 
 public extension UIActivityIndicatorView {
 
-    override func refresh() {
+    override public func refresh() {
         super.refresh()
 
         if let style = self as? CustomActivityIndicatorViewColor {
@@ -51,7 +51,7 @@ public extension UIActivityIndicatorView {
 
 public extension UILabel {
 
-    override func refresh() {
+    override public func refresh() {
         super.refresh()
 
         if let style = self as? CustomFont {
@@ -74,7 +74,7 @@ public extension UILabel {
 
 public extension UINavigationBar {
 
-    override func refresh() {
+    override public func refresh() {
         super.refresh()
 
         if let style = self as? CustomBarTintColor {
@@ -86,7 +86,7 @@ public extension UINavigationBar {
 
 public extension UIProgressView {
 
-    override func refresh() {
+    override public func refresh() {
         super.refresh()
 
         if let style = self as? CustomProgressTintColor {
@@ -102,7 +102,7 @@ public extension UIProgressView {
 
 public extension UISearchBar {
 
-    override func refresh() {
+    override public func refresh() {
         super.refresh()
 
         if let style = self as? CustomBarTintColor {
@@ -114,7 +114,7 @@ public extension UISearchBar {
 
 public extension UITabBar {
 
-    override func refresh() {
+    override public func refresh() {
         super.refresh()
 
         if let style = self as? CustomBarTintColor {
@@ -132,7 +132,7 @@ public extension UITabBar {
 
 public extension UIToolbar {
 
-    override func refresh() {
+    override public func refresh() {
         super.refresh()
 
         if let style = self as? CustomBarTintColor {
@@ -144,24 +144,26 @@ public extension UIToolbar {
 
 public extension UIButton {
     
-    override func refresh() {
+    override public func refresh() {
         super.refresh()
         
         if let style = self as? CustomButtonTitleColor {
             setTitleColor(style.titleColorStyle.normal(), for: [])
-            if let colorStyleGroup = style.titleColorStyle as? ColorStyleGroup {
-                setTitleColor(colorStyleGroup.highlighted(), for: .highlighted)
-                setTitleColor(colorStyleGroup.disabled(), for: .disabled)
-                setTitleColor(colorStyleGroup.selected(), for: .selected)
+            if let styleGroup = style.titleColorStyle as? ColorStyleGroup {
+                setTitleColor(styleGroup.highlighted(), for: .highlighted)
+                setTitleColor(styleGroup.disabled(), for: .disabled)
+                setTitleColor(styleGroup.selected(), for: .selected)
+                setTitleColor(styleGroup.focused(), for: .focused)
             }
         }
         
         if let style = self as? CustomButtonTitleShadowColor {
             setTitleShadowColor(style.titleShadowColorStyle.normal(), for: [])
-            if let colorStyleGroup = style.titleShadowColorStyle as? ColorStyleGroup {
-                setTitleShadowColor(colorStyleGroup.highlighted(), for: .highlighted)
-                setTitleShadowColor(colorStyleGroup.disabled(), for: .disabled)
-                setTitleShadowColor(colorStyleGroup.selected(), for: .selected)
+            if let styleGroup = style.titleShadowColorStyle as? ColorStyleGroup {
+                setTitleShadowColor(styleGroup.highlighted(), for: .highlighted)
+                setTitleShadowColor(styleGroup.disabled(), for: .disabled)
+                setTitleShadowColor(styleGroup.selected(), for: .selected)
+                setTitleShadowColor(styleGroup.focused(), for: .focused)
             }
         }
     }
@@ -170,7 +172,7 @@ public extension UIButton {
 
 public extension UISwitch {
     
-    override func refresh() {
+    override public func refresh() {
         super.refresh()
         
         if let style = self as? CustomSwitchOnTintColor {
@@ -186,7 +188,7 @@ public extension UISwitch {
 
 public extension UITextField {
     
-    override func refresh() {
+    override public func refresh() {
         super.refresh()
         
         if let style = self as? CustomFont {
@@ -202,7 +204,7 @@ public extension UITextField {
 
 public extension UITableView {
     
-    override func refresh() {
+    override public func refresh() {
         super.refresh()
         
         if let style = self as? CustomTableViewSeparatorColor {
@@ -226,7 +228,7 @@ public extension UITableView {
 
 public extension UITextView {
     
-    override func refresh() {
+    override public func refresh() {
         super.refresh()
         
         if let style = self as? CustomFont {

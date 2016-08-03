@@ -8,60 +8,63 @@
 
 import UIKit
 
+// Workaround: default argument in protocol methods is not supported yet
+
 public protocol ViewCustomizable {
+    
+    func selected(_ style: ColorStyle) -> UIColor?
+    func selected(_ style: FontStyle) -> UIFont?
 
-    // Workaround: Default argument not permitted in a protocol method
-    func selected(_ colorStyle: ColorStyle) -> UIColor?
-    func selected(_ fontStyle: FontStyle) -> UIFont?
-
-    func selected(_ colorStyle: ColorStyle, except states: [UIControlState]) -> UIColor?
-    func selected(_ fontStyle: FontStyle, except states: [UIControlState]) -> UIFont?
+    func selected(_ style: ColorStyle, except states: [UIControlState]) -> UIColor?
+    func selected(_ style: FontStyle, except states: [UIControlState]) -> UIFont?
+    
+    func refresh()
 
 }
 
 public extension ViewCustomizable {
 
-    func selected(_ colorStyle: ColorStyle) -> UIColor? {
-        return selected(colorStyle, except: [])
+    func selected(_ style: ColorStyle) -> UIColor? {
+        return selected(style, except: [])
     }
 
-    func selected(_ fontStyle: FontStyle) -> UIFont? {
-        return selected(fontStyle, except: [])
+    func selected(_ style: FontStyle) -> UIFont? {
+        return selected(style, except: [])
     }
 
-    func selected(_ colorStyle: ColorStyle, except states: [UIControlState]) -> UIColor? {
-        guard let colorStyleGroup = colorStyle as? ColorStyleGroup else {
-            return colorStyle.normal()
+    func selected(_ style: ColorStyle, except states: [UIControlState]) -> UIColor? {
+        guard let styleGroup = style as? ColorStyleGroup else {
+            return style.normal()
         }
 
         if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
-            return colorStyleGroup.highlighted()
+            return styleGroup.highlighted()
         } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
-            return colorStyleGroup.selected()
+            return styleGroup.selected()
         } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
-            return colorStyleGroup.disabled()
+            return styleGroup.disabled()
         } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
-            return colorStyleGroup.focused()
+            return styleGroup.focused()
         } else {
-            return colorStyleGroup.normal()
+            return styleGroup.normal()
         }
     }
 
-    func selected(_ fontStyle: FontStyle, except states: [UIControlState]) -> UIFont? {
-        guard let fontStyleGroup = fontStyle as? FontStyleGroup else {
-            return fontStyle.normal()
+    func selected(_ style: FontStyle, except states: [UIControlState]) -> UIFont? {
+        guard let styleGroup = style as? FontStyleGroup else {
+            return style.normal()
         }
 
         if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
-            return fontStyleGroup.highlighted()
+            return styleGroup.highlighted()
         } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
-            return fontStyleGroup.selected()
+            return styleGroup.selected()
         } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
-            return fontStyleGroup.disabled()
+            return styleGroup.disabled()
         } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
-            return fontStyleGroup.focused()
+            return styleGroup.focused()
         } else {
-            return fontStyleGroup.normal()
+            return styleGroup.normal()
         }
     }
 

@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Workaround: generic protocol is not supported yet
+
 public protocol FontStyle {
 
     func normal() -> UIFont

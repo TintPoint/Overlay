@@ -1,5 +1,5 @@
 //
-//  CustomView.swift
+//  RefreshView.swift
 //  Overlay
 //
 //  Created by Justin Jia on 6/29/16.
@@ -140,4 +140,102 @@ public extension UIToolbar {
         }
     }
 
+}
+
+public extension UIButton {
+    
+    override func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomButtonTitleColor {
+            setTitleColor(style.titleColorStyle.normal(), for: [])
+            if let colorStyleGroup = style.titleColorStyle as? ColorStyleGroup {
+                setTitleColor(colorStyleGroup.highlighted(), for: .highlighted)
+                setTitleColor(colorStyleGroup.disabled(), for: .disabled)
+                setTitleColor(colorStyleGroup.selected(), for: .selected)
+            }
+        }
+        
+        if let style = self as? CustomButtonTitleShadowColor {
+            setTitleShadowColor(style.titleShadowColorStyle.normal(), for: [])
+            if let colorStyleGroup = style.titleShadowColorStyle as? ColorStyleGroup {
+                setTitleShadowColor(colorStyleGroup.highlighted(), for: .highlighted)
+                setTitleShadowColor(colorStyleGroup.disabled(), for: .disabled)
+                setTitleShadowColor(colorStyleGroup.selected(), for: .selected)
+            }
+        }
+    }
+    
+}
+
+public extension UISwitch {
+    
+    override func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomSwitchOnTintColor {
+            onTintColor = style.selected(style.onTintColorStyle)
+        }
+        
+        if let style = self as? CustomSwitchThumbTintColor {
+            thumbTintColor = style.selected(style.thumbTintColorStyle)
+        }
+    }
+    
+}
+
+public extension UITextField {
+    
+    override func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomFont {
+            font = style.selected(style.fontStyle)
+        }
+        
+        if let style = self as? CustomTextColor {
+            textColor = style.selected(style.textColorStyle)
+        }
+    }
+    
+}
+
+public extension UITableView {
+    
+    override func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomTableViewSeparatorColor {
+            separatorColor = style.selected(style.separatorColorStyle)
+        }
+        
+        if let style = self as? CustomTableViewSectionIndexColor {
+            sectionIndexColor = style.selected(style.sectionIndexColorStyle)
+        }
+        
+        if let style = self as? CustomTableViewSectionIndexBackgroundColor {
+            sectionIndexBackgroundColor = style.selected(style.sectionIndexBackgroundColorStyle)
+        }
+        
+        if let style = self as? CustomTableViewSectionIndexTrackingBackgroundColor {
+            sectionIndexTrackingBackgroundColor = style.selected(style.sectionIndexTrackingBackgroundColorStyle)
+        }
+    }
+    
+}
+
+public extension UITextView {
+    
+    override func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomFont {
+            font = style.selected(style.fontStyle)
+        }
+        
+        if let style = self as? CustomTextColor {
+            textColor = style.selected(style.textColorStyle)
+        }
+    }
+    
 }

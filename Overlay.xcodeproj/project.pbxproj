@@ -44,6 +44,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D062B0F01D52469400F70C4A /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				D0B172AF1D45A2220079A2F2 /* Overlay.h */,
+			);
+			name = Overlay;
+			sourceTree = "<group>";
+		};
+		D062B0F11D52469E00F70C4A /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				D0B172A91D45A2220079A2F2 /* Customizable.swift */,
+				D0B172A51D45A2220079A2F2 /* ColorStyle.swift */,
+				D0B172AD1D45A2220079A2F2 /* FontStyle.swift */,
+			);
+			name = Style;
+			sourceTree = "<group>";
+		};
+		D062B0F21D5246B000F70C4A /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				D0B172A61D45A2220079A2F2 /* CustomColor.swift */,
+				D0B172A81D45A2220079A2F2 /* CustomFont.swift */,
+				D0B172AA1D45A2220079A2F2 /* CustomNib.swift */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
+		D062B0F31D5246BC00F70C4A /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				D0B172AC1D45A2220079A2F2 /* CustomView.swift */,
+				D0B172A71D45A2220079A2F2 /* CustomControl.swift */,
+				D0B172AB1D45A2220079A2F2 /* CustomScrollView.swift */,
+			);
+			name = Implementation;
+			sourceTree = "<group>";
+		};
 		D0B172901D45A1EB0079A2F2 = {
 			isa = PBXGroup;
 			children = (
@@ -63,16 +101,10 @@
 		D0B1729C1D45A1EB0079A2F2 /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
-				D0B172AF1D45A2220079A2F2 /* Overlay.h */,
-				D0B172A91D45A2220079A2F2 /* Customizable.swift */,
-				D0B172A51D45A2220079A2F2 /* ColorStyle.swift */,
-				D0B172AD1D45A2220079A2F2 /* FontStyle.swift */,
-				D0B172A61D45A2220079A2F2 /* CustomColor.swift */,
-				D0B172A81D45A2220079A2F2 /* CustomFont.swift */,
-				D0B172AA1D45A2220079A2F2 /* CustomNib.swift */,
-				D0B172AC1D45A2220079A2F2 /* CustomView.swift */,
-				D0B172A71D45A2220079A2F2 /* CustomControl.swift */,
-				D0B172AB1D45A2220079A2F2 /* CustomScrollView.swift */,
+				D062B0F01D52469400F70C4A /* Overlay */,
+				D062B0F11D52469E00F70C4A /* Style */,
+				D062B0F21D5246B000F70C4A /* CustomView */,
+				D062B0F31D5246BC00F70C4A /* Implementation */,
 			);
 			path = Overlay;
 			sourceTree = "<group>";
@@ -120,8 +152,6 @@
 				TargetAttributes = {
 					D0B172991D45A1EB0079A2F2 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 4UY7T7255Z;
-						DevelopmentTeamName = "Bowei Jia";
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -245,6 +275,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -263,6 +294,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

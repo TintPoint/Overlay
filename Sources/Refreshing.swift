@@ -26,8 +26,7 @@ public extension UIView {
 extension UIView: ViewCustomizable {
 
     public func refresh() {
-        if let layout = self as? CustomLayout {
-            guard let contentView = layout.nib.instantiate(withOwner: self, options: nil).first as? UIView, !subviews.contains(contentView) else { return }
+        if let layout = self as? CustomLayout, let contentView = layout.contentView(of: self), !subviews.contains(contentView) {
             contentView.translatesAutoresizingMaskIntoConstraints = false
             addSubview(contentView)
             contentView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true

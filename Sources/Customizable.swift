@@ -11,13 +11,7 @@ import UIKit
 // Workaround: default argument in protocol methods is not supported yet
 
 public protocol ViewCustomizable {
-    
-    func selected(_ style: ColorStyle) -> UIColor?
-    func selected(_ style: FontStyle) -> UIFont?
 
-    func selected(_ style: ColorStyle, except states: [UIControlState]) -> UIColor?
-    func selected(_ style: FontStyle, except states: [UIControlState]) -> UIFont?
-    
     func refresh()
 
 }

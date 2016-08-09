@@ -1,5 +1,5 @@
 //
-//  CustomNib.swift
+//  CustomLayout.swift
 //  Look
 //
 //  Created by Justin Jia on 6/26/16.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-public protocol CustomNib {
+public protocol CustomLayout {
     
     var nib: UINib { get }
-    
+
 }

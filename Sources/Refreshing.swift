@@ -26,6 +26,16 @@ public extension UIView {
 extension UIView: ViewCustomizable {
 
     public func refresh() {
+        if let layout = self as? CustomLayout {
+            guard let contentView = layout.nib.instantiate(withOwner: self, options: nil).first as? UIView, !subviews.contains(contentView) else { return }
+            contentView.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(contentView)
+            contentView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+            contentView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+            contentView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+            contentView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        }
+
         if let style = self as? CustomTintColor {
             tintColor = style.selected(style.tintColorStyle)
         }

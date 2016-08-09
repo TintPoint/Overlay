@@ -11,7 +11,7 @@
 		D0B172B11D45A2220079A2F2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A61D45A2220079A2F2 /* CustomColor.swift */; };
 		D0B172B31D45A2220079A2F2 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A81D45A2220079A2F2 /* CustomFont.swift */; };
 		D0B172B41D45A2220079A2F2 /* Customizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A91D45A2220079A2F2 /* Customizable.swift */; };
-		D0B172B51D45A2220079A2F2 /* CustomNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172AA1D45A2220079A2F2 /* CustomNib.swift */; };
+		D0B172B51D45A2220079A2F2 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172AA1D45A2220079A2F2 /* CustomLayout.swift */; };
 		D0B172B71D45A2220079A2F2 /* Refreshing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172AC1D45A2220079A2F2 /* Refreshing.swift */; };
 		D0B172B81D45A2220079A2F2 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172AD1D45A2220079A2F2 /* FontStyle.swift */; };
 		D0B172BA1D45A2220079A2F2 /* Overlay.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B172AF1D45A2220079A2F2 /* Overlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,7 +23,7 @@
 		D0B172A61D45A2220079A2F2 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomColor.swift; path = Sources/CustomColor.swift; sourceTree = SOURCE_ROOT; };
 		D0B172A81D45A2220079A2F2 /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFont.swift; path = Sources/CustomFont.swift; sourceTree = SOURCE_ROOT; };
 		D0B172A91D45A2220079A2F2 /* Customizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Customizable.swift; path = Sources/Customizable.swift; sourceTree = SOURCE_ROOT; };
-		D0B172AA1D45A2220079A2F2 /* CustomNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNib.swift; path = Sources/CustomNib.swift; sourceTree = SOURCE_ROOT; };
+		D0B172AA1D45A2220079A2F2 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLayout.swift; path = Sources/CustomLayout.swift; sourceTree = SOURCE_ROOT; };
 		D0B172AC1D45A2220079A2F2 /* Refreshing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Refreshing.swift; path = Sources/Refreshing.swift; sourceTree = SOURCE_ROOT; };
 		D0B172AD1D45A2220079A2F2 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontStyle.swift; path = Sources/FontStyle.swift; sourceTree = SOURCE_ROOT; };
 		D0B172AF1D45A2220079A2F2 /* Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Overlay.h; path = Sources/Overlay.h; sourceTree = SOURCE_ROOT; };
@@ -63,7 +63,7 @@
 			children = (
 				D0B172A61D45A2220079A2F2 /* CustomColor.swift */,
 				D0B172A81D45A2220079A2F2 /* CustomFont.swift */,
-				D0B172AA1D45A2220079A2F2 /* CustomNib.swift */,
+				D0B172AA1D45A2220079A2F2 /* CustomLayout.swift */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 				D0B172B71D45A2220079A2F2 /* Refreshing.swift in Sources */,
 				D0B172B81D45A2220079A2F2 /* FontStyle.swift in Sources */,
 				D0B172B31D45A2220079A2F2 /* CustomFont.swift in Sources */,
-				D0B172B51D45A2220079A2F2 /* CustomNib.swift in Sources */,
+				D0B172B51D45A2220079A2F2 /* CustomLayout.swift in Sources */,
 				D0B172B01D45A2220079A2F2 /* ColorStyle.swift in Sources */,
 				D0B172B41D45A2220079A2F2 /* Customizable.swift in Sources */,
 			);

@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.requires_arc = true
   s.source       = { :git => "https://github.com/TintPoint/Overlay.git", :tag => "#{s.version}" }
-  s.source_files  = "Sources/**/*.{h,swift}"
-  s.framework  = "UIKit"
+  s.source_files = "Sources/**/*.{h,swift}"
+  s.framework    = "UIKit"
 end
+

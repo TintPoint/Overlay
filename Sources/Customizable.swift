@@ -8,8 +8,6 @@
 
 import UIKit
 
-// Workaround: default argument in protocol methods is not supported yet
-
 public protocol ViewCustomizable {
 
     func refresh()
@@ -17,6 +15,8 @@ public protocol ViewCustomizable {
 }
 
 public extension ViewCustomizable {
+
+    // Workaround: default argument in protocol methods is not supported yet
 
     func selected(_ style: ColorStyle) -> UIColor? {
         return selected(style, except: [])

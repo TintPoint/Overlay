@@ -1,113 +1,221 @@
 # Overlay
 
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Overlay.svg)](https://cocoapods.org)
 [![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Early Development](https://img.shields.io/badge/status-early%20development-red.svg?style=flat)
 
-Write your swift UI code in the CSS way.
+Overlay is a very flexible UI framework designed for Swift. It is very easy to use but still gives you the ability to design complex UI elements.
 
 ## Todo List
 
 - [x] Support customizing all `*Color` properties.
 - [x] Support customizing all `*Font` properties.
 - [ ] Support customizing all `*image` properties.
-- [ ] Support loading layout from `nib` files.
-- [ ] Support `prepareForInterfaceBuilder()`.
-- [ ] Remove the need to call `refresh()` manually (use KVO to observe state changes).
+- [ ] Support customizing shape related properties.
+- [x] Support loading layout from `nib` files.
+- [ ] Support storyboard preview.
+- [ ] Remove the need to call `refresh()` manually.
+
+## Requirements
+
+iOS 9+ / Xcode 8+ / Swift 3+
 
 ## Installation
 
 ### Carthage
 
-Source is available through [Carthage](https://github.com/Carthage/Carthage). To install it, add the following line to your Cartfile:
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager. To install it, add the following line to your `Cartfile`:
 
 ```ogdl
-github "TintPoint/Overlay" "master"
+github "TintPoint/Overlay" ~> 0.1
+```
+
+### CocoaPods
+
+[CocoaPods](https://cocoapods.org) is a centralized dependency manager. To install it, add the following line to your `Podfile`:
+
+```ruby
+pod 'Overlay', '~> 0.1'
 ```
 
 ## Getting Started
 
-The example shows how to customize the color of a view. Font and other attributes can also be customized similarity.
-
-Define a custom view class that conforms to corresponding protocols with `Custom` prefix.
+Define a custom class that conforms to protocols with `Custom` prefix (list of available protocols can be found [here](#available-protocols)). For example, to customize the background color attribute of a view, write the following code.
 
 ```swift
 class CustomView: UIView, CustomBackgroundColor {
-
-    var backgroundColorStyle: ColorStyle = UIColor.white()
-
+    var backgroundColorStyle: ColorStyle = UIColor.white
 }
 ```
 
-The compiler will emit an error if `CustomView`'s superclass (in this case, `UIView`) doesn't have a `backgroundColor` property or `backgroundColorStyle` is not implemented by `CustomView`. `UIColor` is already conformed to `ColorStyle` protocol so it can be used directly. 
+The compiler will emit an error if `CustomView`'s superclass (in this case, `UIView`) doesn't have a `backgroundColor` property or `backgroundColorStyle` is not implemented by `CustomView`. `UIColor` is already conformed to `ColorStyle` protocol so it can be used directly. Font and other attributes can also be customized similarly.
 
-Then, open the storyboard file and change `Identity Inceptor -> Custom Class` to `CustomView`. Initialization from code is also supported, but make sure to call `refresh()` after initialization. 
+`CustomView` can be used like other views. It is recommended to use it with Interface Builder. Open the storyboard file (or nib file), select the view you want to change, navigate to Identity Inceptor, and fill Custom Class with `CustomView`.
+
+Initialization from code is also supported, but make sure to call `refresh()` after initialization.
+
+```swift
+let customView = CustomView(frame: CGRect())
+customView.refresh()
+```
 
 ## Advanced Usage
 
 ### Custom Style
 
-In order to fully elaborate the power of Swift's type checker, it is recommended to define a custom enum that conforms to `ColorStyle` protocols. 
+In order to fully elaborate the power of Swift's type checker, it is recommended to define a custom enum that conforms to protocols with `Style` postfix (list of available styles can be found [here](#available-styles)).
 
 ```swift
 enum CustomColor: ColorStyle {
-
     case white, black
 
     func normal() -> UIColor {
         switch self {
-        case .white: return UIColor.white()
-        case .black: return UIColor.black()
+        case .white: return UIColor.white
+        case .black: return UIColor.black
         }
     }
-
 }
 ```
 
-The above example can therefore be rewritten as the following code.
+The above example can be rewritten as the following code.
 
 ```swift
 class CustomView: UIView, CustomBackgroundColor {
-
     var backgroundColorStyle: ColorStyle = CustomColor.white
-
 }
 ```
 
 ### Style Group
 
-For view which supports state transition (e.g. `UIButton`), it is very common that its design is different under different states. `ColorGroup` can be used here.
+For views that have more than one state (e.g. `UIButton`), their design usually needs to change if their state changes (list of available states can be found [here](#available-styles)). Style group can be used here. All custom style has a corresponding style group (list of available style groups can be found [here](#available-style-groups)).
 
 ```swift
 class CustomButton: UIButton, CustomBackgroundColor {
-
     var backgroundColorStyle: ColorStyle = ColorGroup(normal: CustomColor.white, disabled: CustomColor.black)
-
 }
 ```
 
-Unsupported states will be ignored. Currently, it is required to call `refresh()` after the state is changed.
+Unsupported states will be ignored. Currently, it is required to call `refresh()` after changing the state.
 
 ```swift
 button.isEnabled = true
 button.refresh()
 ```
 
+### Custom Layout
+
+Some views contain subviews. Overlay is designed with this in mind, but it's not the framework's job to handle the layout. Overlay should only handle attributes (like color and font) and Interface Builder should handle layout (like origin and size). `CustomLayout` protocol allows Overlay to work with Interface Builder together seamlessly.
+
+Define a custom class that conforms to `CustomLayout` protocol. Create a nib file and set File's Owner to the newly defined class.
+
+```swift
+class ComplexView: UIView, CustomLayout {
+    var nib: UINib = UINib(nibName: "ComplexView", bundle: Bundle(for: ComplexView.self))
+}
+```
+
+The first root view inside `ComplexView.xib` will be loaded and added as a container view on top of `ComplexView`. Note: Container view's background color should be clear color under most circumstances.
+
+Create `IBOutlet` and connect them like usual if needed.
+
+```swift
+class ComplexView: UIView, CustomLayout {
+    var nib: UINib = UINib(nibName: "ComplexView", bundle: Bundle(for: ComplexView.self))
+    @IBOutlet weak var button: CustomButton?
+}
+```
+
 ## Reference
 
-### Supported Protocols
+### Available Protocols
 
-**TODO**
+#### Custom Color
 
-### Supported Styles
+> - CustomTintColor
+> - CustomBackgroundColor
+> - CustomTextColor
+> - CustomShadowColor
+> - CustomActivityIndicatorViewColor
+> - CustomButtonTitleColor
+> - CustomButtonTitleShadowColor
+> - CustomSwitchOnTintColor
+> - CustomSwitchThumbTintColor
+> - CustomBarTintColor
+> - CustomProgressTintColor
+> - CustomProgressTrackTintColor
+> - CustomTableViewSeparatorColor
+> - CustomTableViewSectionIndexColor
+> - CustomTableViewSectionIndexBackgroundColor
+> - CustomTableViewSectionIndexTrackingBackgroundColor
+> - CustomTabBarUnselectedItemTintColor
 
-- `ColorStyle`
-- `FontStyle`
+#### Custom Font
 
-### Supporting States
+> - CustomFont
 
-```
-- ViewFocusable: All Views
-- ViewDisable: UIControl, UIButton, UIDatePicker, UIPageControl, UIRefreshControl, UISegmentedControl, UISlider, UIStepper, UISwitch, UITextField, UILabel
-- ViewSelectable: UIControl, UIButton, UIDatePicker, UIPageControl, UIRefreshControl, UISegmentedControl, UISlider, UIStepper, UISwitch, UITextField, UITableViewCell
-- ViewHighlightable: UIControl, UIButton, UIDatePicker, UIPageControl, UIRefreshControl, UISegmentedControl, UISlider, UIStepper, UISwitch, UITextField, UITableViewCell, UILabel, UIImageView
-```
+#### Custom Layout
+
+> - CustomLayout
+
+### Available Styles
+
+> - ColorStyle
+> - FontStyle
+> - ColorStyleGroup
+> - FontStyleGroup
+
+### Available Style Groups
+
+> - ColorGroup
+> - FontGroup
+
+### Available States
+
+#### ViewFocusable
+
+> - All Views
+
+#### ViewDisable
+
+> - UIControl
+> - UIButton
+> - UIDatePicker
+> - UIPageControl
+> - UIRefreshControl
+> - UISegmentedControl
+> - UISlider
+> - UIStepper
+> - UISwitch
+> - UITextField
+> - UILabel
+
+#### ViewSelectable
+
+> - UIControl
+> - UIButton
+> - UIDatePicker
+> - UIPageControl
+> - UIRefreshControl
+> - UISegmentedControl
+> - UISlider
+> - UIStepper
+> - UISwitch
+> - UITextField
+> - UITableViewCell
+
+#### ViewHighlightable
+
+> - UIControl
+> - UIButton
+> - UIDatePicker
+> - UIPageControl
+> - UIRefreshControl
+> - UISegmentedControl
+> - UISlider
+> - UIStepper
+> - UISwitch
+> - UITextField
+> - UITableViewCell
+> - UILabel
+> - UIImageView

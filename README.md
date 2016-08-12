@@ -32,6 +32,8 @@ github "TintPoint/Overlay" ~> 0.1
 
 ### CocoaPods
 
+**Note:** Due to [this bug](https://github.com/CocoaPods/CocoaPods/issues/5663), currently Overlay is not available via CocoaPods.
+
 [CocoaPods](https://cocoapods.org) is a centralized dependency manager. To install Overlay, add the following line to your `Podfile`:
 
 ```ruby

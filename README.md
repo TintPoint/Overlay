@@ -24,7 +24,7 @@ iOS 9+ / Xcode 8+ / Swift 3+
 
 ### Carthage
 
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager. To install it, add the following line to your `Cartfile`:
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager. To install, add the following line to your `Cartfile`:
 
 ```ogdl
 github "TintPoint/Overlay" ~> 0.1
@@ -32,7 +32,7 @@ github "TintPoint/Overlay" ~> 0.1
 
 ### CocoaPods
 
-[CocoaPods](https://cocoapods.org) is a centralized dependency manager. To install it, add the following line to your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a centralized dependency manager. To install, add the following line to your `Podfile`:
 
 ```ruby
 pod 'Overlay', '~> 0.1'

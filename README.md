@@ -153,7 +153,7 @@ class ComplexView: UIView, CustomLayout {
 }
 ```
 
-### Custom Unsupported Attributes
+### Unsupported Attributes
 
 Please fill an issue for feature requests. Pull requests are always welcomed!
 

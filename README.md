@@ -160,8 +160,8 @@ Please fill an issue for feature requests. Pull requests are always welcomed!
 However, it is still possible to customize not-yet-supported attributes by overriding `refresh()`.
 
 ```swift
-public class BorderView: UIView {
-    public override func refresh() {
+class BorderView: UIView {
+    override func refresh() {
         super.refresh()
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1

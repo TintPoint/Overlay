@@ -179,7 +179,7 @@ class ComplexView: UIView, CustomLayout {
 
 #### ViewFocusable
 
-> - All Views
+> - UIView and its subclasses
 
 #### ViewDisable
 

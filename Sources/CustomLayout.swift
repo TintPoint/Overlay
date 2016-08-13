@@ -10,6 +10,7 @@ import UIKit
 
 public protocol CustomLayout: ViewCustomizable {
     
+    func insertSubview(_ view: UIView, at index: Int)
     var nib: UINib { get }
 
 }

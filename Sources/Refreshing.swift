@@ -130,8 +130,16 @@ public extension UISlider {
     public override func refresh() {
         super.refresh()
         
-        if let style = self as? CustomSliderMaximumValueImage {
-            maximumValueImage = style.selected(style.maximumValueImageStyle)
+        if let style = self as? CustomSliderMinimumTrackTintColor {
+            minimumTrackTintColor = style.selected(style.minimumTrackTintColorStyle)
+        }
+
+        if let style = self as? CustomSliderMaximumTrackTintColor {
+            maximumTrackTintColor = style.selected(style.maximumTrackTintColorStyle)
+        }
+        
+        if let style = self as? CustomSliderThumbTintColor {
+            thumbTintColor = style.selected(style.thumbTintColorStyle)
         }
         
         if let style = self as? CustomSliderMinimumValueImage {

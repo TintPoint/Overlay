@@ -57,6 +57,27 @@ public protocol CustomButtonTitleShadowColor: ViewCustomizable {
 
 }
 
+public protocol CustomSliderMinimumTrackTintColor: ViewCustomizable {
+    
+    var minimumTrackTintColor: UIColor? { get set }
+    var minimumTrackTintColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomSliderMaximumTrackTintColor: ViewCustomizable {
+    
+    var maximumTrackTintColor: UIColor? { get set }
+    var maximumTrackTintColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomSliderThumbTintColor: ViewCustomizable {
+    
+    var thumbTintColor: UIColor? { get set }
+    var thumbTintColorStyle: ColorStyle { get }
+    
+}
+
 public protocol CustomSwitchOnTintColor: ViewCustomizable {
 
     var onTintColor: UIColor? { get set }

@@ -15,6 +15,7 @@
 		D0B172B71D45A2220079A2F2 /* Refreshing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172AC1D45A2220079A2F2 /* Refreshing.swift */; };
 		D0B172B81D45A2220079A2F2 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172AD1D45A2220079A2F2 /* FontStyle.swift */; };
 		D0B172BA1D45A2220079A2F2 /* Overlay.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B172AF1D45A2220079A2F2 /* Overlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0CE2FAE1D5F21D600FE4287 /* ImageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE2FAD1D5F21D600FE4287 /* ImageStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D0B172AC1D45A2220079A2F2 /* Refreshing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Refreshing.swift; path = Sources/Refreshing.swift; sourceTree = SOURCE_ROOT; };
 		D0B172AD1D45A2220079A2F2 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontStyle.swift; path = Sources/FontStyle.swift; sourceTree = SOURCE_ROOT; };
 		D0B172AF1D45A2220079A2F2 /* Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Overlay.h; path = Sources/Overlay.h; sourceTree = SOURCE_ROOT; };
+		D0CE2FAD1D5F21D600FE4287 /* ImageStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageStyle.swift; path = Sources/ImageStyle.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 				D0B172A91D45A2220079A2F2 /* Customizable.swift */,
 				D0B172A51D45A2220079A2F2 /* ColorStyle.swift */,
 				D0B172AD1D45A2220079A2F2 /* FontStyle.swift */,
+				D0CE2FAD1D5F21D600FE4287 /* ImageStyle.swift */,
 			);
 			name = Style;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0CE2FAE1D5F21D600FE4287 /* ImageStyle.swift in Sources */,
 				D0B172B11D45A2220079A2F2 /* CustomColor.swift in Sources */,
 				D0B172B71D45A2220079A2F2 /* Refreshing.swift in Sources */,
 				D0B172B81D45A2220079A2F2 /* FontStyle.swift in Sources */,

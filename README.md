@@ -164,13 +164,16 @@ class ComplexView: UIView, CustomLayout {
 
 > - ColorStyle
 > - FontStyle
+> - ImageStyle
 > - ColorStyleGroup
 > - FontStyleGroup
+> - ImageStyleGroup
 
 ### Available Style Groups
 
 > - ColorGroup
 > - FontGroup
+> - ImageGroup
 
 ### Available States
 

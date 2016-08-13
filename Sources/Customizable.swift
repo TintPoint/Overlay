@@ -26,6 +26,10 @@ public extension ViewCustomizable {
     func selected(_ style: FontStyle) -> UIFont? {
         return selected(style, except: [])
     }
+    
+    func selected(_ style: ImageStyle) -> UIImage? {
+        return selected(style, except: [])
+    }
 
     func selected(_ style: ColorStyle, except states: [UIControlState]) -> UIColor? {
         guard let styleGroup = style as? ColorStyleGroup else {
@@ -50,6 +54,24 @@ public extension ViewCustomizable {
             return style.normal()
         }
 
+        if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
+            return styleGroup.highlighted()
+        } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
+            return styleGroup.selected()
+        } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
+            return styleGroup.disabled()
+        } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
+            return styleGroup.focused()
+        } else {
+            return styleGroup.normal()
+        }
+    }
+    
+    func selected(_ style: ImageStyle, except states: [UIControlState]) -> UIImage? {
+        guard let styleGroup = style as? ImageStyleGroup else {
+            return style.normal()
+        }
+        
         if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
             return styleGroup.highlighted()
         } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {

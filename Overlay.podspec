@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Overlay"
-  s.version      = "0.1"
+  s.version      = "0.2"
   s.summary      = "A very flexible UI framework designed for Swift."
   s.homepage     = "https://github.com/TintPoint/Overlay"
   s.author       = { "Justin Jia" => "justin@tintpoint.com" }
@@ -11,4 +11,3 @@ Pod::Spec.new do |s|
   s.source_files = "Sources/**/*.{h,swift}"
   s.framework    = "UIKit"
 end
-

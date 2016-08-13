@@ -180,6 +180,7 @@ class ComplexView: UIView, CustomLayout {
 
 #### ViewDisable
 
+> - UIBarItem
 > - UIControl
 > - UIButton
 > - UIDatePicker

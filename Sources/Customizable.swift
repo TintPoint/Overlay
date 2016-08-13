@@ -16,6 +16,7 @@ public protocol ViewCustomizable {
 
 public extension ViewCustomizable {
 
+    // Workaround: generic protocol is not supported yet
     // Workaround: default argument in protocol methods is not supported yet
 
     func selected(_ style: ColorStyle) -> UIColor? {
@@ -87,6 +88,8 @@ public protocol ViewHighlightable {
     var isHighlighted: Bool { get }
 
 }
+
+extension UIBarItem: ViewDisable { }
 
 extension UIView: ViewFocusable { }
 

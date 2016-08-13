@@ -29,6 +29,41 @@ public protocol CustomShadowImage: ViewCustomizable {
     
 }
 
+public protocol CustomButtonImage: ViewCustomizable {
+    
+    func setImage(_ image: UIImage?, for state: UIControlState)
+    var imageStyle: ImageStyle { get }
+    
+}
+
+public protocol CustomButtonBackgroundImage: ViewCustomizable {
+    
+    func setBackgroundImage(_ image: UIImage?, for state: UIControlState)
+    var backgroundImageStyle: ImageStyle { get }
+    
+}
+
+public protocol CustomStepperBackgroundImage: ViewCustomizable {
+    
+    func setBackgroundImage(_ image: UIImage?, for state: UIControlState)
+    var backgroundImageStyle: ImageStyle { get }
+    
+}
+
+public protocol CustomStepperDecrementImage: ViewCustomizable {
+    
+    func setDecrementImage(_ image: UIImage?, for state: UIControlState)
+    var decrementImageStyle: ImageStyle { get }
+    
+}
+
+public protocol CustomStepperIncrementImage: ViewCustomizable {
+    
+    func setIncrementImage(_ image: UIImage?, for state: UIControlState)
+    var incrementImageStyle: ImageStyle { get }
+    
+}
+
 public protocol CustomSwitchOnImage: ViewCustomizable {
     
     var onImage: UIImage? { get set }
@@ -43,6 +78,13 @@ public protocol CustomSwitchOffImage: ViewCustomizable {
     
 }
 
+public protocol CustomSliderMinimumValueImage: ViewCustomizable {
+    
+    var minimumValueImage: UIImage? { get set }
+    var minimumValueImageStyle: ImageStyle { get }
+    
+}
+
 public protocol CustomSliderMaximumValueImage: ViewCustomizable {
     
     var maximumValueImage: UIImage? { get set }
@@ -50,10 +92,23 @@ public protocol CustomSliderMaximumValueImage: ViewCustomizable {
     
 }
 
-public protocol CustomSliderMinimumValueImage: ViewCustomizable {
+public protocol CustomSliderMinimumTrackImage: ViewCustomizable {
     
-    var minimumValueImage: UIImage? { get set }
-    var minimumValueImageStyle: ImageStyle { get }
+    func setMinimumTrackImage(_ image: UIImage?, for state: UIControlState)
+    var minimumTrackImageStyle: ImageStyle { get }
+    
+}
+
+public protocol CustomSliderMaximumTrackImage: ViewCustomizable {
+    
+    func setMaximumTrackImage(_ image: UIImage?, for state: UIControlState)
+    var maximumTrackImageStyle: ImageStyle { get }
+}
+
+public protocol CustomSliderThumbImage: ViewCustomizable {
+    
+    func setThumbImage(_ image: UIImage?, for state: UIControlState)
+    var thumbImageStyle: ImageStyle { get }
     
 }
 
@@ -68,6 +123,20 @@ public protocol CustomProgressTrackImage: ViewCustomizable {
     
     var trackImage: UIImage? { get set }
     var trackImageStyle: ImageStyle { get }
+    
+}
+
+public protocol CustomSearchFieldBackgroundImage: ViewCustomizable {
+
+    func setSearchFieldBackgroundImage(_ backgroundImage: UIImage?, for state: UIControlState)
+    var searchFieldBackgroundImageStyle: ImageStyle { get }
+    
+}
+
+public protocol CustomScopeBarButtonBackgroundImage: ViewCustomizable {
+    
+    func setScopeBarButtonBackgroundImage(_ backgroundImage: UIImage?, for state: UIControlState)
+    var scopeBarButtonBackgroundImageStyle: ImageStyle { get }
     
 }
 

@@ -119,23 +119,19 @@ public extension UIButton {
         super.refresh()
         
         if let style = self as? CustomButtonTitleColor {
-            setTitleColor(style.titleColorStyle.normal(), for: .normal)
-            if let styleGroup = style.titleColorStyle as? ColorStyleGroup {
-                setTitleColor(styleGroup.highlighted(), for: .highlighted)
-                setTitleColor(styleGroup.disabled(), for: .disabled)
-                setTitleColor(styleGroup.selected(), for: .selected)
-                setTitleColor(styleGroup.focused(), for: .focused)
-            }
+            style.setColor(style.titleColorStyle, for: setTitleColor)
         }
         
         if let style = self as? CustomButtonTitleShadowColor {
-            setTitleShadowColor(style.titleShadowColorStyle.normal(), for: .normal)
-            if let styleGroup = style.titleShadowColorStyle as? ColorStyleGroup {
-                setTitleShadowColor(styleGroup.highlighted(), for: .highlighted)
-                setTitleShadowColor(styleGroup.disabled(), for: .disabled)
-                setTitleShadowColor(styleGroup.selected(), for: .selected)
-                setTitleShadowColor(styleGroup.focused(), for: .focused)
-            }
+            style.setColor(style.titleShadowColorStyle, for: setTitleShadowColor)
+        }
+        
+        if let style = self as? CustomButtonImage {
+            style.setImage(style.imageStyle, for: setImage)
+        }
+        
+        if let style = self as? CustomButtonBackgroundImage {
+            style.setImage(style.backgroundImageStyle, for: setBackgroundImage)
         }
     }
     
@@ -160,6 +156,42 @@ public extension UISlider {
         
         if let style = self as? CustomSliderMinimumValueImage {
             minimumValueImage = style.selected(style.minimumValueImageStyle)
+        }
+
+        if let style = self as? CustomSliderMaximumValueImage {
+            maximumValueImage = style.selected(style.maximumValueImageStyle)
+        }
+        
+        if let style = self as? CustomSliderMinimumTrackImage {
+            style.setImage(style.minimumTrackImageStyle, for: setMinimumTrackImage)
+        }
+        
+        if let style = self as? CustomSliderMaximumTrackImage {
+            style.setImage(style.maximumTrackImageStyle, for: setMaximumTrackImage)
+        }
+        
+        if let style = self as? CustomSliderThumbImage {
+            style.setImage(style.thumbImageStyle, for: setThumbImage)
+        }
+    }
+    
+}
+
+public extension UIStepper {
+    
+    public override func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomStepperBackgroundImage {
+            style.setImage(style.backgroundImageStyle, for: setBackgroundImage)
+        }
+        
+        if let style = self as? CustomStepperDecrementImage {
+            style.setImage(style.decrementImageStyle, for: setDecrementImage)
+        }
+        
+        if let style = self as? CustomStepperIncrementImage {
+            style.setImage(style.incrementImageStyle, for: setIncrementImage)
         }
     }
     
@@ -335,6 +367,14 @@ public extension UISearchBar {
         
         if let style = self as? CustomBarBackgroundImage {
             backgroundImage = style.selected(style.backgroundImageStyle)
+        }
+        
+        if let style = self as? CustomScopeBarButtonBackgroundImage {
+            style.setImage(style.scopeBarButtonBackgroundImageStyle, for: setScopeBarButtonBackgroundImage)
+        }
+        
+        if let style = self as? CustomSearchFieldBackgroundImage {
+            style.setImage(style.searchFieldBackgroundImageStyle, for: setSearchFieldBackgroundImage)
         }
     }
 

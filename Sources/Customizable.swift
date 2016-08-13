@@ -87,6 +87,30 @@ public extension ViewCustomizable {
 
 }
 
+extension ViewCustomizable {
+    
+    func setColor(_ style: ColorStyle, for setter: (UIColor?, UIControlState) -> ()) {
+        setter(style.normal(), .normal)
+        if let styleGroup = style as? ColorStyleGroup {
+            setter(styleGroup.highlighted(), .highlighted)
+            setter(styleGroup.disabled(), .disabled)
+            setter(styleGroup.selected(), .selected)
+            setter(styleGroup.focused(), .focused)
+        }
+    }
+        
+    func setImage(_ style: ImageStyle, for setter: (UIImage?, UIControlState) -> ()) {
+        setter(style.normal(), .normal)
+        if let styleGroup = style as? ImageStyleGroup {
+            setter(styleGroup.highlighted(), .highlighted)
+            setter(styleGroup.disabled(), .disabled)
+            setter(styleGroup.selected(), .selected)
+            setter(styleGroup.focused(), .focused)
+        }
+    }
+    
+}
+
 public protocol ViewFocusable {
 
     var isFocused: Bool { get }

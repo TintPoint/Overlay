@@ -141,9 +141,14 @@ class ComplexView: UIView, CustomLayout {
 > - CustomActivityIndicatorViewColor
 > - CustomButtonTitleColor
 > - CustomButtonTitleShadowColor
+> - CustomSliderMinimumTrackTintColor
+> - CustomSliderMaximumTrackTintColor
+> - CustomSliderThumbTintColor
 > - CustomSwitchOnTintColor
 > - CustomSwitchThumbTintColor
 > - CustomBarTintColor
+> - CustomBarItemTintColor
+> - CustomBarItemBadgeColor
 > - CustomProgressTintColor
 > - CustomProgressTrackTintColor
 > - CustomTableViewSeparatorColor
@@ -161,12 +166,22 @@ class ComplexView: UIView, CustomLayout {
 > - CustomImage
 > - CustomHighlightedImage
 > - CustomShadowImage
+> - CustomButtonImage
+> - CustomButtonBackgroundImage
+> - CustomStepperBackgroundImage
+> - CustomStepperDecrementImage
+> - CustomStepperIncrementImage
 > - CustomSwitchOnImage
 > - CustomSwitchOffImage
-> - CustomSliderMaximumValueImage
 > - CustomSliderMinimumValueImage
+> - CustomSliderMaximumValueImage
+> - CustomSliderMinimumTrackImage
+> - CustomSliderMaximumTrackImage
+> - CustomSliderThumbImage
 > - CustomProgressImage
 > - CustomProgressTrackImage
+> - CustomSearchFieldBackgroundImage
+> - CustomScopeBarButtonBackgroundImage
 > - CustomBarBackgroundImage
 > - CustomBarItemLandscapeImagePhone
 > - CustomBarItemSelectedImage
@@ -199,6 +214,8 @@ class ComplexView: UIView, CustomLayout {
 #### ViewDisable
 
 > - UIBarItem
+> - UIBarButtonItem
+> - UITabBarItem
 > - UIControl
 > - UIButton
 > - UIDatePicker

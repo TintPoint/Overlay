@@ -36,7 +36,7 @@ public protocol CustomShadowColor: ViewCustomizable {
 
 }
 
-public protocol CustomActivityIndicatorViewColor: ViewCustomizable {
+public protocol CustomActivityIndicatorColor: ViewCustomizable {
 
     var color: UIColor? { get set }
     var colorStyle: ColorStyle { get }
@@ -99,6 +99,14 @@ public protocol CustomBarTintColor: ViewCustomizable {
 
 }
 
+@available(iOS 10.0, *)
+public protocol CustomBarUnselectedItemTintColor: ViewCustomizable {
+    
+    var unselectedItemTintColor: UIColor? { get set }
+    var unselectedItemTintColorStyle: ColorStyle { get }
+    
+}
+
 public protocol CustomBarItemTintColor: ViewCustomizable {
     
     var tintColor: UIColor? { get set }
@@ -153,13 +161,5 @@ public protocol CustomTableViewSectionIndexTrackingBackgroundColor: ViewCustomiz
 
     var sectionIndexTrackingBackgroundColor: UIColor? { get set }
     var sectionIndexTrackingBackgroundColorStyle: ColorStyle { get }
-
-}
-
-@available(iOS 10.0, *)
-public protocol CustomTabBarUnselectedItemTintColor: ViewCustomizable {
-
-    var unselectedItemTintColor: UIColor? { get set }
-    var unselectedItemTintColorStyle: ColorStyle { get }
 
 }

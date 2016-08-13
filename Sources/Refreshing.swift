@@ -106,7 +106,7 @@ public extension UIActivityIndicatorView {
     override public func refresh() {
         super.refresh()
 
-        if let style = self as? CustomActivityIndicatorViewColor {
+        if let style = self as? CustomActivityIndicatorColor {
             color = style.selected(style.colorStyle)
         }
     }
@@ -369,12 +369,12 @@ public extension UISearchBar {
             backgroundImage = style.selected(style.backgroundImageStyle)
         }
         
-        if let style = self as? CustomScopeBarButtonBackgroundImage {
-            style.setImage(style.scopeBarButtonBackgroundImageStyle, for: setScopeBarButtonBackgroundImage)
+        if let style = self as? CustomBarSearchFieldBackgroundImage {
+            style.setImage(style.searchFieldBackgroundImageStyle, for: setSearchFieldBackgroundImage)
         }
         
-        if let style = self as? CustomSearchFieldBackgroundImage {
-            style.setImage(style.searchFieldBackgroundImageStyle, for: setSearchFieldBackgroundImage)
+        if let style = self as? CustomBarScopeBarButtonBackgroundImage {
+            style.setImage(style.scopeBarButtonBackgroundImageStyle, for: setScopeBarButtonBackgroundImage)
         }
     }
 
@@ -389,7 +389,7 @@ public extension UITabBar {
             barTintColor = style.selected(style.barTintColorStyle)
         }
 
-        if #available(iOS 10.0, *), let style = self as? CustomTabBarUnselectedItemTintColor {
+        if #available(iOS 10.0, *), let style = self as? CustomBarUnselectedItemTintColor {
             unselectedItemTintColor = style.selected(style.unselectedItemTintColorStyle)
         }
 

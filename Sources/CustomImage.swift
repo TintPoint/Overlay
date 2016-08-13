@@ -126,24 +126,24 @@ public protocol CustomProgressTrackImage: ViewCustomizable {
     
 }
 
-public protocol CustomSearchFieldBackgroundImage: ViewCustomizable {
+public protocol CustomBarBackgroundImage: ViewCustomizable {
+    
+    var backgroundImage: UIImage? { get set }
+    var backgroundImageStyle: ImageStyle { get }
+    
+}
 
+public protocol CustomBarSearchFieldBackgroundImage: ViewCustomizable {
+    
     func setSearchFieldBackgroundImage(_ backgroundImage: UIImage?, for state: UIControlState)
     var searchFieldBackgroundImageStyle: ImageStyle { get }
     
 }
 
-public protocol CustomScopeBarButtonBackgroundImage: ViewCustomizable {
+public protocol CustomBarScopeBarButtonBackgroundImage: ViewCustomizable {
     
     func setScopeBarButtonBackgroundImage(_ backgroundImage: UIImage?, for state: UIControlState)
     var scopeBarButtonBackgroundImageStyle: ImageStyle { get }
-    
-}
-
-public protocol CustomBarBackgroundImage: ViewCustomizable {
-    
-    var backgroundImage: UIImage? { get set }
-    var backgroundImageStyle: ImageStyle { get }
     
 }
 

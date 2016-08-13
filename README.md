@@ -138,7 +138,7 @@ class ComplexView: UIView, CustomLayout {
 > - CustomBackgroundColor
 > - CustomTextColor
 > - CustomShadowColor
-> - CustomActivityIndicatorViewColor
+> - CustomActivityIndicatorColor
 > - CustomButtonTitleColor
 > - CustomButtonTitleShadowColor
 > - CustomSliderMinimumTrackTintColor
@@ -147,6 +147,7 @@ class ComplexView: UIView, CustomLayout {
 > - CustomSwitchOnTintColor
 > - CustomSwitchThumbTintColor
 > - CustomBarTintColor
+> - CustomBarUnselectedItemTintColor
 > - CustomBarItemTintColor
 > - CustomBarItemBadgeColor
 > - CustomProgressTintColor
@@ -155,7 +156,6 @@ class ComplexView: UIView, CustomLayout {
 > - CustomTableViewSectionIndexColor
 > - CustomTableViewSectionIndexBackgroundColor
 > - CustomTableViewSectionIndexTrackingBackgroundColor
-> - CustomTabBarUnselectedItemTintColor
 
 #### Custom Font
 
@@ -180,8 +180,8 @@ class ComplexView: UIView, CustomLayout {
 > - CustomSliderThumbImage
 > - CustomProgressImage
 > - CustomProgressTrackImage
-> - CustomSearchFieldBackgroundImage
-> - CustomScopeBarButtonBackgroundImage
+> - CustomBarSearchFieldBackgroundImage
+> - CustomBarScopeBarButtonBackgroundImage
 > - CustomBarBackgroundImage
 > - CustomBarItemLandscapeImagePhone
 > - CustomBarItemSelectedImage

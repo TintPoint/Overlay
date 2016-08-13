@@ -4,17 +4,16 @@
 [![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Early Development](https://img.shields.io/badge/status-early%20development-red.svg?style=flat)
 
-Overlay is a very flexible UI framework designed for Swift. It is very easy to use but still provides the ability to design complex UI elements.
+Overlay is a very flexible UI framework designed for Swift. It is very easy to use but still provides the ability to design complex UI elements. **Note**: Overlay is still under development and many things are subject to change.
 
-## Todo List
+## Features
 
-- [x] Support customizing all `*Color` properties.
-- [x] Support customizing all `*Font` properties.
-- [x] Support customizing all `*image` properties.
+- [x] Support customizing color related properties.
+- [x] Support customizing font related properties.
+- [x] Support customizing image related properties.
 - [ ] Support customizing shape related properties.
-- [x] Support loading layout from `nib` files.
+- [x] Support loading layout from nib file.
 - [ ] Support storyboard preview.
-- [ ] Remove the need to call `refresh()` manually.
 
 ## Requirements
 

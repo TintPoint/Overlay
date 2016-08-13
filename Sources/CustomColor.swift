@@ -99,6 +99,13 @@ public protocol CustomBarTintColor: ViewCustomizable {
 
 }
 
+public protocol CustomBarItemTintColor: ViewCustomizable {
+    
+    var tintColor: UIColor? { get set }
+    var tintColorStyle: ColorStyle { get }
+    
+}
+
 @available(iOS 10.0, *)
 public protocol CustomBarItemBadgeColor: ViewCustomizable {
     

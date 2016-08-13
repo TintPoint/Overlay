@@ -50,6 +50,18 @@ extension UIBarItem: ViewCustomizable {
     
 }
 
+public extension UIBarButtonItem {
+    
+    public override func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomBarItemTintColor {
+            tintColor = style.selected(style.tintColorStyle)
+        }
+    }
+    
+}
+
 public extension UITabBarItem {
     
     public override func refresh() {

@@ -10,7 +10,7 @@ Overlay is a very flexible UI framework designed for Swift. It is very easy to u
 
 - [x] Support customizing all `*Color` properties.
 - [x] Support customizing all `*Font` properties.
-- [ ] Support customizing all `*image` properties.
+- [x] Support customizing all `*image` properties.
 - [ ] Support customizing shape related properties.
 - [x] Support loading layout from `nib` files.
 - [ ] Support storyboard preview.
@@ -155,6 +155,21 @@ class ComplexView: UIView, CustomLayout {
 #### Custom Font
 
 > - CustomFont
+
+#### Custom Image
+
+> - CustomImage
+> - CustomHighlightedImage
+> - CustomShadowImage
+> - CustomSwitchOnImage
+> - CustomSwitchOffImage
+> - CustomSliderMaximumValueImage
+> - CustomSliderMinimumValueImage
+> - CustomProgressImage
+> - CustomProgressTrackImage
+> - CustomBarBackgroundImage
+> - CustomBarItemLandscapeImagePhone
+> - CustomBarItemSelectedImage
 
 #### Custom Layout
 

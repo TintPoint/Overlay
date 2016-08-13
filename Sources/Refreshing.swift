@@ -8,7 +8,20 @@
 
 import UIKit
 
-@IBDesignable
+public extension UIBarItem {
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        refresh()
+    }
+    
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        refresh()
+    }
+
+}
+
 public extension UIView {
 
     public override func awakeFromNib() {
@@ -21,6 +34,32 @@ public extension UIView {
         refresh()
     }
 
+}
+
+extension UIBarItem: ViewCustomizable {
+    
+    public func refresh() {
+        if let style = self as? CustomImage {
+            image = style.selected(style.imageStyle)
+        }
+        
+        if let style = self as? CustomBarItemLandscapeImagePhone {
+            landscapeImagePhone = style.selected(style.landscapeImagePhoneStyle)
+        }
+    }
+    
+}
+
+public extension UITabBarItem {
+    
+    public override func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomBarItemSelectedImage {
+            selectedImage = style.selected(style.selectedImageStyle)
+        }
+    }
+    
 }
 
 extension UIView: ViewCustomizable {
@@ -58,6 +97,106 @@ public extension UIActivityIndicatorView {
 
 }
 
+public extension UIButton {
+    
+    override public func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomButtonTitleColor {
+            setTitleColor(style.titleColorStyle.normal(), for: .normal)
+            if let styleGroup = style.titleColorStyle as? ColorStyleGroup {
+                setTitleColor(styleGroup.highlighted(), for: .highlighted)
+                setTitleColor(styleGroup.disabled(), for: .disabled)
+                setTitleColor(styleGroup.selected(), for: .selected)
+                setTitleColor(styleGroup.focused(), for: .focused)
+            }
+        }
+        
+        if let style = self as? CustomButtonTitleShadowColor {
+            setTitleShadowColor(style.titleShadowColorStyle.normal(), for: .normal)
+            if let styleGroup = style.titleShadowColorStyle as? ColorStyleGroup {
+                setTitleShadowColor(styleGroup.highlighted(), for: .highlighted)
+                setTitleShadowColor(styleGroup.disabled(), for: .disabled)
+                setTitleShadowColor(styleGroup.selected(), for: .selected)
+                setTitleShadowColor(styleGroup.focused(), for: .focused)
+            }
+        }
+    }
+    
+}
+
+public extension UISlider {
+    
+    public override func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomSliderMaximumValueImage {
+            maximumValueImage = style.selected(style.maximumValueImageStyle)
+        }
+        
+        if let style = self as? CustomSliderMinimumValueImage {
+            minimumValueImage = style.selected(style.minimumValueImageStyle)
+        }
+    }
+    
+}
+
+public extension UISwitch {
+    
+    override public func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomSwitchOnTintColor {
+            onTintColor = style.selected(style.onTintColorStyle)
+        }
+        
+        if let style = self as? CustomSwitchThumbTintColor {
+            thumbTintColor = style.selected(style.thumbTintColorStyle)
+        }
+        
+        if let style = self as? CustomSwitchOnImage {
+            onImage = style.selected(style.onImageStyle)
+        }
+        
+        if let style = self as? CustomSwitchOffImage {
+            offImage = style.selected(style.offImageStyle)
+        }
+    }
+    
+}
+
+public extension UITextField {
+    
+    override public func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomFont {
+            font = style.selected(style.fontStyle)
+        }
+        
+        if let style = self as? CustomTextColor {
+            textColor = style.selected(style.textColorStyle)
+        }
+    }
+    
+}
+
+public extension UIImageView {
+    
+    override public func refresh() {
+        super.refresh()
+        
+        if let style = self as? CustomImage {
+            image = style.selected(style.imageStyle)
+        }
+        
+        if let style = self as? CustomHighlightedImage {
+            highlightedImage = style.selected(style.highlightedImageStyle)
+        }
+    }
+    
+}
+
 public extension UILabel {
 
     override public func refresh() {
@@ -89,6 +228,10 @@ public extension UINavigationBar {
         if let style = self as? CustomBarTintColor {
             barTintColor = style.selected(style.barTintColorStyle)
         }
+        
+        if let style = self as? CustomShadowImage {
+            shadowImage = style.selected(style.shadowImageStyle)
+        }
     }
 
 }
@@ -105,110 +248,16 @@ public extension UIProgressView {
         if let style = self as? CustomProgressTrackTintColor {
             trackTintColor = style.selected(style.trackTintColorStyle)
         }
-    }
-
-}
-
-public extension UISearchBar {
-
-    override public func refresh() {
-        super.refresh()
-
-        if let style = self as? CustomBarTintColor {
-            barTintColor = style.selected(style.barTintColorStyle)
-        }
-    }
-
-}
-
-public extension UITabBar {
-
-    override public func refresh() {
-        super.refresh()
-
-        if let style = self as? CustomBarTintColor {
-            barTintColor = style.selected(style.barTintColorStyle)
-        }
-
-        if #available(iOS 10.0, *) {
-            if let style = self as? CustomTabBarUnselectedItemTintColor {
-                unselectedItemTintColor = style.selected(style.unselectedItemTintColorStyle)
-            }
-        }
-    }
-
-}
-
-public extension UIToolbar {
-
-    override public func refresh() {
-        super.refresh()
-
-        if let style = self as? CustomBarTintColor {
-            barTintColor = style.selected(style.barTintColorStyle)
-        }
-    }
-
-}
-
-public extension UIButton {
-    
-    override public func refresh() {
-        super.refresh()
         
-        if let style = self as? CustomButtonTitleColor {
-            setTitleColor(style.titleColorStyle.normal(), for: [])
-            if let styleGroup = style.titleColorStyle as? ColorStyleGroup {
-                setTitleColor(styleGroup.highlighted(), for: .highlighted)
-                setTitleColor(styleGroup.disabled(), for: .disabled)
-                setTitleColor(styleGroup.selected(), for: .selected)
-                setTitleColor(styleGroup.focused(), for: .focused)
-            }
+        if let style = self as? CustomProgressImage {
+            progressImage = style.selected(style.progressImageStyle)
         }
         
-        if let style = self as? CustomButtonTitleShadowColor {
-            setTitleShadowColor(style.titleShadowColorStyle.normal(), for: [])
-            if let styleGroup = style.titleShadowColorStyle as? ColorStyleGroup {
-                setTitleShadowColor(styleGroup.highlighted(), for: .highlighted)
-                setTitleShadowColor(styleGroup.disabled(), for: .disabled)
-                setTitleShadowColor(styleGroup.selected(), for: .selected)
-                setTitleShadowColor(styleGroup.focused(), for: .focused)
-            }
+        if let style = self as? CustomProgressTrackImage {
+            trackImage = style.selected(style.trackImageStyle)
         }
     }
-    
-}
 
-public extension UISwitch {
-    
-    override public func refresh() {
-        super.refresh()
-        
-        if let style = self as? CustomSwitchOnTintColor {
-            onTintColor = style.selected(style.onTintColorStyle)
-        }
-        
-        if let style = self as? CustomSwitchThumbTintColor {
-            thumbTintColor = style.selected(style.thumbTintColorStyle)
-        }
-    }
-    
-}
-
-public extension UITextField {
-    
-    override public func refresh() {
-        super.refresh()
-        
-        if let style = self as? CustomFont {
-            font = style.selected(style.fontStyle)
-        }
-        
-        if let style = self as? CustomTextColor {
-            textColor = style.selected(style.textColorStyle)
-        }
-    }
-    
 }
 
 public extension UITableView {
@@ -250,3 +299,56 @@ public extension UITextView {
     }
     
 }
+
+public extension UISearchBar {
+
+    override public func refresh() {
+        super.refresh()
+
+        if let style = self as? CustomBarTintColor {
+            barTintColor = style.selected(style.barTintColorStyle)
+        }
+        
+        if let style = self as? CustomBarBackgroundImage {
+            backgroundImage = style.selected(style.backgroundImageStyle)
+        }
+    }
+
+}
+
+public extension UITabBar {
+
+    override public func refresh() {
+        super.refresh()
+
+        if let style = self as? CustomBarTintColor {
+            barTintColor = style.selected(style.barTintColorStyle)
+        }
+
+        if #available(iOS 10.0, *), let style = self as? CustomTabBarUnselectedItemTintColor {
+            unselectedItemTintColor = style.selected(style.unselectedItemTintColorStyle)
+        }
+
+        if let style = self as? CustomShadowImage {
+            shadowImage = style.selected(style.shadowImageStyle)
+        }
+        
+        if let style = self as? CustomBarBackgroundImage {
+            backgroundImage = style.selected(style.backgroundImageStyle)
+        }
+    }
+
+}
+
+public extension UIToolbar {
+
+    override public func refresh() {
+        super.refresh()
+
+        if let style = self as? CustomBarTintColor {
+            barTintColor = style.selected(style.barTintColorStyle)
+        }
+    }
+
+}
+

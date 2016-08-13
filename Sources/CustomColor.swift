@@ -99,6 +99,14 @@ public protocol CustomBarTintColor: ViewCustomizable {
 
 }
 
+@available(iOS 10.0, *)
+public protocol CustomBarItemBadgeColor: ViewCustomizable {
+    
+    var badgeColor: UIColor? { get set }
+    var badgeColorStyle: ColorStyle { get }
+    
+}
+
 public protocol CustomProgressTintColor: ViewCustomizable {
 
     var progressTintColor: UIColor? { get set }

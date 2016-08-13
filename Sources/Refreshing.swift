@@ -55,6 +55,10 @@ public extension UITabBarItem {
     public override func refresh() {
         super.refresh()
         
+        if #available(iOS 10.0, *), let style = self as? CustomBarItemBadgeColor {
+            badgeColor = style.selected(style.badgeColorStyle)
+        }
+        
         if let style = self as? CustomBarItemSelectedImage {
             selectedImage = style.selected(style.selectedImageStyle)
         }

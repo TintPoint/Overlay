@@ -102,7 +102,7 @@ class CustomButton: UIButton, CustomBackgroundColor {
 It is also possible to implement app-specific style group by conforming to protocols with `StyleGroup` postfix.
 
 ```swift
-enum CustomColorGroup {
+enum CustomColorGroup: ColorStyleGroup {
     case standard
     
     func normal() -> UIColor {

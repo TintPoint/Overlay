@@ -4,7 +4,9 @@
 [![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Early Development](https://img.shields.io/badge/status-early%20development-red.svg?style=flat)
 
-Overlay is a very flexible UI framework designed for Swift. It is very easy to use but still provides the ability to design complex UI elements. **Note**: Overlay is still under development and many things are subject to change.
+Overlay is a very flexible UI framework designed for Swift. It's very easy to use but still provides the ability to design complex UI elements.
+
+**Note**: Overlay is still under development and many things are subject to change.
 
 ## Features
 
@@ -97,6 +99,30 @@ class CustomButton: UIButton, CustomBackgroundColor {
 }
 ```
 
+It is also possible to implement app-specific style group by conforming to protocols with `StyleGroup` postfix.
+
+```swift
+enum CustomColorGroup: ColorStyleGroup {
+    case standard
+    
+    func normal() -> UIColor {
+        switch self {
+        case .standard: return UIColor.white
+        }
+    }
+    
+    func disabled() -> UIColor? {
+        switch self {
+        case .standard: return UIColor.black
+        }
+    }
+}
+
+class CustomButton: UIButton, CustomBackgroundColor {
+    var backgroundColorStyle: ColorStyle = CustomColorGroup.standard
+}
+```
+
 Unsupported states will be ignored. Currently, it is required to call `refresh()` after changing the state.
 
 ```swift
@@ -124,6 +150,22 @@ Create `IBOutlet` and connect them like usual if needed.
 class ComplexView: UIView, CustomLayout {
     var nib: UINib = UINib(nibName: "ComplexView", bundle: Bundle(for: ComplexView.self))
     @IBOutlet weak var button: CustomButton?
+}
+```
+
+### Unsupported Attributes
+
+Please fill an issue for feature requests. Pull requests are always welcomed!
+
+However, it is still possible to customize not-yet-supported attributes by overriding `refresh()`.
+
+```swift
+class BorderView: UIView {
+    override func refresh() {
+        super.refresh()
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 1
+    }
 }
 ```
 

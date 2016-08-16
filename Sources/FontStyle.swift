@@ -27,19 +27,19 @@ public protocol FontStyleGroup: FontStyle {
 
 public extension FontStyleGroup {
 
-    public func disabled() -> UIFont? {
+    func disabled() -> UIFont? {
         return nil
     }
 
-    public func selected() -> UIFont? {
+    func selected() -> UIFont? {
         return nil
     }
 
-    public func highlighted() -> UIFont? {
+    func highlighted() -> UIFont? {
         return nil
     }
 
-    public func focused() -> UIFont? {
+    func focused() -> UIFont? {
         return nil
     }
 

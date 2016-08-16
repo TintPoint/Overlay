@@ -14,7 +14,7 @@ public protocol ViewCustomizable {
 
 }
 
-public extension ViewCustomizable {
+extension ViewCustomizable {
 
     // Workaround: generic protocol is not supported yet
     // Workaround: default argument in protocol methods is not supported yet

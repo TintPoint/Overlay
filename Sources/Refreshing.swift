@@ -8,28 +8,28 @@
 
 import UIKit
 
-public extension UIBarItem {
+extension UIBarItem {
     
-    public override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         refresh()
     }
     
-    public override func prepareForInterfaceBuilder() {
+    open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         refresh()
     }
 
 }
 
-public extension UIView {
+extension UIView {
 
-    public override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         refresh()
     }
 
-    public override func prepareForInterfaceBuilder() {
+    open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         refresh()
     }
@@ -38,7 +38,7 @@ public extension UIView {
 
 extension UIBarItem: ViewCustomizable {
     
-    public func refresh() {
+    open func refresh() {
         if let style = self as? CustomImage {
             image = style.selected(style.imageStyle)
         }
@@ -50,9 +50,9 @@ extension UIBarItem: ViewCustomizable {
     
 }
 
-public extension UIBarButtonItem {
+extension UIBarButtonItem {
     
-    public override func refresh() {
+    open override func refresh() {
         super.refresh()
         
         if let style = self as? CustomBarItemTintColor {
@@ -62,9 +62,9 @@ public extension UIBarButtonItem {
     
 }
 
-public extension UITabBarItem {
+extension UITabBarItem {
     
-    public override func refresh() {
+    open override func refresh() {
         super.refresh()
         
         if #available(iOS 10.0, *), let style = self as? CustomBarItemBadgeColor {
@@ -80,7 +80,7 @@ public extension UITabBarItem {
 
 extension UIView: ViewCustomizable {
 
-    public func refresh() {
+    open func refresh() {
         if let layout = self as? CustomLayout, let contentView = layout.contentView(of: self), !subviews.contains(contentView) {
             contentView.translatesAutoresizingMaskIntoConstraints = false
             insertSubview(contentView, at: 0)
@@ -101,9 +101,9 @@ extension UIView: ViewCustomizable {
 
 }
 
-public extension UIActivityIndicatorView {
+extension UIActivityIndicatorView {
 
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
 
         if let style = self as? CustomActivityIndicatorColor {
@@ -113,9 +113,9 @@ public extension UIActivityIndicatorView {
 
 }
 
-public extension UIButton {
+extension UIButton {
     
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
         
         if let style = self as? CustomButtonTitleColor {
@@ -137,9 +137,9 @@ public extension UIButton {
     
 }
 
-public extension UISlider {
+extension UISlider {
     
-    public override func refresh() {
+    open override func refresh() {
         super.refresh()
         
         if let style = self as? CustomSliderMinimumTrackTintColor {
@@ -177,9 +177,9 @@ public extension UISlider {
     
 }
 
-public extension UIStepper {
+extension UIStepper {
     
-    public override func refresh() {
+    open override func refresh() {
         super.refresh()
         
         if let style = self as? CustomStepperBackgroundImage {
@@ -197,9 +197,9 @@ public extension UIStepper {
     
 }
 
-public extension UISwitch {
+extension UISwitch {
     
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
         
         if let style = self as? CustomSwitchOnTintColor {
@@ -221,9 +221,9 @@ public extension UISwitch {
     
 }
 
-public extension UITextField {
+extension UITextField {
     
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
         
         if let style = self as? CustomFont {
@@ -237,9 +237,9 @@ public extension UITextField {
     
 }
 
-public extension UIImageView {
+extension UIImageView {
     
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
         
         if let style = self as? CustomImage {
@@ -253,9 +253,9 @@ public extension UIImageView {
     
 }
 
-public extension UILabel {
+extension UILabel {
 
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
 
         if let style = self as? CustomFont {
@@ -276,9 +276,9 @@ public extension UILabel {
 
 }
 
-public extension UINavigationBar {
+extension UINavigationBar {
 
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
 
         if let style = self as? CustomBarTintColor {
@@ -292,9 +292,9 @@ public extension UINavigationBar {
 
 }
 
-public extension UIProgressView {
+extension UIProgressView {
 
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
 
         if let style = self as? CustomProgressTintColor {
@@ -316,9 +316,9 @@ public extension UIProgressView {
 
 }
 
-public extension UITableView {
+extension UITableView {
     
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
         
         if let style = self as? CustomTableViewSeparatorColor {
@@ -340,9 +340,9 @@ public extension UITableView {
     
 }
 
-public extension UITextView {
+extension UITextView {
     
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
         
         if let style = self as? CustomFont {
@@ -356,9 +356,9 @@ public extension UITextView {
     
 }
 
-public extension UISearchBar {
+extension UISearchBar {
 
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
 
         if let style = self as? CustomBarTintColor {
@@ -380,9 +380,9 @@ public extension UISearchBar {
 
 }
 
-public extension UITabBar {
+extension UITabBar {
 
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
 
         if let style = self as? CustomBarTintColor {
@@ -404,9 +404,9 @@ public extension UITabBar {
 
 }
 
-public extension UIToolbar {
+extension UIToolbar {
 
-    override public func refresh() {
+    open override func refresh() {
         super.refresh()
 
         if let style = self as? CustomBarTintColor {

@@ -27,19 +27,19 @@ public protocol ImageStyleGroup: ImageStyle {
 
 public extension ImageStyleGroup {
     
-    public func disabled() -> UIImage? {
+    func disabled() -> UIImage? {
         return nil
     }
     
-    public func selected() -> UIImage? {
+    func selected() -> UIImage? {
         return nil
     }
     
-    public func highlighted() -> UIImage? {
+    func highlighted() -> UIImage? {
         return nil
     }
     
-    public func focused() -> UIImage? {
+    func focused() -> UIImage? {
         return nil
     }
     

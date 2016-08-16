@@ -27,19 +27,19 @@ public protocol ColorStyleGroup: ColorStyle {
 
 public extension ColorStyleGroup {
 
-    public func disabled() -> UIColor? {
+    func disabled() -> UIColor? {
         return nil
     }
 
-    public func selected() -> UIColor? {
+    func selected() -> UIColor? {
         return nil
     }
 
-    public func highlighted() -> UIColor? {
+    func highlighted() -> UIColor? {
         return nil
     }
 
-    public func focused() -> UIColor? {
+    func focused() -> UIColor? {
         return nil
     }
 

@@ -55,13 +55,13 @@ extension UIFont: FontStyle {
 
 public struct FontGroup: FontStyleGroup {
 
-    private let normalStorage: UIFont
-    private let disabledStorage: UIFont?
-    private let selectedStorage: UIFont?
-    private let highlightedStorage: UIFont?
-    private let focusedStorage: UIFont?
+    private let normalStorage: FontStyle
+    private let disabledStorage: FontStyle?
+    private let selectedStorage: FontStyle?
+    private let highlightedStorage: FontStyle?
+    private let focusedStorage: FontStyle?
 
-    public init(normal: UIFont, disabled: UIFont? = nil, selected: UIFont? = nil, highlighted: UIFont? = nil, focused: UIFont? = nil) {
+    public init(normal: FontStyle, disabled: FontStyle? = nil, selected: FontStyle? = nil, highlighted: FontStyle? = nil, focused: FontStyle? = nil) {
         normalStorage = normal
         disabledStorage = disabled
         selectedStorage = selected
@@ -69,28 +69,24 @@ public struct FontGroup: FontStyleGroup {
         focusedStorage = focused
     }
 
-    public init(normal: FontStyle, disabled: FontStyle? = nil, selected: FontStyle? = nil, highlighted: FontStyle? = nil, focused: FontStyle? = nil) {
-        self.init(normal: normal.normal(), disabled: disabled?.normal(), selected: selected?.normal(), highlighted: highlighted?.normal(), focused: focused?.normal())
-    }
-
     public func normal() -> UIFont {
-        return normalStorage
+        return normalStorage.normal()
     }
 
     public func disabled() -> UIFont? {
-        return disabledStorage
+        return disabledStorage?.normal()
     }
 
     public func selected() -> UIFont? {
-        return selectedStorage
+        return selectedStorage?.normal()
     }
 
     public func highlighted() -> UIFont? {
-        return highlightedStorage
+        return highlightedStorage?.normal()
     }
 
     public func focused() -> UIFont? {
-        return focusedStorage
+        return focusedStorage?.normal()
     }
 
 }

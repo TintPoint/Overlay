@@ -55,13 +55,13 @@ extension UIImage: ImageStyle {
 
 public struct ImageGroup: ImageStyleGroup {
     
-    private let normalStorage: UIImage
-    private let disabledStorage: UIImage?
-    private let selectedStorage: UIImage?
-    private let highlightedStorage: UIImage?
-    private let focusedStorage: UIImage?
-    
-    public init(normal: UIImage, disabled: UIImage? = nil, selected: UIImage? = nil, highlighted: UIImage? = nil, focused: UIImage? = nil) {
+    private let normalStorage: ImageStyle
+    private let disabledStorage: ImageStyle?
+    private let selectedStorage: ImageStyle?
+    private let highlightedStorage: ImageStyle?
+    private let focusedStorage: ImageStyle?
+
+    public init(normal: ImageStyle, disabled: ImageStyle? = nil, selected: ImageStyle? = nil, highlighted: ImageStyle? = nil, focused: ImageStyle? = nil) {
         normalStorage = normal
         disabledStorage = disabled
         selectedStorage = selected
@@ -69,28 +69,24 @@ public struct ImageGroup: ImageStyleGroup {
         focusedStorage = focused
     }
     
-    public init(normal: ImageStyle, disabled: ImageStyle? = nil, selected: ImageStyle? = nil, highlighted: ImageStyle? = nil, focused: ImageStyle? = nil) {
-        self.init(normal: normal.normal(), disabled: disabled?.normal(), selected: selected?.normal(), highlighted: highlighted?.normal(), focused: focused?.normal())
-    }
-    
     public func normal() -> UIImage {
-        return normalStorage
+        return normalStorage.normal()
     }
     
     public func disabled() -> UIImage? {
-        return disabledStorage
+        return disabledStorage?.normal()
     }
     
     public func selected() -> UIImage? {
-        return selectedStorage
+        return selectedStorage?.normal()
     }
     
     public func highlighted() -> UIImage? {
-        return highlightedStorage
+        return highlightedStorage?.normal()
     }
     
     public func focused() -> UIImage? {
-        return focusedStorage
+        return focusedStorage?.normal()
     }
     
 }

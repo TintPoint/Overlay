@@ -55,13 +55,13 @@ extension UIColor: ColorStyle {
 
 public struct ColorGroup: ColorStyleGroup {
 
-    private let normalStorage: UIColor
-    private let disabledStorage: UIColor?
-    private let selectedStorage: UIColor?
-    private let highlightedStorage: UIColor?
-    private let focusedStorage: UIColor?
+    private let normalStorage: ColorStyle
+    private let disabledStorage: ColorStyle?
+    private let selectedStorage: ColorStyle?
+    private let highlightedStorage: ColorStyle?
+    private let focusedStorage: ColorStyle?
 
-    public init(normal: UIColor, disabled: UIColor? = nil, selected: UIColor? = nil, highlighted: UIColor? = nil, focused: UIColor? = nil) {
+    public init(normal: ColorStyle, disabled: ColorStyle? = nil, selected: ColorStyle? = nil, highlighted: ColorStyle? = nil, focused: ColorStyle? = nil) {
         normalStorage = normal
         disabledStorage = disabled
         selectedStorage = selected
@@ -69,28 +69,24 @@ public struct ColorGroup: ColorStyleGroup {
         focusedStorage = focused
     }
 
-    public init(normal: ColorStyle, disabled: ColorStyle? = nil, selected: ColorStyle? = nil, highlighted: ColorStyle? = nil, focused: ColorStyle? = nil) {
-        self.init(normal: normal.normal(), disabled: disabled?.normal(), selected: selected?.normal(), highlighted: highlighted?.normal(), focused: focused?.normal())
-    }
-
     public func normal() -> UIColor {
-        return normalStorage
+        return normalStorage.normal()
     }
 
     public func disabled() -> UIColor? {
-        return disabledStorage
+        return disabledStorage?.normal()
     }
 
     public func selected() -> UIColor? {
-        return selectedStorage
+        return selectedStorage?.normal()
     }
 
     public func highlighted() -> UIColor? {
-        return highlightedStorage
+        return highlightedStorage?.normal()
     }
 
     public func focused() -> UIColor? {
-        return focusedStorage
+        return focusedStorage?.normal()
     }
 
 }

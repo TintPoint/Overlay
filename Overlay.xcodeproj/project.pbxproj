@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D0B059B71D65902E009C84FC /* Overlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B1729A1D45A1EB0079A2F2 /* Overlay.framework */; };
+		D0B059BE1D659273009C84FC /* ColorStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B059BD1D659273009C84FC /* ColorStyleTests.swift */; };
+		D0B059C01D659948009C84FC /* FontStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B059BF1D659948009C84FC /* FontStyleTests.swift */; };
+		D0B059C21D659A2A009C84FC /* ImageStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B059C11D659A2A009C84FC /* ImageStyleTests.swift */; };
+		D0B059C41D65D64E009C84FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0B059C31D65D64E009C84FC /* Assets.xcassets */; };
+		D0B059C81D65F8CB009C84FC /* CustomizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B059C71D65F8CB009C84FC /* CustomizableTests.swift */; };
 		D0B172B01D45A2220079A2F2 /* ColorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A51D45A2220079A2F2 /* ColorStyle.swift */; };
 		D0B172B11D45A2220079A2F2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A61D45A2220079A2F2 /* CustomColor.swift */; };
 		D0B172B31D45A2220079A2F2 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A81D45A2220079A2F2 /* CustomFont.swift */; };
@@ -32,6 +37,11 @@
 
 /* Begin PBXFileReference section */
 		D0B059B21D65902E009C84FC /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B059BD1D659273009C84FC /* ColorStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStyleTests.swift; sourceTree = "<group>"; };
+		D0B059BF1D659948009C84FC /* FontStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyleTests.swift; sourceTree = "<group>"; };
+		D0B059C11D659A2A009C84FC /* ImageStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStyleTests.swift; sourceTree = "<group>"; };
+		D0B059C31D65D64E009C84FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0B059C71D65F8CB009C84FC /* CustomizableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableTests.swift; sourceTree = "<group>"; };
 		D0B1729A1D45A1EB0079A2F2 /* Overlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Overlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B172A51D45A2220079A2F2 /* ColorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorStyle.swift; path = Sources/ColorStyle.swift; sourceTree = SOURCE_ROOT; };
 		D0B172A61D45A2220079A2F2 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomColor.swift; path = Sources/CustomColor.swift; sourceTree = SOURCE_ROOT; };
@@ -105,8 +115,29 @@
 		D0B059B31D65902E009C84FC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D0B059C51D65F894009C84FC /* StyleTests */,
+				D0B059C61D65F899009C84FC /* Data */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		D0B059C51D65F894009C84FC /* StyleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0B059C71D65F8CB009C84FC /* CustomizableTests.swift */,
+				D0B059BD1D659273009C84FC /* ColorStyleTests.swift */,
+				D0B059BF1D659948009C84FC /* FontStyleTests.swift */,
+				D0B059C11D659A2A009C84FC /* ImageStyleTests.swift */,
+			);
+			name = StyleTests;
+			sourceTree = "<group>";
+		};
+		D0B059C61D65F899009C84FC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D0B059C31D65D64E009C84FC /* Assets.xcassets */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		D0B172901D45A1EB0079A2F2 = {
@@ -200,6 +231,7 @@
 				TargetAttributes = {
 					D0B059B11D65902E009C84FC = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					D0B172991D45A1EB0079A2F2 = {
@@ -232,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B059C41D65D64E009C84FC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B059C01D659948009C84FC /* FontStyleTests.swift in Sources */,
+				D0B059C21D659A2A009C84FC /* ImageStyleTests.swift in Sources */,
+				D0B059BE1D659273009C84FC /* ColorStyleTests.swift in Sources */,
+				D0B059C81D65F8CB009C84FC /* CustomizableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,22 +319,27 @@
 		D0B059BB1D65902E009C84FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tintpoint.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		D0B059BC1D65902E009C84FC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tintpoint.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

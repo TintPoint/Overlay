@@ -79,7 +79,7 @@ extension UITabBarItem {
 }
 
 extension UIView: ViewCustomizable {
-
+    
     open func refresh() {
         if let layout = self as? CustomLayout, let contentView = layout.contentView(of: self), !subviews.contains(contentView) {
             contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -92,6 +92,10 @@ extension UIView: ViewCustomizable {
 
         if let style = self as? CustomTintColor {
             tintColor = style.selected(style.tintColorStyle)
+        }
+        
+        if let style = self as? CustomBorderColor {
+            layer.borderColor = style.selected(style.borderColorStyle)?.cgColor
         }
 
         if let style = self as? CustomBackgroundColor {

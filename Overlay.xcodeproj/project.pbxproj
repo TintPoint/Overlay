@@ -458,6 +458,7 @@
 				D0B059BC1D65902E009C84FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0B172941D45A1EB0079A2F2 /* Build configuration list for PBXProject "Overlay" */ = {
 			isa = XCConfigurationList;

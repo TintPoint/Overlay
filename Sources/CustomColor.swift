@@ -15,6 +15,13 @@ public protocol CustomTintColor: ViewCustomizable {
 
 }
 
+public protocol CustomBorderColor: ViewCustomizable {
+    
+    var layer: CALayer { get }
+    var borderColorStyle: ColorStyle { get }
+    
+}
+
 public protocol CustomBackgroundColor: ViewCustomizable {
 
     var backgroundColor: UIColor? { get set }

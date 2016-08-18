@@ -104,13 +104,13 @@ It is also possible to implement app-specific style group by conforming to proto
 ```swift
 enum CustomColorGroup: ColorStyleGroup {
     case standard
-    
+
     func normal() -> UIColor {
         switch self {
         case .standard: return UIColor.white
         }
     }
-    
+
     func disabled() -> UIColor? {
         switch self {
         case .standard: return UIColor.black
@@ -163,7 +163,6 @@ However, it is still possible to customize not-yet-supported attributes by overr
 class BorderView: UIView {
     override func refresh() {
         super.refresh()
-        layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1
     }
 }
@@ -176,6 +175,7 @@ class BorderView: UIView {
 #### Custom Color
 
 > - CustomTintColor
+> - CustomBorderColor
 > - CustomBackgroundColor
 > - CustomTextColor
 > - CustomShadowColor

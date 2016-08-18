@@ -266,7 +266,7 @@ extension UILabel {
             font = style.selected(style.fontStyle)
         }
 
-        if let style = self as? CustomTextColor {
+        if let style = self as? CustomLabelTextColor {
             textColor = style.selected(style.textColorStyle, except: [.highlighted])
             if let colorStyleGroup = style.textColorStyle as? ColorStyleGroup {
                 highlightedTextColor = colorStyleGroup.highlighted()

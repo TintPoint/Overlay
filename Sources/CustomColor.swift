@@ -36,6 +36,13 @@ public protocol CustomTextColor: ViewCustomizable {
 
 }
 
+public protocol CustomLabelTextColor: ViewCustomizable {
+    
+    var textColor: UIColor! { get set }
+    var textColorStyle: ColorStyle { get }
+    
+}
+
 public protocol CustomShadowColor: ViewCustomizable {
 
     var shadowColor: UIColor? { get set }

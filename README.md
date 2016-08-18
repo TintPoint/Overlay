@@ -178,6 +178,7 @@ class BorderView: UIView {
 > - CustomBorderColor
 > - CustomBackgroundColor
 > - CustomTextColor
+> - CustomLabelTextColor
 > - CustomShadowColor
 > - CustomActivityIndicatorColor
 > - CustomButtonTitleColor

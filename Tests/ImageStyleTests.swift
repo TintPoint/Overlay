@@ -14,19 +14,19 @@ class ImageStyleTests: XCTestCase {
     typealias Resource = TestImage
     
     func testStyle() {
-        XCTAssertEqual(Resource.normal, Resource.normal.normal())
+        XCTAssertEqual(Resource.first, Resource.first.normal())
     }
     
     func testGroup() {
-        XCTAssertEqual(Resource.normal.normal(), Resource.group.normal())
-        XCTAssertEqual(Resource.disabled.normal(), Resource.group.disabled())
-        XCTAssertEqual(Resource.selected.normal(), Resource.group.selected())
-        XCTAssertEqual(Resource.highlighted.normal(), Resource.group.highlighted())
-        XCTAssertEqual(Resource.focused.normal(), Resource.group.focused())
+        XCTAssertEqual(Resource.first.normal(), Resource.group.normal())
+        XCTAssertEqual(Resource.second.normal(), Resource.group.disabled())
+        XCTAssertEqual(Resource.third.normal(), Resource.group.selected())
+        XCTAssertEqual(Resource.fourth.normal(), Resource.group.highlighted())
+        XCTAssertEqual(Resource.fifth.normal(), Resource.group.focused())
     }
     
     func testEmptyGroup() {
-        XCTAssertEqual(Resource.normal.normal(), Resource.emptyGroup.normal())
+        XCTAssertEqual(Resource.first.normal(), Resource.emptyGroup.normal())
         XCTAssertNil(Resource.emptyGroup.disabled())
         XCTAssertNil(Resource.emptyGroup.selected())
         XCTAssertNil(Resource.emptyGroup.highlighted())

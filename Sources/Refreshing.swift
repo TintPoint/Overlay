@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIBarItem {
+extension UIBarButtonItem {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,6 +20,20 @@ extension UIBarItem {
         refresh()
     }
 
+}
+
+extension UITabBarItem {
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        refresh()
+    }
+    
+    open override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        refresh()
+    }
+    
 }
 
 extension UIView {
@@ -36,9 +50,13 @@ extension UIView {
 
 }
 
-extension UIBarItem: ViewCustomizable {
+extension UIBarButtonItem: ViewCustomizable {
     
     open func refresh() {
+        if let style = self as? CustomBarItemTintColor {
+            tintColor = style.selected(style.tintColorStyle)
+        }
+        
         if let style = self as? CustomImage {
             image = style.selected(style.imageStyle)
         }
@@ -50,25 +68,15 @@ extension UIBarItem: ViewCustomizable {
     
 }
 
-extension UIBarButtonItem {
+extension UITabBarItem: ViewCustomizable {
     
-    open override func refresh() {
-        super.refresh()
-        
-        if let style = self as? CustomBarItemTintColor {
-            tintColor = style.selected(style.tintColorStyle)
-        }
-    }
-    
-}
-
-extension UITabBarItem {
-    
-    open override func refresh() {
-        super.refresh()
-        
+    open func refresh() {
         if #available(iOS 10.0, *), let style = self as? CustomBarItemBadgeColor {
             badgeColor = style.selected(style.badgeColorStyle)
+        }
+        
+        if let style = self as? CustomImage {
+            image = style.selected(style.imageStyle)
         }
         
         if let style = self as? CustomBarItemSelectedImage {

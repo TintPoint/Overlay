@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0A4B9061D67217A00C995A5 /* RefreshingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4B9051D67217A00C995A5 /* RefreshingTests.swift */; };
+		D0A4B9081D67237100C995A5 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4B9071D67237100C995A5 /* Resource.swift */; };
+		D0A4B90A1D672C8600C995A5 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4B9091D672C8600C995A5 /* CustomView.swift */; };
+		D0A4B90E1D67341B00C995A5 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A4B90D1D67341B00C995A5 /* CustomView.xib */; };
 		D0B059B71D65902E009C84FC /* Overlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B1729A1D45A1EB0079A2F2 /* Overlay.framework */; };
 		D0B059BE1D659273009C84FC /* ColorStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B059BD1D659273009C84FC /* ColorStyleTests.swift */; };
 		D0B059C01D659948009C84FC /* FontStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B059BF1D659948009C84FC /* FontStyleTests.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D0A4B9051D67217A00C995A5 /* RefreshingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshingTests.swift; sourceTree = "<group>"; };
+		D0A4B9071D67237100C995A5 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		D0A4B9091D672C8600C995A5 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		D0A4B90D1D67341B00C995A5 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		D0B059B21D65902E009C84FC /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B059BD1D659273009C84FC /* ColorStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStyleTests.swift; sourceTree = "<group>"; };
 		D0B059BF1D659948009C84FC /* FontStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyleTests.swift; sourceTree = "<group>"; };
@@ -78,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				D0B059C71D65F8CB009C84FC /* CustomizableTests.swift */,
+				D0A4B9051D67217A00C995A5 /* RefreshingTests.swift */,
 			);
 			name = CustomizableTests;
 			sourceTree = "<group>";
@@ -125,7 +134,7 @@
 			children = (
 				D0B059C51D65F894009C84FC /* StyleTests */,
 				D05D0A731D671A110001BB1A /* CustomizableTests */,
-				D0B059C61D65F899009C84FC /* Data */,
+				D0B059C61D65F899009C84FC /* Resource */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -140,12 +149,15 @@
 			name = StyleTests;
 			sourceTree = "<group>";
 		};
-		D0B059C61D65F899009C84FC /* Data */ = {
+		D0B059C61D65F899009C84FC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D0A4B9091D672C8600C995A5 /* CustomView.swift */,
+				D0A4B90D1D67341B00C995A5 /* CustomView.xib */,
+				D0A4B9071D67237100C995A5 /* Resource.swift */,
 				D0B059C31D65D64E009C84FC /* Assets.xcassets */,
 			);
-			name = Data;
+			name = Resource;
 			sourceTree = "<group>";
 		};
 		D0B172901D45A1EB0079A2F2 = {
@@ -273,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0B059C41D65D64E009C84FC /* Assets.xcassets in Resources */,
+				D0A4B90E1D67341B00C995A5 /* CustomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +305,9 @@
 			files = (
 				D0B059C01D659948009C84FC /* FontStyleTests.swift in Sources */,
 				D0B059C21D659A2A009C84FC /* ImageStyleTests.swift in Sources */,
+				D0A4B9061D67217A00C995A5 /* RefreshingTests.swift in Sources */,
+				D0A4B90A1D672C8600C995A5 /* CustomView.swift in Sources */,
+				D0A4B9081D67237100C995A5 /* Resource.swift in Sources */,
 				D0B059BE1D659273009C84FC /* ColorStyleTests.swift in Sources */,
 				D0B059C81D65F8CB009C84FC /* CustomizableTests.swift in Sources */,
 			);

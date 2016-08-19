@@ -11,30 +11,26 @@ import XCTest
 
 class FontStyleTests: XCTestCase {
     
-    let normal = UIFont.preferredFont(forTextStyle: .body)
-    let disabled = UIFont.preferredFont(forTextStyle: .callout)
-    let selected = UIFont.preferredFont(forTextStyle: .caption1)
-    let highlighted = UIFont.preferredFont(forTextStyle: .caption2)
-    let focused = UIFont.preferredFont(forTextStyle: .footnote)
-
+    typealias Resource = TestFont
+    
     func testStyle() {
-        XCTAssertEqual(normal, normal.normal())
+        XCTAssertEqual(Resource.normal, Resource.normal.normal())
     }
     
     func testGroup() {
-        let group = FontGroup(normal: normal, disabled: disabled, selected: selected, highlighted: highlighted, focused: focused)
-        XCTAssertEqual(normal.normal(), group.normal())
-        XCTAssertEqual(disabled.normal(), group.disabled())
-        XCTAssertEqual(selected.normal(), group.selected())
-        XCTAssertEqual(highlighted.normal(), group.highlighted())
-        XCTAssertEqual(focused.normal(), group.focused())
-        
-        let nilGroup = FontGroup(normal: normal, disabled: nil, selected: nil, highlighted: nil, focused: nil)
-        XCTAssertEqual(normal.normal(), nilGroup.normal())
-        XCTAssertNil(nilGroup.disabled())
-        XCTAssertNil(nilGroup.selected())
-        XCTAssertNil(nilGroup.highlighted())
-        XCTAssertNil(nilGroup.focused())
+        XCTAssertEqual(Resource.normal.normal(), Resource.group.normal())
+        XCTAssertEqual(Resource.disabled.normal(), Resource.group.disabled())
+        XCTAssertEqual(Resource.selected.normal(), Resource.group.selected())
+        XCTAssertEqual(Resource.highlighted.normal(), Resource.group.highlighted())
+        XCTAssertEqual(Resource.focused.normal(), Resource.group.focused())
+    }
+    
+    func testEmptyGroup() {
+        XCTAssertEqual(Resource.normal.normal(), Resource.emptyGroup.normal())
+        XCTAssertNil(Resource.emptyGroup.disabled())
+        XCTAssertNil(Resource.emptyGroup.selected())
+        XCTAssertNil(Resource.emptyGroup.highlighted())
+        XCTAssertNil(Resource.emptyGroup.focused())
     }
     
 }

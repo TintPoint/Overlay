@@ -24,7 +24,7 @@ public protocol CustomHighlightedImage: ViewCustomizable {
 
 public protocol CustomShadowImage: ViewCustomizable {
     
-    var shadowIamge: UIImage? { get set }
+    var shadowImage: UIImage? { get set }
     var shadowImageStyle: ImageStyle { get }
     
 }

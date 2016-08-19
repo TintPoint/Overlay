@@ -74,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D05D0A731D671A110001BB1A /* CustomizableTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0B059C71D65F8CB009C84FC /* CustomizableTests.swift */,
+			);
+			name = CustomizableTests;
+			sourceTree = "<group>";
+		};
 		D062B0F01D52469400F70C4A /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +93,6 @@
 		D062B0F11D52469E00F70C4A /* Style */ = {
 			isa = PBXGroup;
 			children = (
-				D0B172A91D45A2220079A2F2 /* Customizable.swift */,
 				D0B172A51D45A2220079A2F2 /* ColorStyle.swift */,
 				D0B172AD1D45A2220079A2F2 /* FontStyle.swift */,
 				D0CE2FAD1D5F21D600FE4287 /* ImageStyle.swift */,
@@ -93,15 +100,16 @@
 			name = Style;
 			sourceTree = "<group>";
 		};
-		D062B0F21D5246B000F70C4A /* CustomView */ = {
+		D062B0F21D5246B000F70C4A /* Customizable */ = {
 			isa = PBXGroup;
 			children = (
+				D0B172A91D45A2220079A2F2 /* Customizable.swift */,
 				D0B172AA1D45A2220079A2F2 /* CustomLayout.swift */,
 				D0B172A61D45A2220079A2F2 /* CustomColor.swift */,
 				D0B172A81D45A2220079A2F2 /* CustomFont.swift */,
 				D0CE2FAF1D5F223200FE4287 /* CustomImage.swift */,
 			);
-			name = CustomView;
+			name = Customizable;
 			sourceTree = "<group>";
 		};
 		D062B0F31D5246BC00F70C4A /* Refreshing */ = {
@@ -116,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				D0B059C51D65F894009C84FC /* StyleTests */,
+				D05D0A731D671A110001BB1A /* CustomizableTests */,
 				D0B059C61D65F899009C84FC /* Data */,
 			);
 			path = Tests;
@@ -124,7 +133,6 @@
 		D0B059C51D65F894009C84FC /* StyleTests */ = {
 			isa = PBXGroup;
 			children = (
-				D0B059C71D65F8CB009C84FC /* CustomizableTests.swift */,
 				D0B059BD1D659273009C84FC /* ColorStyleTests.swift */,
 				D0B059BF1D659948009C84FC /* FontStyleTests.swift */,
 				D0B059C11D659A2A009C84FC /* ImageStyleTests.swift */,
@@ -163,7 +171,7 @@
 			children = (
 				D062B0F01D52469400F70C4A /* Overlay */,
 				D062B0F11D52469E00F70C4A /* Style */,
-				D062B0F21D5246B000F70C4A /* CustomView */,
+				D062B0F21D5246B000F70C4A /* Customizable */,
 				D062B0F31D5246BC00F70C4A /* Refreshing */,
 			);
 			path = Overlay;

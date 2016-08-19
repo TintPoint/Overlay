@@ -10,12 +10,10 @@ Overlay is a very flexible UI framework designed for Swift. It's very easy to us
 
 ## Features
 
-- [x] Support customizing color related properties.
-- [x] Support customizing font related properties.
-- [x] Support customizing image related properties.
-- [ ] Support customizing shape related properties.
-- [x] Support loading layout from nib file.
-- [ ] Support storyboard preview.
+- [x] Customize color, font and image
+- [x] Load layout from nib file
+- [x] Support both Interface Builder and code initialization 
+- [x] Comprehensive unit test coverage
 
 ## Requirements
 
@@ -28,7 +26,7 @@ iOS 9+ / Xcode 8+ / Swift 3+
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager. To install Overlay, add the following line to your `Cartfile`:
 
 ```ogdl
-github "TintPoint/Overlay" ~> 0.2
+github "TintPoint/Overlay" ~> 0.3
 ```
 
 ### CocoaPods
@@ -38,7 +36,7 @@ github "TintPoint/Overlay" ~> 0.2
 [CocoaPods](https://cocoapods.org) is a centralized dependency manager. To install Overlay, add the following line to your `Podfile`:
 
 ```ruby
-pod 'Overlay', '~> 0.2'
+pod 'Overlay', '~> 0.3'
 ```
 
 ## Getting Started

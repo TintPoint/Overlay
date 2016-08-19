@@ -8,23 +8,20 @@
 
 import Overlay
 
-class CustomBarItem: UIBarItem, CustomImage, CustomBarItemLandscapeImagePhone {
+class CustomBarButtonItem: UIBarButtonItem, CustomBarItemTintColor, CustomImage, CustomBarItemLandscapeImagePhone {
     
+    var tintColorStyle: ColorStyle = TestColor.normal
     var imageStyle: ImageStyle = TestImage.normal
     var landscapeImagePhoneStyle: ImageStyle = TestImage.disabled
     
 }
 
-class CustomBarButtonItem: UIBarButtonItem, CustomBarItemTintColor {
-    
-    var tintColorStyle: ColorStyle = TestColor.normal
-    
-}
-
-class CustomTabBarItem: UITabBarItem, CustomBarItemBadgeColor, CustomBarItemSelectedImage {
+class CustomTabBarItem: UITabBarItem, CustomBarItemBadgeColor, CustomImage, CustomBarItemSelectedImage {
     
     var badgeColorStyle: ColorStyle = TestColor.normal
-    var selectedImageStyle: ImageStyle = TestImage.normal
+    var imageStyle: ImageStyle = TestImage.normal
+    var landscapeImagePhoneStyle: ImageStyle = TestImage.disabled
+    var selectedImageStyle: ImageStyle = TestImage.selected
     
 }
 
@@ -52,16 +49,21 @@ class CustomButton: UIButton, CustomButtonTitleColor, CustomButtonTitleShadowCol
     
 }
 
-class CustomSlider: UISlider, CustomSliderMinimumTrackTintColor, CustomSliderMaximumTrackTintColor, CustomSliderThumbTintColor, CustomSliderMinimumValueImage, CustomSliderMaximumValueImage, CustomSliderMinimumTrackImage, CustomSliderMaximumTrackImage, CustomSliderThumbImage {
+class CustomSlider: UISlider, CustomSliderMinimumTrackTintColor, CustomSliderMaximumTrackTintColor, CustomSliderThumbTintColor, CustomSliderMinimumValueImage, CustomSliderMaximumValueImage {
     
     var minimumTrackTintColorStyle: ColorStyle = TestColor.normal
     var maximumTrackTintColorStyle: ColorStyle = TestColor.disabled
     var thumbTintColorStyle: ColorStyle = TestColor.selected
     var minimumValueImageStyle: ImageStyle = TestImage.normal
     var maximumValueImageStyle: ImageStyle = TestImage.disabled
-    var minimumTrackImageStyle: ImageStyle = TestImage.selected
-    var maximumTrackImageStyle: ImageStyle = TestImage.highlighted
-    var thumbImageStyle: ImageStyle = TestImage.focused
+    
+}
+
+class CustomImageSlider: UISlider, CustomSliderMinimumTrackImage, CustomSliderMaximumTrackImage, CustomSliderThumbImage {
+    
+    var minimumTrackImageStyle: ImageStyle = TestImage.normal
+    var maximumTrackImageStyle: ImageStyle = TestImage.disabled
+    var thumbImageStyle: ImageStyle = TestImage.selected
     
 }
 
@@ -111,10 +113,15 @@ class CustomNavigationBar: UINavigationBar, CustomBarTintColor, CustomShadowImag
     
 }
 
-class CustomProgressView: UIProgressView, CustomProgressTintColor, CustomProgressTrackTintColor, CustomProgressImage, CustomProgressTrackImage {
+class CustomProgressView: UIProgressView, CustomProgressTintColor, CustomProgressTrackTintColor {
     
     var progressTintColorStyle: ColorStyle = TestColor.normal
     var trackTintColorStyle: ColorStyle = TestColor.disabled
+    
+}
+
+class CustomImageProgressView: UIProgressView, CustomProgressImage, CustomProgressTrackImage {
+    
     var progressImageStyle: ImageStyle = TestImage.normal
     var trackImageStyle: ImageStyle = TestImage.disabled
     

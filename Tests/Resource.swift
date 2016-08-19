@@ -38,7 +38,7 @@ class TestFont {
 class TestImage {
     
     static let normal = UIImage(named: "White", in: Bundle(for: TestImage.self), compatibleWith: nil)!
-    static let disabled = UIImage(named: "Black", in: Bundle(for: TestImage.self), compatibleWith: nil)!
+    static let disabled = UIImage(named: "Black", in: Bundle(for: TestImage.self), compatibleWith: nil)!.withRenderingMode(.alwaysOriginal)
     static let selected = UIImage(named: "Blue", in: Bundle(for: TestImage.self), compatibleWith: nil)!
     static let highlighted = UIImage(named: "Yellow", in: Bundle(for: TestImage.self), compatibleWith: nil)!
     static let focused = UIImage(named: "Red", in: Bundle(for: TestImage.self), compatibleWith: nil)!

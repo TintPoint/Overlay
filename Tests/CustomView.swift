@@ -82,12 +82,12 @@ class CustomSwitch: UISwitch, CustomSwitchOnTintColor, CustomSwitchThumbTintColo
     
 }
 
-//class CustomTextField: UITextField, CustomFont, CustomTextColor {
-//    
-//    var fontStyle: FontStyle = TestFont.normal
-//    var textColorStyle: ColorStyle = TestColor.normal
-//    
-//}
+class CustomTextField: UITextField, CustomFont, CustomTextColor {
+    
+    var fontStyle: FontStyle = TestFont.normal
+    var textColorStyle: ColorStyle = TestColor.normal
+    
+}
 
 class CustomImageView: UIImageView, CustomImage, CustomHighlightedImage {
 
@@ -96,7 +96,7 @@ class CustomImageView: UIImageView, CustomImage, CustomHighlightedImage {
     
 }
 
-class CustomLabel: UILabel, CustomFont, CustomLabelTextColor, CustomShadowColor {
+class CustomLabel: UILabel, CustomLabelFont, CustomLabelTextColor, CustomShadowColor {
     
     var fontStyle: FontStyle = TestFont.normal
     var textColorStyle: ColorStyle = TestColor.normal
@@ -129,12 +129,12 @@ class CustomTableView: UITableView, CustomTableViewSeparatorColor, CustomTableVi
     
 }
 
-//class CustomTextView: UITextView, CustomFont, CustomTextColor {
-//    
-//    var fontStyle: FontStyle = TestFont.normal
-//    var textColorStyle: ColorStyle = TestColor.normal
-//    
-//}
+class CustomTextView: UITextView, CustomFont, CustomTextColor {
+    
+    var fontStyle: FontStyle = TestFont.normal
+    var textColorStyle: ColorStyle = TestColor.normal
+    
+}
 
 class CustomSearchBar: UISearchBar, CustomBarTintColor, CustomBarBackgroundImage, CustomBarSearchFieldBackgroundImage, CustomBarScopeBarButtonBackgroundImage {
     

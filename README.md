@@ -202,6 +202,7 @@ class BorderView: UIView {
 #### Custom Font
 
 > - CustomFont
+> - CustomLabelFont
 
 #### Custom Image
 

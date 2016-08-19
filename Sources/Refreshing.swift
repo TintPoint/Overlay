@@ -262,7 +262,7 @@ extension UILabel {
     open override func refresh() {
         super.refresh()
 
-        if let style = self as? CustomFont {
+        if let style = self as? CustomLabelFont {
             font = style.selected(style.fontStyle)
         }
 

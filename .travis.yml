@@ -5,12 +5,10 @@ env:
   - SCHEME="Overlay"
   - SDK=iphonesimulator
   matrix:
-    - DESTINATION="OS=9.0,name=iPhone 6s"
-    - DESTINATION="OS=9.1,name=iPhone 6s"
-    - DESTINATION="OS=9.2,name=iPhone 6s"
-    - DESTINATION="OS=9.3,name=iPhone 6s"
-    - DESTINATION="OS=10.0,name=iPhone 6s"
+    - DESTINATION="OS=10.0,name=iPhone 6s" CONFIGURATION="Debug"
+    - DESTINATION="OS=10.0,name=iPhone 6s" CONFIGURATION="Release"
+    - DESTINATION="OS=10.0,name=iPad Pro (9.7 inch)" CONFIGURATION="Debug"
+    - DESTINATION="OS=10.0,name=iPad Pro (9.7 inch)" CONFIGURATION="Release"
 script:
   - set -o pipefail
-  - xcodebuild test -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ENABLE_TESTABILITY=YES | xcpretty -c
-  - xcodebuild test -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ENABLE_TESTABILITY=YES | xcpretty -c
+  - xcodebuild test -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration "$CONFIGURATION" ENABLE_TESTABILITY=YES | xcpretty

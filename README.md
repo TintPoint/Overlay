@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/TintPoint/Overlay.svg)](https://travis-ci.org/TintPoint/Overlay)
 [![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Overlay.svg)](https://cocoapods.org)
+<!--[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Overlay.svg)](https://cocoapods.org)-->
 
 Overlay is a very flexible UI framework designed for Swift on top of UIKit.
 
@@ -32,11 +32,11 @@ github "TintPoint/Overlay" ~> 0.3
 
 **Note:** Due to [this bug](https://github.com/CocoaPods/CocoaPods/issues/5663), currently Overlay is not available via CocoaPods.
 
-[CocoaPods](https://cocoapods.org) is a centralized dependency manager. To install Overlay, add the following line to your `Podfile`:
+<!--[CocoaPods](https://cocoapods.org) is a centralized dependency manager. To install Overlay, add the following line to your `Podfile`:-->
 
-```ruby
-pod 'Overlay', '~> 0.3'
-```
+<!--```ruby-->
+<!--pod 'Overlay', '~> 0.3'-->
+<!--```-->
 
 ## Getting Started
 

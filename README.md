@@ -1,18 +1,17 @@
 # Overlay
 
+[![Build Status](https://img.shields.io/travis/TintPoint/Overlay.svg)](https://travis-ci.org/TintPoint/Overlay)
+[![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Overlay.svg)](https://cocoapods.org)
-[![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![Early Development](https://img.shields.io/badge/status-early%20development-red.svg?style=flat)
 
-Overlay is a very flexible UI framework designed for Swift. It's very easy to use but still provides the ability to design complex UI elements.
+Overlay is a very flexible UI framework designed for Swift on top of UIKit.
 
 **Note**: Overlay is still under development and many things are subject to change.
 
 ## Features
 
-- [x] Customize color, font and image
-- [x] Load layout from nib file
-- [x] Support both Interface Builder and code initialization 
+- [x] Protocol oriented design
+- [x] Work with Interface Builder
 - [x] Comprehensive unit test coverage
 
 ## Requirements

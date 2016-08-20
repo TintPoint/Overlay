@@ -1,0 +1,4 @@
+language: objective-c
+xcode_project: Overlay.xcodeproj
+xcode_scheme: Tests
+

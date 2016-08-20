@@ -1,5 +1,17 @@
 language: objective-c
 osx_image: xcode8
+env:
+  global:
+  - SCHEME="Overlay"
+  - TEST_SCHEME="Tests"
+  - SDK=iphonesimulator
+  matrix:
+    - DESTINATION="OS=9.0,name=iPhone 6s"
+    - DESTINATION="OS=9.1,name=iPhone 6s"
+    - DESTINATION="OS=9.2,name=iPhone 6s"
+    - DESTINATION="OS=9.3,name=iPhone 6s"
+    - DESTINATION="OS=10.0,name=iPhone 6s"
 script:
-  xcodebuild test -scheme Tests -sdk iphonesimulator -destination "name=iPhone 6s"
- 
+  - set -o pipefail
+  - xcodebuild test -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug | xcpretty -c
+  - xcodebuild test -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release | xcpretty -c

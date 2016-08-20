@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode8
 script:
-  xcodebuild -project Overlay.xcodeproj -scheme Tests build test
-  
+  xcodebuild test -scheme Tests -sdk iphonesimulator -destination "name=iPhone 6s"
+ 

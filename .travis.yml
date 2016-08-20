@@ -1,5 +1,5 @@
 language: objective-c
-xcode_project: Overlay.xcodeproj
-xcode_scheme: Tests
 osx_image: xcode8
-
+script:
+  xcodebuild -project Overlay.xcodeproj -scheme Tests build test
+  

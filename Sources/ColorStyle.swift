@@ -10,17 +10,34 @@ import UIKit
 
 // Workaround: generic protocol is not supported yet
 
+/// A protocol that describes a color property of a view that conforms to `Custom*Color`.
+/// - SeeAlso: `ColorStyleGroup`, `ColorGroup`
 public protocol ColorStyle {
 
+    /// Returns a color that will be used in normal state.
+    /// - Returns: An `UIColor` that will be used in normal state.
     func normal() -> UIColor
 
 }
 
+/// A protocol that describes a color property of a view in different states (e.g. disabled) that conforms to `Custom*Color`.
+/// - SeeAlso: `ColorStyle`, `ColorGroup`
 public protocol ColorStyleGroup: ColorStyle {
 
+    /// Returns a color that will be used in disabled state.
+    /// - Returns: An `UIColor` that will be used in disabled state, or `nil` if no color is set.
     func disabled() -> UIColor?
+    
+    /// Returns a color that will be used in selected state.
+    /// - Returns: An `UIColor` that will be used in selected state, or `nil` if no color is set.
     func selected() -> UIColor?
+    
+    /// Returns a color that will be used in highlighted state.
+    /// - Returns: An `UIColor` that will be used in highlighted state, or `nil` if no color is set.
     func highlighted() -> UIColor?
+    
+    /// Returns a color that will be used in focused state.
+    /// - Returns: An `UIColor` that will be used in focused state, or `nil` if no color is set.
     func focused() -> UIColor?
 
 }
@@ -53,14 +70,31 @@ extension UIColor: ColorStyle {
 
 }
 
+/// A collection of colors that describes a color property of a view in different states (e.g. disabled) that conforms to `Custom*Color`.
+/// - SeeAlso: `ColorStyle`, `ColorGroupStyle`
 public struct ColorGroup: ColorStyleGroup {
 
+    /// The color that will be used in normal state.
     private let normalStorage: ColorStyle
+    
+    /// The color that will be used in disabled state, or `nil` if no color is set.
     private let disabledStorage: ColorStyle?
+    
+    /// The color that will be used in selected state, or `nil` if no color is set.
     private let selectedStorage: ColorStyle?
+    
+    /// The color that will be used in highlighted state, or `nil` if no color is set.
     private let highlightedStorage: ColorStyle?
+    
+    /// The color that will be used in focused state, or `nil` if no color is set.
     private let focusedStorage: ColorStyle?
 
+    /// Creates an instance with objects that conforms to `ColorStyle`.
+    /// - Parameter normal: color to be used in normal state.
+    /// - Parameter disabled: color to be used in disabled state.
+    /// - Parameter selected: color to be used in selected state.
+    /// - Parameter highlighted: color to be used in highlighted state.
+    /// - Parameter focused: color to be used in focused state.
     public init(normal: ColorStyle, disabled: ColorStyle? = nil, selected: ColorStyle? = nil, highlighted: ColorStyle? = nil, focused: ColorStyle? = nil) {
         normalStorage = normal
         disabledStorage = disabled

@@ -90,8 +90,20 @@ class CustomizableTests: XCTestCase {
         XCTAssertEqual(Resource.third, selectedView.selected(Resource.group)!)
         XCTAssertEqual(Resource.fourth, highlightedView.selected(Resource.group)!)
         XCTAssertEqual(Resource.fifth, focusedView.selected(Resource.group)!)
+        
+        XCTAssertEqual(Resource.first, normalView.selected(Resource.first, except: [.normal]))
+        XCTAssertEqual(Resource.first, disabledView.selected(Resource.group, except: [.disabled])!)
+        XCTAssertEqual(Resource.first, selectedView.selected(Resource.group, except: [.selected])!)
+        XCTAssertEqual(Resource.first, highlightedView.selected(Resource.group, except: [.highlighted])!)
+        XCTAssertEqual(Resource.first, focusedView.selected(Resource.group, except: [.focused])!)
+        
+        XCTAssertEqual(Resource.first, normalView.selected(Resource.group, except: [.disabled, .selected, .highlighted, .focused]))
+        XCTAssertEqual(Resource.second, disabledView.selected(Resource.group, except: [.normal, .selected, .highlighted, .focused])!)
+        XCTAssertEqual(Resource.third, selectedView.selected(Resource.group, except: [.normal, .disabled, .highlighted, .focused])!)
+        XCTAssertEqual(Resource.fourth, highlightedView.selected(Resource.group, except: [.normal, .disabled, .selected, .focused])!)
+        XCTAssertEqual(Resource.fifth, focusedView.selected(Resource.group, except: [.normal, .disabled, .selected, .highlighted])!)
     }
-    
+
     func testSelectedFont() {
         typealias Resource = TestFont
         
@@ -106,6 +118,18 @@ class CustomizableTests: XCTestCase {
         XCTAssertEqual(Resource.third, selectedView.selected(Resource.group)!)
         XCTAssertEqual(Resource.fourth, highlightedView.selected(Resource.group)!)
         XCTAssertEqual(Resource.fifth, focusedView.selected(Resource.group)!)
+        
+        XCTAssertEqual(Resource.first, normalView.selected(Resource.first, except: [.normal]))
+        XCTAssertEqual(Resource.first, disabledView.selected(Resource.group, except: [.disabled])!)
+        XCTAssertEqual(Resource.first, selectedView.selected(Resource.group, except: [.selected])!)
+        XCTAssertEqual(Resource.first, highlightedView.selected(Resource.group, except: [.highlighted])!)
+        XCTAssertEqual(Resource.first, focusedView.selected(Resource.group, except: [.focused])!)
+        
+        XCTAssertEqual(Resource.first, normalView.selected(Resource.group, except: [.disabled, .selected, .highlighted, .focused]))
+        XCTAssertEqual(Resource.second, disabledView.selected(Resource.group, except: [.normal, .selected, .highlighted, .focused])!)
+        XCTAssertEqual(Resource.third, selectedView.selected(Resource.group, except: [.normal, .disabled, .highlighted, .focused])!)
+        XCTAssertEqual(Resource.fourth, highlightedView.selected(Resource.group, except: [.normal, .disabled, .selected, .focused])!)
+        XCTAssertEqual(Resource.fifth, focusedView.selected(Resource.group, except: [.normal, .disabled, .selected, .highlighted])!)
     }
 
     func testSelectedImage() {
@@ -122,6 +146,18 @@ class CustomizableTests: XCTestCase {
         XCTAssertEqual(Resource.third, selectedView.selected(Resource.group)!)
         XCTAssertEqual(Resource.fourth, highlightedView.selected(Resource.group)!)
         XCTAssertEqual(Resource.fifth, focusedView.selected(Resource.group)!)
+        
+        XCTAssertEqual(Resource.first, normalView.selected(Resource.first, except: [.normal]))
+        XCTAssertEqual(Resource.first, disabledView.selected(Resource.group, except: [.disabled])!)
+        XCTAssertEqual(Resource.first, selectedView.selected(Resource.group, except: [.selected])!)
+        XCTAssertEqual(Resource.first, highlightedView.selected(Resource.group, except: [.highlighted])!)
+        XCTAssertEqual(Resource.first, focusedView.selected(Resource.group, except: [.focused])!)
+        
+        XCTAssertEqual(Resource.first, normalView.selected(Resource.group, except: [.disabled, .selected, .highlighted, .focused]))
+        XCTAssertEqual(Resource.second, disabledView.selected(Resource.group, except: [.normal, .selected, .highlighted, .focused])!)
+        XCTAssertEqual(Resource.third, selectedView.selected(Resource.group, except: [.normal, .disabled, .highlighted, .focused])!)
+        XCTAssertEqual(Resource.fourth, highlightedView.selected(Resource.group, except: [.normal, .disabled, .selected, .focused])!)
+        XCTAssertEqual(Resource.fifth, focusedView.selected(Resource.group, except: [.normal, .disabled, .selected, .highlighted])!)
     }
     
     func testSetColor() {

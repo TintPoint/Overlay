@@ -8,8 +8,6 @@
 
 import UIKit
 
-// Workaround: generic protocol is not supported yet
-
 /// A protocol that describes a image property of a view that conforms to `Custom*Image`.
 /// - SeeAlso: `ImageStyleGroup`, `ImageGroup`
 public protocol ImageStyle {

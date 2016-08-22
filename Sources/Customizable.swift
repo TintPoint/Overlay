@@ -21,22 +21,7 @@ public protocol ViewCustomizable {
 
 extension ViewCustomizable {
 
-    // Workaround: generic protocol is not supported yet
-    // Workaround: default argument in protocol methods is not supported yet
-
-    func selected(_ style: ColorStyle) -> UIColor? {
-        return selected(style, except: [])
-    }
-
-    func selected(_ style: FontStyle) -> UIFont? {
-        return selected(style, except: [])
-    }
-    
-    func selected(_ style: ImageStyle) -> UIImage? {
-        return selected(style, except: [])
-    }
-
-    func selected(_ style: ColorStyle, except states: [UIControlState]) -> UIColor? {
+    func selected(_ style: ColorStyle, except states: [UIControlState] = []) -> UIColor? {
         guard let styleGroup = style as? ColorStyleGroup else {
             return style.normal()
         }
@@ -54,7 +39,7 @@ extension ViewCustomizable {
         }
     }
 
-    func selected(_ style: FontStyle, except states: [UIControlState]) -> UIFont? {
+    func selected(_ style: FontStyle, except states: [UIControlState] = []) -> UIFont? {
         guard let styleGroup = style as? FontStyleGroup else {
             return style.normal()
         }
@@ -72,7 +57,7 @@ extension ViewCustomizable {
         }
     }
     
-    func selected(_ style: ImageStyle, except states: [UIControlState]) -> UIImage? {
+    func selected(_ style: ImageStyle, except states: [UIControlState] = []) -> UIImage? {
         guard let styleGroup = style as? ImageStyleGroup else {
             return style.normal()
         }

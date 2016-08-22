@@ -8,8 +8,6 @@
 
 import UIKit
 
-// Workaround: generic protocol is not supported yet
-
 /// A protocol that describes a color property of a view that conforms to `Custom*Color`.
 /// - SeeAlso: `ColorStyleGroup`, `ColorGroup`
 public protocol ColorStyle {

@@ -50,381 +50,176 @@ extension UIView {
 
 }
 
-extension UIBarButtonItem: ViewCustomizable {
+extension ViewCustomizable {
     
-    open func refresh() {
-        if let style = self as? CustomBarItemTintColor {
-            tintColor = style.selected(style.tintColorStyle)
+    public func refresh() {
+        if let view = self as? CustomLayout {
+            view.customizeLayout(using: view.contentNib)
         }
         
-        if let style = self as? CustomImage {
-            image = style.selected(style.imageStyle)
+        if let view = self as? CustomBackgroundColor {
+            view.customizeBackgroundColor(using: view.backgroundColorStyle)
         }
         
-        if let style = self as? CustomBarItemLandscapeImagePhone {
-            landscapeImagePhone = style.selected(style.landscapeImagePhoneStyle)
+        if let view = self as? CustomBadgeColor {
+            view.customizeBadgeColor(using: view.badgeColorStyle)
+        }
+        
+        if let view = self as? CustomBarTintColor {
+            view.customizeBarTintColor(using: view.barTintColorStyle)
+        }
+        
+        if let view = self as? CustomBorderColor {
+            view.customizeBorderColor(using: view.borderColorStyle)
+        }
+        
+        if let view = self as? CustomIndicatorColor {
+            view.customizeIndicatorColor(using: view.indicatorColorStyle)
+        }
+        
+        if let view = self as? CustomMaximumTrackTintColor {
+            view.customizeMaximumTrackTintColor(using: view.maximumTrackTintColorStyle)
+        }
+        
+        if let view = self as? CustomMinimumTrackTintColor {
+            view.customizeMinimumTrackTintColor(using: view.minimumTrackTintColorStyle)
+        }
+        
+        if let view = self as? CustomOnTintColor {
+            view.customizeOnTintColor(using: view.onTintColorStyle)
+        }
+        
+        if let view = self as? CustomProgressTintColor {
+            view.customizeProgressTintColor(using: view.progressTintColorStyle)
+        }
+        
+        if let view = self as? CustomSectionIndexBackgroundColor {
+            view.customizeSectionIndexBackgroundColor(using: view.sectionIndexBackgroundColorStyle)
+        }
+        
+        if let view = self as? CustomSectionIndexColor {
+            view.customizeSectionIndexColor(using: view.sectionIndexColorStyle)
+        }
+        
+        if let view = self as? CustomSectionIndexTrackingBackgroundColor {
+            view.customizeSectionIndexTrackingBackgroundColor(using: view.sectionIndexTrackingBackgroundColorStyle)
+        }
+        
+        if let view = self as? CustomSeparatorColor {
+            view.customizeSeparatorColor(using: view.separatorColorStyle)
+        }
+        
+        if let view = self as? CustomShadowColor {
+            view.customizeShadowColor(using: view.shadowColorStyle)
+        }
+        
+        if let view = self as? CustomTextColor {
+            view.customizeTextColor(using: view.textColorStyle)
+        }
+        
+        if let view = self as? CustomThumbTintColor {
+            view.customizeThumbTintColor(using: view.thumbTintColorStyle)
+        }
+        
+        if let view = self as? CustomTintColor {
+            view.customizeTintColor(using: view.tintColorStyle)
+        }
+        
+        if let view = self as? CustomTitleColor {
+            view.customizeTitleColor(using: view.titleColorStyle)
+        }
+        
+        if let view = self as? CustomTitleShadowColor {
+            view.customizeTitleShadowColor(using: view.titleShadowColorStyle)
+        }
+        
+        if let view = self as? CustomTrackTintColor {
+            view.customizeTrackTintColor(using: view.trackTintColorStyle)
+        }
+        
+        if let view = self as? CustomUnselectedItemTintColor {
+            view.customizeUnselectedItemTintColor(using: view.unselectedItemTintColorStyle)
+        }
+        
+        if let view = self as? CustomFont {
+            view.customizeFont(using: view.fontStyle)
+        }
+        
+        if let view = self as? CustomBackgroundImage {
+            view.customizeBackgroundImage(using: view.backgroundImageStyle)
+        }
+        
+        if let view = self as? CustomDecrementImage {
+            view.customizeDecrementImage(using: view.decrementImageStyle)
+        }
+        
+        if let view = self as? CustomHighlightedImage {
+            view.customizeHighlightedImage(using: view.highlightedImageStyle)
+        }
+        
+        if let view = self as? CustomImage {
+            view.customizeImage(using: view.imageStyle)
+        }
+        
+        if let view = self as? CustomIncrementImage {
+            view.customizeIncrementImage(using: view.incrementImageStyle)
+        }
+        
+        if let view = self as? CustomLandscapeImagePhone {
+            view.customizeLandscapeImagePhone(using: view.landscapeImagePhoneStyle)
+        }
+        
+        if let view = self as? CustomMaximumTrackImage {
+            view.customizeMaximumTrackImage(using: view.maximumTrackImageStyle)
+        }
+        
+        if let view = self as? CustomMaximumValueImage {
+            view.customizeMaximumValueImage(using: view.maximumValueImageStyle)
+        }
+        
+        if let view = self as? CustomMinimumTrackImage {
+            view.customizeMinimumTrackImage(using: view.minimumTrackImageStyle)
+        }
+        
+        if let view = self as? CustomMinimumValueImage {
+            view.customizeMinimumValueImage(using: view.minimumValueImageStyle)
+        }
+        
+        if let view = self as? CustomOffImage {
+            view.customizeOffImage(using: view.offImageStyle)
+        }
+        
+        if let view = self as? CustomOnImage {
+            view.customizeOnImage(using: view.onImageStyle)
+        }
+        
+        if let view = self as? CustomProgressImage {
+            view.customizeProgressImage(using: view.progressImageStyle)
+        }
+        
+        if let view = self as? CustomScopeBarButtonBackgroundImage {
+            view.customizeScopeBarButtonBackgroundImage(using: view.scopeBarButtonBackgroundImageStyle)
+        }
+        
+        if let view = self as? CustomSearchFieldBackgroundImage {
+            view.customizeSearchFieldBackgroundImage(using: view.searchFieldBackgroundImageStyle)
+        }
+        
+        if let view = self as? CustomSelectedImage {
+            view.customizeSelectedImage(using: view.selectedImageStyle)
+        }
+        
+        if let view = self as? CustomShadowImage {
+            view.customizeShadowImage(using: view.shadowImageStyle)
+        }
+        
+        if let view = self as? CustomThumbImage {
+            view.customizeThumbImage(using: view.thumbImageStyle)
+        }
+        
+        if let view = self as? CustomTrackImage {
+            view.customizeTrackImage(using: view.trackImageStyle)
         }
     }
     
 }
-
-extension UITabBarItem: ViewCustomizable {
-    
-    open func refresh() {
-        if #available(iOS 10.0, *), let style = self as? CustomBarItemBadgeColor {
-            badgeColor = style.selected(style.badgeColorStyle)
-        }
-        
-        if let style = self as? CustomImage {
-            image = style.selected(style.imageStyle)
-        }
-        
-        if let style = self as? CustomBarItemSelectedImage {
-            selectedImage = style.selected(style.selectedImageStyle)
-        }
-    }
-    
-}
-
-extension UIView: ViewCustomizable {
-    
-    open func refresh() {
-        if let layout = self as? CustomLayout, let contentView = layout.contentView(of: self), !subviews.contains(contentView) {
-            contentView.translatesAutoresizingMaskIntoConstraints = false
-            insertSubview(contentView, at: 0)
-            contentView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-            contentView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-            contentView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
-            contentView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-        }
-
-        if let style = self as? CustomTintColor {
-            tintColor = style.selected(style.tintColorStyle)
-        }
-        
-        if let style = self as? CustomBorderColor {
-            layer.borderColor = style.selected(style.borderColorStyle)?.cgColor
-        }
-
-        if let style = self as? CustomBackgroundColor {
-            backgroundColor = style.selected(style.backgroundColorStyle)
-        }
-    }
-
-}
-
-extension UIActivityIndicatorView {
-
-    open override func refresh() {
-        super.refresh()
-
-        if let style = self as? CustomActivityIndicatorColor {
-            color = style.selected(style.colorStyle)
-        }
-    }
-
-}
-
-extension UIButton {
-    
-    open override func refresh() {
-        super.refresh()
-        
-        if let style = self as? CustomButtonTitleColor {
-            style.setColor(style.titleColorStyle, for: setTitleColor)
-        }
-        
-        if let style = self as? CustomButtonTitleShadowColor {
-            style.setColor(style.titleShadowColorStyle, for: setTitleShadowColor)
-        }
-        
-        if let style = self as? CustomButtonImage {
-            style.setImage(style.imageStyle, for: setImage)
-        }
-        
-        if let style = self as? CustomButtonBackgroundImage {
-            style.setImage(style.backgroundImageStyle, for: setBackgroundImage)
-        }
-    }
-    
-}
-
-extension UISlider {
-    
-    open override func refresh() {
-        super.refresh()
-        
-        if let style = self as? CustomSliderMinimumTrackTintColor {
-            minimumTrackTintColor = style.selected(style.minimumTrackTintColorStyle)
-        }
-
-        if let style = self as? CustomSliderMaximumTrackTintColor {
-            maximumTrackTintColor = style.selected(style.maximumTrackTintColorStyle)
-        }
-        
-        if let style = self as? CustomSliderThumbTintColor {
-            thumbTintColor = style.selected(style.thumbTintColorStyle)
-        }
-        
-        if let style = self as? CustomSliderMinimumValueImage {
-            minimumValueImage = style.selected(style.minimumValueImageStyle)
-        }
-
-        if let style = self as? CustomSliderMaximumValueImage {
-            maximumValueImage = style.selected(style.maximumValueImageStyle)
-        }
-        
-        if let style = self as? CustomSliderMinimumTrackImage {
-            style.setImage(style.minimumTrackImageStyle, for: setMinimumTrackImage)
-        }
-        
-        if let style = self as? CustomSliderMaximumTrackImage {
-            style.setImage(style.maximumTrackImageStyle, for: setMaximumTrackImage)
-        }
-        
-        if let style = self as? CustomSliderThumbImage {
-            style.setImage(style.thumbImageStyle, for: setThumbImage)
-        }
-    }
-    
-}
-
-extension UIStepper {
-    
-    open override func refresh() {
-        super.refresh()
-        
-        if let style = self as? CustomStepperBackgroundImage {
-            style.setImage(style.backgroundImageStyle, for: setBackgroundImage)
-        }
-        
-        if let style = self as? CustomStepperDecrementImage {
-            style.setImage(style.decrementImageStyle, for: setDecrementImage)
-        }
-        
-        if let style = self as? CustomStepperIncrementImage {
-            style.setImage(style.incrementImageStyle, for: setIncrementImage)
-        }
-    }
-    
-}
-
-extension UISwitch {
-    
-    open override func refresh() {
-        super.refresh()
-        
-        if let style = self as? CustomSwitchOnTintColor {
-            onTintColor = style.selected(style.onTintColorStyle)
-        }
-        
-        if let style = self as? CustomSwitchThumbTintColor {
-            thumbTintColor = style.selected(style.thumbTintColorStyle)
-        }
-        
-        if let style = self as? CustomSwitchOnImage {
-            onImage = style.selected(style.onImageStyle)
-        }
-        
-        if let style = self as? CustomSwitchOffImage {
-            offImage = style.selected(style.offImageStyle)
-        }
-    }
-    
-}
-
-extension UITextField {
-    
-    open override func refresh() {
-        super.refresh()
-        
-        if let style = self as? CustomFont {
-            font = style.selected(style.fontStyle)
-        }
-        
-        if let style = self as? CustomTextColor {
-            textColor = style.selected(style.textColorStyle)
-        }
-    }
-    
-}
-
-extension UIImageView {
-    
-    open override func refresh() {
-        super.refresh()
-        
-        if let style = self as? CustomImage {
-            image = style.selected(style.imageStyle)
-        }
-        
-        if let style = self as? CustomHighlightedImage {
-            highlightedImage = style.selected(style.highlightedImageStyle)
-        }
-    }
-    
-}
-
-extension UILabel {
-
-    open override func refresh() {
-        super.refresh()
-
-        if let style = self as? CustomLabelFont {
-            font = style.selected(style.fontStyle)
-        }
-
-        if let style = self as? CustomLabelTextColor {
-            textColor = style.selected(style.textColorStyle, except: [.highlighted])
-            if let colorStyleGroup = style.textColorStyle as? ColorStyleGroup {
-                highlightedTextColor = colorStyleGroup.highlighted()
-            }
-        }
-
-        if let style = self as? CustomShadowColor {
-            shadowColor = style.selected(style.shadowColorStyle)
-        }
-    }
-
-}
-
-extension UINavigationBar {
-
-    open override func refresh() {
-        super.refresh()
-
-        if let style = self as? CustomBarTintColor {
-            barTintColor = style.selected(style.barTintColorStyle)
-        }
-        
-        if let style = self as? CustomShadowImage {
-            shadowImage = style.selected(style.shadowImageStyle)
-        }
-    }
-
-}
-
-extension UIProgressView {
-
-    open override func refresh() {
-        super.refresh()
-
-        if let style = self as? CustomProgressTintColor {
-            progressTintColor = style.selected(style.progressTintColorStyle)
-        }
-
-        if let style = self as? CustomProgressTrackTintColor {
-            trackTintColor = style.selected(style.trackTintColorStyle)
-        }
-        
-        if let style = self as? CustomProgressImage {
-            progressImage = style.selected(style.progressImageStyle)
-        }
-        
-        if let style = self as? CustomProgressTrackImage {
-            trackImage = style.selected(style.trackImageStyle)
-        }
-    }
-
-}
-
-extension UITableView {
-    
-    open override func refresh() {
-        super.refresh()
-        
-        if let style = self as? CustomTableViewSeparatorColor {
-            separatorColor = style.selected(style.separatorColorStyle)
-        }
-        
-        if let style = self as? CustomTableViewSectionIndexColor {
-            sectionIndexColor = style.selected(style.sectionIndexColorStyle)
-        }
-        
-        if let style = self as? CustomTableViewSectionIndexBackgroundColor {
-            sectionIndexBackgroundColor = style.selected(style.sectionIndexBackgroundColorStyle)
-        }
-        
-        if let style = self as? CustomTableViewSectionIndexTrackingBackgroundColor {
-            sectionIndexTrackingBackgroundColor = style.selected(style.sectionIndexTrackingBackgroundColorStyle)
-        }
-    }
-    
-}
-
-extension UITextView {
-    
-    open override func refresh() {
-        super.refresh()
-        
-        if let style = self as? CustomFont {
-            font = style.selected(style.fontStyle)
-        }
-        
-        if let style = self as? CustomTextColor {
-            textColor = style.selected(style.textColorStyle)
-        }
-    }
-    
-}
-
-extension UISearchBar {
-
-    open override func refresh() {
-        super.refresh()
-
-        if let style = self as? CustomBarTintColor {
-            barTintColor = style.selected(style.barTintColorStyle)
-        }
-        
-        if let style = self as? CustomBarBackgroundImage {
-            backgroundImage = style.selected(style.backgroundImageStyle)
-        }
-        
-        if let style = self as? CustomBarSearchFieldBackgroundImage {
-            style.setImage(style.searchFieldBackgroundImageStyle, for: setSearchFieldBackgroundImage)
-        }
-        
-        if let style = self as? CustomBarScopeBarButtonBackgroundImage {
-            style.setImage(style.scopeBarButtonBackgroundImageStyle, for: setScopeBarButtonBackgroundImage)
-        }
-    }
-
-}
-
-extension UITabBar {
-
-    open override func refresh() {
-        super.refresh()
-
-        if let style = self as? CustomBarTintColor {
-            barTintColor = style.selected(style.barTintColorStyle)
-        }
-
-        if #available(iOS 10.0, *), let style = self as? CustomBarUnselectedItemTintColor {
-            unselectedItemTintColor = style.selected(style.unselectedItemTintColorStyle)
-        }
-
-        if let style = self as? CustomShadowImage {
-            shadowImage = style.selected(style.shadowImageStyle)
-        }
-        
-        if let style = self as? CustomBarBackgroundImage {
-            backgroundImage = style.selected(style.backgroundImageStyle)
-        }
-    }
-
-}
-
-extension UIToolbar {
-
-    open override func refresh() {
-        super.refresh()
-
-        if let style = self as? CustomBarTintColor {
-            barTintColor = style.selected(style.barTintColorStyle)
-        }
-    }
-
-}
-

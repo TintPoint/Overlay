@@ -8,16 +8,8 @@
 
 import UIKit
 
-public protocol CustomFont: ViewCustomizable {
+public protocol CustomFont: FontCustomizable {
     
-    var font: UIFont? { get set }
     var fontStyle: FontStyle { get }
     
-}
-
-public protocol CustomLabelFont: ViewCustomizable {
-
-    var font: UIFont! { get set }
-    var fontStyle: FontStyle { get }
-
 }

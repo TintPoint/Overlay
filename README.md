@@ -48,7 +48,7 @@ class CustomView: UIView, CustomBackgroundColor {
 }
 ```
 
-The compiler will emit an error if `CustomView`'s superclass (in this case, `UIView`) doesn't have a `backgroundColor` property or `backgroundColorStyle` is not implemented by `CustomView`. `UIColor` is already conformed to `ColorStyle` protocol so it can be used directly. Font and other attributes can also be customized similarly.
+The compiler will emit an error if `CustomView`'s superclass (in this case, `UIView`) is not `BackgroundColorCustomizable`, or `backgroundColorStyle` is not implemented by `CustomView`. `UIColor` is already conformed to `ColorStyle` protocol so it can be used directly. Font and other attributes can also be customized similarly.
 
 `CustomView` can be used like other views. It is recommended to use it with Interface Builder. Open the storyboard file (or nib file), select the view you want to change, navigate to Identity Inceptor, and fill Custom Class with `CustomView`.
 
@@ -135,17 +135,17 @@ Define a custom class that conforms to `CustomLayout` protocol. Create a nib fil
 
 ```swift
 class ComplexView: UIView, CustomLayout {
-    var nib: UINib = UINib(nibName: "ComplexView", bundle: Bundle(for: ComplexView.self))
+    var contentNib: UINib = UINib(nibName: "ComplexView", bundle: Bundle(for: ComplexView.self))
 }
 ```
 
-The first root view inside `ComplexView.xib` will be loaded and added as a container view on top of `ComplexView`. Note: Container view's background color should be clear color under most circumstances.
+The first root view inside `ComplexView.xib` will be loaded and added as a content view on top of `ComplexView`. Note: Content view's background color usually should be clear color.
 
 Create `IBOutlet` and connect them like usual if needed.
 
 ```swift
 class ComplexView: UIView, CustomLayout {
-    var nib: UINib = UINib(nibName: "ComplexView", bundle: Bundle(for: ComplexView.self))
+    var contentNib: UINib = UINib(nibName: "ComplexView", bundle: Bundle(for: ComplexView.self))
     @IBOutlet weak var button: CustomButton?
 }
 ```
@@ -169,66 +169,59 @@ class BorderView: UIView {
 
 ### Available Protocols
 
+#### Custom Layout
+
+> - CustomLayout
+
 #### Custom Color
 
-> - CustomTintColor
-> - CustomBorderColor
 > - CustomBackgroundColor
-> - CustomTextColor
-> - CustomLabelTextColor
-> - CustomShadowColor
-> - CustomActivityIndicatorColor
-> - CustomButtonTitleColor
-> - CustomButtonTitleShadowColor
-> - CustomSliderMinimumTrackTintColor
-> - CustomSliderMaximumTrackTintColor
-> - CustomSliderThumbTintColor
-> - CustomSwitchOnTintColor
-> - CustomSwitchThumbTintColor
+> - CustomBadgeColor
 > - CustomBarTintColor
-> - CustomBarUnselectedItemTintColor
-> - CustomBarItemTintColor
-> - CustomBarItemBadgeColor
+> - CustomBorderColor
+> - CustomIndicatorColor
+> - CustomMaximumTrackTintColor
+> - CustomMinimumTrackTintColor
+> - CustomOnTintColor
 > - CustomProgressTintColor
-> - CustomProgressTrackTintColor
-> - CustomTableViewSeparatorColor
-> - CustomTableViewSectionIndexColor
-> - CustomTableViewSectionIndexBackgroundColor
-> - CustomTableViewSectionIndexTrackingBackgroundColor
+> - CustomSectionIndexBackgroundColor
+> - CustomSectionIndexColor
+> - CustomSectionIndexTrackingBackgroundColor
+> - CustomSeparatorColor
+> - CustomShadowColor
+> - CustomTextColor
+> - CustomThumbTintColor
+> - CustomTintColor
+> - CustomTitleColor
+> - CustomTitleShadowColor
+> - CustomTrackTintColor
+> - CustomUnselectedItemTintColor
 
 #### Custom Font
 
 > - CustomFont
-> - CustomLabelFont
 
 #### Custom Image
 
-> - CustomImage
+> - CustomBackgroundImage
+> - CustomDecrementImage
 > - CustomHighlightedImage
-> - CustomShadowImage
-> - CustomButtonImage
-> - CustomButtonBackgroundImage
-> - CustomStepperBackgroundImage
-> - CustomStepperDecrementImage
-> - CustomStepperIncrementImage
-> - CustomSwitchOnImage
-> - CustomSwitchOffImage
-> - CustomSliderMinimumValueImage
-> - CustomSliderMaximumValueImage
-> - CustomSliderMinimumTrackImage
-> - CustomSliderMaximumTrackImage
-> - CustomSliderThumbImage
+> - CustomImage
+> - CustomIncrementImage
+> - CustomLandscapeImagePhone
+> - CustomMaximumTrackImage
+> - CustomMaximumValueImage
+> - CustomMinimumTrackImage
+> - CustomMinimumValueImage
+> - CustomOffImage
+> - CustomOnImage
 > - CustomProgressImage
-> - CustomProgressTrackImage
-> - CustomBarSearchFieldBackgroundImage
-> - CustomBarScopeBarButtonBackgroundImage
-> - CustomBarBackgroundImage
-> - CustomBarItemLandscapeImagePhone
-> - CustomBarItemSelectedImage
-
-#### Custom Layout
-
-> - CustomLayout
+> - CustomScopeBarButtonBackgroundImage
+> - CustomSearchFieldBackgroundImage
+> - CustomSelectedImage
+> - CustomShadowImage
+> - CustomThumbImage
+> - CustomTrackImage
 
 ### Available Styles
 

@@ -8,7 +8,7 @@
 
 import Overlay
 
-class CustomBarButtonItem: UIBarButtonItem, CustomBarItemTintColor, CustomImage, CustomBarItemLandscapeImagePhone {
+class CustomBarButtonItem: UIBarButtonItem, CustomTintColor, CustomImage, CustomLandscapeImagePhone {
     
     var tintColorStyle: ColorStyle = TestColor.first
     var imageStyle: ImageStyle = TestImage.first
@@ -16,7 +16,7 @@ class CustomBarButtonItem: UIBarButtonItem, CustomBarItemTintColor, CustomImage,
     
 }
 
-class CustomTabBarItem: UITabBarItem, CustomBarItemBadgeColor, CustomImage, CustomBarItemSelectedImage {
+class CustomTabBarItem: UITabBarItem, CustomBadgeColor, CustomImage, CustomSelectedImage {
     
     var badgeColorStyle: ColorStyle = TestColor.first
     var imageStyle: ImageStyle = TestImage.first
@@ -27,20 +27,20 @@ class CustomTabBarItem: UITabBarItem, CustomBarItemBadgeColor, CustomImage, Cust
 
 class CustomView: UIView, CustomLayout, CustomTintColor, CustomBorderColor, CustomBackgroundColor {
     
-    var nib: UINib = UINib(nibName: "CustomView", bundle: Bundle(for: CustomView.self))
+    var contentNib: UINib = UINib(nibName: "CustomView", bundle: Bundle(for: CustomView.self))
     var tintColorStyle: ColorStyle = TestColor.first
     var borderColorStyle: ColorStyle = TestColor.second
     var backgroundColorStyle: ColorStyle = TestColor.third
     
 }
 
-class CustomActivityIndicatorView: UIActivityIndicatorView, CustomActivityIndicatorColor {
+class CustomActivityIndicatorView: UIActivityIndicatorView, CustomIndicatorColor {
     
-    var colorStyle: ColorStyle = TestColor.first
+    var indicatorColorStyle: ColorStyle = TestColor.first
     
 }
 
-class CustomButton: UIButton, CustomButtonTitleColor, CustomButtonTitleShadowColor, CustomButtonImage, CustomButtonBackgroundImage {
+class CustomButton: UIButton, CustomTitleColor, CustomTitleShadowColor, CustomImage, CustomBackgroundImage {
     
     var titleColorStyle: ColorStyle = TestColor.first
     var titleShadowColorStyle: ColorStyle = TestColor.second
@@ -49,7 +49,7 @@ class CustomButton: UIButton, CustomButtonTitleColor, CustomButtonTitleShadowCol
     
 }
 
-class CustomSlider: UISlider, CustomSliderMinimumTrackTintColor, CustomSliderMaximumTrackTintColor, CustomSliderThumbTintColor, CustomSliderMinimumValueImage, CustomSliderMaximumValueImage {
+class CustomSlider: UISlider, CustomMinimumTrackTintColor, CustomMaximumTrackTintColor, CustomThumbTintColor, CustomMinimumValueImage, CustomMaximumValueImage {
     
     var minimumTrackTintColorStyle: ColorStyle = TestColor.first
     var maximumTrackTintColorStyle: ColorStyle = TestColor.second
@@ -59,7 +59,7 @@ class CustomSlider: UISlider, CustomSliderMinimumTrackTintColor, CustomSliderMax
     
 }
 
-class CustomImageSlider: UISlider, CustomSliderMinimumTrackImage, CustomSliderMaximumTrackImage, CustomSliderThumbImage {
+class CustomImageSlider: UISlider, CustomMinimumTrackImage, CustomMaximumTrackImage, CustomThumbImage {
     
     var minimumTrackImageStyle: ImageStyle = TestImage.first
     var maximumTrackImageStyle: ImageStyle = TestImage.second
@@ -67,7 +67,7 @@ class CustomImageSlider: UISlider, CustomSliderMinimumTrackImage, CustomSliderMa
     
 }
 
-class CustomStepper: UIStepper, CustomStepperBackgroundImage, CustomStepperDecrementImage, CustomStepperIncrementImage {
+class CustomStepper: UIStepper, CustomBackgroundImage, CustomDecrementImage, CustomIncrementImage {
     
     var backgroundImageStyle: ImageStyle = TestImage.first
     var decrementImageStyle: ImageStyle = TestImage.second
@@ -75,7 +75,7 @@ class CustomStepper: UIStepper, CustomStepperBackgroundImage, CustomStepperDecre
     
 }
 
-class CustomSwitch: UISwitch, CustomSwitchOnTintColor, CustomSwitchThumbTintColor, CustomSwitchOnImage, CustomSwitchOffImage {
+class CustomSwitch: UISwitch, CustomOnTintColor, CustomThumbTintColor, CustomOnImage, CustomOffImage {
     
     var onTintColorStyle: ColorStyle = TestColor.first
     var thumbTintColorStyle: ColorStyle = TestColor.second
@@ -98,7 +98,7 @@ class CustomImageView: UIImageView, CustomImage, CustomHighlightedImage {
     
 }
 
-class CustomLabel: UILabel, CustomLabelFont, CustomLabelTextColor, CustomShadowColor {
+class CustomLabel: UILabel, CustomFont, CustomTextColor, CustomShadowColor {
     
     var fontStyle: FontStyle = TestFont.first
     var textColorStyle: ColorStyle = TestColor.first
@@ -113,21 +113,21 @@ class CustomNavigationBar: UINavigationBar, CustomBarTintColor, CustomShadowImag
     
 }
 
-class CustomProgressView: UIProgressView, CustomProgressTintColor, CustomProgressTrackTintColor {
+class CustomProgressView: UIProgressView, CustomProgressTintColor, CustomTrackTintColor {
     
     var progressTintColorStyle: ColorStyle = TestColor.first
     var trackTintColorStyle: ColorStyle = TestColor.second
     
 }
 
-class CustomImageProgressView: UIProgressView, CustomProgressImage, CustomProgressTrackImage {
+class CustomImageProgressView: UIProgressView, CustomProgressImage, CustomTrackImage {
     
     var progressImageStyle: ImageStyle = TestImage.first
     var trackImageStyle: ImageStyle = TestImage.second
     
 }
 
-class CustomTableView: UITableView, CustomTableViewSeparatorColor, CustomTableViewSectionIndexColor, CustomTableViewSectionIndexBackgroundColor, CustomTableViewSectionIndexTrackingBackgroundColor {
+class CustomTableView: UITableView, CustomSeparatorColor, CustomSectionIndexColor, CustomSectionIndexBackgroundColor, CustomSectionIndexTrackingBackgroundColor {
     
     var separatorColorStyle: ColorStyle = TestColor.first
     var sectionIndexColorStyle: ColorStyle = TestColor.second
@@ -143,7 +143,7 @@ class CustomTextView: UITextView, CustomFont, CustomTextColor {
     
 }
 
-class CustomSearchBar: UISearchBar, CustomBarTintColor, CustomBarBackgroundImage, CustomBarSearchFieldBackgroundImage, CustomBarScopeBarButtonBackgroundImage {
+class CustomSearchBar: UISearchBar, CustomBarTintColor, CustomBackgroundImage, CustomSearchFieldBackgroundImage, CustomScopeBarButtonBackgroundImage {
     
     var barTintColorStyle: ColorStyle = TestColor.first
     var backgroundImageStyle: ImageStyle = TestImage.first
@@ -152,7 +152,7 @@ class CustomSearchBar: UISearchBar, CustomBarTintColor, CustomBarBackgroundImage
     
 }
 
-class CustomTabBar: UITabBar, CustomBarTintColor, CustomBarUnselectedItemTintColor, CustomShadowImage, CustomBarBackgroundImage {
+class CustomTabBar: UITabBar, CustomBarTintColor, CustomUnselectedItemTintColor, CustomShadowImage, CustomBackgroundImage {
     
     var barTintColorStyle: ColorStyle = TestColor.first
     var unselectedItemTintColorStyle: ColorStyle = TestColor.second

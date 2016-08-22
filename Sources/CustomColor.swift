@@ -8,172 +8,128 @@
 
 import UIKit
 
-public protocol CustomTintColor: ViewCustomizable {
-
-    var tintColor: UIColor! { get set }
-    var tintColorStyle: ColorStyle { get }
-
-}
-
-public protocol CustomBorderColor: ViewCustomizable {
+public protocol CustomBackgroundColor: BackgroundColorCustomizable {
     
-    var layer: CALayer { get }
-    var borderColorStyle: ColorStyle { get }
-    
-}
-
-public protocol CustomBackgroundColor: ViewCustomizable {
-
-    var backgroundColor: UIColor? { get set }
     var backgroundColorStyle: ColorStyle { get }
-
-}
-
-public protocol CustomTextColor: ViewCustomizable {
-
-    var textColor: UIColor? { get set }
-    var textColorStyle: ColorStyle { get }
-
-}
-
-public protocol CustomLabelTextColor: ViewCustomizable {
-    
-    var textColor: UIColor! { get set }
-    var textColorStyle: ColorStyle { get }
     
 }
 
-public protocol CustomShadowColor: ViewCustomizable {
-
-    var shadowColor: UIColor? { get set }
-    var shadowColorStyle: ColorStyle { get }
-
-}
-
-public protocol CustomActivityIndicatorColor: ViewCustomizable {
-
-    var color: UIColor? { get set }
-    var colorStyle: ColorStyle { get }
-
-}
-
-public protocol CustomButtonTitleColor: ViewCustomizable {
-
-    func setTitleColor(_ color: UIColor?, for state: UIControlState)
-    var titleColorStyle: ColorStyle { get }
-
-}
-
-public protocol CustomButtonTitleShadowColor: ViewCustomizable {
-
-    func setTitleShadowColor(_ color: UIColor?, for state: UIControlState)
-    var titleShadowColorStyle: ColorStyle { get }
-
-}
-
-public protocol CustomSliderMinimumTrackTintColor: ViewCustomizable {
+public protocol CustomBadgeColor: BadgeColorCustomizable {
     
-    var minimumTrackTintColor: UIColor? { get set }
-    var minimumTrackTintColorStyle: ColorStyle { get }
-    
-}
-
-public protocol CustomSliderMaximumTrackTintColor: ViewCustomizable {
-    
-    var maximumTrackTintColor: UIColor? { get set }
-    var maximumTrackTintColorStyle: ColorStyle { get }
-    
-}
-
-public protocol CustomSliderThumbTintColor: ViewCustomizable {
-    
-    var thumbTintColor: UIColor? { get set }
-    var thumbTintColorStyle: ColorStyle { get }
-    
-}
-
-public protocol CustomSwitchOnTintColor: ViewCustomizable {
-
-    var onTintColor: UIColor? { get set }
-    var onTintColorStyle: ColorStyle { get }
-
-}
-
-public protocol CustomSwitchThumbTintColor: ViewCustomizable {
-
-    var thumbTintColor: UIColor? { get set }
-    var thumbTintColorStyle: ColorStyle { get }
-
-}
-
-public protocol CustomBarTintColor: ViewCustomizable {
-
-    var barTintColor: UIColor? { get set }
-    var barTintColorStyle: ColorStyle { get }
-
-}
-
-@available(iOS 10.0, *)
-public protocol CustomBarUnselectedItemTintColor: ViewCustomizable {
-    
-    var unselectedItemTintColor: UIColor? { get set }
-    var unselectedItemTintColorStyle: ColorStyle { get }
-    
-}
-
-public protocol CustomBarItemTintColor: ViewCustomizable {
-    
-    var tintColor: UIColor? { get set }
-    var tintColorStyle: ColorStyle { get }
-    
-}
-
-@available(iOS 10.0, *)
-public protocol CustomBarItemBadgeColor: ViewCustomizable {
-    
-    var badgeColor: UIColor? { get set }
     var badgeColorStyle: ColorStyle { get }
     
 }
 
-public protocol CustomProgressTintColor: ViewCustomizable {
+public protocol CustomBarTintColor: BarTintColorCustomizable {
+    
+    var barTintColorStyle: ColorStyle { get }
+    
+}
 
-    var progressTintColor: UIColor? { get set }
+public protocol CustomBorderColor: BorderColorCustomizable {
+    
+    var borderColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomIndicatorColor: IndicatorColorCustomizable {
+    
+    var indicatorColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomMaximumTrackTintColor: MaximumTrackTintColorCustomizable {
+    
+    var maximumTrackTintColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomMinimumTrackTintColor: MinimumTrackTintColorCustomizable {
+    
+    var minimumTrackTintColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomOnTintColor: OnTintColorCustomizable {
+    
+    var onTintColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomProgressTintColor: ProgressTintColorCustomizable {
+    
     var progressTintColorStyle: ColorStyle { get }
-
+    
 }
 
-public protocol CustomProgressTrackTintColor: ViewCustomizable {
-
-    var trackTintColor: UIColor? { get set }
-    var trackTintColorStyle: ColorStyle { get }
-
-}
-
-public protocol CustomTableViewSeparatorColor: ViewCustomizable {
-
-    var separatorColor: UIColor? { get set }
-    var separatorColorStyle: ColorStyle { get }
-
-}
-
-public protocol CustomTableViewSectionIndexColor: ViewCustomizable {
-
-    var sectionIndexColor: UIColor? { get set }
-    var sectionIndexColorStyle: ColorStyle { get }
-
-}
-
-public protocol CustomTableViewSectionIndexBackgroundColor: ViewCustomizable {
-
-    var sectionIndexBackgroundColor: UIColor? { get set }
+public protocol CustomSectionIndexBackgroundColor: SectionIndexBackgroundColorCustomizable {
+    
     var sectionIndexBackgroundColorStyle: ColorStyle { get }
-
+    
 }
 
-public protocol CustomTableViewSectionIndexTrackingBackgroundColor: ViewCustomizable {
+public protocol CustomSectionIndexColor: SectionIndexColorCustomizable {
+    
+    var sectionIndexColorStyle: ColorStyle { get }
+    
+}
 
-    var sectionIndexTrackingBackgroundColor: UIColor? { get set }
+public protocol CustomSectionIndexTrackingBackgroundColor: SectionIndexTrackingBackgroundColorCustomizable {
+    
     var sectionIndexTrackingBackgroundColorStyle: ColorStyle { get }
+    
+}
 
+public protocol CustomSeparatorColor: SeparatorColorCustomizable {
+    
+    var separatorColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomShadowColor: ShadowColorCustomizable {
+    
+    var shadowColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomTextColor: TextColorCustomizable {
+    
+    var textColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomThumbTintColor: ThumbTintColorCustomizable {
+    
+    var thumbTintColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomTintColor: TintColorCustomizable {
+    
+    var tintColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomTitleColor: TitleColorCustomizable {
+    
+    var titleColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomTitleShadowColor: TitleShadowColorCustomizable {
+    
+    var titleShadowColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomTrackTintColor: TrackTintColorCustomizable {
+    
+    var trackTintColorStyle: ColorStyle { get }
+    
+}
+
+public protocol CustomUnselectedItemTintColor: UnselectedItemTintColorCustomizable {
+    
+    var unselectedItemTintColorStyle: ColorStyle { get }
+    
 }

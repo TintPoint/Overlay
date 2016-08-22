@@ -10,22 +10,22 @@ import UIKit
 
 /// A protocol that describes a view that can be customized.
 public protocol ViewCustomizable {
-
+    
     /// Updates the view's appearance.
     ///
     /// Your custom view can override this method to customize other properties.
     /// You need to call the super implementation at some point during your own `refresh` method.
     func refresh()
-
+    
 }
 
 extension ViewCustomizable {
-
+    
     func selected(_ style: ColorStyle, except states: [UIControlState] = []) -> UIColor? {
         guard let styleGroup = style as? ColorStyleGroup else {
             return style.normal()
         }
-
+        
         if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
             return styleGroup.highlighted()
         } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
@@ -38,12 +38,12 @@ extension ViewCustomizable {
             return styleGroup.normal()
         }
     }
-
+    
     func selected(_ style: FontStyle, except states: [UIControlState] = []) -> UIFont? {
         guard let styleGroup = style as? FontStyleGroup else {
             return style.normal()
         }
-
+        
         if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
             return styleGroup.highlighted()
         } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
@@ -74,7 +74,7 @@ extension ViewCustomizable {
             return styleGroup.normal()
         }
     }
-
+    
 }
 
 extension ViewCustomizable {
@@ -88,7 +88,7 @@ extension ViewCustomizable {
             setter(styleGroup.focused(), .focused)
         }
     }
-        
+    
     func setImage(_ style: ImageStyle, for setter: (UIImage?, UIControlState) -> ()) {
         setter(style.normal(), .normal)
         if let styleGroup = style as? ImageStyleGroup {
@@ -104,25 +104,25 @@ extension ViewCustomizable {
 /// A protocol that describes a view that can be disabled.
 /// - SeeAlso: `ViewSelectable`, `ViewHighlightable`, `ViewFocusable`
 public protocol ViewDisable {
-
+    
     var isEnabled: Bool { get }
-
+    
 }
 
 /// A protocol that describes a view that can be selected.
 /// - SeeAlso: `ViewDisable`, `ViewHighlightable`, `ViewFocusable`
 public protocol ViewSelectable {
-
+    
     var isSelected: Bool { get }
-
+    
 }
 
 /// A protocol that describes a view that can be highlighted.
 /// - SeeAlso: `ViewDisable`, `ViewSelectable`, `ViewFocusable`
 public protocol ViewHighlightable {
-
+    
     var isHighlighted: Bool { get }
-
+    
 }
 
 /// A protocol that describes a view that can be focused.

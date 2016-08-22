@@ -8,17 +8,8 @@
 
 import UIKit
 
-public protocol CustomLayout: ViewCustomizable {
+public protocol CustomLayout: LayoutCustomizable {
     
-    func insertSubview(_ view: UIView, at index: Int)
-    var nib: UINib { get }
+    var contentNib: UINib { get }
 
-}
-
-extension CustomLayout {
-    
-    func contentView(of superview: UIView) -> UIView? {
-        return nib.instantiate(withOwner: superview, options: nil).first as? UIView
-    }
-    
 }

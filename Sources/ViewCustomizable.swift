@@ -1,58 +1,27 @@
 //
-//  Refreshing.swift
+//  ViewCustomizable.swift
 //  Overlay
 //
-//  Created by Justin Jia on 6/29/16.
+//  Created by Justin Jia on 6/18/16.
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
 import UIKit
 
-extension UIBarButtonItem {
+/// A protocol that describes a view that can be customized.
+public protocol ViewCustomizable {
     
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        refresh()
-    }
-    
-    open override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        refresh()
-    }
-
-}
-
-extension UITabBarItem {
-    
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        refresh()
-    }
-    
-    open override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        refresh()
-    }
+    /// Updates the view's appearance.
+    ///
+    /// Your custom view can override this method to customize other properties.
+    /// You need to call the super implementation at some point during your own `refresh` method.
+    func refresh()
     
 }
 
-extension UIView {
-
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        refresh()
-    }
-
-    open override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        refresh()
-    }
-
-}
-
-extension ViewCustomizable {
+fileprivate extension ViewCustomizable {
     
-    public func refresh() {
+    func customize() {
         if let view = self as? CustomLayout {
             view.customizeLayout(using: view.contentNib)
         }
@@ -220,6 +189,60 @@ extension ViewCustomizable {
         if let view = self as? CustomTrackImage {
             view.customizeTrackImage(using: view.trackImageStyle)
         }
+    }
+    
+}
+
+extension UIBarButtonItem {
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        refresh()
+    }
+    
+    open override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        refresh()
+    }
+    
+    open func refresh() {
+        customize()
+    }
+    
+}
+
+extension UITabBarItem {
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        refresh()
+    }
+    
+    open override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        refresh()
+    }
+    
+    open func refresh() {
+        customize()
+    }
+    
+}
+
+extension UIView {
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        refresh()
+    }
+    
+    open override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        refresh()
+    }
+    
+    open func refresh() {
+        customize()
     }
     
 }

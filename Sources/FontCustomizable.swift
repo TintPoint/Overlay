@@ -14,6 +14,28 @@ public protocol FontCustomizable: ViewCustomizable {
     
 }
 
+extension ViewCustomizable {
+    
+    func selected(_ style: FontStyle, except states: [UIControlState] = []) -> UIFont? {
+        guard let styleGroup = style as? FontStyleGroup else {
+            return style.normal()
+        }
+        
+        if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
+            return styleGroup.highlighted()
+        } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
+            return styleGroup.selected()
+        } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
+            return styleGroup.disabled()
+        } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
+            return styleGroup.focused()
+        } else {
+            return styleGroup.normal()
+        }
+    }
+    
+}
+
 extension UITextField: FontCustomizable {
     
     public func customizeFont(using style: FontStyle) {

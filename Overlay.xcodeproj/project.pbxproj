@@ -24,13 +24,13 @@
 		D0B172B01D45A2220079A2F2 /* ColorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A51D45A2220079A2F2 /* ColorStyle.swift */; };
 		D0B172B11D45A2220079A2F2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A61D45A2220079A2F2 /* CustomColor.swift */; };
 		D0B172B31D45A2220079A2F2 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A81D45A2220079A2F2 /* CustomFont.swift */; };
-		D0B172B41D45A2220079A2F2 /* Customizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A91D45A2220079A2F2 /* Customizable.swift */; };
+		D0B172B41D45A2220079A2F2 /* ViewCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A91D45A2220079A2F2 /* ViewCustomizable.swift */; };
 		D0B172B51D45A2220079A2F2 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172AA1D45A2220079A2F2 /* CustomLayout.swift */; };
-		D0B172B71D45A2220079A2F2 /* Refreshing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172AC1D45A2220079A2F2 /* Refreshing.swift */; };
 		D0B172B81D45A2220079A2F2 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172AD1D45A2220079A2F2 /* FontStyle.swift */; };
 		D0B172BA1D45A2220079A2F2 /* Overlay.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B172AF1D45A2220079A2F2 /* Overlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0CE2FAE1D5F21D600FE4287 /* ImageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE2FAD1D5F21D600FE4287 /* ImageStyle.swift */; };
 		D0CE2FB01D5F223200FE4287 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE2FAF1D5F223200FE4287 /* CustomImage.swift */; };
+		D0EE5F301D6CB01100657C71 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE5F2F1D6CB01100657C71 /* ViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,16 +59,16 @@
 		D0B059C31D65D64E009C84FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0B059C71D65F8CB009C84FC /* CustomizableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableTests.swift; sourceTree = "<group>"; };
 		D0B1729A1D45A1EB0079A2F2 /* Overlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Overlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0B172A51D45A2220079A2F2 /* ColorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorStyle.swift; path = ColorStyle.swift; sourceTree = "<group>"; };
-		D0B172A61D45A2220079A2F2 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomColor.swift; path = CustomColor.swift; sourceTree = "<group>"; };
-		D0B172A81D45A2220079A2F2 /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFont.swift; path = CustomFont.swift; sourceTree = "<group>"; };
-		D0B172A91D45A2220079A2F2 /* Customizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Customizable.swift; path = Customizable.swift; sourceTree = "<group>"; };
-		D0B172AA1D45A2220079A2F2 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLayout.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
-		D0B172AC1D45A2220079A2F2 /* Refreshing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Refreshing.swift; path = Refreshing.swift; sourceTree = "<group>"; };
-		D0B172AD1D45A2220079A2F2 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontStyle.swift; path = FontStyle.swift; sourceTree = "<group>"; };
-		D0B172AF1D45A2220079A2F2 /* Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Overlay.h; path = Overlay.h; sourceTree = "<group>"; };
-		D0CE2FAD1D5F21D600FE4287 /* ImageStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageStyle.swift; path = ImageStyle.swift; sourceTree = "<group>"; };
-		D0CE2FAF1D5F223200FE4287 /* CustomImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomImage.swift; path = CustomImage.swift; sourceTree = "<group>"; };
+		D0B172A51D45A2220079A2F2 /* ColorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStyle.swift; sourceTree = "<group>"; };
+		D0B172A61D45A2220079A2F2 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		D0B172A81D45A2220079A2F2 /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		D0B172A91D45A2220079A2F2 /* ViewCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCustomizable.swift; sourceTree = "<group>"; };
+		D0B172AA1D45A2220079A2F2 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
+		D0B172AD1D45A2220079A2F2 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
+		D0B172AF1D45A2220079A2F2 /* Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overlay.h; sourceTree = "<group>"; };
+		D0CE2FAD1D5F21D600FE4287 /* ImageStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStyle.swift; sourceTree = "<group>"; };
+		D0CE2FAF1D5F223200FE4287 /* CustomImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
+		D0EE5F2F1D6CB01100657C71 /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,17 +99,18 @@
 			name = CustomizableTests;
 			sourceTree = "<group>";
 		};
-		D062B0F01D52469400F70C4A /* Overlay */ = {
+		D062B0F01D52469400F70C4A /* Header */ = {
 			isa = PBXGroup;
 			children = (
 				D0B172AF1D45A2220079A2F2 /* Overlay.h */,
 			);
-			name = Overlay;
+			name = Header;
 			sourceTree = "<group>";
 		};
 		D062B0F11D52469E00F70C4A /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				D0EE5F2F1D6CB01100657C71 /* ViewState.swift */,
 				D0B172A51D45A2220079A2F2 /* ColorStyle.swift */,
 				D0B172AD1D45A2220079A2F2 /* FontStyle.swift */,
 				D0CE2FAD1D5F21D600FE4287 /* ImageStyle.swift */,
@@ -120,7 +121,7 @@
 		D062B0F21D5246B000F70C4A /* Customizable */ = {
 			isa = PBXGroup;
 			children = (
-				D0B172A91D45A2220079A2F2 /* Customizable.swift */,
+				D0B172A91D45A2220079A2F2 /* ViewCustomizable.swift */,
 				D0A4B9161D6B605D00C995A5 /* LayoutCustomizable.swift */,
 				D0A4B90F1D6B3DDD00C995A5 /* ColorCustomizable.swift */,
 				D0A4B9121D6B3E7B00C995A5 /* FontCustomizable.swift */,
@@ -129,15 +130,7 @@
 			name = Customizable;
 			sourceTree = "<group>";
 		};
-		D062B0F31D5246BC00F70C4A /* Refreshing */ = {
-			isa = PBXGroup;
-			children = (
-				D0B172AC1D45A2220079A2F2 /* Refreshing.swift */,
-			);
-			name = Refreshing;
-			sourceTree = "<group>";
-		};
-		D0A4B9111D6B3DEE00C995A5 /* Custom */ = {
+		D0A4B9111D6B3DEE00C995A5 /* Customizing */ = {
 			isa = PBXGroup;
 			children = (
 				D0B172AA1D45A2220079A2F2 /* CustomLayout.swift */,
@@ -145,7 +138,7 @@
 				D0B172A81D45A2220079A2F2 /* CustomFont.swift */,
 				D0CE2FAF1D5F223200FE4287 /* CustomImage.swift */,
 			);
-			name = Custom;
+			name = Customizing;
 			sourceTree = "<group>";
 		};
 		D0B059B31D65902E009C84FC /* Tests */ = {
@@ -182,7 +175,7 @@
 		D0B172901D45A1EB0079A2F2 = {
 			isa = PBXGroup;
 			children = (
-				D0B1729C1D45A1EB0079A2F2 /* Overlay */,
+				D0B1729C1D45A1EB0079A2F2 /* Sources */,
 				D0B059B31D65902E009C84FC /* Tests */,
 				D0B1729B1D45A1EB0079A2F2 /* Products */,
 			);
@@ -197,14 +190,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D0B1729C1D45A1EB0079A2F2 /* Overlay */ = {
+		D0B1729C1D45A1EB0079A2F2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D062B0F01D52469400F70C4A /* Overlay */,
+				D062B0F01D52469400F70C4A /* Header */,
 				D062B0F11D52469E00F70C4A /* Style */,
 				D062B0F21D5246B000F70C4A /* Customizable */,
-				D0A4B9111D6B3DEE00C995A5 /* Custom */,
-				D062B0F31D5246BC00F70C4A /* Refreshing */,
+				D0A4B9111D6B3DEE00C995A5 /* Customizing */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -339,7 +331,6 @@
 			files = (
 				D0CE2FAE1D5F21D600FE4287 /* ImageStyle.swift in Sources */,
 				D0B172B11D45A2220079A2F2 /* CustomColor.swift in Sources */,
-				D0B172B71D45A2220079A2F2 /* Refreshing.swift in Sources */,
 				D0A4B9151D6B3EB700C995A5 /* ImageCustomizable.swift in Sources */,
 				D0B172B81D45A2220079A2F2 /* FontStyle.swift in Sources */,
 				D0B172B31D45A2220079A2F2 /* CustomFont.swift in Sources */,
@@ -347,7 +338,8 @@
 				D0B172B51D45A2220079A2F2 /* CustomLayout.swift in Sources */,
 				D0B172B01D45A2220079A2F2 /* ColorStyle.swift in Sources */,
 				D0A4B9131D6B3E7B00C995A5 /* FontCustomizable.swift in Sources */,
-				D0B172B41D45A2220079A2F2 /* Customizable.swift in Sources */,
+				D0B172B41D45A2220079A2F2 /* ViewCustomizable.swift in Sources */,
+				D0EE5F301D6CB01100657C71 /* ViewState.swift in Sources */,
 				D0CE2FB01D5F223200FE4287 /* CustomImage.swift in Sources */,
 				D0A4B9101D6B3DDD00C995A5 /* ColorCustomizable.swift in Sources */,
 			);

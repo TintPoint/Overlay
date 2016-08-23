@@ -122,6 +122,38 @@ public protocol TrackImageCustomizable: ViewCustomizable {
     
 }
 
+extension ViewCustomizable {
+    
+    func selected(_ style: ImageStyle, except states: [UIControlState] = []) -> UIImage? {
+        guard let styleGroup = style as? ImageStyleGroup else {
+            return style.normal()
+        }
+        
+        if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
+            return styleGroup.highlighted()
+        } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
+            return styleGroup.selected()
+        } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
+            return styleGroup.disabled()
+        } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
+            return styleGroup.focused()
+        } else {
+            return styleGroup.normal()
+        }
+    }
+    
+    func setImage(_ style: ImageStyle, for setter: (UIImage?, UIControlState) -> ()) {
+        setter(style.normal(), .normal)
+        if let styleGroup = style as? ImageStyleGroup {
+            setter(styleGroup.highlighted(), .highlighted)
+            setter(styleGroup.disabled(), .disabled)
+            setter(styleGroup.selected(), .selected)
+            setter(styleGroup.focused(), .focused)
+        }
+    }
+    
+}
+
 extension UIBarButtonItem: ImageCustomizable, LandscapeImagePhoneCustomizable {
     
     public func customizeImage(using style: ImageStyle) {

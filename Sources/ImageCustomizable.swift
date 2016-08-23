@@ -124,7 +124,7 @@ public protocol TrackImageCustomizable: ViewCustomizable {
 
 extension ViewCustomizable {
     
-    func selected(_ style: ImageStyle, except states: [UIControlState] = []) -> UIImage? {
+    func selectedImage(from style: ImageStyle, usingNormalFor states: [UIControlState] = []) -> UIImage? {
         guard let styleGroup = style as? ImageStyleGroup else {
             return style.normal()
         }
@@ -157,11 +157,11 @@ extension ViewCustomizable {
 extension UIBarButtonItem: ImageCustomizable, LandscapeImagePhoneCustomizable {
     
     public func customizeImage(using style: ImageStyle) {
-        image = selected(style)
+        image = selectedImage(from: style)
     }
     
     public func customizeLandscapeImagePhone(using style: ImageStyle) {
-        landscapeImagePhone = selected(style)
+        landscapeImagePhone = selectedImage(from: style)
     }
     
 }
@@ -169,11 +169,11 @@ extension UIBarButtonItem: ImageCustomizable, LandscapeImagePhoneCustomizable {
 extension UITabBarItem: ImageCustomizable, SelectedImageCustomizable {
     
     public func customizeImage(using style: ImageStyle) {
-        image = selected(style)
+        image = selectedImage(from: style)
     }
     
     public func customizeSelectedImage(using style: ImageStyle) {
-        selectedImage = selected(style)
+        selectedImage = selectedImage(from: style)
     }
     
 }
@@ -193,11 +193,11 @@ extension UIButton: ImageCustomizable, BackgroundImageCustomizable {
 extension UISlider: MinimumValueImageCustomizable, MaximumValueImageCustomizable, MinimumTrackImageCustomizable, MaximumTrackImageCustomizable, ThumbImageCustomizable {
     
     public func customizeMinimumValueImage(using style: ImageStyle) {
-        minimumValueImage = selected(style)
+        minimumValueImage = selectedImage(from: style)
     }
     
     public func customizeMaximumValueImage(using style: ImageStyle) {
-        maximumValueImage = selected(style)
+        maximumValueImage = selectedImage(from: style)
     }
     
     public func customizeMinimumTrackImage(using style: ImageStyle) {
@@ -233,11 +233,11 @@ extension UIStepper: BackgroundImageCustomizable, DecrementImageCustomizable, In
 extension UISwitch: OffImageCustomizable, OnImageCustomizable {
     
     public func customizeOffImage(using style: ImageStyle) {
-        offImage = selected(style)
+        offImage = selectedImage(from: style)
     }
     
     public func customizeOnImage(using style: ImageStyle) {
-        onImage = selected(style)
+        onImage = selectedImage(from: style)
     }
     
 }
@@ -245,11 +245,11 @@ extension UISwitch: OffImageCustomizable, OnImageCustomizable {
 extension UIImageView: ImageCustomizable, HighlightedImageCustomizable {
     
     public func customizeImage(using style: ImageStyle) {
-        image = selected(style)
+        image = selectedImage(from: style)
     }
     
     public func customizeHighlightedImage(using style: ImageStyle) {
-        highlightedImage = selected(style)
+        highlightedImage = selectedImage(from: style)
     }
     
 }
@@ -257,7 +257,7 @@ extension UIImageView: ImageCustomizable, HighlightedImageCustomizable {
 extension UINavigationBar: ShadowImageCustomizable {
     
     public func customizeShadowImage(using style: ImageStyle) {
-        shadowImage = selected(style)
+        shadowImage = selectedImage(from: style)
     }
     
 }
@@ -265,11 +265,11 @@ extension UINavigationBar: ShadowImageCustomizable {
 extension UIProgressView: ProgressImageCustomizable, TrackImageCustomizable {
     
     public func customizeProgressImage(using style: ImageStyle) {
-        progressImage = selected(style)
+        progressImage = selectedImage(from: style)
     }
     
     public func customizeTrackImage(using style: ImageStyle) {
-        trackImage = selected(style)
+        trackImage = selectedImage(from: style)
     }
     
 }
@@ -277,7 +277,7 @@ extension UIProgressView: ProgressImageCustomizable, TrackImageCustomizable {
 extension UISearchBar: BackgroundImageCustomizable, SearchFieldBackgroundImageCustomizable, ScopeBarButtonBackgroundImageCustomizable {
     
     public func customizeBackgroundImage(using style: ImageStyle) {
-        backgroundImage = selected(style)
+        backgroundImage = selectedImage(from: style)
     }
     
     public func customizeSearchFieldBackgroundImage(using style: ImageStyle) {
@@ -293,11 +293,11 @@ extension UISearchBar: BackgroundImageCustomizable, SearchFieldBackgroundImageCu
 extension UITabBar: BackgroundImageCustomizable, ShadowImageCustomizable {
     
     public func customizeBackgroundImage(using style: ImageStyle) {
-        backgroundImage = selected(style)
+        backgroundImage = selectedImage(from: style)
     }
     
     public func customizeShadowImage(using style: ImageStyle) {
-        shadowImage = selected(style)
+        shadowImage = selectedImage(from: style)
     }
 
 }

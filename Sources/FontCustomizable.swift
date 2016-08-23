@@ -16,7 +16,7 @@ public protocol FontCustomizable: ViewCustomizable {
 
 extension ViewCustomizable {
     
-    func selected(_ style: FontStyle, except states: [UIControlState] = []) -> UIFont? {
+    func selectedFont(from style: FontStyle, usingNormalFor states: [UIControlState] = []) -> UIFont? {
         guard let styleGroup = style as? FontStyleGroup else {
             return style.normal()
         }
@@ -39,7 +39,7 @@ extension ViewCustomizable {
 extension UITextField: FontCustomizable {
     
     public func customizeFont(using style: FontStyle) {
-        font = selected(style)
+        font = selectedFont(from: style)
     }
     
 }
@@ -47,7 +47,7 @@ extension UITextField: FontCustomizable {
 extension UILabel: FontCustomizable {
     
     public func customizeFont(using style: FontStyle) {
-        font = selected(style)
+        font = selectedFont(from: style)
     }
     
 }
@@ -55,7 +55,7 @@ extension UILabel: FontCustomizable {
 extension UITextView: FontCustomizable {
     
     public func customizeFont(using style: FontStyle) {
-        font = selected(style)
+        font = selectedFont(from: style)
     }
     
 }

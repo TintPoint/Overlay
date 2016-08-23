@@ -6,7 +6,7 @@ branches:
 env:
   global:
   - SCHEME="Overlay"
-  - SDK=iphonesimulator
+  - SDK="iphonesimulator"
   matrix:
     - DESTINATION="OS=10.0,name=iPhone 6s" CONFIGURATION="Debug"
     - DESTINATION="OS=10.0,name=iPhone 6s" CONFIGURATION="Release"
@@ -14,4 +14,4 @@ env:
     - DESTINATION="OS=10.0,name=iPad Pro (9.7 inch)" CONFIGURATION="Release"
 script:
   - set -o pipefail
-  - xcodebuild test -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration "$CONFIGURATION" ENABLE_TESTABILITY=YES | xcpretty
+  - xcodebuild test -scheme $SCHEME -sdk $SDK -destination $DESTINATION -configuration $CONFIGURATION ENABLE_TESTABILITY=YES | xcpretty

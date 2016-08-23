@@ -154,7 +154,7 @@ extension ViewCustomizable {
         }
     }
     
-    func setColor(_ style: ColorStyle, for setter: (UIColor?, UIControlState) -> ()) {
+    func customizeColor(using style: ColorStyle, through setter: (UIColor?, UIControlState) -> ()) {
         setter(style.normal(), .normal)
         if let styleGroup = style as? ColorStyleGroup {
             setter(styleGroup.highlighted(), .highlighted)
@@ -211,11 +211,11 @@ extension UIActivityIndicatorView: IndicatorColorCustomizable {
 extension UIButton: TitleColorCustomizable, TitleShadowColorCustomizable {
 
     public func customizeTitleColor(using style: ColorStyle) {
-        setColor(style, for: setTitleColor)
+        customizeColor(using: style, through: setTitleColor)
     }
     
     public func customizeTitleShadowColor(using style: ColorStyle) {
-        setColor(style, for: setTitleShadowColor)
+        customizeColor(using: style, through: setTitleShadowColor)
     }
 
 }

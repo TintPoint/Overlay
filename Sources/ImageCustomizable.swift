@@ -142,7 +142,7 @@ extension ViewCustomizable {
         }
     }
     
-    func setImage(_ style: ImageStyle, for setter: (UIImage?, UIControlState) -> ()) {
+    func customizeImage(using style: ImageStyle, through setter: (UIImage?, UIControlState) -> ()) {
         setter(style.normal(), .normal)
         if let styleGroup = style as? ImageStyleGroup {
             setter(styleGroup.highlighted(), .highlighted)
@@ -181,11 +181,11 @@ extension UITabBarItem: ImageCustomizable, SelectedImageCustomizable {
 extension UIButton: ImageCustomizable, BackgroundImageCustomizable {
     
     public func customizeImage(using style: ImageStyle) {
-        setImage(style, for: setImage)
+        customizeImage(using: style, through: setImage)
     }
     
     public func customizeBackgroundImage(using style: ImageStyle) {
-        setImage(style, for: setBackgroundImage)
+        customizeImage(using: style, through: setBackgroundImage)
     }
     
 }
@@ -201,15 +201,15 @@ extension UISlider: MinimumValueImageCustomizable, MaximumValueImageCustomizable
     }
     
     public func customizeMinimumTrackImage(using style: ImageStyle) {
-        setImage(style, for: setMinimumTrackImage)
+        customizeImage(using: style, through: setMinimumTrackImage)
     }
     
     public func customizeMaximumTrackImage(using style: ImageStyle) {
-        setImage(style, for: setMaximumTrackImage)
+        customizeImage(using: style, through: setMaximumTrackImage)
     }
     
     public func customizeThumbImage(using style: ImageStyle) {
-        setImage(style, for: setThumbImage)
+        customizeImage(using: style, through: setThumbImage)
     }
     
 }
@@ -217,15 +217,15 @@ extension UISlider: MinimumValueImageCustomizable, MaximumValueImageCustomizable
 extension UIStepper: BackgroundImageCustomizable, DecrementImageCustomizable, IncrementImageCustomizable {
     
     public func customizeBackgroundImage(using style: ImageStyle) {
-        setImage(style, for: setBackgroundImage)
+        customizeImage(using: style, through: setBackgroundImage)
     }
     
     public func customizeDecrementImage(using style: ImageStyle) {
-        setImage(style, for: setDecrementImage)
+        customizeImage(using: style, through: setDecrementImage)
     }
     
     public func customizeIncrementImage(using style: ImageStyle) {
-        setImage(style, for: setIncrementImage)
+        customizeImage(using: style, through: setIncrementImage)
     }
     
 }
@@ -281,11 +281,11 @@ extension UISearchBar: BackgroundImageCustomizable, SearchFieldBackgroundImageCu
     }
     
     public func customizeSearchFieldBackgroundImage(using style: ImageStyle) {
-        setImage(style, for: setSearchFieldBackgroundImage)
+        customizeImage(using: style, through: setSearchFieldBackgroundImage)
     }
     
     public func customizeScopeBarButtonBackgroundImage(using style: ImageStyle) {
-        setImage(style, for: setScopeBarButtonBackgroundImage)
+        customizeImage(using: style, through: setScopeBarButtonBackgroundImage)
     }
     
 }

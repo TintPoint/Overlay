@@ -25,12 +25,12 @@ class ImageStyleTests: XCTestCase {
         XCTAssertEqual(Resource.fifth.normal(), Resource.group.focused())
     }
     
-    func testEmptyGroup() {
-        XCTAssertEqual(Resource.first.normal(), Resource.emptyGroup.normal())
-        XCTAssertNil(Resource.emptyGroup.disabled())
-        XCTAssertNil(Resource.emptyGroup.selected())
-        XCTAssertNil(Resource.emptyGroup.highlighted())
-        XCTAssertNil(Resource.emptyGroup.focused())
+    func testMinimumGroup() {
+        XCTAssertEqual(Resource.first.normal(), Resource.minimumGroup.normal())
+        XCTAssertNil(Resource.minimumGroup.disabled())
+        XCTAssertNil(Resource.minimumGroup.selected())
+        XCTAssertNil(Resource.minimumGroup.highlighted())
+        XCTAssertNil(Resource.minimumGroup.focused())
     }
     
 }

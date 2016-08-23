@@ -34,7 +34,7 @@ class PrototypeColorView: PrototypeView {
     var highlighted: UIColor?
     var focused: UIColor?
     
-    func set(_ color: UIColor?, for state: UIControlState) {
+    func setColor(_ color: UIColor?, for state: UIControlState) {
         switch state.rawValue {
         case UIControlState.normal.rawValue: normal = color
         case UIControlState.disabled.rawValue: disabled = color
@@ -55,7 +55,7 @@ class PrototypeImageView: PrototypeView {
     var highlighted: UIImage?
     var focused: UIImage?
     
-    func set(_ image: UIImage?, for state: UIControlState) {
+    func setImage(_ image: UIImage?, for state: UIControlState) {
         switch state.rawValue {
         case UIControlState.normal.rawValue: normal = image
         case UIControlState.disabled.rawValue: disabled = image
@@ -160,10 +160,10 @@ class CustomizableTests: XCTestCase {
         XCTAssertEqual(Resource.fifth, focusedView.selected(Resource.group, except: [.normal, .disabled, .selected, .highlighted])!)
     }
     
-    func testSetColor() {
+    func testCustomizeColor() {
         typealias Resource = TestColor
         let view = PrototypeColorView()
-        view.setColor(Resource.group, for: view.set)
+        view.customizeColor(using: Resource.group, through: view.setColor)
         
         XCTAssertEqual(view.normal!, Resource.group.normal())
         XCTAssertEqual(view.disabled!, Resource.group.disabled()!)
@@ -172,10 +172,10 @@ class CustomizableTests: XCTestCase {
         XCTAssertEqual(view.focused!, Resource.group.focused()!)
     }
     
-    func testSetImage() {
+    func testCustomizeImage() {
         typealias Resource = TestImage
         let view = PrototypeImageView()
-        view.setImage(Resource.group, for: view.set)
+        view.customizeImage(using: Resource.group, through: view.setImage)
         
         XCTAssertEqual(view.normal!, Resource.group.normal())
         XCTAssertEqual(view.disabled!, Resource.group.disabled()!)
@@ -184,10 +184,10 @@ class CustomizableTests: XCTestCase {
         XCTAssertEqual(view.focused!, Resource.group.focused()!)
     }
     
-    func testSetEmptyColor() {
+    func testCustomizeEmptyColor() {
         typealias Resource = TestColor
         let view = PrototypeColorView()
-        view.setColor(Resource.emptyGroup, for: view.set)
+        view.customizeColor(using: Resource.minimumGroup, through: view.setColor)
         
         XCTAssertEqual(view.normal!, Resource.group.normal())
         XCTAssertNil(view.disabled)
@@ -196,10 +196,10 @@ class CustomizableTests: XCTestCase {
         XCTAssertNil(view.focused)
     }
 
-    func testSetEmptyImage() {
+    func testCustomizeEmptyImage() {
         typealias Resource = TestImage
         let view = PrototypeImageView()
-        view.setImage(Resource.emptyGroup, for: view.set)
+        view.customizeImage(using: Resource.minimumGroup, through: view.setImage)
         
         XCTAssertEqual(view.normal!, Resource.group.normal())
         XCTAssertNil(view.disabled)

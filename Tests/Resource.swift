@@ -17,7 +17,7 @@ class TestColor {
     static let fifth = UIColor.red
     
     static let group = ColorGroup(normal: first, disabled: second, selected: third, highlighted: fourth, focused: fifth)
-    static let emptyGroup = ColorGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
+    static let minimumGroup = ColorGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
 
     
 }
@@ -31,7 +31,7 @@ class TestFont {
     static let fifth = UIFont.preferredFont(forTextStyle: .footnote)
     
     static let group = FontGroup(normal: first, disabled: second, selected: third, highlighted: fourth, focused: fifth)
-    static let emptyGroup = FontGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
+    static let minimumGroup = FontGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
 
 }
 
@@ -44,7 +44,7 @@ class TestImage {
     static let fifth = UIImage(named: "Red", in: Bundle(for: TestImage.self), compatibleWith: nil)!
 
     static let group = ImageGroup(normal: first, disabled: second, selected: third, highlighted: fourth, focused: fifth)
-    static let emptyGroup = ImageGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
+    static let minimumGroup = ImageGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
 
 
 }

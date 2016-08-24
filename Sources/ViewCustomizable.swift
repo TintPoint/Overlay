@@ -11,7 +11,7 @@ import UIKit
 /// A protocol that describes a view that can be customized.
 public protocol ViewCustomizable {
     
-    /// Updates the view's appearance.
+    /// Refreshes the view's appearance. You should call this method: a) after initialization from code b) after changing the state of the view (e.g. set `isEnabled` to `false`).
     ///
     /// Your custom view can override this method to customize other properties.
     /// You need to call the super implementation at some point during your own `refresh` method.

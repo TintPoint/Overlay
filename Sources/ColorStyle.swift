@@ -70,29 +70,29 @@ extension UIColor: ColorStyle {
 
 /// A collection of colors that describes a color property of a view in different states (e.g. disabled) that conforms to `Custom*Color`.
 /// - SeeAlso: `ColorStyle`, `ColorGroupStyle`
-public struct ColorGroup: ColorStyleGroup {
+public struct ColorGroup {
 
     /// The color that will be used in normal state.
-    private let normalStorage: ColorStyle
+    fileprivate let normalStorage: ColorStyle
     
     /// The color that will be used in disabled state, or `nil` if no color is set.
-    private let disabledStorage: ColorStyle?
+    fileprivate let disabledStorage: ColorStyle?
     
     /// The color that will be used in selected state, or `nil` if no color is set.
-    private let selectedStorage: ColorStyle?
+    fileprivate let selectedStorage: ColorStyle?
     
     /// The color that will be used in highlighted state, or `nil` if no color is set.
-    private let highlightedStorage: ColorStyle?
+    fileprivate let highlightedStorage: ColorStyle?
     
     /// The color that will be used in focused state, or `nil` if no color is set.
-    private let focusedStorage: ColorStyle?
+    fileprivate let focusedStorage: ColorStyle?
 
     /// Creates an instance with objects that conforms to `ColorStyle`.
-    /// - Parameter normal: color to be used in normal state.
-    /// - Parameter disabled: color to be used in disabled state.
-    /// - Parameter selected: color to be used in selected state.
-    /// - Parameter highlighted: color to be used in highlighted state.
-    /// - Parameter focused: color to be used in focused state.
+    /// - Parameter normal: An `UIColor` that will be used in normal state.
+    /// - Parameter disabled: An `UIColor` that will be used in disabled state.
+    /// - Parameter selected: An `UIColor` that will be used in selected state.
+    /// - Parameter highlighted: An `UIColor` that will be used in highlighted state.
+    /// - Parameter focused: An `UIColor` that will be used in focused state.
     public init(normal: ColorStyle, disabled: ColorStyle? = nil, selected: ColorStyle? = nil, highlighted: ColorStyle? = nil, focused: ColorStyle? = nil) {
         normalStorage = normal
         disabledStorage = disabled
@@ -101,22 +101,26 @@ public struct ColorGroup: ColorStyleGroup {
         focusedStorage = focused
     }
 
+}
+
+extension ColorGroup: ColorStyleGroup {
+    
     public func normal() -> UIColor {
         return normalStorage.normal()
     }
-
+    
     public func disabled() -> UIColor? {
         return disabledStorage?.normal()
     }
-
+    
     public func selected() -> UIColor? {
         return selectedStorage?.normal()
     }
-
+    
     public func highlighted() -> UIColor? {
         return highlightedStorage?.normal()
     }
-
+    
     public func focused() -> UIColor? {
         return focusedStorage?.normal()
     }

@@ -8,14 +8,21 @@
 
 import UIKit
 
+/// A protocol that describes a view that its font can be customized.
 public protocol FontCustomizable: ViewCustomizable {
     
+    /// Customizes the font.
+    /// - Parameter style: A `FontStyle` that describes the font.
     func customizeFont(using style: FontStyle)
     
 }
 
 extension ViewCustomizable {
     
+    /// Returns a font that will be used in current state.
+    /// - Parameter style: A `FontStyle` that describes the font.
+    /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
+    /// - Returns: An `UIFont` that will be used in current state, or `nil` if no font is set.
     func selectedFont(from style: FontStyle, usingNormalFor states: [UIControlState] = []) -> UIFont? {
         guard let styleGroup = style as? FontStyleGroup else {
             return style.normal()

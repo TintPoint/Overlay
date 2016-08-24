@@ -8,8 +8,11 @@
 
 import UIKit
 
+/// A protocol that describes a view that its layout can be customized.
 public protocol LayoutCustomizable: ViewCustomizable {
 
+    /// Customizes the layout.
+    /// - Parameter nib: An `UINib` that describes the layout.
     func customizeLayout(using nib: UINib)
     
 }

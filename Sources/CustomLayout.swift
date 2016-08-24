@@ -8,8 +8,10 @@
 
 import UIKit
 
+/// A protocol that describes a view that its layout will be customized.
 public protocol CustomLayout: LayoutCustomizable {
     
+    /// The `UINib` that describes the layout.
     var contentNib: UINib { get }
 
 }

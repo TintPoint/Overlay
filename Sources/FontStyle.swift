@@ -70,29 +70,29 @@ extension UIFont: FontStyle {
 
 /// A collection of fonts that describes a font property of a view in different states (e.g. disabled) that conforms to `Custom*Font`.
 /// - SeeAlso: `FontStyle`, `FontGroupStyle`
-public struct FontGroup: FontStyleGroup {
+public struct FontGroup {
     
     /// The font that will be used in normal state.
-    private let normalStorage: FontStyle
+    fileprivate let normalStorage: FontStyle
     
     /// The font that will be used in disabled state, or `nil` if no font is set.
-    private let disabledStorage: FontStyle?
+    fileprivate let disabledStorage: FontStyle?
     
     /// The font that will be used in selected state, or `nil` if no font is set.
-    private let selectedStorage: FontStyle?
+    fileprivate let selectedStorage: FontStyle?
     
     /// The font that will be used in highlighted state, or `nil` if no font is set.
-    private let highlightedStorage: FontStyle?
+    fileprivate let highlightedStorage: FontStyle?
     
     /// The font that will be used in focused state, or `nil` if no font is set.
-    private let focusedStorage: FontStyle?
+    fileprivate let focusedStorage: FontStyle?
     
     /// Creates an instance with objects that conforms to `FontStyle`.
-    /// - Parameter normal: font to be used in normal state.
-    /// - Parameter disabled: font to be used in disabled state.
-    /// - Parameter selected: font to be used in selected state.
-    /// - Parameter highlighted: font to be used in highlighted state.
-    /// - Parameter focused: font to be used in focused state.
+    /// - Parameter normal: An `UIFont` that will be used in normal state.
+    /// - Parameter disabled: An `UIFont` that will be used in disabled state.
+    /// - Parameter selected: An `UIFont` that will be used in selected state.
+    /// - Parameter highlighted: An `UIFont` that will be used in highlighted state.
+    /// - Parameter focused: An `UIFont` that will be used in focused state.
     public init(normal: FontStyle, disabled: FontStyle? = nil, selected: FontStyle? = nil, highlighted: FontStyle? = nil, focused: FontStyle? = nil) {
         normalStorage = normal
         disabledStorage = disabled
@@ -100,6 +100,10 @@ public struct FontGroup: FontStyleGroup {
         highlightedStorage = highlighted
         focusedStorage = focused
     }
+    
+}
+
+extension FontGroup: FontStyleGroup {
     
     public func normal() -> UIFont {
         return normalStorage.normal()

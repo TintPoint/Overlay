@@ -35,9 +35,9 @@ class CustomView: UIView, CustomLayout, CustomTintColor, CustomBorderColor, Cust
     
 }
 
-class CustomActivityIndicatorView: UIActivityIndicatorView, CustomIndicatorColor {
+class CustomActivityIndicatorView: UIActivityIndicatorView, CustomColor {
     
-    var indicatorColorStyle: ColorStyle = TestColor.first
+    var colorStyle: ColorStyle = TestColor.first
     
 }
 

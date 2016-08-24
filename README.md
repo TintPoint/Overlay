@@ -179,7 +179,7 @@ class BorderView: UIView {
 > - CustomBadgeColor
 > - CustomBarTintColor
 > - CustomBorderColor
-> - CustomIndicatorColor
+> - CustomColor
 > - CustomMaximumTrackTintColor
 > - CustomMinimumTrackTintColor
 > - CustomOnTintColor

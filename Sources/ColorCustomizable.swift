@@ -44,12 +44,12 @@ public protocol BorderColorCustomizable: ViewCustomizable {
 
 }
 
-/// A protocol that describes an indicator that its color can be customized.
-public protocol IndicatorColorCustomizable: ViewCustomizable {
+/// A protocol that describes a view that its color can be customized.
+public protocol ColorCustomizable: ViewCustomizable {
 
     /// Customizes the color.
     /// - Parameter style: A `ColorStyle` that describes the color.
-    func customizeIndicatorColor(using style: ColorStyle)
+    func customizeColor(using style: ColorStyle)
 
 }
 
@@ -272,9 +272,9 @@ extension UIView: TintColorCustomizable, BackgroundColorCustomizable, BorderColo
 
 }
 
-extension UIActivityIndicatorView: IndicatorColorCustomizable {
+extension UIActivityIndicatorView: ColorCustomizable {
 
-    public func customizeIndicatorColor(using style: ColorStyle) {
+    public func customizeColor(using style: ColorStyle) {
         color = selectedColor(from: style)
     }
 

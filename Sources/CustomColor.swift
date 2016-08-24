@@ -40,11 +40,11 @@ public protocol CustomBorderColor: BorderColorCustomizable {
 
 }
 
-/// A protocol that describes an indicator that its color will be customized.
-public protocol CustomIndicatorColor: IndicatorColorCustomizable {
+/// A protocol that describes a view that its color will be customized.
+public protocol CustomColor: ColorCustomizable {
 
     /// The `ColorStyle` that describes the color.
-    var indicatorColorStyle: ColorStyle { get }
+    var colorStyle: ColorStyle { get }
 
 }
 

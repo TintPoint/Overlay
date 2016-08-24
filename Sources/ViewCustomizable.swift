@@ -42,8 +42,8 @@ fileprivate extension ViewCustomizable {
             view.customizeBorderColor(using: view.borderColorStyle)
         }
         
-        if let view = self as? CustomIndicatorColor {
-            view.customizeIndicatorColor(using: view.indicatorColorStyle)
+        if let view = self as? CustomColor {
+            view.customizeColor(using: view.colorStyle)
         }
         
         if let view = self as? CustomMaximumTrackTintColor {

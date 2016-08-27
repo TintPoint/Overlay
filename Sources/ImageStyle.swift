@@ -79,7 +79,7 @@ extension UIImage: ImageStyle {
 }
 
 /// A collection of images that describes an image property of a view in different states (e.g. disabled) that conforms to `Custom*Image`.
-/// - SeeAlso: `ImageStyle`, `ImageGroupStyle`
+/// - SeeAlso: `ImageStyle`, `ImageStyleGroup`
 public struct ImageGroup {
     
     /// The image that will be used in normal state.

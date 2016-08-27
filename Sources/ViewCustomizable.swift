@@ -20,7 +20,8 @@ public protocol ViewCustomizable {
 }
 
 extension ViewCustomizable {
-    
+
+    /// Customizes the view's appearance.
     func customizeView() {
         if let view = self as? CustomLayout {
             view.customizeLayout(using: view.contentNib)

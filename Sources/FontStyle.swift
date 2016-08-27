@@ -79,7 +79,7 @@ extension UIFont: FontStyle {
 }
 
 /// A collection of fonts that describes a font property of a view in different states (e.g. disabled) that conforms to `Custom*Font`.
-/// - SeeAlso: `FontStyle`, `FontGroupStyle`
+/// - SeeAlso: `FontStyle`, `FontStyleGroup`
 public struct FontGroup {
 
     /// The font that will be used in normal state.

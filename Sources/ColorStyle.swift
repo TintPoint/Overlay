@@ -79,7 +79,7 @@ extension UIColor: ColorStyle {
 }
 
 /// A collection of colors that describes a color property of a view in different states (e.g. disabled) that conforms to `Custom*Color`.
-/// - SeeAlso: `ColorStyle`, `ColorGroupStyle`
+/// - SeeAlso: `ColorStyle`, `ColorStyleGroup`
 public struct ColorGroup {
 
     /// The color that will be used in normal state.

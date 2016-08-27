@@ -12,25 +12,25 @@ import XCTest
 class ViewStateTest: XCTestCase {
     
     func testViewDisable() {
-        XCTAssertTrue(UIBarItem() as Any is ViewDisable)
-        XCTAssertTrue(UIControl() as Any is ViewDisable)
-        XCTAssertTrue(UILabel() as Any is ViewDisable)
+        XCTAssert(UIBarItem() as Any is ViewDisable)
+        XCTAssert(UIControl() as Any is ViewDisable)
+        XCTAssert(UILabel() as Any is ViewDisable)
     }
     
     func testViewSelectable() {
-        XCTAssertTrue(UIControl() as Any is ViewSelectable)
-        XCTAssertTrue(UITableViewCell() as Any is ViewSelectable)
+        XCTAssert(UIControl() as Any is ViewSelectable)
+        XCTAssert(UITableViewCell() as Any is ViewSelectable)
     }
     
     func testViewHighlightable() {
-        XCTAssertTrue(UIControl() as Any is ViewHighlightable)
-        XCTAssertTrue(UITableViewCell() as Any is ViewHighlightable)
-        XCTAssertTrue(UILabel() as Any is ViewHighlightable)
-        XCTAssertTrue(UIImageView() as Any is ViewHighlightable)
+        XCTAssert(UIControl() as Any is ViewHighlightable)
+        XCTAssert(UITableViewCell() as Any is ViewHighlightable)
+        XCTAssert(UILabel() as Any is ViewHighlightable)
+        XCTAssert(UIImageView() as Any is ViewHighlightable)
     }
     
     func testViewFocusable() {
-        XCTAssertTrue(UIView() as Any is ViewFocusable)
+        XCTAssert(UIView() as Any is ViewFocusable)
     }
     
 }

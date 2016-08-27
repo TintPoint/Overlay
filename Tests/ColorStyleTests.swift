@@ -48,40 +48,40 @@ class ColorStyleTests: XCTestCase {
         XCTAssertEqual(Resource.first, focusedView.selectedColor(from: Resource.first))
 
         XCTAssertEqual(Resource.first, normalView.selectedColor(from: Resource.group))
-        XCTAssertEqual(Resource.second, disabledView.selectedColor(from: Resource.group)!)
-        XCTAssertEqual(Resource.third, selectedView.selectedColor(from: Resource.group)!)
-        XCTAssertEqual(Resource.fourth, highlightedView.selectedColor(from: Resource.group)!)
-        XCTAssertEqual(Resource.fifth, focusedView.selectedColor(from: Resource.group)!)
+        XCTAssertEqual(Resource.second, disabledView.selectedColor(from: Resource.group))
+        XCTAssertEqual(Resource.third, selectedView.selectedColor(from: Resource.group))
+        XCTAssertEqual(Resource.fourth, highlightedView.selectedColor(from: Resource.group))
+        XCTAssertEqual(Resource.fifth, focusedView.selectedColor(from: Resource.group))
 
         XCTAssertEqual(Resource.first, normalView.selectedColor(from: Resource.first, usingNormalFor: [.normal]))
-        XCTAssertEqual(Resource.first, disabledView.selectedColor(from: Resource.group, usingNormalFor: [.disabled])!)
-        XCTAssertEqual(Resource.first, selectedView.selectedColor(from: Resource.group, usingNormalFor: [.selected])!)
-        XCTAssertEqual(Resource.first, highlightedView.selectedColor(from: Resource.group, usingNormalFor: [.highlighted])!)
-        XCTAssertEqual(Resource.first, focusedView.selectedColor(from: Resource.group, usingNormalFor: [.focused])!)
+        XCTAssertEqual(Resource.first, disabledView.selectedColor(from: Resource.group, usingNormalFor: [.disabled]))
+        XCTAssertEqual(Resource.first, selectedView.selectedColor(from: Resource.group, usingNormalFor: [.selected]))
+        XCTAssertEqual(Resource.first, highlightedView.selectedColor(from: Resource.group, usingNormalFor: [.highlighted]))
+        XCTAssertEqual(Resource.first, focusedView.selectedColor(from: Resource.group, usingNormalFor: [.focused]))
 
         XCTAssertEqual(Resource.first, normalView.selectedColor(from: Resource.group, usingNormalFor: [.disabled, .selected, .highlighted, .focused]))
-        XCTAssertEqual(Resource.second, disabledView.selectedColor(from: Resource.group, usingNormalFor: [.normal, .selected, .highlighted, .focused])!)
-        XCTAssertEqual(Resource.third, selectedView.selectedColor(from: Resource.group, usingNormalFor: [.normal, .disabled, .highlighted, .focused])!)
-        XCTAssertEqual(Resource.fourth, highlightedView.selectedColor(from: Resource.group, usingNormalFor: [.normal, .disabled, .selected, .focused])!)
-        XCTAssertEqual(Resource.fifth, focusedView.selectedColor(from: Resource.group, usingNormalFor: [.normal, .disabled, .selected, .highlighted])!)
+        XCTAssertEqual(Resource.second, disabledView.selectedColor(from: Resource.group, usingNormalFor: [.normal, .selected, .highlighted, .focused]))
+        XCTAssertEqual(Resource.third, selectedView.selectedColor(from: Resource.group, usingNormalFor: [.normal, .disabled, .highlighted, .focused]))
+        XCTAssertEqual(Resource.fourth, highlightedView.selectedColor(from: Resource.group, usingNormalFor: [.normal, .disabled, .selected, .focused]))
+        XCTAssertEqual(Resource.fifth, focusedView.selectedColor(from: Resource.group, usingNormalFor: [.normal, .disabled, .selected, .highlighted]))
     }
 
     func testCustomizeColor() {
         let view = View()
         view.customizeColor(using: Resource.group, through: view.setColor)
 
-        XCTAssertEqual(view.normal!, Resource.group.normal())
-        XCTAssertEqual(view.disabled!, Resource.group.disabled()!)
-        XCTAssertEqual(view.selected!, Resource.group.selected()!)
-        XCTAssertEqual(view.highlighted!, Resource.group.highlighted()!)
-        XCTAssertEqual(view.focused!, Resource.group.focused()!)
+        XCTAssertEqual(view.normal, Resource.group.normal())
+        XCTAssertEqual(view.disabled, Resource.group.disabled())
+        XCTAssertEqual(view.selected, Resource.group.selected())
+        XCTAssertEqual(view.highlighted, Resource.group.highlighted())
+        XCTAssertEqual(view.focused, Resource.group.focused())
     }
 
     func testCustomizeEmptyColor() {
         let view = View()
         view.customizeColor(using: Resource.minimumGroup, through: view.setColor)
 
-        XCTAssertEqual(view.normal!, Resource.group.normal())
+        XCTAssertEqual(view.normal, Resource.group.normal())
         XCTAssertNil(view.disabled)
         XCTAssertNil(view.selected)
         XCTAssertNil(view.highlighted)

@@ -48,33 +48,33 @@ class ImageStyleTests: XCTestCase {
         XCTAssertEqual(Resource.first, focusedView.selectedImage(from: Resource.first))
 
         XCTAssertEqual(Resource.first, normalView.selectedImage(from: Resource.group))
-        XCTAssertEqual(Resource.second, disabledView.selectedImage(from: Resource.group)!)
-        XCTAssertEqual(Resource.third, selectedView.selectedImage(from: Resource.group)!)
-        XCTAssertEqual(Resource.fourth, highlightedView.selectedImage(from: Resource.group)!)
-        XCTAssertEqual(Resource.fifth, focusedView.selectedImage(from: Resource.group)!)
+        XCTAssertEqual(Resource.second, disabledView.selectedImage(from: Resource.group))
+        XCTAssertEqual(Resource.third, selectedView.selectedImage(from: Resource.group))
+        XCTAssertEqual(Resource.fourth, highlightedView.selectedImage(from: Resource.group))
+        XCTAssertEqual(Resource.fifth, focusedView.selectedImage(from: Resource.group))
 
         XCTAssertEqual(Resource.first, normalView.selectedImage(from: Resource.first, usingNormalFor: [.normal]))
-        XCTAssertEqual(Resource.first, disabledView.selectedImage(from: Resource.group, usingNormalFor: [.disabled])!)
-        XCTAssertEqual(Resource.first, selectedView.selectedImage(from: Resource.group, usingNormalFor: [.selected])!)
-        XCTAssertEqual(Resource.first, highlightedView.selectedImage(from: Resource.group, usingNormalFor: [.highlighted])!)
-        XCTAssertEqual(Resource.first, focusedView.selectedImage(from: Resource.group, usingNormalFor: [.focused])!)
+        XCTAssertEqual(Resource.first, disabledView.selectedImage(from: Resource.group, usingNormalFor: [.disabled]))
+        XCTAssertEqual(Resource.first, selectedView.selectedImage(from: Resource.group, usingNormalFor: [.selected]))
+        XCTAssertEqual(Resource.first, highlightedView.selectedImage(from: Resource.group, usingNormalFor: [.highlighted]))
+        XCTAssertEqual(Resource.first, focusedView.selectedImage(from: Resource.group, usingNormalFor: [.focused]))
 
         XCTAssertEqual(Resource.first, normalView.selectedImage(from: Resource.group, usingNormalFor: [.disabled, .selected, .highlighted, .focused]))
-        XCTAssertEqual(Resource.second, disabledView.selectedImage(from: Resource.group, usingNormalFor: [.normal, .selected, .highlighted, .focused])!)
-        XCTAssertEqual(Resource.third, selectedView.selectedImage(from: Resource.group, usingNormalFor: [.normal, .disabled, .highlighted, .focused])!)
-        XCTAssertEqual(Resource.fourth, highlightedView.selectedImage(from: Resource.group, usingNormalFor: [.normal, .disabled, .selected, .focused])!)
-        XCTAssertEqual(Resource.fifth, focusedView.selectedImage(from: Resource.group, usingNormalFor: [.normal, .disabled, .selected, .highlighted])!)
+        XCTAssertEqual(Resource.second, disabledView.selectedImage(from: Resource.group, usingNormalFor: [.normal, .selected, .highlighted, .focused]))
+        XCTAssertEqual(Resource.third, selectedView.selectedImage(from: Resource.group, usingNormalFor: [.normal, .disabled, .highlighted, .focused]))
+        XCTAssertEqual(Resource.fourth, highlightedView.selectedImage(from: Resource.group, usingNormalFor: [.normal, .disabled, .selected, .focused]))
+        XCTAssertEqual(Resource.fifth, focusedView.selectedImage(from: Resource.group, usingNormalFor: [.normal, .disabled, .selected, .highlighted]))
     }
 
     func testCustomizeImage() {
         let view = View()
         view.customizeImage(using: Resource.group, through: view.setImage)
 
-        XCTAssertEqual(view.normal!, Resource.group.normal())
-        XCTAssertEqual(view.disabled!, Resource.group.disabled()!)
-        XCTAssertEqual(view.selected!, Resource.group.selected()!)
-        XCTAssertEqual(view.highlighted!, Resource.group.highlighted()!)
-        XCTAssertEqual(view.focused!, Resource.group.focused()!)
+        XCTAssertEqual(view.normal, Resource.group.normal())
+        XCTAssertEqual(view.disabled, Resource.group.disabled())
+        XCTAssertEqual(view.selected, Resource.group.selected())
+        XCTAssertEqual(view.highlighted, Resource.group.highlighted())
+        XCTAssertEqual(view.focused, Resource.group.focused())
     }
 
 
@@ -82,7 +82,7 @@ class ImageStyleTests: XCTestCase {
         let view = View()
         view.customizeImage(using: Resource.minimumGroup, through: view.setImage)
 
-        XCTAssertEqual(view.normal!, Resource.group.normal())
+        XCTAssertEqual(view.normal, Resource.group.normal())
         XCTAssertNil(view.disabled)
         XCTAssertNil(view.selected)
         XCTAssertNil(view.highlighted)

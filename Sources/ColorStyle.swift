@@ -70,8 +70,6 @@ public extension ColorStyleGroup {
 
 extension UIColor: ColorStyle {
 
-    /// Returns a color that will be used in normal state.
-    /// - Returns: An `UIColor` that will be used in normal state.
     public func normal() -> UIColor {
         return self
     }
@@ -115,32 +113,22 @@ public struct ColorGroup {
 
 extension ColorGroup: ColorStyleGroup {
 
-    /// Returns a color that will be used in normal state.
-    /// - Returns: An `UIColor` that will be used in normal state.
     public func normal() -> UIColor {
         return normalStorage.normal()
     }
 
-    /// Returns a color that will be used in disabled state.
-    /// - Returns: An `UIColor` that will be used in disabled state, or `nil` if no color is set.
     public func disabled() -> UIColor? {
         return disabledStorage?.normal()
     }
 
-    /// Returns a color that will be used in selected state.
-    /// - Returns: An `UIColor` that will be used in selected state, or `nil` if no color is set.
     public func selected() -> UIColor? {
         return selectedStorage?.normal()
     }
 
-    /// Returns a color that will be used in highlighted state.
-    /// - Returns: An `UIColor` that will be used in highlighted state, or `nil` if no color is set.
     public func highlighted() -> UIColor? {
         return highlightedStorage?.normal()
     }
 
-    /// Returns a color that will be used in focused state.
-    /// - Returns: An `UIColor` that will be used in focused state, or `nil` if no color is set.
     public func focused() -> UIColor? {
         return focusedStorage?.normal()
     }

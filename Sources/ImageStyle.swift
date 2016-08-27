@@ -70,8 +70,6 @@ public extension ImageStyleGroup {
 
 extension UIImage: ImageStyle {
 
-    /// Returns an image that will be used in normal state.
-    /// - Returns: An `UIImage` that will be used in normal state.
     public func normal() -> UIImage {
         return self
     }
@@ -115,32 +113,22 @@ public struct ImageGroup {
 
 extension ImageGroup: ImageStyleGroup {
     
-    /// Returns an image that will be used in normal state.
-    /// - Returns: An `UIImage` that will be used in normal state.
     public func normal() -> UIImage {
         return normalStorage.normal()
     }
 
-    /// Returns an image that will be used in disabled state.
-    /// - Returns: An `UIImage` that will be used in disabled state, or `nil` if no image is set.
     public func disabled() -> UIImage? {
         return disabledStorage?.normal()
     }
 
-    /// Returns an image that will be used in selected state.
-    /// - Returns: An `UIImage` that will be used in selected state, or `nil` if no image is set.
     public func selected() -> UIImage? {
         return selectedStorage?.normal()
     }
 
-    /// Returns an image that will be used in highlighted state.
-    /// - Returns: An `UIImage` that will be used in highlighted state, or `nil` if no image is set.
     public func highlighted() -> UIImage? {
         return highlightedStorage?.normal()
     }
 
-    /// Returns an image that will be used in focused state.
-    /// - Returns: An `UIImage` that will be used in focused state, or `nil` if no image is set.
     public func focused() -> UIImage? {
         return focusedStorage?.normal()
     }

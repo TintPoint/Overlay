@@ -70,8 +70,6 @@ public extension FontStyleGroup {
 
 extension UIFont: FontStyle {
 
-    /// Returns a font that will be used in normal state.
-    /// - Returns: An `UIFont` that will be used in normal state.
     public func normal() -> UIFont {
         return self
     }
@@ -115,32 +113,22 @@ public struct FontGroup {
 
 extension FontGroup: FontStyleGroup {
 
-    /// Returns a font that will be used in normal state.
-    /// - Returns: An `UIFont` that will be used in normal state.
     public func normal() -> UIFont {
         return normalStorage.normal()
     }
 
-    /// Returns a font that will be used in disabled state.
-    /// - Returns: An `UIFont` that will be used in disabled state, or `nil` if no font is set.
     public func disabled() -> UIFont? {
         return disabledStorage?.normal()
     }
 
-    /// Returns a font that will be used in selected state.
-    /// - Returns: An `UIFont` that will be used in selected state, or `nil` if no font is set.
     public func selected() -> UIFont? {
         return selectedStorage?.normal()
     }
 
-    /// Returns a font that will be used in highlighted state.
-    /// - Returns: An `UIFont` that will be used in highlighted state, or `nil` if no font is set.
     public func highlighted() -> UIFont? {
         return highlightedStorage?.normal()
     }
 
-    /// Returns a font that will be used in focused state.
-    /// - Returns: An `UIFont` that will be used in focused state, or `nil` if no font is set.
     public func focused() -> UIFont? {
         return focusedStorage?.normal()
     }

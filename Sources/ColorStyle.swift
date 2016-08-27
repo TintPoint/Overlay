@@ -25,15 +25,15 @@ public protocol ColorStyleGroup: ColorStyle {
     /// Returns a color that will be used in disabled state.
     /// - Returns: An `UIColor` that will be used in disabled state, or `nil` if no color is set.
     func disabled() -> UIColor?
-    
+
     /// Returns a color that will be used in selected state.
     /// - Returns: An `UIColor` that will be used in selected state, or `nil` if no color is set.
     func selected() -> UIColor?
-    
+
     /// Returns a color that will be used in highlighted state.
     /// - Returns: An `UIColor` that will be used in highlighted state, or `nil` if no color is set.
     func highlighted() -> UIColor?
-    
+
     /// Returns a color that will be used in focused state.
     /// - Returns: An `UIColor` that will be used in focused state, or `nil` if no color is set.
     func focused() -> UIColor?
@@ -74,16 +74,16 @@ public struct ColorGroup {
 
     /// The color that will be used in normal state.
     fileprivate let normalStorage: ColorStyle
-    
+
     /// The color that will be used in disabled state, or `nil` if no color is set.
     fileprivate let disabledStorage: ColorStyle?
-    
+
     /// The color that will be used in selected state, or `nil` if no color is set.
     fileprivate let selectedStorage: ColorStyle?
-    
+
     /// The color that will be used in highlighted state, or `nil` if no color is set.
     fileprivate let highlightedStorage: ColorStyle?
-    
+
     /// The color that will be used in focused state, or `nil` if no color is set.
     fileprivate let focusedStorage: ColorStyle?
 
@@ -104,25 +104,69 @@ public struct ColorGroup {
 }
 
 extension ColorGroup: ColorStyleGroup {
-    
+
     public func normal() -> UIColor {
         return normalStorage.normal()
     }
-    
+
     public func disabled() -> UIColor? {
         return disabledStorage?.normal()
     }
-    
+
     public func selected() -> UIColor? {
         return selectedStorage?.normal()
     }
-    
+
     public func highlighted() -> UIColor? {
         return highlightedStorage?.normal()
     }
-    
+
     public func focused() -> UIColor? {
         return focusedStorage?.normal()
+    }
+
+}
+
+/// A protocol that describes a view that its color can be expressed by `ColorStyle`.
+public protocol ColorStyleExpressible { }
+
+extension ColorStyleExpressible {
+
+    /// Returns a color that will be used in current state.
+    /// - Parameter style: A `ColorStyle` that describes the color.
+    /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
+    /// - Returns: An `UIColor` that will be used in current state, or `nil` if no color is set.
+    func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControlState] = []) -> UIColor? {
+        guard let styleGroup = style as? ColorStyleGroup else {
+            return style.normal()
+        }
+
+        if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
+            return styleGroup.highlighted()
+        } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
+            return styleGroup.selected()
+        } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
+            return styleGroup.disabled()
+        } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
+            return styleGroup.focused()
+        } else {
+            return styleGroup.normal()
+        }
+    }
+
+    /// Customizes a color through a setter method.
+    /// - Parameter style: A `ColorStyle` that describes a color.
+    /// - Parameter setter: A setter method that will customize a color in different states.
+    /// - Parameter color: An `UIColor` that will be used.
+    /// - Parameter state: An `UIControlState` that will use the color.
+    func customizeColor(using style: ColorStyle, through setter: (_ color: UIColor?, _ state: UIControlState) -> ()) {
+        setter(style.normal(), .normal)
+        if let styleGroup = style as? ColorStyleGroup {
+            setter(styleGroup.highlighted(), .highlighted)
+            setter(styleGroup.disabled(), .disabled)
+            setter(styleGroup.selected(), .selected)
+            setter(styleGroup.focused(), .focused)
+        }
     }
 
 }

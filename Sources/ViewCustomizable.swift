@@ -19,9 +19,9 @@ public protocol ViewCustomizable {
     
 }
 
-fileprivate extension ViewCustomizable {
+extension ViewCustomizable {
     
-    func customize() {
+    func customizeView() {
         if let view = self as? CustomLayout {
             view.customizeLayout(using: view.contentNib)
         }
@@ -193,7 +193,7 @@ fileprivate extension ViewCustomizable {
     
 }
 
-extension UIBarButtonItem {
+extension UIBarButtonItem: ViewCustomizable {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -206,12 +206,12 @@ extension UIBarButtonItem {
     }
     
     open func refresh() {
-        customize()
+        customizeView()
     }
     
 }
 
-extension UITabBarItem {
+extension UITabBarItem: ViewCustomizable {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -224,12 +224,12 @@ extension UITabBarItem {
     }
     
     open func refresh() {
-        customize()
+        customizeView()
     }
     
 }
 
-extension UIView {
+extension UIView: ViewCustomizable {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -242,7 +242,7 @@ extension UIView {
     }
     
     open func refresh() {
-        customize()
+        customizeView()
     }
     
 }

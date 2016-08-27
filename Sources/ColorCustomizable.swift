@@ -9,7 +9,7 @@
 import UIKit
 
 /// A protocol that describes a view that its background color can be customized.
-public protocol BackgroundColorCustomizable: ViewCustomizable {
+public protocol BackgroundColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the background color.
     /// - Parameter style: A `ColorStyle` that describes the background color.
@@ -18,7 +18,7 @@ public protocol BackgroundColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its badge color can be customized.
-public protocol BadgeColorCustomizable: ViewCustomizable {
+public protocol BadgeColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the badge color.
     /// - Parameter style: A `ColorStyle` that describes the badge color.
@@ -27,7 +27,7 @@ public protocol BadgeColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its bar tint color can be customized.
-public protocol BarTintColorCustomizable: ViewCustomizable {
+public protocol BarTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the bar tint color.
     /// - Parameter style: A `ColorStyle` that describes the bar tint color.
@@ -36,7 +36,7 @@ public protocol BarTintColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its border color can be customized.
-public protocol BorderColorCustomizable: ViewCustomizable {
+public protocol BorderColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the border color.
     /// - Parameter style: A `ColorStyle` that describes the border color.
@@ -45,7 +45,7 @@ public protocol BorderColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its color can be customized.
-public protocol ColorCustomizable: ViewCustomizable {
+public protocol ColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the color.
     /// - Parameter style: A `ColorStyle` that describes the color.
@@ -54,7 +54,7 @@ public protocol ColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its maximum track tint color can be customized.
-public protocol MaximumTrackTintColorCustomizable: ViewCustomizable {
+public protocol MaximumTrackTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the maximum track tint color.
     /// - Parameter style: A `ColorStyle` that describes the maximum track tint color.
@@ -63,7 +63,7 @@ public protocol MaximumTrackTintColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its minimum track tint color can be customized.
-public protocol MinimumTrackTintColorCustomizable: ViewCustomizable {
+public protocol MinimumTrackTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the minimum track tint color.
     /// - Parameter style: A `ColorStyle` that describes the minimum track tint color.
@@ -72,7 +72,7 @@ public protocol MinimumTrackTintColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its on tint color can be customized.
-public protocol OnTintColorCustomizable: ViewCustomizable {
+public protocol OnTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the on tint color.
     /// - Parameter style: A `ColorStyle` that describes the on tint color.
@@ -81,7 +81,7 @@ public protocol OnTintColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its progress tint color can be customized.
-public protocol ProgressTintColorCustomizable: ViewCustomizable {
+public protocol ProgressTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the progress tint color.
     /// - Parameter style: A `ColorStyle` that describes the progress tint color.
@@ -90,7 +90,7 @@ public protocol ProgressTintColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its section index background color can be customized.
-public protocol SectionIndexBackgroundColorCustomizable: ViewCustomizable {
+public protocol SectionIndexBackgroundColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the section index background color.
     /// - Parameter style: A `ColorStyle` that describes the section index background color.
@@ -99,7 +99,7 @@ public protocol SectionIndexBackgroundColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its section index color can be customized.
-public protocol SectionIndexColorCustomizable: ViewCustomizable {
+public protocol SectionIndexColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the section index color.
     /// - Parameter style: A `ColorStyle` that describes the section index color.
@@ -108,7 +108,7 @@ public protocol SectionIndexColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its section index tracking background color can be customized.
-public protocol SectionIndexTrackingBackgroundColorCustomizable: ViewCustomizable {
+public protocol SectionIndexTrackingBackgroundColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the section index tracking background color.
     /// - Parameter style: A `ColorStyle` that describes the section index tracking background color.
@@ -117,7 +117,7 @@ public protocol SectionIndexTrackingBackgroundColorCustomizable: ViewCustomizabl
 }
 
 /// A protocol that describes a view that its separator color can be customized.
-public protocol SeparatorColorCustomizable: ViewCustomizable {
+public protocol SeparatorColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the separator color.
     /// - Parameter style: A `ColorStyle` that describes the separator color.
@@ -126,7 +126,7 @@ public protocol SeparatorColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its shadow color can be customized.
-public protocol ShadowColorCustomizable: ViewCustomizable {
+public protocol ShadowColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the shadow color.
     /// - Parameter style: A `ColorStyle` that describes the shadow color.
@@ -135,7 +135,7 @@ public protocol ShadowColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its text color can be customized.
-public protocol TextColorCustomizable: ViewCustomizable {
+public protocol TextColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the text color.
     /// - Parameter style: A `ColorStyle` that describes the text color.
@@ -144,7 +144,7 @@ public protocol TextColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its thumb tint color can be customized.
-public protocol ThumbTintColorCustomizable: ViewCustomizable {
+public protocol ThumbTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the thumb tint color.
     /// - Parameter style: A `ColorStyle` that describes the thumb tint color.
@@ -153,7 +153,7 @@ public protocol ThumbTintColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its tint color can be customized.
-public protocol TintColorCustomizable: ViewCustomizable {
+public protocol TintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the tint color.
     /// - Parameter style: A `ColorStyle` that describes the tint color.
@@ -162,7 +162,7 @@ public protocol TintColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its title color can be customized.
-public protocol TitleColorCustomizable: ViewCustomizable {
+public protocol TitleColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the title color.
     /// - Parameter style: A `ColorStyle` that describes the title color.
@@ -171,7 +171,7 @@ public protocol TitleColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its title shadow color can be customized.
-public protocol TitleShadowColorCustomizable: ViewCustomizable {
+public protocol TitleShadowColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the title shadow color.
     /// - Parameter style: A `ColorStyle` that describes the title shadow color.
@@ -180,7 +180,7 @@ public protocol TitleShadowColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its track tint color can be customized.
-public protocol TrackTintColorCustomizable: ViewCustomizable {
+public protocol TrackTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the track tint color.
     /// - Parameter style: A `ColorStyle` that describes the track tint color.
@@ -189,52 +189,11 @@ public protocol TrackTintColorCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its unselected item tint color can be customized.
-public protocol UnselectedItemTintColorCustomizable: ViewCustomizable {
+public protocol UnselectedItemTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the unselected item tint color.
     /// - Parameter style: A `ColorStyle` that describes the unselected item tint color.
     func customizeUnselectedItemTintColor(using style: ColorStyle)
-
-}
-
-extension ViewCustomizable {
-
-    /// Returns a color that will be used in current state.
-    /// - Parameter style: A `ColorStyle` that describes the color.
-    /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
-    /// - Returns: An `UIColor` that will be used in current state, or `nil` if no color is set.
-    func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControlState] = []) -> UIColor? {
-        guard let styleGroup = style as? ColorStyleGroup else {
-            return style.normal()
-        }
-
-        if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
-            return styleGroup.highlighted()
-        } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
-            return styleGroup.selected()
-        } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
-            return styleGroup.disabled()
-        } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
-            return styleGroup.focused()
-        } else {
-            return styleGroup.normal()
-        }
-    }
-
-    /// Customizes a color through a setter method.
-    /// - Parameter style: A `ColorStyle` that describes a color.
-    /// - Parameter setter: A setter method that will customize a color in different states.
-    /// - Parameter color: An `UIColor` that will be used.
-    /// - Parameter state: An `UIControlState` that will use the color.
-    func customizeColor(using style: ColorStyle, through setter: (_ color: UIColor?, _ state: UIControlState) -> ()) {
-        setter(style.normal(), .normal)
-        if let styleGroup = style as? ColorStyleGroup {
-            setter(styleGroup.highlighted(), .highlighted)
-            setter(styleGroup.disabled(), .disabled)
-            setter(styleGroup.selected(), .selected)
-            setter(styleGroup.focused(), .focused)
-        }
-    }
 
 }
 

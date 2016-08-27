@@ -9,7 +9,7 @@
 import UIKit
 
 /// A protocol that describes a view that its layout can be customized.
-public protocol LayoutCustomizable: ViewCustomizable {
+public protocol LayoutCustomizable {
 
     /// Customizes the layout.
     /// - Parameter nib: An `UINib` that describes the layout.

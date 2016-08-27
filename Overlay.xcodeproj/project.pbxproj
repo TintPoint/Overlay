@@ -19,7 +19,6 @@
 		D0B059C01D659948009C84FC /* FontStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B059BF1D659948009C84FC /* FontStyleTests.swift */; };
 		D0B059C21D659A2A009C84FC /* ImageStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B059C11D659A2A009C84FC /* ImageStyleTests.swift */; };
 		D0B059C41D65D64E009C84FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0B059C31D65D64E009C84FC /* Assets.xcassets */; };
-		D0B059C81D65F8CB009C84FC /* CustomizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B059C71D65F8CB009C84FC /* CustomizableTests.swift */; };
 		D0B172B01D45A2220079A2F2 /* ColorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A51D45A2220079A2F2 /* ColorStyle.swift */; };
 		D0B172B11D45A2220079A2F2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A61D45A2220079A2F2 /* CustomColor.swift */; };
 		D0B172B31D45A2220079A2F2 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172A81D45A2220079A2F2 /* CustomFont.swift */; };
@@ -27,6 +26,7 @@
 		D0B172B51D45A2220079A2F2 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172AA1D45A2220079A2F2 /* CustomLayout.swift */; };
 		D0B172B81D45A2220079A2F2 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B172AD1D45A2220079A2F2 /* FontStyle.swift */; };
 		D0B172BA1D45A2220079A2F2 /* Overlay.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B172AF1D45A2220079A2F2 /* Overlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0CDC6F21D71B4CD00843DA8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CDC6F11D71B4CD00843DA8 /* TestView.swift */; };
 		D0CE2FAE1D5F21D600FE4287 /* ImageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE2FAD1D5F21D600FE4287 /* ImageStyle.swift */; };
 		D0CE2FB01D5F223200FE4287 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE2FAF1D5F223200FE4287 /* CustomImage.swift */; };
 		D0EE5F301D6CB01100657C71 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE5F2F1D6CB01100657C71 /* ViewState.swift */; };
@@ -58,7 +58,6 @@
 		D0B059BF1D659948009C84FC /* FontStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyleTests.swift; sourceTree = "<group>"; };
 		D0B059C11D659A2A009C84FC /* ImageStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStyleTests.swift; sourceTree = "<group>"; };
 		D0B059C31D65D64E009C84FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D0B059C71D65F8CB009C84FC /* CustomizableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableTests.swift; sourceTree = "<group>"; };
 		D0B1729A1D45A1EB0079A2F2 /* Overlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Overlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B172A51D45A2220079A2F2 /* ColorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStyle.swift; sourceTree = "<group>"; };
 		D0B172A61D45A2220079A2F2 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		D0B172AA1D45A2220079A2F2 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		D0B172AD1D45A2220079A2F2 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		D0B172AF1D45A2220079A2F2 /* Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overlay.h; sourceTree = "<group>"; };
+		D0CDC6F11D71B4CD00843DA8 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		D0CE2FAD1D5F21D600FE4287 /* ImageStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStyle.swift; sourceTree = "<group>"; };
 		D0CE2FAF1D5F223200FE4287 /* CustomImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
 		D0EE5F2F1D6CB01100657C71 /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
@@ -94,14 +94,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D05D0A731D671A110001BB1A /* CustomizableTests */ = {
-			isa = PBXGroup;
-			children = (
-				D0B059C71D65F8CB009C84FC /* CustomizableTests.swift */,
-			);
-			name = CustomizableTests;
-			sourceTree = "<group>";
-		};
 		D062B0F01D52469400F70C4A /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				D0B059C51D65F894009C84FC /* StyleTests */,
-				D05D0A731D671A110001BB1A /* CustomizableTests */,
 				D0EE5F331D6CBB4E00657C71 /* CustomizingTests */,
 				D0B059C61D65F899009C84FC /* TestResources */,
 			);
@@ -173,6 +164,7 @@
 				D0EE5F341D6CBC2300657C71 /* TestColor.swift */,
 				D0EE5F361D6CBC5500657C71 /* TestFont.swift */,
 				D0A4B9071D67237100C995A5 /* TestImage.swift */,
+				D0CDC6F11D71B4CD00843DA8 /* TestView.swift */,
 				D0B059C31D65D64E009C84FC /* Assets.xcassets */,
 			);
 			name = TestResources;
@@ -335,9 +327,9 @@
 				D0EE5F371D6CBC5500657C71 /* TestFont.swift in Sources */,
 				D0A4B9061D67217A00C995A5 /* CustomizingTests.swift in Sources */,
 				D0A4B9081D67237100C995A5 /* TestImage.swift in Sources */,
+				D0CDC6F21D71B4CD00843DA8 /* TestView.swift in Sources */,
 				D0B059BE1D659273009C84FC /* ColorStyleTests.swift in Sources */,
 				D0EE5F321D6CB83300657C71 /* ViewStateTests.swift in Sources */,
-				D0B059C81D65F8CB009C84FC /* CustomizableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

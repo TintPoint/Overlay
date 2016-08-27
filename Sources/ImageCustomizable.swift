@@ -9,7 +9,7 @@
 import UIKit
 
 /// A protocol that describes a view that its background image can be customized.
-public protocol BackgroundImageCustomizable: ViewCustomizable {
+public protocol BackgroundImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the background image.
     /// - Parameter style: An `ImageStyle` that describes the background image.
@@ -18,7 +18,7 @@ public protocol BackgroundImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its decrement image can be customized.
-public protocol DecrementImageCustomizable: ViewCustomizable {
+public protocol DecrementImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the decrement image.
     /// - Parameter style: An `ImageStyle` that describes the decrement image.
@@ -27,7 +27,7 @@ public protocol DecrementImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its highlighted image can be customized.
-public protocol HighlightedImageCustomizable: ViewCustomizable {
+public protocol HighlightedImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the highlighted image.
     /// - Parameter style: An `ImageStyle` that describes the highlighted image.
@@ -36,7 +36,7 @@ public protocol HighlightedImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its image can be customized.
-public protocol ImageCustomizable: ViewCustomizable {
+public protocol ImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the image.
     /// - Parameter style: An `ImageStyle` that describes the image.
@@ -45,7 +45,7 @@ public protocol ImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its increment image can be customized.
-public protocol IncrementImageCustomizable: ViewCustomizable {
+public protocol IncrementImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the increment image.
     /// - Parameter style: An `ImageStyle` that describes the increment image.
@@ -54,7 +54,7 @@ public protocol IncrementImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its landscape image for iPhone can be customized.
-public protocol LandscapeImagePhoneCustomizable: ViewCustomizable {
+public protocol LandscapeImagePhoneCustomizable: ImageStyleExpressible {
 
     /// Customizes the landscape image for iPhone.
     /// - Parameter style: An `ImageStyle` that describes the landscape image for iPhone.
@@ -63,7 +63,7 @@ public protocol LandscapeImagePhoneCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its maximum track image can be customized.
-public protocol MaximumTrackImageCustomizable: ViewCustomizable {
+public protocol MaximumTrackImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the maximum track image.
     /// - Parameter style: An `ImageStyle` that describes the maximum track image.
@@ -72,7 +72,7 @@ public protocol MaximumTrackImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its maximum value image can be customized.
-public protocol MaximumValueImageCustomizable: ViewCustomizable {
+public protocol MaximumValueImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the maximum value image.
     /// - Parameter style: An `ImageStyle` that describes the maximum value image.
@@ -81,7 +81,7 @@ public protocol MaximumValueImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its minimum track image can be customized.
-public protocol MinimumTrackImageCustomizable: ViewCustomizable {
+public protocol MinimumTrackImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the minimum track image.
     /// - Parameter style: An `ImageStyle` that describes the minimum track image.
@@ -90,7 +90,7 @@ public protocol MinimumTrackImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its minimum value image can be customized.
-public protocol MinimumValueImageCustomizable: ViewCustomizable {
+public protocol MinimumValueImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the minimum value image.
     /// - Parameter style: An `ImageStyle` that describes the minimum value image.
@@ -99,7 +99,7 @@ public protocol MinimumValueImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its off image can be customized.
-public protocol OffImageCustomizable: ViewCustomizable {
+public protocol OffImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the off image.
     /// - Parameter style: An `ImageStyle` that describes the off image.
@@ -108,7 +108,7 @@ public protocol OffImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its on image can be customized.
-public protocol OnImageCustomizable: ViewCustomizable {
+public protocol OnImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the on image.
     /// - Parameter style: An `ImageStyle` that describes the on image.
@@ -117,7 +117,7 @@ public protocol OnImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its progress image can be customized.
-public protocol ProgressImageCustomizable: ViewCustomizable {
+public protocol ProgressImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the progress image.
     /// - Parameter style: An `ImageStyle` that describes the progress image.
@@ -126,7 +126,7 @@ public protocol ProgressImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its scope bar button background image can be customized.
-public protocol ScopeBarButtonBackgroundImageCustomizable: ViewCustomizable {
+public protocol ScopeBarButtonBackgroundImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the scope bar button background image.
     /// - Parameter style: An `ImageStyle` that describes the scope bar button background image.
@@ -135,7 +135,7 @@ public protocol ScopeBarButtonBackgroundImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its search field background image can be customized.
-public protocol SearchFieldBackgroundImageCustomizable: ViewCustomizable {
+public protocol SearchFieldBackgroundImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the search field background image.
     /// - Parameter style: An `ImageStyle` that describes the search field background image.
@@ -144,7 +144,7 @@ public protocol SearchFieldBackgroundImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its selected image can be customized.
-public protocol SelectedImageCustomizable: ViewCustomizable {
+public protocol SelectedImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the selected image.
     /// - Parameter style: An `ImageStyle` that describes the selected image.
@@ -153,7 +153,7 @@ public protocol SelectedImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its shadow image can be customized.
-public protocol ShadowImageCustomizable: ViewCustomizable {
+public protocol ShadowImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the shadow image.
     /// - Parameter style: An `ImageStyle` that describes the shadow image.
@@ -162,7 +162,7 @@ public protocol ShadowImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its thumb image can be customized.
-public protocol ThumbImageCustomizable: ViewCustomizable {
+public protocol ThumbImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the thumb image.
     /// - Parameter style: An `ImageStyle` that describes the thumb image.
@@ -171,52 +171,11 @@ public protocol ThumbImageCustomizable: ViewCustomizable {
 }
 
 /// A protocol that describes a view that its track image can be customized.
-public protocol TrackImageCustomizable: ViewCustomizable {
+public protocol TrackImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the track image.
     /// - Parameter style: An `ImageStyle` that describes the track image.
     func customizeTrackImage(using style: ImageStyle)
-
-}
-
-extension ViewCustomizable {
-
-    /// Returns an image that will be used in current state.
-    /// - Parameter style: An `ImageStyle` that describes the image.
-    /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
-    /// - Returns: An `UIImage` that will be used in current state, or `nil` if no image is set.
-    func selectedImage(from style: ImageStyle, usingNormalFor states: [UIControlState] = []) -> UIImage? {
-        guard let styleGroup = style as? ImageStyleGroup else {
-            return style.normal()
-        }
-
-        if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
-            return styleGroup.highlighted()
-        } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
-            return styleGroup.selected()
-        } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
-            return styleGroup.disabled()
-        } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
-            return styleGroup.focused()
-        } else {
-            return styleGroup.normal()
-        }
-    }
-
-    /// Customizes an image through a setter method.
-    /// - Parameter style: An `ImageStyle` that describes an image.
-    /// - Parameter setter: A setter method that will customize an image in different states.
-    /// - Parameter image: An `UIImage` that will be used.
-    /// - Parameter state: An `UIControlState` that will use the image.
-    func customizeImage(using style: ImageStyle, through setter: (_ image: UIImage?, _ state: UIControlState) -> ()) {
-        setter(style.normal(), .normal)
-        if let styleGroup = style as? ImageStyleGroup {
-            setter(styleGroup.highlighted(), .highlighted)
-            setter(styleGroup.disabled(), .disabled)
-            setter(styleGroup.selected(), .selected)
-            setter(styleGroup.focused(), .focused)
-        }
-    }
 
 }
 

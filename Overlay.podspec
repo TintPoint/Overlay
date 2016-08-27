@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Overlay"
-  s.version      = "0.4"
+  s.version      = "0.4.1"
   s.summary      = "A very flexible UI framework designed for Swift."
   s.homepage     = "https://github.com/TintPoint/Overlay"
   s.author       = { "Justin Jia" => "justin@tintpoint.com" }

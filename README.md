@@ -13,6 +13,7 @@ Overlay is a very flexible UI framework designed for Swift on top of UIKit.
 - [x] Protocol oriented design
 - [x] Work with Interface Builder
 - [x] Comprehensive unit test coverage
+- [x] [Complete documentation](http://cocoadocs.org/docsets/Overlay)
 
 ## Requirements
 
@@ -221,20 +222,32 @@ class BorderView: UIView {
 > - CustomThumbImage
 > - CustomTrackImage
 
+#### Custom Text
+
+> - CustomPlaceholder
+> - CustomPrompt
+> - CustomSegmentTitles
+> - CustomScopeButtonTitles
+> - CustomText
+> - CustomTitle
+
 ### Available Styles
 
 > - ColorStyle
 > - FontStyle
 > - ImageStyle
+> - TextStyle
 > - ColorStyleGroup
 > - FontStyleGroup
 > - ImageStyleGroup
+> - TextStyleGroup
 
 ### Available Style Groups
 
 > - ColorGroup
 > - FontGroup
 > - ImageGroup
+> - TextGroup
 
 ### Available States
 

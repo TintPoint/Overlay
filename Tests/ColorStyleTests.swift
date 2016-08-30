@@ -32,12 +32,12 @@ class ColorStyleTests: XCTestCase {
         XCTAssertEqual(Resource.fifth.normal(), Resource.group.focused())
     }
     
-    func testMinimumGroup() {
-        XCTAssertEqual(Resource.first.normal(), Resource.minimumGroup.normal())
-        XCTAssertNil(Resource.minimumGroup.disabled())
-        XCTAssertNil(Resource.minimumGroup.selected())
-        XCTAssertNil(Resource.minimumGroup.highlighted())
-        XCTAssertNil(Resource.minimumGroup.focused())
+    func testminimalGroup() {
+        XCTAssertEqual(Resource.first.normal(), Resource.minimalGroup.normal())
+        XCTAssertNil(Resource.minimalGroup.disabled())
+        XCTAssertNil(Resource.minimalGroup.selected())
+        XCTAssertNil(Resource.minimalGroup.highlighted())
+        XCTAssertNil(Resource.minimalGroup.focused())
     }
 
     func testSelectedColor() {
@@ -77,9 +77,9 @@ class ColorStyleTests: XCTestCase {
         XCTAssertEqual(view.focused, Resource.group.focused())
     }
 
-    func testCustomizeEmptyColor() {
+    func testCustomizeMinimalColor() {
         let view = View()
-        view.customizeColor(using: Resource.minimumGroup, through: view.setColor)
+        view.customizeColor(using: Resource.minimalGroup, through: view.setColor)
 
         XCTAssertEqual(view.normal, Resource.group.normal())
         XCTAssertNil(view.disabled)

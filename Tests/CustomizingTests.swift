@@ -9,20 +9,22 @@
 import XCTest
 @testable import Overlay
 
-class CustomBarButtonItem: UIBarButtonItem, CustomTintColor, CustomImage, CustomLandscapeImagePhone {
+class CustomBarButtonItem: UIBarButtonItem, CustomTintColor, CustomImage, CustomLandscapeImagePhone, CustomTitle {
     
     var tintColorStyle: ColorStyle = TestColor.first
     var imageStyle: ImageStyle = TestImage.first
     var landscapeImagePhoneStyle: ImageStyle = TestImage.second
+    var titleStyle: TextStyle = TestText.first
     
 }
 
-class CustomTabBarItem: UITabBarItem, CustomBadgeColor, CustomImage, CustomSelectedImage {
+class CustomTabBarItem: UITabBarItem, CustomBadgeColor, CustomImage, CustomSelectedImage, CustomTitle {
     
     var badgeColorStyle: ColorStyle = TestColor.first
     var imageStyle: ImageStyle = TestImage.first
     var landscapeImagePhoneStyle: ImageStyle = TestImage.second
     var selectedImageStyle: ImageStyle = TestImage.third
+    var titleStyle: TextStyle = TestText.first
     
 }
 
@@ -41,13 +43,20 @@ class CustomActivityIndicatorView: UIActivityIndicatorView, CustomColor {
     
 }
 
-class CustomButton: UIButton, CustomTitleColor, CustomTitleShadowColor, CustomImage, CustomBackgroundImage {
+class CustomButton: UIButton, CustomTitleColor, CustomTitleShadowColor, CustomImage, CustomBackgroundImage, CustomTitle {
     
     var titleColorStyle: ColorStyle = TestColor.first
     var titleShadowColorStyle: ColorStyle = TestColor.second
     var imageStyle: ImageStyle = TestImage.first
     var backgroundImageStyle: ImageStyle = TestImage.second
-    
+    var titleStyle: TextStyle = TestText.first
+
+}
+
+class CustomSegmentedControl: UISegmentedControl, CustomSegmentTitles {
+
+    var segmentTitleStyles: [TextStyle] = [TestText.first, TestText.second]
+
 }
 
 class CustomSlider: UISlider, CustomMinimumTrackTintColor, CustomMaximumTrackTintColor, CustomThumbTintColor, CustomMinimumValueImage, CustomMaximumValueImage {
@@ -85,10 +94,12 @@ class CustomSwitch: UISwitch, CustomOnTintColor, CustomThumbTintColor, CustomOnI
     
 }
 
-class CustomTextField: UITextField, CustomFont, CustomTextColor {
+class CustomTextField: UITextField, CustomFont, CustomTextColor, CustomText, CustomPlaceholder {
     
     var fontStyle: FontStyle = TestFont.first
     var textColorStyle: ColorStyle = TestColor.first
+    var textStyle: TextStyle = TestText.first
+    var placeholderStyle: TextStyle = TestText.second
     
 }
 
@@ -99,11 +110,12 @@ class CustomImageView: UIImageView, CustomImage, CustomHighlightedImage {
     
 }
 
-class CustomLabel: UILabel, CustomFont, CustomTextColor, CustomShadowColor {
+class CustomLabel: UILabel, CustomFont, CustomTextColor, CustomShadowColor, CustomText {
     
     var fontStyle: FontStyle = TestFont.first
     var textColorStyle: ColorStyle = TestColor.first
     var shadowColorStyle: ColorStyle = TestColor.second
+    var textStyle: TextStyle = TestText.first
     
 }
 
@@ -137,20 +149,25 @@ class CustomTableView: UITableView, CustomSeparatorColor, CustomSectionIndexColo
     
 }
 
-class CustomTextView: UITextView, CustomFont, CustomTextColor {
+class CustomTextView: UITextView, CustomFont, CustomTextColor, CustomText {
     
     var fontStyle: FontStyle = TestFont.first
     var textColorStyle: ColorStyle = TestColor.first
+    var textStyle: TextStyle = TestText.first
     
 }
 
-class CustomSearchBar: UISearchBar, CustomBarTintColor, CustomBackgroundImage, CustomSearchFieldBackgroundImage, CustomScopeBarButtonBackgroundImage {
+class CustomSearchBar: UISearchBar, CustomBarTintColor, CustomBackgroundImage, CustomSearchFieldBackgroundImage, CustomScopeBarButtonBackgroundImage, CustomText, CustomPlaceholder, CustomPrompt, CustomScopeButtonTitles {
     
     var barTintColorStyle: ColorStyle = TestColor.first
     var backgroundImageStyle: ImageStyle = TestImage.first
     var searchFieldBackgroundImageStyle: ImageStyle = TestImage.second
     var scopeBarButtonBackgroundImageStyle: ImageStyle = TestImage.third
-    
+    var textStyle: TextStyle = TestText.first
+    var placeholderStyle: TextStyle = TestText.second
+    var promptStyle: TextStyle = TestText.third
+    var scopeButtonTitleStyles: [TextStyle] = [TestText.fourth, TestText.fifth]
+
 }
 
 class CustomTabBar: UITabBar, CustomBarTintColor, CustomUnselectedItemTintColor, CustomShadowImage, CustomBackgroundImage {
@@ -176,6 +193,7 @@ class CustomizingTests: XCTestCase {
         XCTAssertEqual(barButtonItem.tintColor, TestColor.first)
         XCTAssertEqual(barButtonItem.image, TestImage.first)
         XCTAssertEqual(barButtonItem.landscapeImagePhone, TestImage.second)
+        XCTAssertEqual(barButtonItem.title, TestText.first)
     }
     
     func testTabBarItem() {
@@ -186,6 +204,7 @@ class CustomizingTests: XCTestCase {
         }
         XCTAssertEqual(tabBarItem.image, TestImage.first)
         XCTAssertNotNil(tabBarItem.selectedImage) // Image is altered
+        XCTAssertEqual(tabBarItem.title, TestText.first)
     }
     
     func testView() {
@@ -210,8 +229,22 @@ class CustomizingTests: XCTestCase {
         XCTAssertEqual(button.currentTitleShadowColor, TestColor.second)
         XCTAssertEqual(button.currentImage, TestImage.first)
         XCTAssertEqual(button.currentBackgroundImage, TestImage.second)
+        XCTAssertEqual(button.currentTitle, TestText.first)
     }
-    
+
+    func testSegmentedControl() {
+        let segmentedControl = CustomSegmentedControl(items: ["", "", ""])
+        segmentedControl.refresh()
+        XCTAssertEqual(segmentedControl.titleForSegment(at: 0), TestText.first)
+        XCTAssertEqual(segmentedControl.titleForSegment(at: 1), TestText.second)
+        XCTAssertEqual(segmentedControl.titleForSegment(at: 2), "")
+    }
+
+    func testEmptySegmentedControl() {
+        let segmentedControl = CustomSegmentedControl()
+        segmentedControl.refresh()
+    }
+
     func testSlider() {
         let slider = CustomSlider()
         slider.refresh()
@@ -252,6 +285,8 @@ class CustomizingTests: XCTestCase {
         textField.refresh()
         XCTAssertEqual(textField.font, TestFont.first)
         XCTAssertEqual(textField.textColor, TestColor.first)
+        XCTAssertEqual(textField.text, TestText.first)
+        XCTAssertEqual(textField.placeholder, TestText.second)
     }
     
     func testImageView() {
@@ -267,6 +302,7 @@ class CustomizingTests: XCTestCase {
         XCTAssertEqual(label.font, TestFont.first)
         XCTAssertEqual(label.textColor, TestColor.first)
         XCTAssertEqual(label.shadowColor, TestColor.second)
+        XCTAssertEqual(label.text, TestText.first)
     }
     
     func testNavigationBar() {
@@ -304,6 +340,7 @@ class CustomizingTests: XCTestCase {
         textView.refresh()
         XCTAssertEqual(textView.font, TestFont.first)
         XCTAssertEqual(textView.textColor, TestColor.first)
+        XCTAssertEqual(textView.text, TestText.first)
     }
     
     func testSearchBar() {
@@ -313,8 +350,12 @@ class CustomizingTests: XCTestCase {
         XCTAssertNotNil(searchBar.backgroundImage) // Image is scaled or tiled
         XCTAssertEqual(searchBar.searchFieldBackgroundImage(for: .normal), TestImage.second)
         XCTAssertEqual(searchBar.scopeBarButtonBackgroundImage(for: .normal), TestImage.third)
+        XCTAssertEqual(searchBar.text, TestText.first)
+        XCTAssertEqual(searchBar.placeholder, TestText.second)
+        XCTAssertEqual(searchBar.prompt, TestText.third)
+        XCTAssertEqual(searchBar.scopeButtonTitles!, [TestText.fourth, TestText.fifth])
     }
-    
+
     func testTabBar() {
         let tabBar = CustomTabBar()
         tabBar.refresh()

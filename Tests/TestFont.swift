@@ -17,6 +17,6 @@ class TestFont {
     static let fifth = UIFont.preferredFont(forTextStyle: .footnote)
     
     static let group = FontGroup(normal: first, disabled: second, selected: third, highlighted: fourth, focused: fifth)
-    static let minimumGroup = FontGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
+    static let minimalGroup = FontGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
     
 }

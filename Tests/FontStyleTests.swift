@@ -32,12 +32,12 @@ class FontStyleTests: XCTestCase {
         XCTAssertEqual(Resource.fifth.normal(), Resource.group.focused())
     }
     
-    func testMinimumGroup() {
-        XCTAssertEqual(Resource.first.normal(), Resource.minimumGroup.normal())
-        XCTAssertNil(Resource.minimumGroup.disabled())
-        XCTAssertNil(Resource.minimumGroup.selected())
-        XCTAssertNil(Resource.minimumGroup.highlighted())
-        XCTAssertNil(Resource.minimumGroup.focused())
+    func testminimalGroup() {
+        XCTAssertEqual(Resource.first.normal(), Resource.minimalGroup.normal())
+        XCTAssertNil(Resource.minimalGroup.disabled())
+        XCTAssertNil(Resource.minimalGroup.selected())
+        XCTAssertNil(Resource.minimalGroup.highlighted())
+        XCTAssertNil(Resource.minimalGroup.focused())
     }
 
     func testSelectedFont() {

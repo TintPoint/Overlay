@@ -68,3 +68,24 @@ class TestImageView: TestView, ImageStyleExpressible {
     }
     
 }
+
+class TestTextView: TestView, TextStyleExpressible {
+
+    var normal: String?
+    var disabled: String?
+    var selected: String?
+    var highlighted:String?
+    var focused: String?
+
+    func setText(_ text: String?, for state: UIControlState) {
+        switch state.rawValue {
+        case UIControlState.normal.rawValue: normal = text
+        case UIControlState.disabled.rawValue: disabled = text
+        case UIControlState.selected.rawValue: selected = text
+        case UIControlState.highlighted.rawValue: highlighted = text
+        case UIControlState.focused.rawValue: focused = text
+        default: return
+        }
+    }
+    
+}

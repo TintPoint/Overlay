@@ -17,6 +17,6 @@ class TestImage {
     static let fifth = UIImage(named: "Red", in: Bundle(for: TestImage.self), compatibleWith: nil)!
 
     static let group = ImageGroup(normal: first, disabled: second, selected: third, highlighted: fourth, focused: fifth)
-    static let minimumGroup = ImageGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
+    static let minimalGroup = ImageGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
 
 }

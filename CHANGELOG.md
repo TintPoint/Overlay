@@ -1,11 +1,25 @@
-# Changelog
+# Change Log
+
+## 0.4.2
+
+### Added
+
+- Add `TextStyle` and the ability to customize texts.
+    - Added by [Justin Jia](http://github.com/JustinJiaDev) in pull request #8.
+
+### Changed
+
+- Change test target bundle ID.
+    - Changed by [Justin Jia](http://github.com/JustinJiaDev).
+- Update docs.
+    - Changed by [Justin Jia](http://github.com/JustinJiaDev).
 
 ## 0.4.1
 
 ### Added
 
 - Add `*StyleExpressible`.
-    - Added by [Justin Jia](http://github.com/JustinJiaDev) in pull request #8 .
+    - Added by [Justin Jia](http://github.com/JustinJiaDev) in pull request #8.
 - Support CocoaPods.
     - Added by [Justin Jia](http://github.com/JustinJiaDev).
 

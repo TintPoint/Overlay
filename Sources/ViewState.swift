@@ -11,8 +11,8 @@ import UIKit
 /// A protocol that describes a view that can be disabled.
 /// - SeeAlso: `ViewSelectable`, `ViewHighlightable`, `ViewFocusable`
 public protocol ViewDisable {
-    
-    /// The value that indicates whether the view is currently enabled.
+
+    /// A `Bool` value that indicates whether the view is currently enabled.
     var isEnabled: Bool { get }
     
 }
@@ -20,8 +20,8 @@ public protocol ViewDisable {
 /// A protocol that describes a view that can be selected.
 /// - SeeAlso: `ViewDisable`, `ViewHighlightable`, `ViewFocusable`
 public protocol ViewSelectable {
-    
-    /// The value that indicates whether the view is currently selected.
+
+    /// A `Bool` value that indicates whether the view is currently selected.
     var isSelected: Bool { get }
     
 }
@@ -30,7 +30,7 @@ public protocol ViewSelectable {
 /// - SeeAlso: `ViewDisable`, `ViewSelectable`, `ViewFocusable`
 public protocol ViewHighlightable {
     
-    /// The value that indicates whether the view is currently highlighted.
+    /// A `Bool` value that indicates whether the view is currently highlighted.
     var isHighlighted: Bool { get }
     
 }
@@ -39,7 +39,7 @@ public protocol ViewHighlightable {
 /// - SeeAlso: `ViewDisable`, `ViewSelectable`, `ViewHighlightable`
 public protocol ViewFocusable {
     
-    /// The value that indicates whether the view is currently focused.
+    /// A `Bool` value that indicates whether the view is currently focused.
     var isFocused: Bool { get }
     
 }

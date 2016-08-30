@@ -12,7 +12,7 @@ import UIKit
 public protocol BackgroundColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the background color.
-    /// - Parameter style: A `ColorStyle` that describes the background color.
+    /// - Parameter style: A `ColorStyle` that represents the background color.
     func customizeBackgroundColor(using style: ColorStyle)
 
 }
@@ -21,7 +21,7 @@ public protocol BackgroundColorCustomizable: ColorStyleExpressible {
 public protocol BadgeColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the badge color.
-    /// - Parameter style: A `ColorStyle` that describes the badge color.
+    /// - Parameter style: A `ColorStyle` that represents the badge color.
     func customizeBadgeColor(using style: ColorStyle)
 
 }
@@ -30,7 +30,7 @@ public protocol BadgeColorCustomizable: ColorStyleExpressible {
 public protocol BarTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the bar tint color.
-    /// - Parameter style: A `ColorStyle` that describes the bar tint color.
+    /// - Parameter style: A `ColorStyle` that represents the bar tint color.
     func customizeBarTintColor(using style: ColorStyle)
 
 }
@@ -39,7 +39,7 @@ public protocol BarTintColorCustomizable: ColorStyleExpressible {
 public protocol BorderColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the border color.
-    /// - Parameter style: A `ColorStyle` that describes the border color.
+    /// - Parameter style: A `ColorStyle` that represents the border color.
     func customizeBorderColor(using style: ColorStyle)
 
 }
@@ -48,7 +48,7 @@ public protocol BorderColorCustomizable: ColorStyleExpressible {
 public protocol ColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the color.
-    /// - Parameter style: A `ColorStyle` that describes the color.
+    /// - Parameter style: A `ColorStyle` that represents the color.
     func customizeColor(using style: ColorStyle)
 
 }
@@ -57,7 +57,7 @@ public protocol ColorCustomizable: ColorStyleExpressible {
 public protocol MaximumTrackTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the maximum track tint color.
-    /// - Parameter style: A `ColorStyle` that describes the maximum track tint color.
+    /// - Parameter style: A `ColorStyle` that represents the maximum track tint color.
     func customizeMaximumTrackTintColor(using style: ColorStyle)
 
 }
@@ -66,7 +66,7 @@ public protocol MaximumTrackTintColorCustomizable: ColorStyleExpressible {
 public protocol MinimumTrackTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the minimum track tint color.
-    /// - Parameter style: A `ColorStyle` that describes the minimum track tint color.
+    /// - Parameter style: A `ColorStyle` that represents the minimum track tint color.
     func customizeMinimumTrackTintColor(using style: ColorStyle)
 
 }
@@ -75,7 +75,7 @@ public protocol MinimumTrackTintColorCustomizable: ColorStyleExpressible {
 public protocol OnTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the on tint color.
-    /// - Parameter style: A `ColorStyle` that describes the on tint color.
+    /// - Parameter style: A `ColorStyle` that represents the on tint color.
     func customizeOnTintColor(using style: ColorStyle)
 
 }
@@ -84,7 +84,7 @@ public protocol OnTintColorCustomizable: ColorStyleExpressible {
 public protocol ProgressTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the progress tint color.
-    /// - Parameter style: A `ColorStyle` that describes the progress tint color.
+    /// - Parameter style: A `ColorStyle` that represents the progress tint color.
     func customizeProgressTintColor(using style: ColorStyle)
 
 }
@@ -93,7 +93,7 @@ public protocol ProgressTintColorCustomizable: ColorStyleExpressible {
 public protocol SectionIndexBackgroundColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the section index background color.
-    /// - Parameter style: A `ColorStyle` that describes the section index background color.
+    /// - Parameter style: A `ColorStyle` that represents the section index background color.
     func customizeSectionIndexBackgroundColor(using style: ColorStyle)
 
 }
@@ -102,7 +102,7 @@ public protocol SectionIndexBackgroundColorCustomizable: ColorStyleExpressible {
 public protocol SectionIndexColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the section index color.
-    /// - Parameter style: A `ColorStyle` that describes the section index color.
+    /// - Parameter style: A `ColorStyle` that represents the section index color.
     func customizeSectionIndexColor(using style: ColorStyle)
 
 }
@@ -111,7 +111,7 @@ public protocol SectionIndexColorCustomizable: ColorStyleExpressible {
 public protocol SectionIndexTrackingBackgroundColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the section index tracking background color.
-    /// - Parameter style: A `ColorStyle` that describes the section index tracking background color.
+    /// - Parameter style: A `ColorStyle` that represents the section index tracking background color.
     func customizeSectionIndexTrackingBackgroundColor(using style: ColorStyle)
 
 }
@@ -120,7 +120,7 @@ public protocol SectionIndexTrackingBackgroundColorCustomizable: ColorStyleExpre
 public protocol SeparatorColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the separator color.
-    /// - Parameter style: A `ColorStyle` that describes the separator color.
+    /// - Parameter style: A `ColorStyle` that represents the separator color.
     func customizeSeparatorColor(using style: ColorStyle)
 
 }
@@ -129,7 +129,7 @@ public protocol SeparatorColorCustomizable: ColorStyleExpressible {
 public protocol ShadowColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the shadow color.
-    /// - Parameter style: A `ColorStyle` that describes the shadow color.
+    /// - Parameter style: A `ColorStyle` that represents the shadow color.
     func customizeShadowColor(using style: ColorStyle)
 
 }
@@ -138,7 +138,7 @@ public protocol ShadowColorCustomizable: ColorStyleExpressible {
 public protocol TextColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the text color.
-    /// - Parameter style: A `ColorStyle` that describes the text color.
+    /// - Parameter style: A `ColorStyle` that represents the text color.
     func customizeTextColor(using style: ColorStyle)
 
 }
@@ -147,7 +147,7 @@ public protocol TextColorCustomizable: ColorStyleExpressible {
 public protocol ThumbTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the thumb tint color.
-    /// - Parameter style: A `ColorStyle` that describes the thumb tint color.
+    /// - Parameter style: A `ColorStyle` that represents the thumb tint color.
     func customizeThumbTintColor(using style: ColorStyle)
 
 }
@@ -156,7 +156,7 @@ public protocol ThumbTintColorCustomizable: ColorStyleExpressible {
 public protocol TintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the tint color.
-    /// - Parameter style: A `ColorStyle` that describes the tint color.
+    /// - Parameter style: A `ColorStyle` that represents the tint color.
     func customizeTintColor(using style: ColorStyle)
 
 }
@@ -165,7 +165,7 @@ public protocol TintColorCustomizable: ColorStyleExpressible {
 public protocol TitleColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the title color.
-    /// - Parameter style: A `ColorStyle` that describes the title color.
+    /// - Parameter style: A `ColorStyle` that represents the title color.
     func customizeTitleColor(using style: ColorStyle)
 
 }
@@ -174,7 +174,7 @@ public protocol TitleColorCustomizable: ColorStyleExpressible {
 public protocol TitleShadowColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the title shadow color.
-    /// - Parameter style: A `ColorStyle` that describes the title shadow color.
+    /// - Parameter style: A `ColorStyle` that represents the title shadow color.
     func customizeTitleShadowColor(using style: ColorStyle)
 
 }
@@ -183,7 +183,7 @@ public protocol TitleShadowColorCustomizable: ColorStyleExpressible {
 public protocol TrackTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the track tint color.
-    /// - Parameter style: A `ColorStyle` that describes the track tint color.
+    /// - Parameter style: A `ColorStyle` that represents the track tint color.
     func customizeTrackTintColor(using style: ColorStyle)
 
 }
@@ -192,7 +192,7 @@ public protocol TrackTintColorCustomizable: ColorStyleExpressible {
 public protocol UnselectedItemTintColorCustomizable: ColorStyleExpressible {
 
     /// Customizes the unselected item tint color.
-    /// - Parameter style: A `ColorStyle` that describes the unselected item tint color.
+    /// - Parameter style: A `ColorStyle` that represents the unselected item tint color.
     func customizeUnselectedItemTintColor(using style: ColorStyle)
 
 }

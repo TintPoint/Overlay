@@ -8,33 +8,33 @@
 
 import UIKit
 
-/// A protocol that describes an image property of a view that conforms to `Custom*Image`.
+/// A protocol that describes an item that can represent an image.
 /// - SeeAlso: `ImageStyleGroup`, `ImageGroup`
 public protocol ImageStyle {
     
-    /// Returns an image that will be used in normal state.
+    /// Returns an `UIImage` that will be used in normal state.
     /// - Returns: An `UIImage` that will be used in normal state.
     func normal() -> UIImage
     
 }
 
-/// A protocol that describes an image property of a view in different states (e.g. disabled) that conforms to `Custom*Image`.
+/// A protocol that describes an item that can represent an image in different states (e.g. disabled).
 /// - SeeAlso: `ImageStyle`, `ImageGroup`
 public protocol ImageStyleGroup: ImageStyle {
     
-    /// Returns an image that will be used in disabled state.
+    /// Returns an `UIImage` that will be used in disabled state.
     /// - Returns: An `UIImage` that will be used in disabled state, or `nil` if no image is set.
     func disabled() -> UIImage?
     
-    /// Returns an image that will be used in selected state.
+    /// Returns an `UIImage` that will be used in selected state.
     /// - Returns: An `UIImage` that will be used in selected state, or `nil` if no image is set.
     func selected() -> UIImage?
     
-    /// Returns an image that will be used in highlighted state.
+    /// Returns an `UIImage` that will be used in highlighted state.
     /// - Returns: An `UIImage` that will be used in highlighted state, or `nil` if no image is set.
     func highlighted() -> UIImage?
     
-    /// Returns an image that will be used in focused state.
+    /// Returns an `UIImage` that will be used in focused state.
     /// - Returns: An `UIImage` that will be used in focused state, or `nil` if no image is set.
     func focused() -> UIImage?
     
@@ -76,31 +76,31 @@ extension UIImage: ImageStyle {
     
 }
 
-/// A collection of images that describes an image property of a view in different states (e.g. disabled) that conforms to `Custom*Image`.
+/// A collection of `ImageStyle` that can represent an image in different states (e.g. disabled).
 /// - SeeAlso: `ImageStyle`, `ImageStyleGroup`
 public struct ImageGroup {
     
-    /// The image that will be used in normal state.
+    /// The `ImageStyle` that will be used in normal state.
     fileprivate let normalStorage: ImageStyle
     
-    /// The image that will be used in disabled state, or `nil` if no image is set.
+    /// The `ImageStyle` that will be used in disabled state, or `nil` if no `ImageStyle` is set.
     fileprivate let disabledStorage: ImageStyle?
     
-    /// The image that will be used in selected state, or `nil` if no image is set.
+    /// The `ImageStyle` that will be used in selected state, or `nil` if no `ImageStyle` is set.
     fileprivate let selectedStorage: ImageStyle?
     
-    /// The image that will be used in highlighted state, or `nil` if no image is set.
+    /// The `ImageStyle` that will be used in highlighted state, or `nil` if no `ImageStyle` is set.
     fileprivate let highlightedStorage: ImageStyle?
     
-    /// The image that will be used in focused state, or `nil` if no image is set.
+    /// The `ImageStyle` that will be used in focused state, or `nil` if no `ImageStyle` is set.
     fileprivate let focusedStorage: ImageStyle?
     
     /// Creates an instance with objects that conforms to `ImageStyle`.
-    /// - Parameter normal: An `UIImage` that will be used in normal state.
-    /// - Parameter disabled: An `UIImage` that will be used in disabled state.
-    /// - Parameter selected: An `UIImage` that will be used in selected state.
-    /// - Parameter highlighted: An `UIImage` that will be used in highlighted state.
-    /// - Parameter focused: An `UIImage` that will be used in focused state.
+    /// - Parameter normal: An `ImageStyle` that will be used in normal state.
+    /// - Parameter disabled: An `ImageStyle` that will be used in disabled state.
+    /// - Parameter selected: An `ImageStyle` that will be used in selected state.
+    /// - Parameter highlighted: An `ImageStyle` that will be used in highlighted state.
+    /// - Parameter focused: An `ImageStyle` that will be used in focused state.
     public init(normal: ImageStyle, disabled: ImageStyle? = nil, selected: ImageStyle? = nil, highlighted: ImageStyle? = nil, focused: ImageStyle? = nil) {
         normalStorage = normal
         disabledStorage = disabled
@@ -140,8 +140,8 @@ public protocol ImageStyleExpressible { }
 
 extension ImageStyleExpressible {
 
-    /// Returns an image that will be used in current state.
-    /// - Parameter style: An `ImageStyle` that describes the image.
+    /// Returns an `UIImage` that will be used in current state.
+    /// - Parameter style: An `ImageStyle` that represents the image.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
     /// - Returns: An `UIImage` that will be used in current state, or `nil` if no image is set.
     func selectedImage(from style: ImageStyle, usingNormalFor states: [UIControlState] = []) -> UIImage? {
@@ -163,7 +163,7 @@ extension ImageStyleExpressible {
     }
 
     /// Customizes an image through a setter method.
-    /// - Parameter style: An `ImageStyle` that describes an image.
+    /// - Parameter style: An `ImageStyle` that represents an image.
     /// - Parameter setter: A setter method that will customize an image in different states.
     /// - Parameter image: An `UIImage` that will be used.
     /// - Parameter state: An `UIControlState` that will use the image.

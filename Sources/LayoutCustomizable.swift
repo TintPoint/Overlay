@@ -12,7 +12,7 @@ import UIKit
 public protocol LayoutCustomizable {
 
     /// Customizes the layout.
-    /// - Parameter nib: An `UINib` that describes the layout.
+    /// - Parameter nib: An `UINib` that represents the layout.
     func customizeLayout(using nib: UINib)
     
 }

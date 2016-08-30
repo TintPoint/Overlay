@@ -11,7 +11,7 @@ import UIKit
 /// A protocol that describes a view that its background image will be customized.
 public protocol CustomBackgroundImage: BackgroundImageCustomizable {
 
-    /// The `ImageStyle` that describes the background image.
+    /// The `ImageStyle` that represents the background image.
     var backgroundImageStyle: ImageStyle { get }
 
 }
@@ -19,7 +19,7 @@ public protocol CustomBackgroundImage: BackgroundImageCustomizable {
 /// A protocol that describes a view that its decrement image will be customized.
 public protocol CustomDecrementImage: DecrementImageCustomizable {
 
-    /// The `ImageStyle` that describes the decrement image.
+    /// The `ImageStyle` that represents the decrement image.
     var decrementImageStyle: ImageStyle { get }
 
 }
@@ -27,7 +27,7 @@ public protocol CustomDecrementImage: DecrementImageCustomizable {
 /// A protocol that describes a view that its highlighted image will be customized.
 public protocol CustomHighlightedImage: HighlightedImageCustomizable {
 
-    /// The `ImageStyle` that describes the highlighted image.
+    /// The `ImageStyle` that represents the highlighted image.
     var highlightedImageStyle: ImageStyle { get }
 
 }
@@ -35,7 +35,7 @@ public protocol CustomHighlightedImage: HighlightedImageCustomizable {
 /// A protocol that describes a view that its image will be customized.
 public protocol CustomImage: ImageCustomizable {
 
-    /// The `ImageStyle` that describes the image.
+    /// The `ImageStyle` that represents the image.
     var imageStyle: ImageStyle { get }
 
 }
@@ -43,7 +43,7 @@ public protocol CustomImage: ImageCustomizable {
 /// A protocol that describes a view that its increment image will be customized.
 public protocol CustomIncrementImage: IncrementImageCustomizable {
 
-    /// The `ImageStyle` that describes the increment image.
+    /// The `ImageStyle` that represents the increment image.
     var incrementImageStyle: ImageStyle { get }
 
 }
@@ -51,7 +51,7 @@ public protocol CustomIncrementImage: IncrementImageCustomizable {
 /// A protocol that describes a view that its landscape image for iPhone will be customized.
 public protocol CustomLandscapeImagePhone: LandscapeImagePhoneCustomizable {
 
-    /// The `ImageStyle` that describes the landscape image for iPhone.
+    /// The `ImageStyle` that represents the landscape image for iPhone.
     var landscapeImagePhoneStyle: ImageStyle { get }
 
 }
@@ -59,7 +59,7 @@ public protocol CustomLandscapeImagePhone: LandscapeImagePhoneCustomizable {
 /// A protocol that describes a view that its maximum track image will be customized.
 public protocol CustomMaximumTrackImage: MaximumTrackImageCustomizable {
 
-    /// The `ImageStyle` that describes the maximum track image.
+    /// The `ImageStyle` that represents the maximum track image.
     var maximumTrackImageStyle: ImageStyle { get }
 
 }
@@ -67,7 +67,7 @@ public protocol CustomMaximumTrackImage: MaximumTrackImageCustomizable {
 /// A protocol that describes a view that its maximum value image will be customized.
 public protocol CustomMaximumValueImage: MaximumValueImageCustomizable {
 
-    /// The `ImageStyle` that describes the maximum value image.
+    /// The `ImageStyle` that represents the maximum value image.
     var maximumValueImageStyle: ImageStyle { get }
 
 }
@@ -75,7 +75,7 @@ public protocol CustomMaximumValueImage: MaximumValueImageCustomizable {
 /// A protocol that describes a view that its minimum track image will be customized.
 public protocol CustomMinimumTrackImage: MinimumTrackImageCustomizable {
 
-    /// The `ImageStyle` that describes the minimum track image.
+    /// The `ImageStyle` that represents the minimum track image.
     var minimumTrackImageStyle: ImageStyle { get }
 
 }
@@ -83,7 +83,7 @@ public protocol CustomMinimumTrackImage: MinimumTrackImageCustomizable {
 /// A protocol that describes a view that its minimum value image will be customized.
 public protocol CustomMinimumValueImage: MinimumValueImageCustomizable {
 
-    /// The `ImageStyle` that describes the minimum value image.
+    /// The `ImageStyle` that represents the minimum value image.
     var minimumValueImageStyle: ImageStyle { get }
 
 }
@@ -91,7 +91,7 @@ public protocol CustomMinimumValueImage: MinimumValueImageCustomizable {
 /// A protocol that describes a view that its off image will be customized.
 public protocol CustomOffImage: OffImageCustomizable {
 
-    /// The `ImageStyle` that describes the off image.
+    /// The `ImageStyle` that represents the off image.
     var offImageStyle: ImageStyle { get }
 
 }
@@ -99,7 +99,7 @@ public protocol CustomOffImage: OffImageCustomizable {
 /// A protocol that describes a view that its on image will be customized.
 public protocol CustomOnImage: OnImageCustomizable {
 
-    /// The `ImageStyle` that describes the on image.
+    /// The `ImageStyle` that represents the on image.
     var onImageStyle: ImageStyle { get }
 
 }
@@ -107,7 +107,7 @@ public protocol CustomOnImage: OnImageCustomizable {
 /// A protocol that describes a view that its progress image will be customized.
 public protocol CustomProgressImage: ProgressImageCustomizable {
 
-    /// The `ImageStyle` that describes the progress image.
+    /// The `ImageStyle` that represents the progress image.
     var progressImageStyle: ImageStyle { get }
 
 }
@@ -115,7 +115,7 @@ public protocol CustomProgressImage: ProgressImageCustomizable {
 /// A protocol that describes a view that its scope bar button background image will be customized.
 public protocol CustomScopeBarButtonBackgroundImage: ScopeBarButtonBackgroundImageCustomizable {
 
-    /// The `ImageStyle` that describes the scope bar button background image.
+    /// The `ImageStyle` that represents the scope bar button background image.
     var scopeBarButtonBackgroundImageStyle: ImageStyle { get }
 
 }
@@ -123,7 +123,7 @@ public protocol CustomScopeBarButtonBackgroundImage: ScopeBarButtonBackgroundIma
 /// A protocol that describes a view that its search field background image will be customized.
 public protocol CustomSearchFieldBackgroundImage: SearchFieldBackgroundImageCustomizable {
 
-    /// The `ImageStyle` that describes the search field background image.
+    /// The `ImageStyle` that represents the search field background image.
     var searchFieldBackgroundImageStyle: ImageStyle { get }
 
 }
@@ -131,7 +131,7 @@ public protocol CustomSearchFieldBackgroundImage: SearchFieldBackgroundImageCust
 /// A protocol that describes a view that its selected image will be customized.
 public protocol CustomSelectedImage: SelectedImageCustomizable {
 
-    /// The `ImageStyle` that describes the selected image.
+    /// The `ImageStyle` that represents the selected image.
     var selectedImageStyle: ImageStyle { get }
 
 }
@@ -139,7 +139,7 @@ public protocol CustomSelectedImage: SelectedImageCustomizable {
 /// A protocol that describes a view that its shadow image will be customized.
 public protocol CustomShadowImage: ShadowImageCustomizable {
 
-    /// The `ImageStyle` that describes the shadow image.
+    /// The `ImageStyle` that represents the shadow image.
     var shadowImageStyle: ImageStyle { get }
 
 }
@@ -147,7 +147,7 @@ public protocol CustomShadowImage: ShadowImageCustomizable {
 /// A protocol that describes a view that its thumb image will be customized.
 public protocol CustomThumbImage: ThumbImageCustomizable {
 
-    /// The `ImageStyle` that describes the thumb image.
+    /// The `ImageStyle` that represents the thumb image.
     var thumbImageStyle: ImageStyle { get }
 
 }
@@ -155,7 +155,7 @@ public protocol CustomThumbImage: ThumbImageCustomizable {
 /// A protocol that describes a view that its track image will be customized.
 public protocol CustomTrackImage: TrackImageCustomizable {
 
-    /// The `ImageStyle` that describes the track image.
+    /// The `ImageStyle` that represents the track image.
     var trackImageStyle: ImageStyle { get }
 
 }

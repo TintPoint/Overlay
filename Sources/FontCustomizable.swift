@@ -12,7 +12,7 @@ import UIKit
 public protocol FontCustomizable: FontStyleExpressible {
     
     /// Customizes the font.
-    /// - Parameter style: A `FontStyle` that describes the font.
+    /// - Parameter style: A `FontStyle` that represents the font.
     func customizeFont(using style: FontStyle)
     
 }

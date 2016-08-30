@@ -12,7 +12,7 @@ import UIKit
 public protocol PlaceholderCustomizable: TextStyleExpressible {
 
     /// Customizes the placeholder.
-    /// - Parameter style: A `TextStyle` that describes the placeholder.
+    /// - Parameter style: A `TextStyle` that represents the placeholder.
     func customizePlaceholder(using style: TextStyle)
 
 }
@@ -21,7 +21,7 @@ public protocol PlaceholderCustomizable: TextStyleExpressible {
 public protocol PromptCustomizable: TextStyleExpressible {
 
     /// Customizes the prompt.
-    /// - Parameter style: A `TextStyle` that describes the prompt.
+    /// - Parameter style: A `TextStyle` that represents the prompt.
     func customizePrompt(using style: TextStyle)
 
 }
@@ -30,7 +30,7 @@ public protocol PromptCustomizable: TextStyleExpressible {
 public protocol SegmentTitlesCustomizable: TextStyleExpressible {
 
     /// Customizes the titles of the segments.
-    /// - Parameter styles: An array of `TextStyle` that describes the titles of the segments.
+    /// - Parameter styles: An array of `TextStyle` that represents the titles of the segments. The indexes of the array is used to identify segments in the control, from left to right. Styles which their indexes exceeding the number of segments are ignored.
     func customizeSegmentTitles(using styles: [TextStyle])
 
 }
@@ -39,7 +39,7 @@ public protocol SegmentTitlesCustomizable: TextStyleExpressible {
 public protocol ScopeButtonTitlesCustomizable: TextStyleExpressible {
 
     /// Customizes the titles of the scope buttons.
-    /// - Parameter styles: An array of `TextStyle` that describes the titles of the scope buttons.
+    /// - Parameter styles: An array of `TextStyle` that represents the titles of the scope buttons. The indexes of the array is used to identify buttons in the control, from left to right.
     func customizeScopeButtonTitles(using styles: [TextStyle])
 
 }
@@ -48,7 +48,7 @@ public protocol ScopeButtonTitlesCustomizable: TextStyleExpressible {
 public protocol TextCustomizable: TextStyleExpressible {
 
     /// Customizes the text.
-    /// - Parameter style: A `TextStyle` that describes the text.
+    /// - Parameter style: A `TextStyle` that represents the text.
     func customizeText(using style: TextStyle)
 
 }
@@ -57,7 +57,7 @@ public protocol TextCustomizable: TextStyleExpressible {
 public protocol TitleCustomizable: TextStyleExpressible {
 
     /// Customizes the title.
-    /// - Parameter style: A `TextStyle` that describes the title.
+    /// - Parameter style: A `TextStyle` that represents the title.
     func customizeTitle(using style: TextStyle)
 
 }

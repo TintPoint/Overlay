@@ -12,7 +12,7 @@ import UIKit
 public protocol BackgroundImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the background image.
-    /// - Parameter style: An `ImageStyle` that describes the background image.
+    /// - Parameter style: An `ImageStyle` that represents the background image.
     func customizeBackgroundImage(using style: ImageStyle)
 
 }
@@ -21,7 +21,7 @@ public protocol BackgroundImageCustomizable: ImageStyleExpressible {
 public protocol DecrementImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the decrement image.
-    /// - Parameter style: An `ImageStyle` that describes the decrement image.
+    /// - Parameter style: An `ImageStyle` that represents the decrement image.
     func customizeDecrementImage(using style: ImageStyle)
 
 }
@@ -30,7 +30,7 @@ public protocol DecrementImageCustomizable: ImageStyleExpressible {
 public protocol HighlightedImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the highlighted image.
-    /// - Parameter style: An `ImageStyle` that describes the highlighted image.
+    /// - Parameter style: An `ImageStyle` that represents the highlighted image.
     func customizeHighlightedImage(using style: ImageStyle)
 
 }
@@ -39,7 +39,7 @@ public protocol HighlightedImageCustomizable: ImageStyleExpressible {
 public protocol ImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the image.
-    /// - Parameter style: An `ImageStyle` that describes the image.
+    /// - Parameter style: An `ImageStyle` that represents the image.
     func customizeImage(using style: ImageStyle)
 
 }
@@ -48,7 +48,7 @@ public protocol ImageCustomizable: ImageStyleExpressible {
 public protocol IncrementImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the increment image.
-    /// - Parameter style: An `ImageStyle` that describes the increment image.
+    /// - Parameter style: An `ImageStyle` that represents the increment image.
     func customizeIncrementImage(using style: ImageStyle)
 
 }
@@ -57,7 +57,7 @@ public protocol IncrementImageCustomizable: ImageStyleExpressible {
 public protocol LandscapeImagePhoneCustomizable: ImageStyleExpressible {
 
     /// Customizes the landscape image for iPhone.
-    /// - Parameter style: An `ImageStyle` that describes the landscape image for iPhone.
+    /// - Parameter style: An `ImageStyle` that represents the landscape image for iPhone.
     func customizeLandscapeImagePhone(using style: ImageStyle)
 
 }
@@ -66,7 +66,7 @@ public protocol LandscapeImagePhoneCustomizable: ImageStyleExpressible {
 public protocol MaximumTrackImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the maximum track image.
-    /// - Parameter style: An `ImageStyle` that describes the maximum track image.
+    /// - Parameter style: An `ImageStyle` that represents the maximum track image.
     func customizeMaximumTrackImage(using style: ImageStyle)
 
 }
@@ -75,7 +75,7 @@ public protocol MaximumTrackImageCustomizable: ImageStyleExpressible {
 public protocol MaximumValueImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the maximum value image.
-    /// - Parameter style: An `ImageStyle` that describes the maximum value image.
+    /// - Parameter style: An `ImageStyle` that represents the maximum value image.
     func customizeMaximumValueImage(using style: ImageStyle)
 
 }
@@ -84,7 +84,7 @@ public protocol MaximumValueImageCustomizable: ImageStyleExpressible {
 public protocol MinimumTrackImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the minimum track image.
-    /// - Parameter style: An `ImageStyle` that describes the minimum track image.
+    /// - Parameter style: An `ImageStyle` that represents the minimum track image.
     func customizeMinimumTrackImage(using style: ImageStyle)
 
 }
@@ -93,7 +93,7 @@ public protocol MinimumTrackImageCustomizable: ImageStyleExpressible {
 public protocol MinimumValueImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the minimum value image.
-    /// - Parameter style: An `ImageStyle` that describes the minimum value image.
+    /// - Parameter style: An `ImageStyle` that represents the minimum value image.
     func customizeMinimumValueImage(using style: ImageStyle)
 
 }
@@ -102,7 +102,7 @@ public protocol MinimumValueImageCustomizable: ImageStyleExpressible {
 public protocol OffImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the off image.
-    /// - Parameter style: An `ImageStyle` that describes the off image.
+    /// - Parameter style: An `ImageStyle` that represents the off image.
     func customizeOffImage(using style: ImageStyle)
 
 }
@@ -111,7 +111,7 @@ public protocol OffImageCustomizable: ImageStyleExpressible {
 public protocol OnImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the on image.
-    /// - Parameter style: An `ImageStyle` that describes the on image.
+    /// - Parameter style: An `ImageStyle` that represents the on image.
     func customizeOnImage(using style: ImageStyle)
 
 }
@@ -120,7 +120,7 @@ public protocol OnImageCustomizable: ImageStyleExpressible {
 public protocol ProgressImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the progress image.
-    /// - Parameter style: An `ImageStyle` that describes the progress image.
+    /// - Parameter style: An `ImageStyle` that represents the progress image.
     func customizeProgressImage(using style: ImageStyle)
 
 }
@@ -129,7 +129,7 @@ public protocol ProgressImageCustomizable: ImageStyleExpressible {
 public protocol ScopeBarButtonBackgroundImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the scope bar button background image.
-    /// - Parameter style: An `ImageStyle` that describes the scope bar button background image.
+    /// - Parameter style: An `ImageStyle` that represents the scope bar button background image.
     func customizeScopeBarButtonBackgroundImage(using style: ImageStyle)
 
 }
@@ -138,7 +138,7 @@ public protocol ScopeBarButtonBackgroundImageCustomizable: ImageStyleExpressible
 public protocol SearchFieldBackgroundImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the search field background image.
-    /// - Parameter style: An `ImageStyle` that describes the search field background image.
+    /// - Parameter style: An `ImageStyle` that represents the search field background image.
     func customizeSearchFieldBackgroundImage(using style: ImageStyle)
 
 }
@@ -147,7 +147,7 @@ public protocol SearchFieldBackgroundImageCustomizable: ImageStyleExpressible {
 public protocol SelectedImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the selected image.
-    /// - Parameter style: An `ImageStyle` that describes the selected image.
+    /// - Parameter style: An `ImageStyle` that represents the selected image.
     func customizeSelectedImage(using style: ImageStyle)
 
 }
@@ -156,7 +156,7 @@ public protocol SelectedImageCustomizable: ImageStyleExpressible {
 public protocol ShadowImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the shadow image.
-    /// - Parameter style: An `ImageStyle` that describes the shadow image.
+    /// - Parameter style: An `ImageStyle` that represents the shadow image.
     func customizeShadowImage(using style: ImageStyle)
 
 }
@@ -165,7 +165,7 @@ public protocol ShadowImageCustomizable: ImageStyleExpressible {
 public protocol ThumbImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the thumb image.
-    /// - Parameter style: An `ImageStyle` that describes the thumb image.
+    /// - Parameter style: An `ImageStyle` that represents the thumb image.
     func customizeThumbImage(using style: ImageStyle)
 
 }
@@ -174,7 +174,7 @@ public protocol ThumbImageCustomizable: ImageStyleExpressible {
 public protocol TrackImageCustomizable: ImageStyleExpressible {
 
     /// Customizes the track image.
-    /// - Parameter style: An `ImageStyle` that describes the track image.
+    /// - Parameter style: An `ImageStyle` that represents the track image.
     func customizeTrackImage(using style: ImageStyle)
 
 }

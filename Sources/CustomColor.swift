@@ -11,7 +11,7 @@ import UIKit
 /// A protocol that describes a view that its background color will be customized.
 public protocol CustomBackgroundColor: BackgroundColorCustomizable {
 
-    /// The `ColorStyle` that describes the background color.
+    /// The `ColorStyle` that represents the background color.
     var backgroundColorStyle: ColorStyle { get }
 
 }
@@ -19,7 +19,7 @@ public protocol CustomBackgroundColor: BackgroundColorCustomizable {
 /// A protocol that describes a view that its badge color will be customized.
 public protocol CustomBadgeColor: BadgeColorCustomizable {
 
-    /// The `ColorStyle` that describes the badge color.
+    /// The `ColorStyle` that represents the badge color.
     var badgeColorStyle: ColorStyle { get }
 
 }
@@ -27,7 +27,7 @@ public protocol CustomBadgeColor: BadgeColorCustomizable {
 /// A protocol that describes a view that its bar tint color will be customized.
 public protocol CustomBarTintColor: BarTintColorCustomizable {
 
-    /// The `ColorStyle` that describes the bar tint color.
+    /// The `ColorStyle` that represents the bar tint color.
     var barTintColorStyle: ColorStyle { get }
 
 }
@@ -35,7 +35,7 @@ public protocol CustomBarTintColor: BarTintColorCustomizable {
 /// A protocol that describes a view that its border color will be customized.
 public protocol CustomBorderColor: BorderColorCustomizable {
 
-    /// The `ColorStyle` that describes the border color.
+    /// The `ColorStyle` that represents the border color.
     var borderColorStyle: ColorStyle { get }
 
 }
@@ -43,7 +43,7 @@ public protocol CustomBorderColor: BorderColorCustomizable {
 /// A protocol that describes a view that its color will be customized.
 public protocol CustomColor: ColorCustomizable {
 
-    /// The `ColorStyle` that describes the color.
+    /// The `ColorStyle` that represents the color.
     var colorStyle: ColorStyle { get }
 
 }
@@ -51,7 +51,7 @@ public protocol CustomColor: ColorCustomizable {
 /// A protocol that describes a view that its maximum track tint color will be customized.
 public protocol CustomMaximumTrackTintColor: MaximumTrackTintColorCustomizable {
 
-    /// The `ColorStyle` that describes the maximum track tint color.
+    /// The `ColorStyle` that represents the maximum track tint color.
     var maximumTrackTintColorStyle: ColorStyle { get }
 
 }
@@ -59,7 +59,7 @@ public protocol CustomMaximumTrackTintColor: MaximumTrackTintColorCustomizable {
 /// A protocol that describes a view that its minimum track tint color will be customized.
 public protocol CustomMinimumTrackTintColor: MinimumTrackTintColorCustomizable {
 
-    /// The `ColorStyle` that describes the minimum track tint color.
+    /// The `ColorStyle` that represents the minimum track tint color.
     var minimumTrackTintColorStyle: ColorStyle { get }
 
 }
@@ -67,7 +67,7 @@ public protocol CustomMinimumTrackTintColor: MinimumTrackTintColorCustomizable {
 /// A protocol that describes a view that its on tint color will be customized.
 public protocol CustomOnTintColor: OnTintColorCustomizable {
 
-    /// The `ColorStyle` that describes the on tint color.
+    /// The `ColorStyle` that represents the on tint color.
     var onTintColorStyle: ColorStyle { get }
 
 }
@@ -75,7 +75,7 @@ public protocol CustomOnTintColor: OnTintColorCustomizable {
 /// A protocol that describes a view that its progress tint color will be customized.
 public protocol CustomProgressTintColor: ProgressTintColorCustomizable {
 
-    /// The `ColorStyle` that describes the progress tint color.
+    /// The `ColorStyle` that represents the progress tint color.
     var progressTintColorStyle: ColorStyle { get }
 
 }
@@ -83,7 +83,7 @@ public protocol CustomProgressTintColor: ProgressTintColorCustomizable {
 /// A protocol that describes a view that its section index background color will be customized.
 public protocol CustomSectionIndexBackgroundColor: SectionIndexBackgroundColorCustomizable {
 
-    /// The `ColorStyle` that describes the section index background color.
+    /// The `ColorStyle` that represents the section index background color.
     var sectionIndexBackgroundColorStyle: ColorStyle { get }
 
 }
@@ -91,7 +91,7 @@ public protocol CustomSectionIndexBackgroundColor: SectionIndexBackgroundColorCu
 /// A protocol that describes a view that its section index color will be customized.
 public protocol CustomSectionIndexColor: SectionIndexColorCustomizable {
 
-    /// The `ColorStyle` that describes the section index color.
+    /// The `ColorStyle` that represents the section index color.
     var sectionIndexColorStyle: ColorStyle { get }
 
 }
@@ -99,7 +99,7 @@ public protocol CustomSectionIndexColor: SectionIndexColorCustomizable {
 /// A protocol that describes a view that its section index tracking background color will be customized.
 public protocol CustomSectionIndexTrackingBackgroundColor: SectionIndexTrackingBackgroundColorCustomizable {
 
-    /// The `ColorStyle` that describes the section index tracking background color.
+    /// The `ColorStyle` that represents the section index tracking background color.
     var sectionIndexTrackingBackgroundColorStyle: ColorStyle { get }
 
 }
@@ -107,7 +107,7 @@ public protocol CustomSectionIndexTrackingBackgroundColor: SectionIndexTrackingB
 /// A protocol that describes a view that its separator color will be customized.
 public protocol CustomSeparatorColor: SeparatorColorCustomizable {
 
-    /// The `ColorStyle` that describes the separator color.
+    /// The `ColorStyle` that represents the separator color.
     var separatorColorStyle: ColorStyle { get }
 
 }
@@ -115,7 +115,7 @@ public protocol CustomSeparatorColor: SeparatorColorCustomizable {
 /// A protocol that describes a view that its shadow color will be customized.
 public protocol CustomShadowColor: ShadowColorCustomizable {
 
-    /// The `ColorStyle` that describes the shadow color.
+    /// The `ColorStyle` that represents the shadow color.
     var shadowColorStyle: ColorStyle { get }
 
 }
@@ -123,7 +123,7 @@ public protocol CustomShadowColor: ShadowColorCustomizable {
 /// A protocol that describes a view that its text color will be customized.
 public protocol CustomTextColor: TextColorCustomizable {
 
-    /// The `ColorStyle` that describes the text color.
+    /// The `ColorStyle` that represents the text color.
     var textColorStyle: ColorStyle { get }
 
 }
@@ -131,7 +131,7 @@ public protocol CustomTextColor: TextColorCustomizable {
 /// A protocol that describes a view that its thumb tint color will be customized.
 public protocol CustomThumbTintColor: ThumbTintColorCustomizable {
 
-    /// The `ColorStyle` that describes the thumb tint color.
+    /// The `ColorStyle` that represents the thumb tint color.
     var thumbTintColorStyle: ColorStyle { get }
 
 }
@@ -139,7 +139,7 @@ public protocol CustomThumbTintColor: ThumbTintColorCustomizable {
 /// A protocol that describes a view that its tint color will be customized.
 public protocol CustomTintColor: TintColorCustomizable {
 
-    /// The `ColorStyle` that describes the tint color.
+    /// The `ColorStyle` that represents the tint color.
     var tintColorStyle: ColorStyle { get }
 
 }
@@ -147,7 +147,7 @@ public protocol CustomTintColor: TintColorCustomizable {
 /// A protocol that describes a view that its title color will be customized.
 public protocol CustomTitleColor: TitleColorCustomizable {
 
-    /// The `ColorStyle` that describes the title color.
+    /// The `ColorStyle` that represents the title color.
     var titleColorStyle: ColorStyle { get }
 
 }
@@ -155,7 +155,7 @@ public protocol CustomTitleColor: TitleColorCustomizable {
 /// A protocol that describes a view that its title shadow color will be customized.
 public protocol CustomTitleShadowColor: TitleShadowColorCustomizable {
 
-    /// The `ColorStyle` that describes the title shadow color.
+    /// The `ColorStyle` that represents the title shadow color.
     var titleShadowColorStyle: ColorStyle { get }
 
 }
@@ -163,7 +163,7 @@ public protocol CustomTitleShadowColor: TitleShadowColorCustomizable {
 /// A protocol that describes a view that its track tint color will be customized.
 public protocol CustomTrackTintColor: TrackTintColorCustomizable {
 
-    /// The `ColorStyle` that describes the track tint color.
+    /// The `ColorStyle` that represents the track tint color.
     var trackTintColorStyle: ColorStyle { get }
 
 }
@@ -171,7 +171,7 @@ public protocol CustomTrackTintColor: TrackTintColorCustomizable {
 /// A protocol that describes a view that its unselected item tint color will be customized.
 public protocol CustomUnselectedItemTintColor: UnselectedItemTintColorCustomizable {
 
-    /// The `ColorStyle` that describes the unselected item tint color.
+    /// The `ColorStyle` that represents the unselected item tint color.
     var unselectedItemTintColorStyle: ColorStyle { get }
 
 }

@@ -8,33 +8,33 @@
 
 import UIKit
 
-/// A protocol that describes a text property of a view that conforms to `Custom*Text`.
+/// A protocol that describes an item that can represent a text.
 /// - SeeAlso: `TextStyleGroup`, `TextGroup`
 public protocol TextStyle {
 
-    /// Returns a text that will be used in normal state.
+    /// Returns a `String` that will be used in normal state.
     /// - Returns: A `String` that will be used in normal state.
     func normal() -> String
 
 }
 
-/// A protocol that describes a text property of a view in different states (e.g. disabled) that conforms to `Custom*Text`.
+/// A protocol that describes an item that can represent a text in different states (e.g. disabled).
 /// - SeeAlso: `TextStyle`, `TextGroup`
 public protocol TextStyleGroup: TextStyle {
 
-    /// Returns a text that will be used in disabled state.
+    /// Returns a `String` that will be used in disabled state.
     /// - Returns: A `String` that will be used in disabled state, or `nil` if no text is set.
     func disabled() -> String?
 
-    /// Returns a text that will be used in selected state.
+    /// Returns a `String` that will be used in selected state.
     /// - Returns: A `String` that will be used in selected state, or `nil` if no text is set.
     func selected() -> String?
 
-    /// Returns a text that will be used in highlighted state.
+    /// Returns a `String` that will be used in highlighted state.
     /// - Returns: A `String` that will be used in highlighted state, or `nil` if no text is set.
     func highlighted() -> String?
 
-    /// Returns a text that will be used in focused state.
+    /// Returns a `String` that will be used in focused state.
     /// - Returns: A `String` that will be used in focused state, or `nil` if no text is set.
     func focused() -> String?
 
@@ -76,31 +76,31 @@ extension String: TextStyle {
 
 }
 
-/// A collection of texts that describes a text property of a view in different states (e.g. disabled) that conforms to `Custom*Text`.
+/// A collection of `TextStyle` that can represent a text in different states (e.g. disabled).
 /// - SeeAlso: `TextStyle`, `TextStyleGroup`
 public struct TextGroup {
 
-    /// The text that will be used in normal state.
+    /// The `TextStyle` that will be used in normal state.
     fileprivate let normalStorage: TextStyle
 
-    /// The text that will be used in disabled state, or `nil` if no text is set.
+    /// The `TextStyle` that will be used in disabled state, or `nil` if no `TextStyle` is set.
     fileprivate let disabledStorage: TextStyle?
 
-    /// The text that will be used in selected state, or `nil` if no text is set.
+    /// The `TextStyle` that will be used in selected state, or `nil` if no `TextStyle` is set.
     fileprivate let selectedStorage: TextStyle?
 
-    /// The text that will be used in highlighted state, or `nil` if no text is set.
+    /// The `TextStyle` that will be used in highlighted state, or `nil` if no `TextStyle` is set.
     fileprivate let highlightedStorage: TextStyle?
 
-    /// The text that will be used in focused state, or `nil` if no text is set.
+    /// The `TextStyle` that will be used in focused state, or `nil` if no `TextStyle` is set.
     fileprivate let focusedStorage: TextStyle?
 
     /// Creates an instance with objects that conforms to `TextStyle`.
-    /// - Parameter normal: A `String` that will be used in normal state.
-    /// - Parameter disabled: A `String` that will be used in disabled state.
-    /// - Parameter selected: A `String` that will be used in selected state.
-    /// - Parameter highlighted: A `String` that will be used in highlighted state.
-    /// - Parameter focused: A `String` that will be used in focused state.
+    /// - Parameter normal: A `TextStyle` that will be used in normal state.
+    /// - Parameter disabled: A `TextStyle` that will be used in disabled state.
+    /// - Parameter selected: A `TextStyle` that will be used in selected state.
+    /// - Parameter highlighted: A `TextStyle` that will be used in highlighted state.
+    /// - Parameter focused: A `TextStyle` that will be used in focused state.
     public init(normal: TextStyle, disabled: TextStyle? = nil, selected: TextStyle? = nil, highlighted: TextStyle? = nil, focused: TextStyle? = nil) {
         normalStorage = normal
         disabledStorage = disabled
@@ -140,8 +140,8 @@ public protocol TextStyleExpressible { }
 
 extension TextStyleExpressible {
 
-    /// Returns a text that will be used in current state.
-    /// - Parameter style: A `TextStyle` that describes the text.
+    /// Returns a `String` that will be used in current state.
+    /// - Parameter style: A `TextStyle` that represents the text.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
     /// - Returns: A `String` that will be used in current state, or `nil` if no text is set.
     func selectedText(from style: TextStyle, usingNormalFor states: [UIControlState] = []) -> String? {
@@ -163,7 +163,7 @@ extension TextStyleExpressible {
     }
 
     /// Customizes a text through a setter method.
-    /// - Parameter style: A `TextStyle` that describes a text.
+    /// - Parameter style: A `TextStyle` that represents a text.
     /// - Parameter setter: A setter method that will customize a text in different states.
     /// - Parameter text: A `String` that will be used.
     /// - Parameter state: An `UIControlState` that will use the text.

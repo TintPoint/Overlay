@@ -8,33 +8,33 @@
 
 import UIKit
 
-/// A protocol that describes a font property of a view that conforms to `Custom*Font`.
+/// A protocol that describes an item that can represent a font.
 /// - SeeAlso: `FontStyleGroup`, `FontGroup`
 public protocol FontStyle {
 
-    /// Returns a font that will be used in normal state.
+    /// Returns an `UIFont` that will be used in normal state.
     /// - Returns: An `UIFont` that will be used in normal state.
     func normal() -> UIFont
 
 }
 
-/// A protocol that describes a font property of a view in different states (e.g. disabled) that conforms to `Custom*Font`.
+/// A protocol that describes an item that can represent a font in different states (e.g. disabled).
 /// - SeeAlso: `FontStyle`, `FontGroup`
 public protocol FontStyleGroup: FontStyle {
 
-    /// Returns a font that will be used in disabled state.
+    /// Returns an `UIFont` that will be used in disabled state.
     /// - Returns: An `UIFont` that will be used in disabled state, or `nil` if no font is set.
     func disabled() -> UIFont?
 
-    /// Returns a font that will be used in selected state.
+    /// Returns an `UIFont` that will be used in selected state.
     /// - Returns: An `UIFont` that will be used in selected state, or `nil` if no font is set.
     func selected() -> UIFont?
 
-    /// Returns a font that will be used in highlighted state.
+    /// Returns an `UIFont` that will be used in highlighted state.
     /// - Returns: An `UIFont` that will be used in highlighted state, or `nil` if no font is set.
     func highlighted() -> UIFont?
 
-    /// Returns a font that will be used in focused state.
+    /// Returns an `UIFont` that will be used in focused state.
     /// - Returns: An `UIFont` that will be used in focused state, or `nil` if no font is set.
     func focused() -> UIFont?
 
@@ -76,31 +76,31 @@ extension UIFont: FontStyle {
 
 }
 
-/// A collection of fonts that describes a font property of a view in different states (e.g. disabled) that conforms to `Custom*Font`.
+/// A collection of `FontStyle` that can represent a font in different states (e.g. disabled).
 /// - SeeAlso: `FontStyle`, `FontStyleGroup`
 public struct FontGroup {
 
-    /// The font that will be used in normal state.
+    /// The `FontStyle` that will be used in normal state.
     fileprivate let normalStorage: FontStyle
 
-    /// The font that will be used in disabled state, or `nil` if no font is set.
+    /// The `FontStyle` that will be used in disabled state, or `nil` if no `FontStyle` is set.
     fileprivate let disabledStorage: FontStyle?
 
-    /// The font that will be used in selected state, or `nil` if no font is set.
+    /// The `FontStyle` that will be used in selected state, or `nil` if no `FontStyle` is set.
     fileprivate let selectedStorage: FontStyle?
 
-    /// The font that will be used in highlighted state, or `nil` if no font is set.
+    /// The `FontStyle` that will be used in highlighted state, or `nil` if no `FontStyle` is set.
     fileprivate let highlightedStorage: FontStyle?
 
-    /// The font that will be used in focused state, or `nil` if no font is set.
+    /// The `FontStyle` that will be used in focused state, or `nil` if no `FontStyle` is set.
     fileprivate let focusedStorage: FontStyle?
 
     /// Creates an instance with objects that conforms to `FontStyle`.
-    /// - Parameter normal: An `UIFont` that will be used in normal state.
-    /// - Parameter disabled: An `UIFont` that will be used in disabled state.
-    /// - Parameter selected: An `UIFont` that will be used in selected state.
-    /// - Parameter highlighted: An `UIFont` that will be used in highlighted state.
-    /// - Parameter focused: An `UIFont` that will be used in focused state.
+    /// - Parameter normal: A `FontStyle` that will be used in normal state.
+    /// - Parameter disabled: A `FontStyle` that will be used in disabled state.
+    /// - Parameter selected: A `FontStyle` that will be used in selected state.
+    /// - Parameter highlighted: A `FontStyle` that will be used in highlighted state.
+    /// - Parameter focused: A `FontStyle` that will be used in focused state.
     public init(normal: FontStyle, disabled: FontStyle? = nil, selected: FontStyle? = nil, highlighted: FontStyle? = nil, focused: FontStyle? = nil) {
         normalStorage = normal
         disabledStorage = disabled
@@ -140,8 +140,8 @@ public protocol FontStyleExpressible { }
 
 extension FontStyleExpressible {
 
-    /// Returns a font that will be used in current state.
-    /// - Parameter style: A `FontStyle` that describes the font.
+    /// Returns an `UIFont` that will be used in current state.
+    /// - Parameter style: A `FontStyle` that represents the font.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
     /// - Returns: An `UIFont` that will be used in current state, or `nil` if no font is set.
     func selectedFont(from style: FontStyle, usingNormalFor states: [UIControlState] = []) -> UIFont? {

@@ -135,10 +135,10 @@ extension ColorGroup: ColorStyleGroup {
 
 }
 
-/// A protocol that describes a view that its color can be expressed by `ColorStyle`.
-public protocol ColorStyleExpressible { }
+/// A protocol that describes a view that its color can be represented by `ColorStyle`.
+public protocol ColorStyleRepresentable { }
 
-extension ColorStyleExpressible {
+extension ColorStyleRepresentable {
 
     /// Returns an `UIColor` that will be used in current state.
     /// - Parameter style: A `ColorStyle` that represents the color.

@@ -25,7 +25,7 @@ class TestView: ViewDisable, ViewSelectable, ViewHighlightable, ViewFocusable {
     func refresh() { }
 }
 
-class TestColorView: TestView, ColorStyleExpressible {
+class TestColorView: TestView, ColorStyleRepresentable {
 
     var normal: UIColor?
     var disabled: UIColor?
@@ -46,9 +46,9 @@ class TestColorView: TestView, ColorStyleExpressible {
 
 }
 
-class TestFontView: TestView, FontStyleExpressible { }
+class TestFontView: TestView, FontStyleRepresentable { }
 
-class TestImageView: TestView, ImageStyleExpressible {
+class TestImageView: TestView, ImageStyleRepresentable {
 
     var normal: UIImage?
     var disabled: UIImage?
@@ -69,7 +69,7 @@ class TestImageView: TestView, ImageStyleExpressible {
     
 }
 
-class TestTextView: TestView, TextStyleExpressible {
+class TestTextView: TestView, TextStyleRepresentable {
 
     var normal: String?
     var disabled: String?

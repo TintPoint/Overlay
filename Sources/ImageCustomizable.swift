@@ -9,7 +9,7 @@
 import UIKit
 
 /// A protocol that describes a view that its background image can be customized.
-public protocol BackgroundImageCustomizable: ImageStyleExpressible {
+public protocol BackgroundImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the background image.
     /// - Parameter style: An `ImageStyle` that represents the background image.
@@ -18,7 +18,7 @@ public protocol BackgroundImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its decrement image can be customized.
-public protocol DecrementImageCustomizable: ImageStyleExpressible {
+public protocol DecrementImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the decrement image.
     /// - Parameter style: An `ImageStyle` that represents the decrement image.
@@ -27,7 +27,7 @@ public protocol DecrementImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its highlighted image can be customized.
-public protocol HighlightedImageCustomizable: ImageStyleExpressible {
+public protocol HighlightedImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the highlighted image.
     /// - Parameter style: An `ImageStyle` that represents the highlighted image.
@@ -36,7 +36,7 @@ public protocol HighlightedImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its image can be customized.
-public protocol ImageCustomizable: ImageStyleExpressible {
+public protocol ImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the image.
     /// - Parameter style: An `ImageStyle` that represents the image.
@@ -45,7 +45,7 @@ public protocol ImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its increment image can be customized.
-public protocol IncrementImageCustomizable: ImageStyleExpressible {
+public protocol IncrementImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the increment image.
     /// - Parameter style: An `ImageStyle` that represents the increment image.
@@ -54,7 +54,7 @@ public protocol IncrementImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its landscape image for iPhone can be customized.
-public protocol LandscapeImagePhoneCustomizable: ImageStyleExpressible {
+public protocol LandscapeImagePhoneCustomizable: ImageStyleRepresentable {
 
     /// Customizes the landscape image for iPhone.
     /// - Parameter style: An `ImageStyle` that represents the landscape image for iPhone.
@@ -63,7 +63,7 @@ public protocol LandscapeImagePhoneCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its maximum track image can be customized.
-public protocol MaximumTrackImageCustomizable: ImageStyleExpressible {
+public protocol MaximumTrackImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the maximum track image.
     /// - Parameter style: An `ImageStyle` that represents the maximum track image.
@@ -72,7 +72,7 @@ public protocol MaximumTrackImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its maximum value image can be customized.
-public protocol MaximumValueImageCustomizable: ImageStyleExpressible {
+public protocol MaximumValueImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the maximum value image.
     /// - Parameter style: An `ImageStyle` that represents the maximum value image.
@@ -81,7 +81,7 @@ public protocol MaximumValueImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its minimum track image can be customized.
-public protocol MinimumTrackImageCustomizable: ImageStyleExpressible {
+public protocol MinimumTrackImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the minimum track image.
     /// - Parameter style: An `ImageStyle` that represents the minimum track image.
@@ -90,7 +90,7 @@ public protocol MinimumTrackImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its minimum value image can be customized.
-public protocol MinimumValueImageCustomizable: ImageStyleExpressible {
+public protocol MinimumValueImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the minimum value image.
     /// - Parameter style: An `ImageStyle` that represents the minimum value image.
@@ -99,7 +99,7 @@ public protocol MinimumValueImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its off image can be customized.
-public protocol OffImageCustomizable: ImageStyleExpressible {
+public protocol OffImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the off image.
     /// - Parameter style: An `ImageStyle` that represents the off image.
@@ -108,7 +108,7 @@ public protocol OffImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its on image can be customized.
-public protocol OnImageCustomizable: ImageStyleExpressible {
+public protocol OnImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the on image.
     /// - Parameter style: An `ImageStyle` that represents the on image.
@@ -117,7 +117,7 @@ public protocol OnImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its progress image can be customized.
-public protocol ProgressImageCustomizable: ImageStyleExpressible {
+public protocol ProgressImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the progress image.
     /// - Parameter style: An `ImageStyle` that represents the progress image.
@@ -126,7 +126,7 @@ public protocol ProgressImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its scope bar button background image can be customized.
-public protocol ScopeBarButtonBackgroundImageCustomizable: ImageStyleExpressible {
+public protocol ScopeBarButtonBackgroundImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the scope bar button background image.
     /// - Parameter style: An `ImageStyle` that represents the scope bar button background image.
@@ -135,7 +135,7 @@ public protocol ScopeBarButtonBackgroundImageCustomizable: ImageStyleExpressible
 }
 
 /// A protocol that describes a view that its search field background image can be customized.
-public protocol SearchFieldBackgroundImageCustomizable: ImageStyleExpressible {
+public protocol SearchFieldBackgroundImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the search field background image.
     /// - Parameter style: An `ImageStyle` that represents the search field background image.
@@ -144,7 +144,7 @@ public protocol SearchFieldBackgroundImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its selected image can be customized.
-public protocol SelectedImageCustomizable: ImageStyleExpressible {
+public protocol SelectedImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the selected image.
     /// - Parameter style: An `ImageStyle` that represents the selected image.
@@ -153,7 +153,7 @@ public protocol SelectedImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its shadow image can be customized.
-public protocol ShadowImageCustomizable: ImageStyleExpressible {
+public protocol ShadowImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the shadow image.
     /// - Parameter style: An `ImageStyle` that represents the shadow image.
@@ -162,7 +162,7 @@ public protocol ShadowImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its thumb image can be customized.
-public protocol ThumbImageCustomizable: ImageStyleExpressible {
+public protocol ThumbImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the thumb image.
     /// - Parameter style: An `ImageStyle` that represents the thumb image.
@@ -171,7 +171,7 @@ public protocol ThumbImageCustomizable: ImageStyleExpressible {
 }
 
 /// A protocol that describes a view that its track image can be customized.
-public protocol TrackImageCustomizable: ImageStyleExpressible {
+public protocol TrackImageCustomizable: ImageStyleRepresentable {
 
     /// Customizes the track image.
     /// - Parameter style: An `ImageStyle` that represents the track image.

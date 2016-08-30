@@ -9,7 +9,7 @@
 import UIKit
 
 /// A protocol that describes a view that its placeholder can be customized.
-public protocol PlaceholderCustomizable: TextStyleExpressible {
+public protocol PlaceholderCustomizable: TextStyleRepresentable {
 
     /// Customizes the placeholder.
     /// - Parameter style: A `TextStyle` that represents the placeholder.
@@ -18,7 +18,7 @@ public protocol PlaceholderCustomizable: TextStyleExpressible {
 }
 
 /// A protocol that describes a view that its prompt can be customized.
-public protocol PromptCustomizable: TextStyleExpressible {
+public protocol PromptCustomizable: TextStyleRepresentable {
 
     /// Customizes the prompt.
     /// - Parameter style: A `TextStyle` that represents the prompt.
@@ -27,7 +27,7 @@ public protocol PromptCustomizable: TextStyleExpressible {
 }
 
 /// A protocol that describes a view that its titles of the segments can be customized.
-public protocol SegmentTitlesCustomizable: TextStyleExpressible {
+public protocol SegmentTitlesCustomizable: TextStyleRepresentable {
 
     /// Customizes the titles of the segments.
     /// - Parameter styles: An array of `TextStyle` that represents the titles of the segments. The indexes of the array is used to identify segments in the control, from left to right. Styles which their indexes exceeding the number of segments are ignored.
@@ -36,7 +36,7 @@ public protocol SegmentTitlesCustomizable: TextStyleExpressible {
 }
 
 /// A protocol that describes a view that its titles of the scope buttons can be customized.
-public protocol ScopeButtonTitlesCustomizable: TextStyleExpressible {
+public protocol ScopeButtonTitlesCustomizable: TextStyleRepresentable {
 
     /// Customizes the titles of the scope buttons.
     /// - Parameter styles: An array of `TextStyle` that represents the titles of the scope buttons. The indexes of the array is used to identify buttons in the control, from left to right.
@@ -45,7 +45,7 @@ public protocol ScopeButtonTitlesCustomizable: TextStyleExpressible {
 }
 
 /// A protocol that describes a view that its text can be customized.
-public protocol TextCustomizable: TextStyleExpressible {
+public protocol TextCustomizable: TextStyleRepresentable {
 
     /// Customizes the text.
     /// - Parameter style: A `TextStyle` that represents the text.
@@ -54,7 +54,7 @@ public protocol TextCustomizable: TextStyleExpressible {
 }
 
 /// A protocol that describes a view that its title can be customized.
-public protocol TitleCustomizable: TextStyleExpressible {
+public protocol TitleCustomizable: TextStyleRepresentable {
 
     /// Customizes the title.
     /// - Parameter style: A `TextStyle` that represents the title.

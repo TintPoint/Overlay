@@ -135,10 +135,10 @@ extension TextGroup: TextStyleGroup {
 
 }
 
-/// A protocol that describes a view that its text can be expressed by `TextStyle`.
-public protocol TextStyleExpressible { }
+/// A protocol that describes a view that its text can be represented by `TextStyle`.
+public protocol TextStyleRepresentable { }
 
-extension TextStyleExpressible {
+extension TextStyleRepresentable {
 
     /// Returns a `String` that will be used in current state.
     /// - Parameter style: A `TextStyle` that represents the text.

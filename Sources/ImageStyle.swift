@@ -135,10 +135,10 @@ extension ImageGroup: ImageStyleGroup {
 
 }
 
-/// A protocol that describes a view that its image can be expressed by `ImageStyle`.
-public protocol ImageStyleExpressible { }
+/// A protocol that describes a view that its image can be represented by `ImageStyle`.
+public protocol ImageStyleRepresentable { }
 
-extension ImageStyleExpressible {
+extension ImageStyleRepresentable {
 
     /// Returns an `UIImage` that will be used in current state.
     /// - Parameter style: An `ImageStyle` that represents the image.

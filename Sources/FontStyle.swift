@@ -135,10 +135,10 @@ extension FontGroup: FontStyleGroup {
 
 }
 
-/// A protocol that describes a view that its font can be expressed by `FontStyle`.
-public protocol FontStyleExpressible { }
+/// A protocol that describes a view that its font can be represented by `FontStyle`.
+public protocol FontStyleRepresentable { }
 
-extension FontStyleExpressible {
+extension FontStyleRepresentable {
 
     /// Returns an `UIFont` that will be used in current state.
     /// - Parameter style: A `FontStyle` that represents the font.

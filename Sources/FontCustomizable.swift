@@ -9,7 +9,7 @@
 import UIKit
 
 /// A protocol that describes a view that its font can be customized.
-public protocol FontCustomizable: FontStyleExpressible {
+public protocol FontCustomizable: FontStyleRepresentable {
     
     /// Customizes the font.
     /// - Parameter style: A `FontStyle` that represents the font.

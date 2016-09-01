@@ -66,12 +66,12 @@ In order to fully elaborate the power of Swift's type checker, it is recommended
 
 ```swift
 enum CustomColor: ColorStyle {
-    case white, black
+    case normal, disabled
 
     func normal() -> UIColor {
         switch self {
-        case .white: return UIColor.white
-        case .black: return UIColor.black
+        case .normal: return UIColor.white
+        case .disabled: return UIColor.black
         }
     }
 }
@@ -81,7 +81,7 @@ The above example can be rewritten as the following code.
 
 ```swift
 class CustomView: UIView, CustomBackgroundColor {
-    var backgroundColorStyle: ColorStyle = CustomColor.white
+    var backgroundColorStyle: ColorStyle = CustomColor.normal
 }
 ```
 
@@ -91,7 +91,7 @@ For views that have more than one state (e.g. `UIButton`), their design usually 
 
 ```swift
 class CustomButton: UIButton, CustomBackgroundColor {
-    var backgroundColorStyle: ColorStyle = ColorGroup(normal: CustomColor.white, disabled: CustomColor.black)
+    var backgroundColorStyle: ColorStyle = ColorGroup(normal: CustomColor.normal, disabled: CustomColor.disabled)
 }
 ```
 
@@ -157,8 +157,8 @@ However, it is still possible to customize not-yet-supported attributes by overr
 
 ```swift
 class BorderView: UIView {
-    override func refresh() {
-        super.refresh()
+    override func refresh(includingSubviews: Bool = false) {
+        super.refresh(includingSubviews: includingSubviews)
         layer.borderWidth = 1
     }
 }

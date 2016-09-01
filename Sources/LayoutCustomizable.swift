@@ -12,15 +12,15 @@ import UIKit
 public protocol LayoutCustomizable {
 
     /// Customizes the layout.
-    /// - Parameter nib: An `UINib` that represents the layout.
-    func customizeLayout(using nib: UINib)
+    /// - Parameter contentNib: An `UINib` that represents the layout.
+    func customizeLayout(using contentNib: UINib)
     
 }
 
 extension UIView: LayoutCustomizable {
     
-    public func customizeLayout(using nib: UINib) {
-        if let contentView = nib.instantiate(withOwner: self, options: nil).first as? UIView, !subviews.contains(contentView) {
+    public func customizeLayout(using contentNib: UINib) {
+        if let contentView = contentNib.instantiate(withOwner: self).first as? UIView, !subviews.contains(contentView) {
             contentView.translatesAutoresizingMaskIntoConstraints = false
             insertSubview(contentView, at: 0)
             contentView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true

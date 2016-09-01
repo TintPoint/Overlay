@@ -11,11 +11,13 @@ import UIKit
 /// A protocol that describes a view that can be customized.
 public protocol ViewCustomizable {
     
-    /// Refreshes the view's appearance. You should call this method: a) after initialization from code b) after changing the state of the view (e.g. set `isEnabled` to `false`).
+    /// Refreshes the view's appearance. You should call this method after: a) creating a view programmatically b) changing the state of a view c) changing the style of a view.
     ///
     /// Your custom view can override this method to customize other properties.
     /// You need to call the super implementation at some point during your own `refresh` method.
-    func refresh()
+    ///
+    /// - Parameter includingSubviews: A `Bool` value that indicates whether the view's subviews (and its subviews' subviews...) should also be refreshed.
+    func refresh(includingSubviews: Bool)
     
 }
 
@@ -251,7 +253,7 @@ extension UIBarButtonItem: ViewCustomizable {
         refresh()
     }
     
-    open func refresh() {
+    open func refresh(includingSubviews: Bool = false) {
         customizeView()
     }
     
@@ -269,7 +271,7 @@ extension UITabBarItem: ViewCustomizable {
         refresh()
     }
     
-    open func refresh() {
+    open func refresh(includingSubviews: Bool = false) {
         customizeView()
     }
     
@@ -287,8 +289,11 @@ extension UIView: ViewCustomizable {
         refresh()
     }
     
-    open func refresh() {
+    open func refresh(includingSubviews: Bool = false) {
         customizeView()
+        if includingSubviews {
+            subviews.forEach { $0.refresh(includingSubviews: true) }
+        }
     }
     
 }

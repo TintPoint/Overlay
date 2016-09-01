@@ -22,7 +22,7 @@ class TestView: ViewDisable, ViewSelectable, ViewHighlightable, ViewFocusable {
         isFocused = focused
     }
 
-    func refresh() { }
+    func refresh(includingSubviews: Bool = false) { }
 }
 
 class TestColorView: TestView, ColorStyleRepresentable {

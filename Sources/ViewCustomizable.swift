@@ -241,40 +241,22 @@ extension ViewCustomizable {
 
 }
 
-extension UIBarButtonItem: ViewCustomizable {
-    
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        refresh()
-    }
-    
-    open override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        refresh()
-    }
-    
-    open func refresh(includingSubviews: Bool = false) {
-        customizeView()
-    }
-    
-}
+extension UIBarItem: ViewCustomizable {
 
-extension UITabBarItem: ViewCustomizable {
-    
     open override func awakeFromNib() {
         super.awakeFromNib()
         refresh()
     }
-    
+
     open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         refresh()
     }
-    
+
     open func refresh(includingSubviews: Bool = false) {
         customizeView()
     }
-    
+
 }
 
 extension UIView: ViewCustomizable {
@@ -288,7 +270,7 @@ extension UIView: ViewCustomizable {
         super.prepareForInterfaceBuilder()
         refresh()
     }
-    
+
     open func refresh(includingSubviews: Bool = false) {
         customizeView()
         if includingSubviews {

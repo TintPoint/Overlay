@@ -1,5 +1,21 @@
 # Change Log
 
+## 0.5
+
+### Added
+
+- Add `includingSubviews` parameter to `refresh()`.
+    - Added by [Justin Jia](http://github.com/JustinJiaDev).
+
+### Changed
+
+- Rename `*Expressible` to `*Representable`.
+    - Changed by [Justin Jia](http://github.com/JustinJiaDev).
+- Rename `nib` to `contentNib` in `CustomLayout` protocol.
+    - Changed by [Justin Jia](http://github.com/JustinJiaDev).
+- Update docs.
+    - Changed by [Justin Jia](http://github.com/JustinJiaDev).
+
 ## 0.4.2
 
 ### Added

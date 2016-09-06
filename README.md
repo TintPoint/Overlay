@@ -26,7 +26,7 @@ iOS 9+ / Xcode 8+ / Swift 3+
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager. To install Overlay, add the following line to your `Cartfile`:
 
 ```ogdl
-github "TintPoint/Overlay" ~> 0.4
+github "TintPoint/Overlay" ~> 0.5
 ```
 
 ### CocoaPods
@@ -34,7 +34,7 @@ github "TintPoint/Overlay" ~> 0.4
 [CocoaPods](https://cocoapods.org) is a centralized dependency manager. To install Overlay, add the following line to your `Podfile`:
 
 ```ruby
-pod 'Overlay', '~> 0.4'
+pod 'Overlay', '~> 0.5'
 ```
 
 ## Getting Started

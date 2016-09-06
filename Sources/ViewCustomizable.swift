@@ -41,6 +41,8 @@ extension ViewCustomizable {
 
     /// Customizes the view's colors.
     func customizeViewColor() {
+        guard self is ColorStyleRepresentable else { return }
+
         if let view = self as? CustomBackgroundColor {
             view.customizeBackgroundColor(using: view.backgroundColorStyle)
         }
@@ -128,6 +130,8 @@ extension ViewCustomizable {
 
     /// Customizes the view's fonts.
     func customizeViewFont() {
+        guard self is FontStyleRepresentable else { return }
+
         if let view = self as? CustomFont {
             view.customizeFont(using: view.fontStyle)
         }
@@ -135,6 +139,8 @@ extension ViewCustomizable {
 
     /// Customizes the view's images.
     func customizeViewImage() {
+        guard self is ImageStyleRepresentable else { return }
+
         if let view = self as? CustomBackgroundImage {
             view.customizeBackgroundImage(using: view.backgroundImageStyle)
         }
@@ -214,6 +220,8 @@ extension ViewCustomizable {
 
     /// Customizes the view's texts.
     func customizeViewText() {
+        guard self is TextStyleRepresentable else { return }
+
         if let view = self as? CustomPlaceholder {
             view.customizePlaceholder(using: view.placeholderStyle)
         }

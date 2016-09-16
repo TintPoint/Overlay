@@ -11,7 +11,7 @@ Overlay is a very flexible UI framework designed for Swift on top of UIKit.
 ## Features
 
 - [x] Protocol oriented design
-- [x] Work with Interface Builder
+- [x] Interface Builder support
 - [x] Comprehensive unit test coverage
 - [x] [Complete documentation](http://cocoadocs.org/docsets/Overlay)
 

@@ -28,9 +28,10 @@ class CustomTabBarItem: UITabBarItem, CustomBadgeColor, CustomImage, CustomSelec
     
 }
 
-class CustomView: UIView, CustomLayout, CustomTintColor, CustomBorderColor, CustomBackgroundColor {
+class CustomView: UIView, CustomLayout, CustomDesign, CustomTintColor, CustomBorderColor, CustomBackgroundColor {
     
     var contentNib: UINib = UINib(nibName: "TestLayout", bundle: Bundle(for: CustomView.self))
+    var design: (DesignCustomizable) -> () = { guard let view = $0 as? UIView else { return }; view.layer.borderWidth = 3 }
     var tintColorStyle: ColorStyle = TestColor.first
     var borderColorStyle: ColorStyle = TestColor.second
     var backgroundColorStyle: ColorStyle = TestColor.third
@@ -211,6 +212,7 @@ class CustomizingTests: XCTestCase {
         let view = CustomView()
         view.refresh()
         XCTAssertNotNil(view.subviews.first)
+        XCTAssertEqual(view.layer.borderWidth, 3)
         XCTAssertEqual(view.tintColor, TestColor.first)
         XCTAssertEqual(view.layer.borderColor, TestColor.second.cgColor)
         XCTAssertEqual(view.backgroundColor, TestColor.third)

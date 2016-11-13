@@ -26,6 +26,7 @@ extension ViewCustomizable {
     /// Customizes the view's appearance.
     func customizeView() {
         customizeViewLayout()
+        customizeViewDesign()
         customizeViewColor()
         customizeViewFont()
         customizeViewImage()
@@ -36,6 +37,13 @@ extension ViewCustomizable {
     func customizeViewLayout() {
         if let view = self as? CustomLayout {
             view.customizeLayout(using: view.contentNib)
+        }
+    }
+
+    /// Customizes the view's design using a closure.
+    func customizeViewDesign() {
+        if let view = self as? CustomDesign {
+            view.customizeDesign(using: view.design)
         }
     }
 
@@ -261,7 +269,7 @@ extension UIBarItem: ViewCustomizable {
         refresh()
     }
 
-    open func refresh(includingSubviews: Bool = false) {
+    public func refresh(includingSubviews: Bool = false) {
         customizeView()
     }
 
@@ -279,7 +287,7 @@ extension UIView: ViewCustomizable {
         refresh()
     }
 
-    open func refresh(includingSubviews: Bool = false) {
+    public func refresh(includingSubviews: Bool = false) {
         customizeView()
         if includingSubviews {
             subviews.forEach { $0.refresh(includingSubviews: true) }

@@ -39,6 +39,8 @@
 		D0EE5F321D6CB83300657C71 /* ViewStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE5F311D6CB83300657C71 /* ViewStateTests.swift */; };
 		D0EE5F351D6CBC2300657C71 /* TestColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE5F341D6CBC2300657C71 /* TestColor.swift */; };
 		D0EE5F371D6CBC5500657C71 /* TestFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE5F361D6CBC5500657C71 /* TestFont.swift */; };
+		D0F25A871DD9200E00550302 /* CustomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F25A861DD9200E00550302 /* CustomDesign.swift */; };
+		D0F25A891DD920A600550302 /* DesignCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F25A881DD920A600550302 /* DesignCustomizable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		D0EE5F311D6CB83300657C71 /* ViewStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStateTests.swift; sourceTree = "<group>"; };
 		D0EE5F341D6CBC2300657C71 /* TestColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestColor.swift; sourceTree = "<group>"; };
 		D0EE5F361D6CBC5500657C71 /* TestFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestFont.swift; sourceTree = "<group>"; };
+		D0F25A861DD9200E00550302 /* CustomDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDesign.swift; sourceTree = "<group>"; };
+		D0F25A881DD920A600550302 /* DesignCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignCustomizable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 			children = (
 				D0B172A91D45A2220079A2F2 /* ViewCustomizable.swift */,
 				D0A4B9161D6B605D00C995A5 /* LayoutCustomizable.swift */,
+				D0F25A881DD920A600550302 /* DesignCustomizable.swift */,
 				D0A4B90F1D6B3DDD00C995A5 /* ColorCustomizable.swift */,
 				D0A4B9121D6B3E7B00C995A5 /* FontCustomizable.swift */,
 				D0A4B9141D6B3EB700C995A5 /* ImageCustomizable.swift */,
@@ -143,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				D0B172AA1D45A2220079A2F2 /* CustomLayout.swift */,
+				D0F25A861DD9200E00550302 /* CustomDesign.swift */,
 				D0B172A61D45A2220079A2F2 /* CustomColor.swift */,
 				D0B172A81D45A2220079A2F2 /* CustomFont.swift */,
 				D0CE2FAF1D5F223200FE4287 /* CustomImage.swift */,
@@ -379,9 +385,11 @@
 				D03D1F931D71FED700EEA2CB /* TextStyle.swift in Sources */,
 				D06687C61D74861A004615F9 /* CustomText.swift in Sources */,
 				D0EE5F301D6CB01100657C71 /* ViewState.swift in Sources */,
+				D0F25A871DD9200E00550302 /* CustomDesign.swift in Sources */,
 				D06687C41D7405B0004615F9 /* TextCustomizable.swift in Sources */,
 				D0CE2FB01D5F223200FE4287 /* CustomImage.swift in Sources */,
 				D0A4B9101D6B3DDD00C995A5 /* ColorCustomizable.swift in Sources */,
+				D0F25A891DD920A600550302 /* DesignCustomizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

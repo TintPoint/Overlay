@@ -1,5 +1,22 @@
 # Change Log
 
+## 0.6
+
+### Added
+
+- Add `DesignCustomizable` and `CustomDesign` protocols.
+  - Added by [Justin Jia](http://github.com/JustinJiaDev).
+
+### Changed
+
+- Update project to use `Swift 3.0.1`.
+  - Changed by [Justin Jia](http://github.com/JustinJiaDev).
+
+### Removed
+
+- Remove the ability to override `refresh()`. Use `CustomDesign` protocol instead.
+  - Removed by [Justin Jia](http://github.com/JustinJiaDev).
+
 ## 0.5
 
 ### Added

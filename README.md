@@ -153,13 +153,12 @@ class ComplexView: UIView, CustomLayout {
 
 Please fill an issue for feature requests. Pull requests are always welcomed!
 
-However, it is still possible to customize not-yet-supported attributes by overriding `refresh()`.
+However, it is still possible to customize not-yet-supported attributes by adopting `CustomDesign` protocol.
 
 ```swift
-class BorderView: UIView {
-    override func refresh(includingSubviews: Bool = false) {
-        super.refresh(includingSubviews: includingSubviews)
-        layer.borderWidth = 1
+class BorderView: UIView, CustomDesign {
+    var design: (DesignCustomizable) -> () = { view in
+        (view as! UIView).layer.borderWidth = 1
     }
 }
 ```
@@ -167,6 +166,10 @@ class BorderView: UIView {
 ## Reference
 
 ### Available Protocols
+
+#### Custom Design
+
+> - CustomDesign
 
 #### Custom Layout
 

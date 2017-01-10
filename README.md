@@ -234,16 +234,22 @@ class BorderView: UIView, CustomDesign {
 > - CustomText
 > - CustomTitle
 
+#### Custom Text Alignment
+
+> - CustomTextAlignment
+
 ### Available Styles
 
 > - ColorStyle
 > - FontStyle
 > - ImageStyle
 > - TextStyle
+> - TextAlignmentStyle
 > - ColorStyleGroup
 > - FontStyleGroup
 > - ImageStyleGroup
 > - TextStyleGroup
+> - TextAlignmentStyleGroup
 
 ### Available Style Groups
 
@@ -251,6 +257,7 @@ class BorderView: UIView, CustomDesign {
 > - FontGroup
 > - ImageGroup
 > - TextGroup
+> - TextAlignmentGroup
 
 ### Available States
 

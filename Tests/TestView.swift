@@ -89,3 +89,25 @@ class TestTextView: TestView, TextStyleRepresentable {
     }
     
 }
+
+class TestTextAlignmentView: TestView, TextAlignmentStyleRepresentable {
+
+    var normal: NSTextAlignment?
+    var disabled: NSTextAlignment?
+    var selected: NSTextAlignment?
+    var highlighted:NSTextAlignment?
+    var focused: NSTextAlignment?
+
+    func setTextAlignment(_ textAlignment: NSTextAlignment?, for state: UIControlState) {
+        switch state.rawValue {
+        case UIControlState.normal.rawValue: normal = textAlignment
+        case UIControlState.disabled.rawValue: disabled = textAlignment
+        case UIControlState.selected.rawValue: selected = textAlignment
+        case UIControlState.highlighted.rawValue: highlighted = textAlignment
+        case UIControlState.focused.rawValue: focused = textAlignment
+        default: return
+        }
+    }
+
+
+}

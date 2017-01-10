@@ -95,12 +95,13 @@ class CustomSwitch: UISwitch, CustomOnTintColor, CustomThumbTintColor, CustomOnI
     
 }
 
-class CustomTextField: UITextField, CustomFont, CustomTextColor, CustomText, CustomPlaceholder {
+class CustomTextField: UITextField, CustomFont, CustomTextColor, CustomText, CustomPlaceholder, CustomTextAlignment {
     
     var fontStyle: FontStyle = TestFont.first
     var textColorStyle: ColorStyle = TestColor.first
     var textStyle: TextStyle = TestText.first
     var placeholderStyle: TextStyle = TestText.second
+    var textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
     
 }
 
@@ -111,12 +112,13 @@ class CustomImageView: UIImageView, CustomImage, CustomHighlightedImage {
     
 }
 
-class CustomLabel: UILabel, CustomFont, CustomTextColor, CustomShadowColor, CustomText {
+class CustomLabel: UILabel, CustomFont, CustomTextColor, CustomShadowColor, CustomText, CustomTextAlignment {
     
     var fontStyle: FontStyle = TestFont.first
     var textColorStyle: ColorStyle = TestColor.first
     var shadowColorStyle: ColorStyle = TestColor.second
     var textStyle: TextStyle = TestText.first
+    var textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
     
 }
 
@@ -150,11 +152,12 @@ class CustomTableView: UITableView, CustomSeparatorColor, CustomSectionIndexColo
     
 }
 
-class CustomTextView: UITextView, CustomFont, CustomTextColor, CustomText {
+class CustomTextView: UITextView, CustomFont, CustomTextColor, CustomText, CustomTextAlignment {
     
     var fontStyle: FontStyle = TestFont.first
     var textColorStyle: ColorStyle = TestColor.first
     var textStyle: TextStyle = TestText.first
+    var textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
     
 }
 

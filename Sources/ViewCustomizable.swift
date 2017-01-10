@@ -31,6 +31,7 @@ extension ViewCustomizable {
         customizeViewFont()
         customizeViewImage()
         customizeViewText()
+        customizeViewTextAlignment()
     }
 
     /// Customizes the view's layout.
@@ -252,6 +253,15 @@ extension ViewCustomizable {
         
         if let view = self as? CustomTitle {
             view.customizeTitle(using: view.titleStyle)
+        }
+    }
+
+    /// Customizes the view's text alignments.
+    func customizeViewTextAlignment() {
+        guard self is TextAlignmentStyleRepresentable else { return }
+
+        if let view = self as? CustomTextAlignment {
+            view.customizeTextAlignment(using: view.textAlignmentStyle)
         }
     }
 

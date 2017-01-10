@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.6.1
+
+### Added
+
+- Add `TextAlignmentStyle` and the ability to customize text alignments.
+  - Added by [Justin Jia](http://github.com/JustinJiaDev).
+
 ## 0.6
 
 ### Added

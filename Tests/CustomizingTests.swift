@@ -44,13 +44,15 @@ class CustomActivityIndicatorView: UIActivityIndicatorView, CustomColor {
     
 }
 
-class CustomButton: UIButton, CustomTitleColor, CustomTitleShadowColor, CustomImage, CustomBackgroundImage, CustomTitle {
+class CustomButton: UIButton, CustomTitleFont, CustomTitleColor, CustomTitleShadowColor, CustomImage, CustomBackgroundImage, CustomTitle, CustomTitleTextAlignment {
     
+    var titleFontStyle: FontStyle = TestFont.first
     var titleColorStyle: ColorStyle = TestColor.first
     var titleShadowColorStyle: ColorStyle = TestColor.second
     var imageStyle: ImageStyle = TestImage.first
     var backgroundImageStyle: ImageStyle = TestImage.second
     var titleStyle: TextStyle = TestText.first
+    var titleTextAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
 
 }
 
@@ -230,11 +232,13 @@ class CustomizingTests: XCTestCase {
     func testButton() {
         let button = CustomButton()
         button.refresh()
+        XCTAssertEqual(button.titleLabel?.font, TestFont.first)
         XCTAssertEqual(button.currentTitleColor, TestColor.first)
         XCTAssertEqual(button.currentTitleShadowColor, TestColor.second)
         XCTAssertEqual(button.currentImage, TestImage.first)
         XCTAssertEqual(button.currentBackgroundImage, TestImage.second)
         XCTAssertEqual(button.currentTitle, TestText.first)
+        XCTAssertEqual(button.titleLabel?.textAlignment, TestTextAlignment.first)
     }
 
     func testSegmentedControl() {
@@ -292,6 +296,7 @@ class CustomizingTests: XCTestCase {
         XCTAssertEqual(textField.textColor, TestColor.first)
         XCTAssertEqual(textField.text, TestText.first)
         XCTAssertEqual(textField.placeholder, TestText.second)
+        XCTAssertEqual(textField.textAlignment, TestTextAlignment.first)
     }
     
     func testImageView() {
@@ -308,6 +313,7 @@ class CustomizingTests: XCTestCase {
         XCTAssertEqual(label.textColor, TestColor.first)
         XCTAssertEqual(label.shadowColor, TestColor.second)
         XCTAssertEqual(label.text, TestText.first)
+        XCTAssertEqual(label.textAlignment, TestTextAlignment.first)
     }
     
     func testNavigationBar() {
@@ -346,6 +352,7 @@ class CustomizingTests: XCTestCase {
         XCTAssertEqual(textView.font, TestFont.first)
         XCTAssertEqual(textView.textColor, TestColor.first)
         XCTAssertEqual(textView.text, TestText.first)
+        XCTAssertEqual(textView.textAlignment, TestTextAlignment.first)
     }
     
     func testSearchBar() {

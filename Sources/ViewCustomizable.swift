@@ -141,6 +141,10 @@ extension ViewCustomizable {
     func customizeViewFont() {
         guard self is FontStyleRepresentable else { return }
 
+        if let view = self as? CustomTitleFont {
+            view.customizeTitleFont(using: view.titleFontStyle)
+        }
+        
         if let view = self as? CustomFont {
             view.customizeFont(using: view.fontStyle)
         }
@@ -260,6 +264,10 @@ extension ViewCustomizable {
     func customizeViewTextAlignment() {
         guard self is TextAlignmentStyleRepresentable else { return }
 
+        if let view = self as? CustomTitleTextAlignment {
+            view.customizeTitleTextAlignment(using: view.titleTextAlignmentStyle)
+        }
+        
         if let view = self as? CustomTextAlignment {
             view.customizeTextAlignment(using: view.textAlignmentStyle)
         }

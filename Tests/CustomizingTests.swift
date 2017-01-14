@@ -31,7 +31,7 @@ class CustomTabBarItem: UITabBarItem, CustomBadgeColor, CustomImage, CustomSelec
 class CustomView: UIView, CustomLayout, CustomDesign, CustomTintColor, CustomBorderColor, CustomBackgroundColor {
     
     var contentNib: UINib = UINib(nibName: "TestLayout", bundle: Bundle(for: CustomView.self))
-    var design: (DesignCustomizable) -> () = { guard let view = $0 as? UIView else { return }; view.layer.borderWidth = 3 }
+    var design: (DesignCustomizable) -> Void = { guard let view = $0 as? UIView else { return }; view.layer.borderWidth = 3 }
     var tintColorStyle: ColorStyle = TestColor.first
     var borderColorStyle: ColorStyle = TestColor.second
     var backgroundColorStyle: ColorStyle = TestColor.third

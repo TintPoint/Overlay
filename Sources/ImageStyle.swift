@@ -167,7 +167,7 @@ extension ImageStyleRepresentable {
     /// - Parameter setter: A setter method that will customize an image in different states.
     /// - Parameter image: An `UIImage` that will be used.
     /// - Parameter state: An `UIControlState` that will use the image.
-    func customizeImage(using style: ImageStyle, through setter: (_ image: UIImage?, _ state: UIControlState) -> ()) {
+    func customizeImage(using style: ImageStyle, through setter: (_ image: UIImage?, _ state: UIControlState) -> Void) {
         setter(style.normal(), .normal)
         if let styleGroup = style as? ImageStyleGroup {
             setter(styleGroup.highlighted(), .highlighted)

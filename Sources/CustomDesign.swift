@@ -12,6 +12,6 @@ import UIKit
 public protocol CustomDesign: DesignCustomizable {
 
     /// The closure that customizes the design.
-    var design: (DesignCustomizable) -> () { get }
+    var design: (DesignCustomizable) -> Void { get }
 
 }

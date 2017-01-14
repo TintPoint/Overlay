@@ -167,7 +167,7 @@ extension TextStyleRepresentable {
     /// - Parameter setter: A setter method that will customize a text in different states.
     /// - Parameter text: A `String` that will be used.
     /// - Parameter state: An `UIControlState` that will use the text.
-    func customizeText(using style: TextStyle, through setter: (_ text: String?, _ state: UIControlState) -> ()) {
+    func customizeText(using style: TextStyle, through setter: (_ text: String?, _ state: UIControlState) -> Void) {
         setter(style.normal(), .normal)
         if let styleGroup = style as? TextStyleGroup {
             setter(styleGroup.highlighted(), .highlighted)

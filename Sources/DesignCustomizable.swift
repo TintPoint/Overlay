@@ -13,13 +13,13 @@ public protocol DesignCustomizable {
 
     /// Customizes the design using a closure.
     /// - Parameter designHandler: A closure that customizes the design.
-    func customizeDesign(using designHandler: (DesignCustomizable) -> ())
+    func customizeDesign(using designHandler: (DesignCustomizable) -> Void)
 
 }
 
 extension UIView: DesignCustomizable {
 
-    public func customizeDesign(using designHandler: (DesignCustomizable) -> ()) {
+    public func customizeDesign(using designHandler: (DesignCustomizable) -> Void) {
         designHandler(self)
     }
 

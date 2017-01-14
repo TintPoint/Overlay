@@ -167,7 +167,7 @@ extension ColorStyleRepresentable {
     /// - Parameter setter: A setter method that will customize a color in different states.
     /// - Parameter color: An `UIColor` that will be used.
     /// - Parameter state: An `UIControlState` that will use the color.
-    func customizeColor(using style: ColorStyle, through setter: (_ color: UIColor?, _ state: UIControlState) -> ()) {
+    func customizeColor(using style: ColorStyle, through setter: (_ color: UIColor?, _ state: UIControlState) -> Void) {
         setter(style.normal(), .normal)
         if let styleGroup = style as? ColorStyleGroup {
             setter(styleGroup.highlighted(), .highlighted)

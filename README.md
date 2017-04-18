@@ -202,6 +202,7 @@ class BorderView: UIView, CustomDesign {
 #### Custom Font
 
 > - CustomFont
+> - CustomTitleFont
 
 #### Custom Image
 
@@ -237,6 +238,7 @@ class BorderView: UIView, CustomDesign {
 #### Custom Text Alignment
 
 > - CustomTextAlignment
+> - CustomTitleTextAlignment
 
 ### Available Styles
 

@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.6.2
+
+### Added
+
+- Add `CustomTitleFont`.
+  - Added by [Justin Jia](http://github.com/JustinJiaDev).
+- Add `CustomTitleTextAlignment`.
+  - Added by [Justin Jia](http://github.com/JustinJiaDev).
+
 ## 0.6.1
 
 ### Added

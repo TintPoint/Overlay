@@ -81,19 +81,19 @@ extension String: TextStyle {
 public struct TextGroup {
 
     /// The `TextStyle` that will be used in normal state.
-    fileprivate let normalStorage: TextStyle
+    private let normalStorage: TextStyle
 
     /// The `TextStyle` that will be used in disabled state, or `nil` if no `TextStyle` is set.
-    fileprivate let disabledStorage: TextStyle?
+    private let disabledStorage: TextStyle?
 
     /// The `TextStyle` that will be used in selected state, or `nil` if no `TextStyle` is set.
-    fileprivate let selectedStorage: TextStyle?
+    private let selectedStorage: TextStyle?
 
     /// The `TextStyle` that will be used in highlighted state, or `nil` if no `TextStyle` is set.
-    fileprivate let highlightedStorage: TextStyle?
+    private let highlightedStorage: TextStyle?
 
     /// The `TextStyle` that will be used in focused state, or `nil` if no `TextStyle` is set.
-    fileprivate let focusedStorage: TextStyle?
+    private let focusedStorage: TextStyle?
 
     /// Creates an instance with objects that conforms to `TextStyle`.
     /// - Parameter normal: A `TextStyle` that will be used in normal state.

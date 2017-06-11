@@ -81,19 +81,19 @@ extension NSTextAlignment: TextAlignmentStyle {
 public struct TextAlignmentGroup {
 
     /// The `TextAlignmentStyle` that will be used in normal state.
-    fileprivate let normalStorage: TextAlignmentStyle
+    private let normalStorage: TextAlignmentStyle
 
     /// The `TextAlignmentStyle` that will be used in disabled state, or `nil` if no `TextAlignmentStyle` is set.
-    fileprivate let disabledStorage: TextAlignmentStyle?
+    private let disabledStorage: TextAlignmentStyle?
 
     /// The `TextAlignmentStyle` that will be used in selected state, or `nil` if no `TextAlignmentStyle` is set.
-    fileprivate let selectedStorage: TextAlignmentStyle?
+    private let selectedStorage: TextAlignmentStyle?
 
     /// The `TextAlignmentStyle` that will be used in highlighted state, or `nil` if no `TextAlignmentStyle` is set.
-    fileprivate let highlightedStorage: TextAlignmentStyle?
+    private let highlightedStorage: TextAlignmentStyle?
 
     /// The `TextAlignmentStyle` that will be used in focused state, or `nil` if no `TextAlignmentStyle` is set.
-    fileprivate let focusedStorage: TextAlignmentStyle?
+    private let focusedStorage: TextAlignmentStyle?
 
     /// Creates an instance with objects that conforms to `TextAlignmentStyle`.
     /// - Parameter normal: A `TextAlignmentStyle` that will be used in normal state.

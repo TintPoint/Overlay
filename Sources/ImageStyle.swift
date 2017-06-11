@@ -81,19 +81,19 @@ extension UIImage: ImageStyle {
 public struct ImageGroup {
     
     /// The `ImageStyle` that will be used in normal state.
-    fileprivate let normalStorage: ImageStyle
+    private let normalStorage: ImageStyle
     
     /// The `ImageStyle` that will be used in disabled state, or `nil` if no `ImageStyle` is set.
-    fileprivate let disabledStorage: ImageStyle?
+    private let disabledStorage: ImageStyle?
     
     /// The `ImageStyle` that will be used in selected state, or `nil` if no `ImageStyle` is set.
-    fileprivate let selectedStorage: ImageStyle?
+    private let selectedStorage: ImageStyle?
     
     /// The `ImageStyle` that will be used in highlighted state, or `nil` if no `ImageStyle` is set.
-    fileprivate let highlightedStorage: ImageStyle?
+    private let highlightedStorage: ImageStyle?
     
     /// The `ImageStyle` that will be used in focused state, or `nil` if no `ImageStyle` is set.
-    fileprivate let focusedStorage: ImageStyle?
+    private let focusedStorage: ImageStyle?
     
     /// Creates an instance with objects that conforms to `ImageStyle`.
     /// - Parameter normal: An `ImageStyle` that will be used in normal state.

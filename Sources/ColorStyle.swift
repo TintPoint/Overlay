@@ -81,19 +81,19 @@ extension UIColor: ColorStyle {
 public struct ColorGroup {
 
     /// The `ColorStyle` that will be used in normal state.
-    fileprivate let normalStorage: ColorStyle
+    private let normalStorage: ColorStyle
 
     /// The `ColorStyle` that will be used in disabled state, or `nil` if no `ColorStyle` is set.
-    fileprivate let disabledStorage: ColorStyle?
+    private let disabledStorage: ColorStyle?
 
     /// The `ColorStyle` that will be used in selected state, or `nil` if no `ColorStyle` is set.
-    fileprivate let selectedStorage: ColorStyle?
+    private let selectedStorage: ColorStyle?
 
     /// The `ColorStyle` that will be used in highlighted state, or `nil` if no `ColorStyle` is set.
-    fileprivate let highlightedStorage: ColorStyle?
+    private let highlightedStorage: ColorStyle?
 
     /// The `ColorStyle` that will be used in focused state, or `nil` if no `ColorStyle` is set.
-    fileprivate let focusedStorage: ColorStyle?
+    private let focusedStorage: ColorStyle?
 
     /// Creates an instance with objects that conforms to `ColorStyle`.
     /// - Parameter normal: A `ColorStyle` that will be used in normal state.

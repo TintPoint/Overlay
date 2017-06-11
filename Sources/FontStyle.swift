@@ -81,19 +81,19 @@ extension UIFont: FontStyle {
 public struct FontGroup {
 
     /// The `FontStyle` that will be used in normal state.
-    fileprivate let normalStorage: FontStyle
+    private let normalStorage: FontStyle
 
     /// The `FontStyle` that will be used in disabled state, or `nil` if no `FontStyle` is set.
-    fileprivate let disabledStorage: FontStyle?
+    private let disabledStorage: FontStyle?
 
     /// The `FontStyle` that will be used in selected state, or `nil` if no `FontStyle` is set.
-    fileprivate let selectedStorage: FontStyle?
+    private let selectedStorage: FontStyle?
 
     /// The `FontStyle` that will be used in highlighted state, or `nil` if no `FontStyle` is set.
-    fileprivate let highlightedStorage: FontStyle?
+    private let highlightedStorage: FontStyle?
 
     /// The `FontStyle` that will be used in focused state, or `nil` if no `FontStyle` is set.
-    fileprivate let focusedStorage: FontStyle?
+    private let focusedStorage: FontStyle?
 
     /// Creates an instance with objects that conforms to `FontStyle`.
     /// - Parameter normal: A `FontStyle` that will be used in normal state.

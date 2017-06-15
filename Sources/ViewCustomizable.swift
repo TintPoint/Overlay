@@ -9,7 +9,7 @@
 import UIKit
 
 /// A protocol that describes a view that can be customized.
-@objc public protocol ViewCustomizable {
+public protocol ViewCustomizable {
     
     /// Refreshes the view's appearance. You should call this method after: a) creating a view programmatically b) changing the state of a view c) changing the style of a view.
     ///
@@ -17,7 +17,7 @@ import UIKit
     /// You need to call the super implementation at some point during your own `refresh` method.
     ///
     /// - Parameter includingSubviews: A `Bool` value that indicates whether the view's subviews (and its subviews' subviews...) should also be refreshed.
-    @objc func refresh(includingSubviews: Bool)
+    func refresh(includingSubviews: Bool)
     
 }
 

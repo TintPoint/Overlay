@@ -9,13 +9,13 @@
 import XCTest
 @testable import Overlay
 
-class TestRefreshingView: UIView {
+class TestRefreshingView: UIView, CustomDesign {
 
-    var isRefreshed = false
+    var refreshed = false
 
-    override func refresh(includingSubviews: Bool) {
-        super.refresh(includingSubviews: includingSubviews)
-        isRefreshed = true
+    let design: (DesignCustomizable) -> Void = {
+        let view = $0 as! TestRefreshingView
+        view.refreshed = true
     }
 
 }
@@ -27,8 +27,8 @@ class ViewCustomizableTests: XCTestCase {
         let subview = TestRefreshingView()
         view.addSubview(subview)
         view.refresh(includingSubviews: false)
-        XCTAssert(view.isRefreshed)
-        XCTAssertFalse(subview.isRefreshed)
+        XCTAssert(view.refreshed)
+        XCTAssertFalse(subview.refreshed)
     }
 
     func testRefreshIncludingSubviews() {
@@ -40,10 +40,10 @@ class ViewCustomizableTests: XCTestCase {
         view.addSubview(second)
         view.addSubview(third)
         view.refresh(includingSubviews: true)
-        XCTAssert(view.isRefreshed)
-        XCTAssert(first.isRefreshed)
-        XCTAssert(second.isRefreshed)
-        XCTAssert(third.isRefreshed)
+        XCTAssert(view.refreshed)
+        XCTAssert(first.refreshed)
+        XCTAssert(second.refreshed)
+        XCTAssert(third.refreshed)
     }
 
     func testRecursiveRefreshIncludingSubviews() {
@@ -53,9 +53,9 @@ class ViewCustomizableTests: XCTestCase {
         middle.addSubview(lowest)
         highest.addSubview(middle)
         highest.refresh(includingSubviews: true)
-        XCTAssert(highest.isRefreshed)
-        XCTAssert(middle.isRefreshed)
-        XCTAssert(lowest.isRefreshed)
+        XCTAssert(highest.refreshed)
+        XCTAssert(middle.refreshed)
+        XCTAssert(lowest.refreshed)
     }
 
 }

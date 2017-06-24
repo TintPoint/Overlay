@@ -1,6 +1,6 @@
 //
 //  ViewCustomizableTests.swift
-//  Overlay
+//  Tests
 //
 //  Created by Justin Jia on 9/1/16.
 //  Copyright © 2016 TintPoint. MIT license.

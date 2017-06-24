@@ -1,6 +1,6 @@
 //
 //  TextAlignmentStyleTests.swift
-//  Overlay
+//  Tests
 //
 //  Created by Justin Jia on 1/10/17.
 //  Copyright © 2017 TintPoint. MIT license.

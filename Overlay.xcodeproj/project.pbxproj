@@ -10,6 +10,8 @@
 		D03D1F931D71FED700EEA2CB /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D1F921D71FED700EEA2CB /* TextStyle.swift */; };
 		D03D1F951D71FF8400EEA2CB /* TestText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D1F941D71FF8400EEA2CB /* TestText.swift */; };
 		D03D1F971D71FFD700EEA2CB /* TextStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D1F961D71FFD700EEA2CB /* TextStyleTests.swift */; };
+		D03ED71A1EFEFBFF0076A34A /* CellCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03ED7191EFEFBFF0076A34A /* CellCustomizable.swift */; };
+		D03ED71C1EFF00160076A34A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03ED71B1EFF00160076A34A /* CustomCell.swift */; };
 		D06687C41D7405B0004615F9 /* TextCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06687C31D7405B0004615F9 /* TextCustomizable.swift */; };
 		D06687C61D74861A004615F9 /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06687C51D74861A004615F9 /* CustomText.swift */; };
 		D0A4B9061D67217A00C995A5 /* CustomizingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4B9051D67217A00C995A5 /* CustomizingTests.swift */; };
@@ -62,6 +64,8 @@
 		D03D1F921D71FED700EEA2CB /* TextStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
 		D03D1F941D71FF8400EEA2CB /* TestText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestText.swift; sourceTree = "<group>"; };
 		D03D1F961D71FFD700EEA2CB /* TextStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStyleTests.swift; sourceTree = "<group>"; };
+		D03ED7191EFEFBFF0076A34A /* CellCustomizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCustomizable.swift; sourceTree = "<group>"; };
+		D03ED71B1EFF00160076A34A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D06687C31D7405B0004615F9 /* TextCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCustomizable.swift; sourceTree = "<group>"; };
 		D06687C51D74861A004615F9 /* CustomText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
 		D0A4B9051D67217A00C995A5 /* CustomizingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizingTests.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				D0B172A91D45A2220079A2F2 /* ViewCustomizable.swift */,
+				D03ED7191EFEFBFF0076A34A /* CellCustomizable.swift */,
 				D0A4B9161D6B605D00C995A5 /* LayoutCustomizable.swift */,
 				D0F25A881DD920A600550302 /* DesignCustomizable.swift */,
 				D0A4B90F1D6B3DDD00C995A5 /* ColorCustomizable.swift */,
@@ -159,6 +164,7 @@
 		D0A4B9111D6B3DEE00C995A5 /* Customizing */ = {
 			isa = PBXGroup;
 			children = (
+				D03ED71B1EFF00160076A34A /* CustomCell.swift */,
 				D0B172AA1D45A2220079A2F2 /* CustomLayout.swift */,
 				D0F25A861DD9200E00550302 /* CustomDesign.swift */,
 				D0B172A61D45A2220079A2F2 /* CustomColor.swift */,
@@ -389,11 +395,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03ED71C1EFF00160076A34A /* CustomCell.swift in Sources */,
 				D0CE2FAE1D5F21D600FE4287 /* ImageStyle.swift in Sources */,
 				D0B172B11D45A2220079A2F2 /* CustomColor.swift in Sources */,
 				D0FC93A41E25891200D11343 /* CustomTextAlignment.swift in Sources */,
 				D0A4B9151D6B3EB700C995A5 /* ImageCustomizable.swift in Sources */,
 				D0B172B81D45A2220079A2F2 /* FontStyle.swift in Sources */,
+				D03ED71A1EFEFBFF0076A34A /* CellCustomizable.swift in Sources */,
 				D0B172B31D45A2220079A2F2 /* CustomFont.swift in Sources */,
 				D0A4B9171D6B605D00C995A5 /* LayoutCustomizable.swift in Sources */,
 				D0B172B51D45A2220079A2F2 /* CustomLayout.swift in Sources */,

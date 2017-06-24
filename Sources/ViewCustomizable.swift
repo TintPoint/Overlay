@@ -16,7 +16,7 @@ public protocol ViewCustomizable {
     /// Your custom view can override this method to customize other properties.
     /// You need to call the super implementation at some point during your own `refresh` method.
     ///
-    /// - Parameter includingSubviews: A `Bool` value that indicates whether the view's subviews (and its subviews' subviews...) should also be refreshed.
+    /// - Parameter includingSubviews: A `Bool` value that indicates whether subviews of the view (and subviews' subviews...) should also be refreshed.
     func refresh(includingSubviews: Bool)
     
 }

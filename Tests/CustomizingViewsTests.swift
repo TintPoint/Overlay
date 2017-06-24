@@ -1,6 +1,6 @@
 //
-//  CustomizingTests.swift
-//  Overlay
+//  CustomizingViewsTests.swift
+//  Tests
 //
 //  Created by Justin Jia on 8/19/16.
 //  Copyright © 2016 TintPoint. MIT license.
@@ -11,187 +11,187 @@ import XCTest
 
 class CustomBarButtonItem: UIBarButtonItem, CustomTintColor, CustomImage, CustomLandscapeImagePhone, CustomTitle {
     
-    var tintColorStyle: ColorStyle = TestColor.first
-    var imageStyle: ImageStyle = TestImage.first
-    var landscapeImagePhoneStyle: ImageStyle = TestImage.second
-    var titleStyle: TextStyle = TestText.first
+    let tintColorStyle: ColorStyle = TestColor.first
+    let imageStyle: ImageStyle = TestImage.first
+    let landscapeImagePhoneStyle: ImageStyle = TestImage.second
+    let titleStyle: TextStyle = TestText.first
     
 }
 
 class CustomTabBarItem: UITabBarItem, CustomBadgeColor, CustomImage, CustomSelectedImage, CustomTitle {
     
-    var badgeColorStyle: ColorStyle = TestColor.first
-    var imageStyle: ImageStyle = TestImage.first
-    var landscapeImagePhoneStyle: ImageStyle = TestImage.second
-    var selectedImageStyle: ImageStyle = TestImage.third
-    var titleStyle: TextStyle = TestText.first
+    let badgeColorStyle: ColorStyle = TestColor.first
+    let imageStyle: ImageStyle = TestImage.first
+    let landscapeImagePhoneStyle: ImageStyle = TestImage.second
+    let selectedImageStyle: ImageStyle = TestImage.third
+    let titleStyle: TextStyle = TestText.first
     
 }
 
 class CustomView: UIView, CustomLayout, CustomDesign, CustomTintColor, CustomBorderColor, CustomBackgroundColor {
     
-    var contentNib: UINib = UINib(nibName: "TestLayout", bundle: Bundle(for: CustomView.self))
-    var design: (DesignCustomizable) -> Void = { guard let view = $0 as? UIView else { return }; view.layer.borderWidth = 3 }
-    var tintColorStyle: ColorStyle = TestColor.first
-    var borderColorStyle: ColorStyle = TestColor.second
-    var backgroundColorStyle: ColorStyle = TestColor.third
+    let contentNib: UINib = UINib(nibName: "TestLayout", bundle: Bundle(for: CustomView.self))
+    let design: (DesignCustomizable) -> Void = { guard let view = $0 as? UIView else { return }; view.layer.borderWidth = 3 }
+    let tintColorStyle: ColorStyle = TestColor.first
+    let borderColorStyle: ColorStyle = TestColor.second
+    let backgroundColorStyle: ColorStyle = TestColor.third
     
 }
 
 class CustomActivityIndicatorView: UIActivityIndicatorView, CustomColor {
     
-    var colorStyle: ColorStyle = TestColor.first
+    let colorStyle: ColorStyle = TestColor.first
     
 }
 
 class CustomButton: UIButton, CustomTitleFont, CustomTitleColor, CustomTitleShadowColor, CustomImage, CustomBackgroundImage, CustomTitle, CustomTitleTextAlignment {
     
-    var titleFontStyle: FontStyle = TestFont.first
-    var titleColorStyle: ColorStyle = TestColor.first
-    var titleShadowColorStyle: ColorStyle = TestColor.second
-    var imageStyle: ImageStyle = TestImage.first
-    var backgroundImageStyle: ImageStyle = TestImage.second
-    var titleStyle: TextStyle = TestText.first
-    var titleTextAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
+    let titleFontStyle: FontStyle = TestFont.first
+    let titleColorStyle: ColorStyle = TestColor.first
+    let titleShadowColorStyle: ColorStyle = TestColor.second
+    let imageStyle: ImageStyle = TestImage.first
+    let backgroundImageStyle: ImageStyle = TestImage.second
+    let titleStyle: TextStyle = TestText.first
+    let titleTextAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
 
 }
 
 class CustomSegmentedControl: UISegmentedControl, CustomSegmentTitles {
 
-    var segmentTitleStyles: [TextStyle] = [TestText.first, TestText.second]
+    let segmentTitleStyles: [TextStyle] = [TestText.first, TestText.second]
 
 }
 
 class CustomSlider: UISlider, CustomMinimumTrackTintColor, CustomMaximumTrackTintColor, CustomThumbTintColor, CustomMinimumValueImage, CustomMaximumValueImage {
     
-    var minimumTrackTintColorStyle: ColorStyle = TestColor.first
-    var maximumTrackTintColorStyle: ColorStyle = TestColor.second
-    var thumbTintColorStyle: ColorStyle = TestColor.third
-    var minimumValueImageStyle: ImageStyle = TestImage.first
-    var maximumValueImageStyle: ImageStyle = TestImage.second
+    let minimumTrackTintColorStyle: ColorStyle = TestColor.first
+    let maximumTrackTintColorStyle: ColorStyle = TestColor.second
+    let thumbTintColorStyle: ColorStyle = TestColor.third
+    let minimumValueImageStyle: ImageStyle = TestImage.first
+    let maximumValueImageStyle: ImageStyle = TestImage.second
     
 }
 
 class CustomImageSlider: UISlider, CustomMinimumTrackImage, CustomMaximumTrackImage, CustomThumbImage {
     
-    var minimumTrackImageStyle: ImageStyle = TestImage.first
-    var maximumTrackImageStyle: ImageStyle = TestImage.second
-    var thumbImageStyle: ImageStyle = TestImage.third
+    let minimumTrackImageStyle: ImageStyle = TestImage.first
+    let maximumTrackImageStyle: ImageStyle = TestImage.second
+    let thumbImageStyle: ImageStyle = TestImage.third
     
 }
 
 class CustomStepper: UIStepper, CustomBackgroundImage, CustomDecrementImage, CustomIncrementImage {
     
-    var backgroundImageStyle: ImageStyle = TestImage.first
-    var decrementImageStyle: ImageStyle = TestImage.second
-    var incrementImageStyle: ImageStyle = TestImage.third
+    let backgroundImageStyle: ImageStyle = TestImage.first
+    let decrementImageStyle: ImageStyle = TestImage.second
+    let incrementImageStyle: ImageStyle = TestImage.third
     
 }
 
 class CustomSwitch: UISwitch, CustomOnTintColor, CustomThumbTintColor, CustomOnImage, CustomOffImage {
     
-    var onTintColorStyle: ColorStyle = TestColor.first
-    var thumbTintColorStyle: ColorStyle = TestColor.second
-    var onImageStyle: ImageStyle = TestImage.first
-    var offImageStyle: ImageStyle = TestImage.second
+    let onTintColorStyle: ColorStyle = TestColor.first
+    let thumbTintColorStyle: ColorStyle = TestColor.second
+    let onImageStyle: ImageStyle = TestImage.first
+    let offImageStyle: ImageStyle = TestImage.second
     
 }
 
 class CustomTextField: UITextField, CustomFont, CustomTextColor, CustomText, CustomPlaceholder, CustomTextAlignment {
     
-    var fontStyle: FontStyle = TestFont.first
-    var textColorStyle: ColorStyle = TestColor.first
-    var textStyle: TextStyle = TestText.first
-    var placeholderStyle: TextStyle = TestText.second
-    var textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
+    let fontStyle: FontStyle = TestFont.first
+    let textColorStyle: ColorStyle = TestColor.first
+    let textStyle: TextStyle = TestText.first
+    let placeholderStyle: TextStyle = TestText.second
+    let textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
     
 }
 
 class CustomImageView: UIImageView, CustomImage, CustomHighlightedImage {
     
-    var imageStyle: ImageStyle = TestImage.first
-    var highlightedImageStyle: ImageStyle = TestImage.second
+    let imageStyle: ImageStyle = TestImage.first
+    let highlightedImageStyle: ImageStyle = TestImage.second
     
 }
 
 class CustomLabel: UILabel, CustomFont, CustomTextColor, CustomShadowColor, CustomText, CustomTextAlignment {
     
-    var fontStyle: FontStyle = TestFont.first
-    var textColorStyle: ColorStyle = TestColor.first
-    var shadowColorStyle: ColorStyle = TestColor.second
-    var textStyle: TextStyle = TestText.first
-    var textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
+    let fontStyle: FontStyle = TestFont.first
+    let textColorStyle: ColorStyle = TestColor.first
+    let shadowColorStyle: ColorStyle = TestColor.second
+    let textStyle: TextStyle = TestText.first
+    let textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
     
 }
 
 class CustomNavigationBar: UINavigationBar, CustomBarTintColor, CustomShadowImage {
     
-    var barTintColorStyle: ColorStyle = TestColor.first
-    var shadowImageStyle: ImageStyle = TestImage.first
+    let barTintColorStyle: ColorStyle = TestColor.first
+    let shadowImageStyle: ImageStyle = TestImage.first
     
 }
 
 class CustomProgressView: UIProgressView, CustomProgressTintColor, CustomTrackTintColor {
     
-    var progressTintColorStyle: ColorStyle = TestColor.first
-    var trackTintColorStyle: ColorStyle = TestColor.second
+    let progressTintColorStyle: ColorStyle = TestColor.first
+    let trackTintColorStyle: ColorStyle = TestColor.second
     
 }
 
 class CustomImageProgressView: UIProgressView, CustomProgressImage, CustomTrackImage {
     
-    var progressImageStyle: ImageStyle = TestImage.first
-    var trackImageStyle: ImageStyle = TestImage.second
+    let progressImageStyle: ImageStyle = TestImage.first
+    let trackImageStyle: ImageStyle = TestImage.second
     
 }
 
 class CustomTableView: UITableView, CustomSeparatorColor, CustomSectionIndexColor, CustomSectionIndexBackgroundColor, CustomSectionIndexTrackingBackgroundColor {
     
-    var separatorColorStyle: ColorStyle = TestColor.first
-    var sectionIndexColorStyle: ColorStyle = TestColor.second
-    var sectionIndexBackgroundColorStyle: ColorStyle = TestColor.third
-    var sectionIndexTrackingBackgroundColorStyle: ColorStyle = TestColor.fourth
+    let separatorColorStyle: ColorStyle = TestColor.first
+    let sectionIndexColorStyle: ColorStyle = TestColor.second
+    let sectionIndexBackgroundColorStyle: ColorStyle = TestColor.third
+    let sectionIndexTrackingBackgroundColorStyle: ColorStyle = TestColor.fourth
     
 }
 
 class CustomTextView: UITextView, CustomFont, CustomTextColor, CustomText, CustomTextAlignment {
     
-    var fontStyle: FontStyle = TestFont.first
-    var textColorStyle: ColorStyle = TestColor.first
-    var textStyle: TextStyle = TestText.first
-    var textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
+    let fontStyle: FontStyle = TestFont.first
+    let textColorStyle: ColorStyle = TestColor.first
+    let textStyle: TextStyle = TestText.first
+    let textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
     
 }
 
 class CustomSearchBar: UISearchBar, CustomBarTintColor, CustomBackgroundImage, CustomSearchFieldBackgroundImage, CustomScopeBarButtonBackgroundImage, CustomText, CustomPlaceholder, CustomPrompt, CustomScopeButtonTitles {
     
-    var barTintColorStyle: ColorStyle = TestColor.first
-    var backgroundImageStyle: ImageStyle = TestImage.first
-    var searchFieldBackgroundImageStyle: ImageStyle = TestImage.second
-    var scopeBarButtonBackgroundImageStyle: ImageStyle = TestImage.third
-    var textStyle: TextStyle = TestText.first
-    var placeholderStyle: TextStyle = TestText.second
-    var promptStyle: TextStyle = TestText.third
-    var scopeButtonTitleStyles: [TextStyle] = [TestText.fourth, TestText.fifth]
+    let barTintColorStyle: ColorStyle = TestColor.first
+    let backgroundImageStyle: ImageStyle = TestImage.first
+    let searchFieldBackgroundImageStyle: ImageStyle = TestImage.second
+    let scopeBarButtonBackgroundImageStyle: ImageStyle = TestImage.third
+    let textStyle: TextStyle = TestText.first
+    let placeholderStyle: TextStyle = TestText.second
+    let promptStyle: TextStyle = TestText.third
+    let scopeButtonTitleStyles: [TextStyle] = [TestText.fourth, TestText.fifth]
 
 }
 
 class CustomTabBar: UITabBar, CustomBarTintColor, CustomUnselectedItemTintColor, CustomShadowImage, CustomBackgroundImage {
     
-    var barTintColorStyle: ColorStyle = TestColor.first
-    var unselectedItemTintColorStyle: ColorStyle = TestColor.second
-    var shadowImageStyle: ImageStyle = TestImage.first
-    var backgroundImageStyle: ImageStyle = TestImage.second
+    let barTintColorStyle: ColorStyle = TestColor.first
+    let unselectedItemTintColorStyle: ColorStyle = TestColor.second
+    let shadowImageStyle: ImageStyle = TestImage.first
+    let backgroundImageStyle: ImageStyle = TestImage.second
     
 }
 
 class CustomToolbar: UIToolbar, CustomBarTintColor {
     
-    var barTintColorStyle: ColorStyle = TestColor.first
+    let barTintColorStyle: ColorStyle = TestColor.first
     
 }
 
-class CustomizingTests: XCTestCase {
+class CustomizingViewsTests: XCTestCase {
     
     func testBarButtonItem() {
         let barButtonItem = CustomBarButtonItem()

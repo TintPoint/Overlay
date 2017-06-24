@@ -12,9 +12,10 @@
 		D03D1F971D71FFD700EEA2CB /* TextStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D1F961D71FFD700EEA2CB /* TextStyleTests.swift */; };
 		D03ED71A1EFEFBFF0076A34A /* CellCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03ED7191EFEFBFF0076A34A /* CellCustomizable.swift */; };
 		D03ED71C1EFF00160076A34A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03ED71B1EFF00160076A34A /* CustomCell.swift */; };
+		D03ED71E1EFF18730076A34A /* CustomizingCellsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03ED71D1EFF18730076A34A /* CustomizingCellsTests.swift */; };
 		D06687C41D7405B0004615F9 /* TextCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06687C31D7405B0004615F9 /* TextCustomizable.swift */; };
 		D06687C61D74861A004615F9 /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06687C51D74861A004615F9 /* CustomText.swift */; };
-		D0A4B9061D67217A00C995A5 /* CustomizingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4B9051D67217A00C995A5 /* CustomizingTests.swift */; };
+		D0A4B9061D67217A00C995A5 /* CustomizingViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4B9051D67217A00C995A5 /* CustomizingViewsTests.swift */; };
 		D0A4B9081D67237100C995A5 /* TestImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4B9071D67237100C995A5 /* TestImage.swift */; };
 		D0A4B90E1D67341B00C995A5 /* TestLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A4B90D1D67341B00C995A5 /* TestLayout.xib */; };
 		D0A4B9101D6B3DDD00C995A5 /* ColorCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4B90F1D6B3DDD00C995A5 /* ColorCustomizable.swift */; };
@@ -66,9 +67,10 @@
 		D03D1F961D71FFD700EEA2CB /* TextStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStyleTests.swift; sourceTree = "<group>"; };
 		D03ED7191EFEFBFF0076A34A /* CellCustomizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCustomizable.swift; sourceTree = "<group>"; };
 		D03ED71B1EFF00160076A34A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		D03ED71D1EFF18730076A34A /* CustomizingCellsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizingCellsTests.swift; sourceTree = "<group>"; };
 		D06687C31D7405B0004615F9 /* TextCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCustomizable.swift; sourceTree = "<group>"; };
 		D06687C51D74861A004615F9 /* CustomText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
-		D0A4B9051D67217A00C995A5 /* CustomizingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizingTests.swift; sourceTree = "<group>"; };
+		D0A4B9051D67217A00C995A5 /* CustomizingViewsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizingViewsTests.swift; sourceTree = "<group>"; };
 		D0A4B9071D67237100C995A5 /* TestImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestImage.swift; sourceTree = "<group>"; };
 		D0A4B90D1D67341B00C995A5 /* TestLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestLayout.xib; sourceTree = "<group>"; };
 		D0A4B90F1D6B3DDD00C995A5 /* ColorCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCustomizable.swift; sourceTree = "<group>"; };
@@ -255,7 +257,8 @@
 		D0EE5F331D6CBB4E00657C71 /* CustomizingTests */ = {
 			isa = PBXGroup;
 			children = (
-				D0A4B9051D67217A00C995A5 /* CustomizingTests.swift */,
+				D0A4B9051D67217A00C995A5 /* CustomizingViewsTests.swift */,
+				D03ED71D1EFF18730076A34A /* CustomizingCellsTests.swift */,
 			);
 			name = CustomizingTests;
 			sourceTree = "<group>";
@@ -375,11 +378,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0B059C01D659948009C84FC /* FontStyleTests.swift in Sources */,
+				D03ED71E1EFF18730076A34A /* CustomizingCellsTests.swift in Sources */,
 				D0EE5F351D6CBC2300657C71 /* TestColor.swift in Sources */,
 				D0B059C21D659A2A009C84FC /* ImageStyleTests.swift in Sources */,
 				D0EE5F371D6CBC5500657C71 /* TestFont.swift in Sources */,
 				D03D1F951D71FF8400EEA2CB /* TestText.swift in Sources */,
-				D0A4B9061D67217A00C995A5 /* CustomizingTests.swift in Sources */,
+				D0A4B9061D67217A00C995A5 /* CustomizingViewsTests.swift in Sources */,
 				D0A4B9081D67237100C995A5 /* TestImage.swift in Sources */,
 				D0CDC6F21D71B4CD00843DA8 /* TestView.swift in Sources */,
 				D03D1F971D71FFD700EEA2CB /* TextStyleTests.swift in Sources */,

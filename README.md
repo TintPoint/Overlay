@@ -17,7 +17,7 @@ Overlay is a very flexible UI framework designed for Swift on top of UIKit.
 
 ## Requirements
 
-iOS 9+ / Xcode 8+ / Swift 3+
+iOS 9+ / Xcode 9+ / Swift 4+
 
 ## Installation
 
@@ -166,6 +166,12 @@ class BorderView: UIView, CustomDesign {
 ## Reference
 
 ### Available Protocols
+
+#### Custom Cell
+
+> - CustomCell
+> - CustomHeaderFooterView
+> - CustomReusableView
 
 #### Custom Design
 

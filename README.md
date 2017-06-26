@@ -176,6 +176,25 @@ class BorderView: UIView, CustomDesign {
 #### Custom Design
 
 > - CustomDesign
+> - CustomBarButtonItemDesign
+> - CustomTabBarItemDesign
+> - CustomViewDesign
+> - CustomActivityIndicatorViewDesign
+> - CustomButtonDesign
+> - CustomSegmentedControlDesign
+> - CustomSliderDesign
+> - CustomStepperDesign
+> - CustomSwitchDesign
+> - CustomTextFieldDesign
+> - CustomImageViewDesign
+> - CustomLabelDesign
+> - CustomNavigationBarDesign
+> - CustomProgressViewDesign
+> - CustomTableViewDesign
+> - CustomTextViewDesign
+> - CustomSearchBarDesign
+> - CustomTabBarDesign
+> - CustomToolbarDesign
 
 #### Custom Layout
 

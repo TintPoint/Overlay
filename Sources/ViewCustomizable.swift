@@ -43,8 +43,86 @@ extension ViewCustomizable {
 
     /// Customizes the view's design using a closure.
     func customizeViewDesign() {
+        guard self is DesignCustomizable else { return }
+
         if let view = self as? CustomDesign {
-            view.customizeDesign(using: view.design)
+            view.design(view)
+        }
+
+        if let view = self as? UIBarButtonItem & CustomBarButtonItemDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UITabBarItem & CustomTabBarItemDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIView & CustomViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIActivityIndicatorView & CustomActivityIndicatorViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIButton & CustomButtonDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UISegmentedControl & CustomSegmentedControlDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UISlider & CustomSliderDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIStepper & CustomStepperDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UISwitch & CustomSwitchDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UITextField & CustomTextFieldDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIImageView & CustomImageViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UILabel & CustomLabelDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UINavigationBar & CustomNavigationBarDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIProgressView & CustomProgressViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UITableView & CustomTableViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UITextView & CustomTextViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UISearchBar & CustomSearchBarDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UITabBar & CustomTabBarDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIToolbar & CustomToolbarDesign {
+            view.design(view)
         }
     }
 

@@ -402,7 +402,9 @@ extension UIView: ViewCustomizable {
     public func refresh(includingSubviews: Bool = false) {
         customizeView()
         if includingSubviews {
-            subviews.forEach { $0.refresh(includingSubviews: true) }
+            for subview in subviews {
+                subview.refresh(includingSubviews: true)
+            }
         }
     }
 

@@ -10,4 +10,3 @@ import UIKit
 
 /// A protocol that describes a view that its design can be customized using a closure.
 public protocol DesignCustomizable { }
-

@@ -77,7 +77,6 @@ class ImageStyleTests: XCTestCase {
         XCTAssertEqual(view.focused, Resource.group.focused())
     }
 
-
     func testCustomizeMinimalImage() {
         let view = View()
         view.customizeImage(using: Resource.minimalGroup, through: view.setImage)

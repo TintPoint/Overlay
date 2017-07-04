@@ -77,7 +77,6 @@ class TextStyleTests: XCTestCase {
         XCTAssertEqual(view.focused, Resource.group.focused())
     }
 
-
     func testCustomizeMinimalText() {
         let view = View()
         view.customizeText(using: Resource.minimalGroup, through: view.setText)

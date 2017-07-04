@@ -30,7 +30,9 @@ public protocol PromptCustomizable: TextStyleRepresentable {
 public protocol SegmentTitlesCustomizable: TextStyleRepresentable {
 
     /// Customizes the titles of the segments.
-    /// - Parameter styles: An array of `TextStyle` that represents the titles of the segments. The indexes of the array is used to identify segments in the control, from left to right. Styles which their indexes exceeding the number of segments are ignored.
+    /// - Parameter styles: An array of `TextStyle` that represents the titles of the segments.
+    /// The indexes of the array is used to identify segments in the control, from left to right.
+    /// Styles which their indexes exceeding the number of segments are ignored.
     func customizeSegmentTitles(using styles: [TextStyle])
 
 }
@@ -39,7 +41,8 @@ public protocol SegmentTitlesCustomizable: TextStyleRepresentable {
 public protocol ScopeButtonTitlesCustomizable: TextStyleRepresentable {
 
     /// Customizes the titles of the scope buttons.
-    /// - Parameter styles: An array of `TextStyle` that represents the titles of the scope buttons. The indexes of the array is used to identify buttons in the control, from left to right.
+    /// - Parameter styles: An array of `TextStyle` that represents the titles of the scope buttons.
+    /// The indexes of the array is used to identify buttons in the control, from left to right.
     func customizeScopeButtonTitles(using styles: [TextStyle])
 
 }

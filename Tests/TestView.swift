@@ -74,7 +74,7 @@ class TestTextView: TestView, TextStyleRepresentable {
     var normal: String?
     var disabled: String?
     var selected: String?
-    var highlighted:String?
+    var highlighted: String?
     var focused: String?
 
     func setText(_ text: String?, for state: UIControlState) {
@@ -95,7 +95,7 @@ class TestTextAlignmentView: TestView, TextAlignmentStyleRepresentable {
     var normal: NSTextAlignment?
     var disabled: NSTextAlignment?
     var selected: NSTextAlignment?
-    var highlighted:NSTextAlignment?
+    var highlighted: NSTextAlignment?
     var focused: NSTextAlignment?
 
     func setTextAlignment(_ textAlignment: NSTextAlignment?, for state: UIControlState) {
@@ -108,6 +108,5 @@ class TestTextAlignmentView: TestView, TextAlignmentStyleRepresentable {
         default: return
         }
     }
-
 
 }

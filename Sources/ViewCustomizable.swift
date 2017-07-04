@@ -11,7 +11,11 @@ import UIKit
 /// A protocol that describes a view that can be customized.
 public protocol ViewCustomizable {
     
-    /// Refreshes the view's appearance. You should call this method after: a) creating a view programmatically b) changing the state of a view c) changing the style of a view.
+    /// Refreshes the view's appearance.
+    /// You should call this method after:
+    /// a) creating a view programmatically
+    /// b) changing the state of a view
+    /// c) changing the style of a view.
     ///
     /// Your custom view can override this method to customize other properties.
     /// You need to call the super implementation at some point during your own `refresh` method.
@@ -43,7 +47,9 @@ extension ViewCustomizable {
 
     /// Customizes the view's design using a closure.
     func customizeViewDesign() {
-        guard self is DesignCustomizable else { return }
+        guard self is DesignCustomizable else {
+            return
+        }
 
         if let view = self as? CustomDesign {
             view.design(view)
@@ -128,7 +134,9 @@ extension ViewCustomizable {
 
     /// Customizes the view's colors.
     func customizeViewColor() {
-        guard self is ColorStyleRepresentable else { return }
+        guard self is ColorStyleRepresentable else {
+            return
+        }
 
         if let view = self as? CustomBackgroundColor {
             view.customizeBackgroundColor(using: view.backgroundColorStyle)
@@ -217,7 +225,9 @@ extension ViewCustomizable {
 
     /// Customizes the view's fonts.
     func customizeViewFont() {
-        guard self is FontStyleRepresentable else { return }
+        guard self is FontStyleRepresentable else {
+            return
+        }
 
         if let view = self as? CustomTitleFont {
             view.customizeTitleFont(using: view.titleFontStyle)
@@ -230,7 +240,9 @@ extension ViewCustomizable {
 
     /// Customizes the view's images.
     func customizeViewImage() {
-        guard self is ImageStyleRepresentable else { return }
+        guard self is ImageStyleRepresentable else {
+            return
+        }
 
         if let view = self as? CustomBackgroundImage {
             view.customizeBackgroundImage(using: view.backgroundImageStyle)
@@ -311,7 +323,9 @@ extension ViewCustomizable {
 
     /// Customizes the view's texts.
     func customizeViewText() {
-        guard self is TextStyleRepresentable else { return }
+        guard self is TextStyleRepresentable else {
+            return
+        }
 
         if let view = self as? CustomPlaceholder {
             view.customizePlaceholder(using: view.placeholderStyle)
@@ -340,7 +354,9 @@ extension ViewCustomizable {
 
     /// Customizes the view's text alignments.
     func customizeViewTextAlignment() {
-        guard self is TextAlignmentStyleRepresentable else { return }
+        guard self is TextAlignmentStyleRepresentable else {
+            return
+        }
 
         if let view = self as? CustomTitleTextAlignment {
             view.customizeTitleTextAlignment(using: view.titleTextAlignmentStyle)

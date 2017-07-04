@@ -72,27 +72,31 @@ class CustomizingCellsTests: XCTestCase {
     func testTableViewCell() {
         let tableView = UITableView()
         tableView.register(CustomTableViewCell.self)
-        let firstCell = tableView.dequeueReusableCell(CustomTableViewCell.self)
-        XCTAssert(firstCell as Any is CustomTableViewCell)
-        let secondCell = tableView.dequeueReusableCell(CustomTableViewCell.self, for: IndexPath(row: 0, section: 0))
-        XCTAssert(secondCell as Any is CustomTableViewCell)
-        let thirdCell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.suggestedIdentifier)
-        XCTAssert(thirdCell as Any is CustomTableViewCell)
-        let fourthCell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.suggestedIdentifier, for: IndexPath(row: 0, section: 0))
-        XCTAssert(fourthCell as Any is CustomTableViewCell)
+        if #available(iOS 11, *) {
+            let firstCell = tableView.dequeueReusableCell(CustomTableViewCell.self)
+            XCTAssert(firstCell as Any is CustomTableViewCell)
+            let secondCell = tableView.dequeueReusableCell(CustomTableViewCell.self, for: IndexPath(row: 0, section: 0))
+            XCTAssert(secondCell as Any is CustomTableViewCell)
+            let thirdCell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.suggestedIdentifier)
+            XCTAssert(thirdCell as Any is CustomTableViewCell)
+            let fourthCell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.suggestedIdentifier, for: IndexPath(row: 0, section: 0))
+            XCTAssert(fourthCell as Any is CustomTableViewCell)
+        }
     }
 
     func testEmptyTableViewCell() {
         let tableView = UITableView()
         tableView.register(CustomEmptyTableViewCell.self)
-        let firstCell = tableView.dequeueReusableCell(CustomEmptyTableViewCell.self)
-        XCTAssert(firstCell as Any is CustomEmptyTableViewCell)
-        let secondCell = tableView.dequeueReusableCell(CustomEmptyTableViewCell.self, for: IndexPath(row: 0, section: 0))
-        XCTAssert(secondCell as Any is CustomEmptyTableViewCell)
-        let thirdCell = tableView.dequeueReusableCell(withIdentifier: CustomEmptyTableViewCell.suggestedIdentifier)
-        XCTAssert(thirdCell as Any is CustomEmptyTableViewCell)
-        let fourthCell = tableView.dequeueReusableCell(withIdentifier: CustomEmptyTableViewCell.suggestedIdentifier, for: IndexPath(row: 0, section: 0))
-        XCTAssert(fourthCell as Any is CustomEmptyTableViewCell)
+        if #available(iOS 11, *) {
+            let firstCell = tableView.dequeueReusableCell(CustomEmptyTableViewCell.self)
+            XCTAssert(firstCell as Any is CustomEmptyTableViewCell)
+            let secondCell = tableView.dequeueReusableCell(CustomEmptyTableViewCell.self, for: IndexPath(row: 0, section: 0))
+            XCTAssert(secondCell as Any is CustomEmptyTableViewCell)
+            let thirdCell = tableView.dequeueReusableCell(withIdentifier: CustomEmptyTableViewCell.suggestedIdentifier)
+            XCTAssert(thirdCell as Any is CustomEmptyTableViewCell)
+            let fourthCell = tableView.dequeueReusableCell(withIdentifier: CustomEmptyTableViewCell.suggestedIdentifier, for: IndexPath(row: 0, section: 0))
+            XCTAssert(fourthCell as Any is CustomEmptyTableViewCell)
+        }
     }
 
     func testCollectionViewCell() {

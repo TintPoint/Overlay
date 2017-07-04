@@ -67,22 +67,6 @@ class CustomEmptyCollectionReusableView: UICollectionReusableView, CustomReusabl
 
 }
 
-class TestCollectionViewDataSource: NSObject, UICollectionViewDataSource {
-
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(CustomCollectionViewCell.self, for: indexPath)
-    }
-
-}
-
 class CustomizingCellsTests: XCTestCase {
 
     func testTableViewCell() {
@@ -90,11 +74,11 @@ class CustomizingCellsTests: XCTestCase {
         tableView.register(CustomTableViewCell.self)
         let firstCell = tableView.dequeueReusableCell(CustomTableViewCell.self)
         XCTAssert(firstCell as Any is CustomTableViewCell)
-        let secondCell = tableView.dequeueReusableCell(CustomTableViewCell.self, for: IndexPath())
+        let secondCell = tableView.dequeueReusableCell(CustomTableViewCell.self, for: IndexPath(row: 0, section: 0))
         XCTAssert(secondCell as Any is CustomTableViewCell)
         let thirdCell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.suggestedIdentifier)
         XCTAssert(thirdCell as Any is CustomTableViewCell)
-        let fourthCell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.suggestedIdentifier, for: IndexPath())
+        let fourthCell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.suggestedIdentifier, for: IndexPath(row: 0, section: 0))
         XCTAssert(fourthCell as Any is CustomTableViewCell)
     }
 
@@ -103,11 +87,11 @@ class CustomizingCellsTests: XCTestCase {
         tableView.register(CustomEmptyTableViewCell.self)
         let firstCell = tableView.dequeueReusableCell(CustomEmptyTableViewCell.self)
         XCTAssert(firstCell as Any is CustomEmptyTableViewCell)
-        let secondCell = tableView.dequeueReusableCell(CustomEmptyTableViewCell.self, for: IndexPath())
+        let secondCell = tableView.dequeueReusableCell(CustomEmptyTableViewCell.self, for: IndexPath(row: 0, section: 0))
         XCTAssert(secondCell as Any is CustomEmptyTableViewCell)
         let thirdCell = tableView.dequeueReusableCell(withIdentifier: CustomEmptyTableViewCell.suggestedIdentifier)
         XCTAssert(thirdCell as Any is CustomEmptyTableViewCell)
-        let fourthCell = tableView.dequeueReusableCell(withIdentifier: CustomEmptyTableViewCell.suggestedIdentifier, for: IndexPath())
+        let fourthCell = tableView.dequeueReusableCell(withIdentifier: CustomEmptyTableViewCell.suggestedIdentifier, for: IndexPath(row: 0, section: 0))
         XCTAssert(fourthCell as Any is CustomEmptyTableViewCell)
     }
 

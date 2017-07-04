@@ -18,5 +18,5 @@ class TestText {
 
     static let group = TextGroup(normal: first, disabled: second, selected: third, highlighted: fourth, focused: fifth)
     static let minimalGroup = TextGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
-    
+
 }

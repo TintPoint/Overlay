@@ -14,7 +14,7 @@ public protocol ViewDisable {
 
     /// A `Bool` value that indicates whether the view is currently enabled.
     var isEnabled: Bool { get }
-    
+
 }
 
 /// A protocol that describes a view that can be selected.
@@ -23,25 +23,25 @@ public protocol ViewSelectable {
 
     /// A `Bool` value that indicates whether the view is currently selected.
     var isSelected: Bool { get }
-    
+
 }
 
 /// A protocol that describes a view that can be highlighted.
 /// - SeeAlso: `ViewDisable`, `ViewSelectable`, `ViewFocusable`
 public protocol ViewHighlightable {
-    
+
     /// A `Bool` value that indicates whether the view is currently highlighted.
     var isHighlighted: Bool { get }
-    
+
 }
 
 /// A protocol that describes a view that can be focused.
 /// - SeeAlso: `ViewDisable`, `ViewSelectable`, `ViewHighlightable`
 public protocol ViewFocusable {
-    
+
     /// A `Bool` value that indicates whether the view is currently focused.
     var isFocused: Bool { get }
-    
+
 }
 
 extension UIBarItem: ViewDisable { }

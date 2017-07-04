@@ -56,5 +56,5 @@ public protocol CustomTitle: TitleCustomizable {
 
     /// The `TextStyle` that represents the title.
     var titleStyle: TextStyle { get }
-    
+
 }

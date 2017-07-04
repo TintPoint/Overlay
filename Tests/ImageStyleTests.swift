@@ -10,7 +10,7 @@ import XCTest
 @testable import Overlay
 
 class ImageStyleTests: XCTestCase {
-    
+
     typealias Resource = TestImage
     typealias View = TestImageView
 
@@ -23,7 +23,7 @@ class ImageStyleTests: XCTestCase {
     func testStyle() {
         XCTAssertEqual(Resource.first, Resource.first.normal())
     }
-    
+
     func testGroup() {
         XCTAssertEqual(Resource.first.normal(), Resource.group.normal())
         XCTAssertEqual(Resource.second.normal(), Resource.group.disabled())
@@ -31,7 +31,7 @@ class ImageStyleTests: XCTestCase {
         XCTAssertEqual(Resource.fourth.normal(), Resource.group.highlighted())
         XCTAssertEqual(Resource.fifth.normal(), Resource.group.focused())
     }
-    
+
     func testminimalGroup() {
         XCTAssertEqual(Resource.first.normal(), Resource.minimalGroup.normal())
         XCTAssertNil(Resource.minimalGroup.disabled())

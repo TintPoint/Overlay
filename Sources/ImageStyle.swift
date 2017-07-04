@@ -11,33 +11,33 @@ import UIKit
 /// A protocol that describes an item that can represent an image.
 /// - SeeAlso: `ImageStyleGroup`, `ImageGroup`
 public protocol ImageStyle {
-    
+
     /// Returns an `UIImage` that will be used in normal state.
     /// - Returns: An `UIImage` that will be used in normal state.
     func normal() -> UIImage
-    
+
 }
 
 /// A protocol that describes an item that can represent an image in different states (e.g. disabled).
 /// - SeeAlso: `ImageStyle`, `ImageGroup`
 public protocol ImageStyleGroup: ImageStyle {
-    
+
     /// Returns an `UIImage` that will be used in disabled state.
     /// - Returns: An `UIImage` that will be used in disabled state, or `nil` if no image is set.
     func disabled() -> UIImage?
-    
+
     /// Returns an `UIImage` that will be used in selected state.
     /// - Returns: An `UIImage` that will be used in selected state, or `nil` if no image is set.
     func selected() -> UIImage?
-    
+
     /// Returns an `UIImage` that will be used in highlighted state.
     /// - Returns: An `UIImage` that will be used in highlighted state, or `nil` if no image is set.
     func highlighted() -> UIImage?
-    
+
     /// Returns an `UIImage` that will be used in focused state.
     /// - Returns: An `UIImage` that will be used in focused state, or `nil` if no image is set.
     func focused() -> UIImage?
-    
+
 }
 
 public extension ImageStyleGroup {
@@ -65,7 +65,7 @@ public extension ImageStyleGroup {
     func focused() -> UIImage? {
         return nil
     }
-    
+
 }
 
 extension UIImage: ImageStyle {
@@ -73,28 +73,28 @@ extension UIImage: ImageStyle {
     public func normal() -> UIImage {
         return self
     }
-    
+
 }
 
 /// A collection of `ImageStyle` that can represent an image in different states (e.g. disabled).
 /// - SeeAlso: `ImageStyle`, `ImageStyleGroup`
 public struct ImageGroup {
-    
+
     /// The `ImageStyle` that will be used in normal state.
     private let normalStorage: ImageStyle
-    
+
     /// The `ImageStyle` that will be used in disabled state, or `nil` if no `ImageStyle` is set.
     private let disabledStorage: ImageStyle?
-    
+
     /// The `ImageStyle` that will be used in selected state, or `nil` if no `ImageStyle` is set.
     private let selectedStorage: ImageStyle?
-    
+
     /// The `ImageStyle` that will be used in highlighted state, or `nil` if no `ImageStyle` is set.
     private let highlightedStorage: ImageStyle?
-    
+
     /// The `ImageStyle` that will be used in focused state, or `nil` if no `ImageStyle` is set.
     private let focusedStorage: ImageStyle?
-    
+
     /// Creates an instance with objects that conforms to `ImageStyle`.
     /// - Parameter normal: An `ImageStyle` that will be used in normal state.
     /// - Parameter disabled: An `ImageStyle` that will be used in disabled state.
@@ -108,11 +108,11 @@ public struct ImageGroup {
         highlightedStorage = highlighted
         focusedStorage = focused
     }
-    
+
 }
 
 extension ImageGroup: ImageStyleGroup {
-    
+
     public func normal() -> UIImage {
         return normalStorage.normal()
     }
@@ -176,5 +176,5 @@ extension ImageStyleRepresentable {
             setter(styleGroup.focused(), .focused)
         }
     }
-    
+
 }

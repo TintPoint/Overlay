@@ -9,7 +9,7 @@
 import Overlay
 
 class TestImage {
-    
+
     static let first = UIImage(named: "White", in: Bundle(for: TestImage.self), compatibleWith: nil)!
     static let second = UIImage(named: "Black", in: Bundle(for: TestImage.self), compatibleWith: nil)!
     static let third = UIImage(named: "Blue", in: Bundle(for: TestImage.self), compatibleWith: nil)!

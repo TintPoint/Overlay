@@ -66,7 +66,7 @@ class TestImageView: TestView, ImageStyleRepresentable {
         default: return
         }
     }
-    
+
 }
 
 class TestTextView: TestView, TextStyleRepresentable {
@@ -87,7 +87,7 @@ class TestTextView: TestView, TextStyleRepresentable {
         default: return
         }
     }
-    
+
 }
 
 class TestTextAlignmentView: TestView, TextAlignmentStyleRepresentable {

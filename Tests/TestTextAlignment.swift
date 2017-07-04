@@ -18,5 +18,5 @@ class TestTextAlignment {
 
     static let group = TextAlignmentGroup(normal: first, disabled: second, selected: third, highlighted: fourth, focused: fifth)
     static let minimalGroup = TextAlignmentGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
-    
+
 }

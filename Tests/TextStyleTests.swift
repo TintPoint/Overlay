@@ -87,5 +87,5 @@ class TextStyleTests: XCTestCase {
         XCTAssertNil(view.highlighted)
         XCTAssertNil(view.focused)
     }
-    
+
 }

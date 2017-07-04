@@ -161,5 +161,5 @@ extension FontStyleRepresentable {
             return styleGroup.normal()
         }
     }
-    
+
 }

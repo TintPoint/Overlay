@@ -10,7 +10,7 @@ import UIKit
 
 /// A protocol that describes a view that can be customized.
 public protocol ViewCustomizable {
-    
+
     /// Refreshes the view's appearance.
     /// You should call this method after:
     /// a) creating a view programmatically
@@ -22,7 +22,7 @@ public protocol ViewCustomizable {
     ///
     /// - Parameter includingSubviews: A `Bool` value that indicates whether subviews of the view (and subviews' subviews...) should also be refreshed.
     func refresh(includingSubviews: Bool)
-    
+
 }
 
 extension ViewCustomizable {
@@ -232,7 +232,7 @@ extension ViewCustomizable {
         if let view = self as? CustomTitleFont {
             view.customizeTitleFont(using: view.titleFontStyle)
         }
-        
+
         if let view = self as? CustomFont {
             view.customizeFont(using: view.fontStyle)
         }
@@ -346,7 +346,7 @@ extension ViewCustomizable {
         if let view = self as? CustomText {
             view.customizeText(using: view.textStyle)
         }
-        
+
         if let view = self as? CustomTitle {
             view.customizeTitle(using: view.titleStyle)
         }
@@ -361,7 +361,7 @@ extension ViewCustomizable {
         if let view = self as? CustomTitleTextAlignment {
             view.customizeTitleTextAlignment(using: view.titleTextAlignmentStyle)
         }
-        
+
         if let view = self as? CustomTextAlignment {
             view.customizeTextAlignment(using: view.textAlignmentStyle)
         }
@@ -388,12 +388,12 @@ extension UIBarItem: ViewCustomizable {
 }
 
 extension UIView: ViewCustomizable {
-    
+
     open override func awakeFromNib() {
         super.awakeFromNib()
         refresh()
     }
-    
+
     open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         refresh()
@@ -405,5 +405,5 @@ extension UIView: ViewCustomizable {
             subviews.forEach { $0.refresh(includingSubviews: true) }
         }
     }
-    
+
 }

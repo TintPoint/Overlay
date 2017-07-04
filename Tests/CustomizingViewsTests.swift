@@ -212,7 +212,7 @@ class CustomToolbar: UIToolbar, CustomBarTintColor, CustomToolbarDesign {
 }
 
 class CustomizingViewsTests: XCTestCase {
-    
+
     func testBarButtonItem() {
         let barButtonItem = CustomBarButtonItem()
         barButtonItem.refresh()
@@ -222,7 +222,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(barButtonItem.title, TestText.first)
         XCTAssertEqual(barButtonItem.width, 5)
     }
-    
+
     func testTabBarItem() {
         let tabBarItem = CustomTabBarItem()
         tabBarItem.refresh()
@@ -234,7 +234,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(tabBarItem.title, TestText.first)
         XCTAssertEqual(tabBarItem.badgeValue, TestText.second)
     }
-    
+
     func testView() {
         let view = CustomView()
         view.refresh()
@@ -244,14 +244,14 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(view.backgroundColor, TestColor.third)
         XCTAssertEqual(view.layer.cornerRadius, 5)
     }
-    
+
     func testActivityIndicatorView() {
         let activityIndicatorView = CustomActivityIndicatorView()
         activityIndicatorView.refresh()
         XCTAssertEqual(activityIndicatorView.color, TestColor.first)
         XCTAssertEqual(activityIndicatorView.layer.cornerRadius, 5)
     }
-    
+
     func testButton() {
         let button = CustomButton()
         button.refresh()
@@ -289,7 +289,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(slider.maximumValueImage, TestImage.second)
         XCTAssertEqual(slider.layer.cornerRadius, 5)
     }
-    
+
     func testImageSlider() {
         let imageSlider = CustomImageSlider()
         imageSlider.refresh()
@@ -298,7 +298,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(imageSlider.currentThumbImage, TestImage.third)
         XCTAssertEqual(imageSlider.layer.cornerRadius, 5)
     }
-    
+
     func testStepper() {
         let stepper = CustomStepper()
         stepper.refresh()
@@ -307,7 +307,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(stepper.incrementImage(for: .normal), TestImage.third)
         XCTAssertEqual(stepper.layer.cornerRadius, 5)
     }
-    
+
     func testSwitch() {
         let control = CustomSwitch()
         control.refresh()
@@ -317,7 +317,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(control.offImage, TestImage.second)
         XCTAssertEqual(control.layer.cornerRadius, 5)
     }
-    
+
     func testTextField() {
         let textField = CustomTextField()
         textField.refresh()
@@ -328,7 +328,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(textField.textAlignment, TestTextAlignment.first)
         XCTAssertEqual(textField.layer.cornerRadius, 5)
     }
-    
+
     func testImageView() {
         let imageView = CustomImageView()
         imageView.refresh()
@@ -336,7 +336,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(imageView.highlightedImage, TestImage.second)
         XCTAssertEqual(imageView.layer.cornerRadius, 5)
     }
-    
+
     func testLabel() {
         let label = CustomLabel()
         label.refresh()
@@ -347,7 +347,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(label.textAlignment, TestTextAlignment.first)
         XCTAssertEqual(label.layer.cornerRadius, 5)
     }
-    
+
     func testNavigationBar() {
         let navigationBar = CustomNavigationBar()
         navigationBar.refresh()
@@ -355,7 +355,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertNotNil(navigationBar.shadowImage) // Image is modified
         XCTAssertEqual(navigationBar.layer.cornerRadius, 5)
     }
-    
+
     func testProgressView() {
         let progressView = CustomProgressView()
         progressView.refresh()
@@ -363,7 +363,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(progressView.trackTintColor, TestColor.second)
         XCTAssertEqual(progressView.layer.cornerRadius, 5)
     }
-    
+
     func testImageProgressView() {
         let imageProgressView = CustomImageProgressView()
         imageProgressView.refresh()
@@ -371,7 +371,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(imageProgressView.trackImage, TestImage.second)
         XCTAssertEqual(imageProgressView.layer.cornerRadius, 5)
     }
-    
+
     func testTableView() {
         let tableView = CustomTableView()
         tableView.refresh()
@@ -381,7 +381,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(tableView.sectionIndexTrackingBackgroundColor, TestColor.fourth)
         XCTAssertEqual(tableView.layer.cornerRadius, 5)
     }
-    
+
     func testTextView() {
         let textView = CustomTextView()
         textView.refresh()
@@ -391,7 +391,7 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(textView.textAlignment, TestTextAlignment.first)
         XCTAssertEqual(textView.layer.cornerRadius, 5)
     }
-    
+
     func testSearchBar() {
         let searchBar = CustomSearchBar()
         searchBar.refresh()
@@ -417,12 +417,12 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertNotNil(tabBar.backgroundImage) // Image is tiled to fit
         XCTAssertEqual(tabBar.layer.cornerRadius, 5)
     }
-    
+
     func testToolbar() {
         let toolbar = CustomToolbar()
         toolbar.refresh()
         XCTAssertEqual(toolbar.barTintColor, TestColor.first)
         XCTAssertEqual(toolbar.layer.cornerRadius, 5)
     }
-    
+
 }

@@ -135,7 +135,7 @@ extension TextGroup: TextStyleGroup {
 
 }
 
-/// A protocol that describes a view that its text can be represented by `TextStyle`.
+/// A protocol that describes a view that its texts can be represented by `TextStyle`.
 public protocol TextStyleRepresentable { }
 
 extension TextStyleRepresentable {

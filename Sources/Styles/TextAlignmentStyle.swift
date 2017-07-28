@@ -135,7 +135,7 @@ extension TextAlignmentGroup: TextAlignmentStyleGroup {
 
 }
 
-/// A protocol that describes a view that its text can be represented by `TextAlignmentStyle`.
+/// A protocol that describes a view that its alignments of texts can be represented by `TextAlignmentStyle`.
 public protocol TextAlignmentStyleRepresentable { }
 
 extension TextAlignmentStyleRepresentable {

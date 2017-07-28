@@ -135,7 +135,7 @@ extension ImageGroup: ImageStyleGroup {
 
 }
 
-/// A protocol that describes a view that its image can be represented by `ImageStyle`.
+/// A protocol that describes a view that its images can be represented by `ImageStyle`.
 public protocol ImageStyleRepresentable { }
 
 extension ImageStyleRepresentable {

@@ -135,7 +135,7 @@ extension ColorGroup: ColorStyleGroup {
 
 }
 
-/// A protocol that describes a view that its color can be represented by `ColorStyle`.
+/// A protocol that describes a view that its colors can be represented by `ColorStyle`.
 public protocol ColorStyleRepresentable { }
 
 extension ColorStyleRepresentable {

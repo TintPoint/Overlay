@@ -135,7 +135,7 @@ extension FontGroup: FontStyleGroup {
 
 }
 
-/// A protocol that describes a view that its font can be represented by `FontStyle`.
+/// A protocol that describes a view that its fonts can be represented by `FontStyle`.
 public protocol FontStyleRepresentable { }
 
 extension FontStyleRepresentable {

@@ -15,4 +15,4 @@ env:
     - DESTINATION="OS=11.0,name=iPad Pro (10.5-inch)" MODE="build" CONFIGURATION="Release" SCHEME="Overlay"
 script:
   - set -o pipefail
-  - xcodebuild "$MODE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration "$CONFIGURATION" | xcpretty
+  - xcodebuild $MODE -scheme $SCHEME -sdk $SDK -destination $DESTINATION -configuration $CONFIGURATION | xcpretty

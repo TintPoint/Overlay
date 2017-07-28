@@ -11,6 +11,10 @@ import XCTest
 
 class ViewStateTest: XCTestCase {
 
+    func testViewHideable() {
+        XCTAssert(UIView() as Any is ViewHideable)
+    }
+
     func testViewDisable() {
         XCTAssert(UIBarItem() as Any is ViewDisable)
         XCTAssert(UIControl() as Any is ViewDisable)

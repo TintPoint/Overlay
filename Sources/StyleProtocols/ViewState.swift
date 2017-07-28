@@ -8,8 +8,17 @@
 
 import UIKit
 
+/// A protocol that describes a view that can be hidden.
+/// - SeeAlso: `ViewDisable`, `ViewSelectable`, `ViewHighlightable`, `ViewFocusable`
+public protocol ViewHideable {
+
+    /// A `Bool` that indicates whether the view is currently hidden.
+    var isHidden: Bool { get }
+
+}
+
 /// A protocol that describes a view that can be disabled.
-/// - SeeAlso: `ViewSelectable`, `ViewHighlightable`, `ViewFocusable`
+/// - SeeAlso: `ViewHideable`, `ViewSelectable`, `ViewHighlightable`, `ViewFocusable`
 public protocol ViewDisable {
 
     /// A `Bool` that indicates whether the view is currently enabled.
@@ -18,7 +27,7 @@ public protocol ViewDisable {
 }
 
 /// A protocol that describes a view that can be selected.
-/// - SeeAlso: `ViewDisable`, `ViewHighlightable`, `ViewFocusable`
+/// - SeeAlso: `ViewHideable`, `ViewDisable`, `ViewHighlightable`, `ViewFocusable`
 public protocol ViewSelectable {
 
     /// A `Bool` that indicates whether the view is currently selected.
@@ -27,7 +36,7 @@ public protocol ViewSelectable {
 }
 
 /// A protocol that describes a view that can be highlighted.
-/// - SeeAlso: `ViewDisable`, `ViewSelectable`, `ViewFocusable`
+/// - SeeAlso: `ViewHideable`, `ViewDisable`, `ViewSelectable`, `ViewFocusable`
 public protocol ViewHighlightable {
 
     /// A `Bool` that indicates whether the view is currently highlighted.
@@ -36,7 +45,7 @@ public protocol ViewHighlightable {
 }
 
 /// A protocol that describes a view that can be focused.
-/// - SeeAlso: `ViewDisable`, `ViewSelectable`, `ViewHighlightable`
+/// - SeeAlso: `ViewHideable`, `ViewDisable`, `ViewSelectable`, `ViewHighlightable`
 public protocol ViewFocusable {
 
     /// A `Bool` that indicates whether the view is currently focused.
@@ -46,7 +55,7 @@ public protocol ViewFocusable {
 
 extension UIBarItem: ViewDisable { }
 
-extension UIView: ViewFocusable { }
+extension UIView: ViewFocusable, ViewHideable { }
 
 extension UIControl: ViewDisable, ViewSelectable, ViewHighlightable { }
 

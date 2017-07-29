@@ -13,7 +13,7 @@ import UIKit
 public protocol ViewHideable {
 
     /// A `Bool` that indicates whether the view is currently hidden.
-    var isHidden: Bool { get }
+    var isHidden: Bool { get set }
 
 }
 
@@ -22,7 +22,7 @@ public protocol ViewHideable {
 public protocol ViewDisable {
 
     /// A `Bool` that indicates whether the view is currently enabled.
-    var isEnabled: Bool { get }
+    var isEnabled: Bool { get set }
 
 }
 
@@ -31,7 +31,7 @@ public protocol ViewDisable {
 public protocol ViewSelectable {
 
     /// A `Bool` that indicates whether the view is currently selected.
-    var isSelected: Bool { get }
+    var isSelected: Bool { get set }
 
 }
 
@@ -40,7 +40,7 @@ public protocol ViewSelectable {
 public protocol ViewHighlightable {
 
     /// A `Bool` that indicates whether the view is currently highlighted.
-    var isHighlighted: Bool { get }
+    var isHighlighted: Bool { get set }
 
 }
 
@@ -49,7 +49,7 @@ public protocol ViewHighlightable {
 public protocol ViewFocusable {
 
     /// A `Bool` that indicates whether the view is currently focused.
-    var isFocused: Bool { get }
+    var isFocused: Bool { get set }
 
 }
 

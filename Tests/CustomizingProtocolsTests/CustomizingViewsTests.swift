@@ -9,27 +9,6 @@
 import XCTest
 @testable import Overlay
 
-class CustomBarButtonItem: UIBarButtonItem, CustomTintColor, CustomImage, CustomLandscapeImagePhone, CustomTitle, CustomBarButtonItemDesign {
-
-    let tintColorStyle: ColorStyle = TestColor.first
-    let imageStyle: ImageStyle = TestImage.first
-    let landscapeImagePhoneStyle: ImageStyle = TestImage.second
-    let titleStyle: TextStyle = TestText.first
-    let design: (UIBarButtonItem) -> Void = { $0.width = 5 }
-
-}
-
-class CustomTabBarItem: UITabBarItem, CustomBadgeColor, CustomImage, CustomSelectedImage, CustomTitle, CustomTabBarItemDesign {
-
-    let badgeColorStyle: ColorStyle = TestColor.first
-    let imageStyle: ImageStyle = TestImage.first
-    let landscapeImagePhoneStyle: ImageStyle = TestImage.second
-    let selectedImageStyle: ImageStyle = TestImage.third
-    let titleStyle: TextStyle = TestText.first
-    let design: (UITabBarItem) -> Void = { $0.badgeValue = TestText.second }
-
-}
-
 class CustomView: UIView, CustomLayout, CustomTintColor, CustomBorderColor, CustomBackgroundColor, CustomViewDesign {
 
     let contentNib: UINib = UINib(nibName: "TestLayout", bundle: Bundle(for: CustomView.self))
@@ -37,6 +16,22 @@ class CustomView: UIView, CustomLayout, CustomTintColor, CustomBorderColor, Cust
     let borderColorStyle: ColorStyle = TestColor.second
     let backgroundColorStyle: ColorStyle = TestColor.third
     let design: (UIView) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
+class CustomCollectionView: UICollectionView, CustomCollectionViewDesign {
+
+    let design: (UICollectionView) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
+class CustomTableView: UITableView, CustomSeparatorColor, CustomSectionIndexColor, CustomSectionIndexBackgroundColor, CustomSectionIndexTrackingBackgroundColor, CustomTableViewDesign {
+
+    let separatorColorStyle: ColorStyle = TestColor.first
+    let sectionIndexColorStyle: ColorStyle = TestColor.second
+    let sectionIndexBackgroundColorStyle: ColorStyle = TestColor.third
+    let sectionIndexTrackingBackgroundColorStyle: ColorStyle = TestColor.fourth
+    let design: (UITableView) -> Void = { $0.layer.cornerRadius = 5 }
 
 }
 
@@ -59,6 +54,48 @@ class CustomActivityIndicatorView: UIActivityIndicatorView, CustomColor, CustomA
 
 }
 
+class CustomImageView: UIImageView, CustomImage, CustomHighlightedImage, CustomImageViewDesign {
+
+    let imageStyle: ImageStyle = TestImage.first
+    let highlightedImageStyle: ImageStyle = TestImage.second
+    let design: (UIImageView) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
+class CustomPickerView: UIPickerView, CustomPickerViewDesign {
+
+    let design: (UIPickerView) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
+class CustomProgressView: UIProgressView, CustomProgressTintColor, CustomTrackTintColor, CustomProgressViewDesign {
+
+    let progressTintColorStyle: ColorStyle = TestColor.first
+    let trackTintColorStyle: ColorStyle = TestColor.second
+    let design: (UIProgressView) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
+class CustomImageProgressView: UIProgressView, CustomProgressImage, CustomTrackImage, CustomProgressViewDesign {
+
+    let progressImageStyle: ImageStyle = TestImage.first
+    let trackImageStyle: ImageStyle = TestImage.second
+    let design: (UIProgressView) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
+class CustomWebView: UIWebView, CustomWebViewDesign {
+
+    let design: (UIWebView) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
+class CustomControl: UIControl, CustomControlDesign {
+
+    let design: (UIControl) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
 class CustomButton: UIButton, CustomTitleFont, CustomTitleColor, CustomTitleShadowColor, CustomImage, CustomBackgroundImage, CustomTitle, CustomTitleTextAlignment, CustomButtonDesign {
 
     let titleFontStyle: FontStyle = TestFont.first
@@ -69,6 +106,18 @@ class CustomButton: UIButton, CustomTitleFont, CustomTitleColor, CustomTitleShad
     let titleStyle: TextStyle = TestText.first
     let titleTextAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
     let design: (UIButton) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
+class CustomDatePicker: UIDatePicker, CustomDatePickerDesign {
+
+    let design: (UIDatePicker) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
+class CustomPageControl: UIPageControl, CustomPageControlDesign {
+
+    let design: (UIPageControl) -> Void = { $0.layer.cornerRadius = 5 }
 
 }
 
@@ -118,25 +167,6 @@ class CustomSwitch: UISwitch, CustomOnTintColor, CustomThumbTintColor, CustomOnI
 
 }
 
-class CustomTextField: UITextField, CustomFont, CustomTextColor, CustomText, CustomPlaceholder, CustomTextAlignment, CustomTextFieldDesign {
-
-    let fontStyle: FontStyle = TestFont.first
-    let textColorStyle: ColorStyle = TestColor.first
-    let textStyle: TextStyle = TestText.first
-    let placeholderStyle: TextStyle = TestText.second
-    let textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
-    let design: (UITextField) -> Void = { $0.layer.cornerRadius = 5 }
-
-}
-
-class CustomImageView: UIImageView, CustomImage, CustomHighlightedImage, CustomImageViewDesign {
-
-    let imageStyle: ImageStyle = TestImage.first
-    let highlightedImageStyle: ImageStyle = TestImage.second
-    let design: (UIImageView) -> Void = { $0.layer.cornerRadius = 5 }
-
-}
-
 class CustomLabel: UILabel, CustomFont, CustomTextColor, CustomShadowColor, CustomText, CustomTextAlignment, CustomLabelDesign {
 
     let fontStyle: FontStyle = TestFont.first
@@ -148,37 +178,14 @@ class CustomLabel: UILabel, CustomFont, CustomTextColor, CustomShadowColor, Cust
 
 }
 
-class CustomNavigationBar: UINavigationBar, CustomBarTintColor, CustomShadowImage, CustomNavigationBarDesign {
+class CustomTextField: UITextField, CustomFont, CustomTextColor, CustomText, CustomPlaceholder, CustomTextAlignment, CustomTextFieldDesign {
 
-    let barTintColorStyle: ColorStyle = TestColor.first
-    let shadowImageStyle: ImageStyle = TestImage.first
-    let design: (UINavigationBar) -> Void = { $0.layer.cornerRadius = 5 }
-
-}
-
-class CustomProgressView: UIProgressView, CustomProgressTintColor, CustomTrackTintColor, CustomProgressViewDesign {
-
-    let progressTintColorStyle: ColorStyle = TestColor.first
-    let trackTintColorStyle: ColorStyle = TestColor.second
-    let design: (UIProgressView) -> Void = { $0.layer.cornerRadius = 5 }
-
-}
-
-class CustomImageProgressView: UIProgressView, CustomProgressImage, CustomTrackImage, CustomProgressViewDesign {
-
-    let progressImageStyle: ImageStyle = TestImage.first
-    let trackImageStyle: ImageStyle = TestImage.second
-    let design: (UIProgressView) -> Void = { $0.layer.cornerRadius = 5 }
-
-}
-
-class CustomTableView: UITableView, CustomSeparatorColor, CustomSectionIndexColor, CustomSectionIndexBackgroundColor, CustomSectionIndexTrackingBackgroundColor, CustomTableViewDesign {
-
-    let separatorColorStyle: ColorStyle = TestColor.first
-    let sectionIndexColorStyle: ColorStyle = TestColor.second
-    let sectionIndexBackgroundColorStyle: ColorStyle = TestColor.third
-    let sectionIndexTrackingBackgroundColorStyle: ColorStyle = TestColor.fourth
-    let design: (UITableView) -> Void = { $0.layer.cornerRadius = 5 }
+    let fontStyle: FontStyle = TestFont.first
+    let textColorStyle: ColorStyle = TestColor.first
+    let textStyle: TextStyle = TestText.first
+    let placeholderStyle: TextStyle = TestText.second
+    let textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
+    let design: (UITextField) -> Void = { $0.layer.cornerRadius = 5 }
 
 }
 
@@ -189,6 +196,30 @@ class CustomTextView: UITextView, CustomFont, CustomTextColor, CustomText, Custo
     let textStyle: TextStyle = TestText.first
     let textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
     let design: (UITextView) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
+class CustomBarItem: UIBarItem, CustomBarItemDesign {
+
+    let design: (UIBarItem) -> Void = { $0.tag = 5 }
+
+}
+
+class CustomBarButtonItem: UIBarButtonItem, CustomTintColor, CustomImage, CustomLandscapeImagePhone, CustomTitle, CustomBarButtonItemDesign {
+
+    let tintColorStyle: ColorStyle = TestColor.first
+    let imageStyle: ImageStyle = TestImage.first
+    let landscapeImagePhoneStyle: ImageStyle = TestImage.second
+    let titleStyle: TextStyle = TestText.first
+    let design: (UIBarButtonItem) -> Void = { $0.tag = 5 }
+
+}
+
+class CustomNavigationBar: UINavigationBar, CustomBarTintColor, CustomShadowImage, CustomNavigationBarDesign {
+
+    let barTintColorStyle: ColorStyle = TestColor.first
+    let shadowImageStyle: ImageStyle = TestImage.first
+    let design: (UINavigationBar) -> Void = { $0.layer.cornerRadius = 5 }
 
 }
 
@@ -206,6 +237,13 @@ class CustomSearchBar: UISearchBar, CustomBarTintColor, CustomBackgroundImage, C
 
 }
 
+class CustomToolbar: UIToolbar, CustomBarTintColor, CustomToolbarDesign {
+
+    let barTintColorStyle: ColorStyle = TestColor.first
+    let design: (UIToolbar) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
 class CustomTabBar: UITabBar, CustomBarTintColor, CustomUnselectedItemTintColor, CustomShadowImage, CustomBackgroundImage, CustomTabBarDesign {
 
     let barTintColorStyle: ColorStyle = TestColor.first
@@ -216,36 +254,18 @@ class CustomTabBar: UITabBar, CustomBarTintColor, CustomUnselectedItemTintColor,
 
 }
 
-class CustomToolbar: UIToolbar, CustomBarTintColor, CustomToolbarDesign {
+class CustomTabBarItem: UITabBarItem, CustomBadgeColor, CustomImage, CustomSelectedImage, CustomTitle, CustomTabBarItemDesign {
 
-    let barTintColorStyle: ColorStyle = TestColor.first
-    let design: (UIToolbar) -> Void = { $0.layer.cornerRadius = 5 }
+    let badgeColorStyle: ColorStyle = TestColor.first
+    let imageStyle: ImageStyle = TestImage.first
+    let landscapeImagePhoneStyle: ImageStyle = TestImage.second
+    let selectedImageStyle: ImageStyle = TestImage.third
+    let titleStyle: TextStyle = TestText.first
+    let design: (UITabBarItem) -> Void = { $0.badgeValue = TestText.second }
 
 }
 
 class CustomizingViewsTests: XCTestCase {
-
-    func testBarButtonItem() {
-        let barButtonItem = CustomBarButtonItem()
-        barButtonItem.refresh()
-        XCTAssertEqual(barButtonItem.tintColor, TestColor.first)
-        XCTAssertEqual(barButtonItem.image, TestImage.first)
-        XCTAssertEqual(barButtonItem.landscapeImagePhone, TestImage.second)
-        XCTAssertEqual(barButtonItem.title, TestText.first)
-        XCTAssertEqual(barButtonItem.width, 5)
-    }
-
-    func testTabBarItem() {
-        let tabBarItem = CustomTabBarItem()
-        tabBarItem.refresh()
-        if #available(iOS 10.0, *) {
-            XCTAssertEqual(tabBarItem.badgeColor, TestColor.first)
-        }
-        XCTAssertEqual(tabBarItem.image, TestImage.first)
-        XCTAssertNotNil(tabBarItem.selectedImage) // Image is altered
-        XCTAssertEqual(tabBarItem.title, TestText.first)
-        XCTAssertEqual(tabBarItem.badgeValue, TestText.second)
-    }
 
     func testView() {
         let view = CustomView()
@@ -255,6 +275,22 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(view.layer.borderColor, TestColor.second.cgColor)
         XCTAssertEqual(view.backgroundColor, TestColor.third)
         XCTAssertEqual(view.layer.cornerRadius, 5)
+    }
+
+    func testCollectionView() {
+        let collectionView = CustomCollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        collectionView.refresh()
+        XCTAssertEqual(collectionView.layer.cornerRadius, 5)
+    }
+
+    func testTableView() {
+        let tableView = CustomTableView()
+        tableView.refresh()
+        XCTAssertEqual(tableView.separatorColor, TestColor.first)
+        XCTAssertEqual(tableView.sectionIndexColor, TestColor.second)
+        XCTAssertEqual(tableView.sectionIndexBackgroundColor, TestColor.third)
+        XCTAssertEqual(tableView.sectionIndexTrackingBackgroundColor, TestColor.fourth)
+        XCTAssertEqual(tableView.layer.cornerRadius, 5)
     }
 
     func testStackView() {
@@ -276,6 +312,48 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(activityIndicatorView.layer.cornerRadius, 5)
     }
 
+    func testImageView() {
+        let imageView = CustomImageView()
+        imageView.refresh()
+        XCTAssertEqual(imageView.image, TestImage.first)
+        XCTAssertEqual(imageView.highlightedImage, TestImage.second)
+        XCTAssertEqual(imageView.layer.cornerRadius, 5)
+    }
+
+    func testPickerView() {
+        let pickerView = CustomPickerView()
+        pickerView.refresh()
+        XCTAssertEqual(pickerView.layer.cornerRadius, 5)
+    }
+
+    func testProgressView() {
+        let progressView = CustomProgressView()
+        progressView.refresh()
+        XCTAssertEqual(progressView.progressTintColor, TestColor.first)
+        XCTAssertEqual(progressView.trackTintColor, TestColor.second)
+        XCTAssertEqual(progressView.layer.cornerRadius, 5)
+    }
+
+    func testImageProgressView() {
+        let imageProgressView = CustomImageProgressView()
+        imageProgressView.refresh()
+        XCTAssertEqual(imageProgressView.progressImage, TestImage.first)
+        XCTAssertEqual(imageProgressView.trackImage, TestImage.second)
+        XCTAssertEqual(imageProgressView.layer.cornerRadius, 5)
+    }
+
+    func testWebView() {
+        let webView = CustomWebView()
+        webView.refresh()
+        XCTAssertEqual(webView.layer.cornerRadius, 5)
+    }
+
+    func testControl() {
+        let control = CustomControl()
+        control.refresh()
+        XCTAssertEqual(control.layer.cornerRadius, 5)
+    }
+
     func testButton() {
         let button = CustomButton()
         button.refresh()
@@ -287,6 +365,18 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(button.currentTitle, TestText.first)
         XCTAssertEqual(button.titleLabel?.textAlignment, TestTextAlignment.first)
         XCTAssertEqual(button.layer.cornerRadius, 5)
+    }
+
+    func testDatePicker() {
+        let datePicker = CustomDatePicker()
+        datePicker.refresh()
+        XCTAssertEqual(datePicker.layer.cornerRadius, 5)
+    }
+
+    func testPageControl() {
+        let pageControl = CustomPageControl()
+        pageControl.refresh()
+        XCTAssertEqual(pageControl.layer.cornerRadius, 5)
     }
 
     func testSegmentedControl() {
@@ -301,6 +391,7 @@ class CustomizingViewsTests: XCTestCase {
     func testEmptySegmentedControl() {
         let segmentedControl = CustomSegmentedControl()
         segmentedControl.refresh()
+        XCTAssertEqual(segmentedControl.layer.cornerRadius, 5)
     }
 
     func testSlider() {
@@ -342,25 +433,6 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(control.layer.cornerRadius, 5)
     }
 
-    func testTextField() {
-        let textField = CustomTextField()
-        textField.refresh()
-        XCTAssertEqual(textField.font, TestFont.first)
-        XCTAssertEqual(textField.textColor, TestColor.first)
-        XCTAssertEqual(textField.text, TestText.first)
-        XCTAssertEqual(textField.placeholder, TestText.second)
-        XCTAssertEqual(textField.textAlignment, TestTextAlignment.first)
-        XCTAssertEqual(textField.layer.cornerRadius, 5)
-    }
-
-    func testImageView() {
-        let imageView = CustomImageView()
-        imageView.refresh()
-        XCTAssertEqual(imageView.image, TestImage.first)
-        XCTAssertEqual(imageView.highlightedImage, TestImage.second)
-        XCTAssertEqual(imageView.layer.cornerRadius, 5)
-    }
-
     func testLabel() {
         let label = CustomLabel()
         label.refresh()
@@ -372,38 +444,15 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(label.layer.cornerRadius, 5)
     }
 
-    func testNavigationBar() {
-        let navigationBar = CustomNavigationBar()
-        navigationBar.refresh()
-        XCTAssertEqual(navigationBar.barTintColor, TestColor.first)
-        XCTAssertNotNil(navigationBar.shadowImage) // Image is modified
-        XCTAssertEqual(navigationBar.layer.cornerRadius, 5)
-    }
-
-    func testProgressView() {
-        let progressView = CustomProgressView()
-        progressView.refresh()
-        XCTAssertEqual(progressView.progressTintColor, TestColor.first)
-        XCTAssertEqual(progressView.trackTintColor, TestColor.second)
-        XCTAssertEqual(progressView.layer.cornerRadius, 5)
-    }
-
-    func testImageProgressView() {
-        let imageProgressView = CustomImageProgressView()
-        imageProgressView.refresh()
-        XCTAssertEqual(imageProgressView.progressImage, TestImage.first)
-        XCTAssertEqual(imageProgressView.trackImage, TestImage.second)
-        XCTAssertEqual(imageProgressView.layer.cornerRadius, 5)
-    }
-
-    func testTableView() {
-        let tableView = CustomTableView()
-        tableView.refresh()
-        XCTAssertEqual(tableView.separatorColor, TestColor.first)
-        XCTAssertEqual(tableView.sectionIndexColor, TestColor.second)
-        XCTAssertEqual(tableView.sectionIndexBackgroundColor, TestColor.third)
-        XCTAssertEqual(tableView.sectionIndexTrackingBackgroundColor, TestColor.fourth)
-        XCTAssertEqual(tableView.layer.cornerRadius, 5)
+    func testTextField() {
+        let textField = CustomTextField()
+        textField.refresh()
+        XCTAssertEqual(textField.font, TestFont.first)
+        XCTAssertEqual(textField.textColor, TestColor.first)
+        XCTAssertEqual(textField.text, TestText.first)
+        XCTAssertEqual(textField.placeholder, TestText.second)
+        XCTAssertEqual(textField.textAlignment, TestTextAlignment.first)
+        XCTAssertEqual(textField.layer.cornerRadius, 5)
     }
 
     func testTextView() {
@@ -414,6 +463,30 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(textView.text, TestText.first)
         XCTAssertEqual(textView.textAlignment, TestTextAlignment.first)
         XCTAssertEqual(textView.layer.cornerRadius, 5)
+    }
+
+    func testBarItem() {
+        let barItem = CustomBarItem()
+        barItem.refresh()
+        XCTAssertEqual(barItem.tag, 5)
+    }
+
+    func testBarButtonItem() {
+        let barButtonItem = CustomBarButtonItem()
+        barButtonItem.refresh()
+        XCTAssertEqual(barButtonItem.tintColor, TestColor.first)
+        XCTAssertEqual(barButtonItem.image, TestImage.first)
+        XCTAssertEqual(barButtonItem.landscapeImagePhone, TestImage.second)
+        XCTAssertEqual(barButtonItem.title, TestText.first)
+        XCTAssertEqual(barButtonItem.tag, 5)
+    }
+
+    func testNavigationBar() {
+        let navigationBar = CustomNavigationBar()
+        navigationBar.refresh()
+        XCTAssertEqual(navigationBar.barTintColor, TestColor.first)
+        XCTAssertNotNil(navigationBar.shadowImage) // Image is modified
+        XCTAssertEqual(navigationBar.layer.cornerRadius, 5)
     }
 
     func testSearchBar() {
@@ -430,6 +503,13 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(searchBar.layer.cornerRadius, 5)
     }
 
+    func testToolbar() {
+        let toolbar = CustomToolbar()
+        toolbar.refresh()
+        XCTAssertEqual(toolbar.barTintColor, TestColor.first)
+        XCTAssertEqual(toolbar.layer.cornerRadius, 5)
+    }
+
     func testTabBar() {
         let tabBar = CustomTabBar()
         tabBar.refresh()
@@ -442,11 +522,16 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(tabBar.layer.cornerRadius, 5)
     }
 
-    func testToolbar() {
-        let toolbar = CustomToolbar()
-        toolbar.refresh()
-        XCTAssertEqual(toolbar.barTintColor, TestColor.first)
-        XCTAssertEqual(toolbar.layer.cornerRadius, 5)
+    func testTabBarItem() {
+        let tabBarItem = CustomTabBarItem()
+        tabBarItem.refresh()
+        if #available(iOS 10.0, *) {
+            XCTAssertEqual(tabBarItem.badgeColor, TestColor.first)
+        }
+        XCTAssertEqual(tabBarItem.image, TestImage.first)
+        XCTAssertNotNil(tabBarItem.selectedImage) // Image is altered
+        XCTAssertEqual(tabBarItem.title, TestText.first)
+        XCTAssertEqual(tabBarItem.badgeValue, TestText.second)
     }
 
 }

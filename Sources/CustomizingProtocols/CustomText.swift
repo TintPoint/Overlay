@@ -24,6 +24,15 @@ public protocol CustomPrompt: PromptCustomizable {
 
 }
 
+/// A protocol that describes a view that its titles of the scope buttons will be customized.
+public protocol CustomScopeButtonTitles: ScopeButtonTitlesCustomizable {
+
+    /// The array of `TextStyle` that represents the titles of the scope buttons.
+    /// The indexes of the array is used to identify the buttons in the control, from left to right.
+    var scopeButtonTitleStyles: [TextStyle] { get }
+
+}
+
 /// A protocol that describes a view that its titles of the segments will be customized.
 public protocol CustomSegmentTitles: SegmentTitlesCustomizable {
 
@@ -31,15 +40,6 @@ public protocol CustomSegmentTitles: SegmentTitlesCustomizable {
     /// The indexes of the array is used to identify the segments in the control, from left to right.
     /// Styles which their indexes exceeding the number of segments are ignored.
     var segmentTitleStyles: [TextStyle] { get }
-
-}
-
-/// A protocol that describes a view that its titles of the scope buttons will be customized.
-public protocol CustomScopeButtonTitles: ScopeButtonTitlesCustomizable {
-
-    /// The array of `TextStyle` that represents the titles of the scope buttons.
-    /// The indexes of the array is used to identify the buttons in the control, from left to right.
-    var scopeButtonTitleStyles: [TextStyle] { get }
 
 }
 

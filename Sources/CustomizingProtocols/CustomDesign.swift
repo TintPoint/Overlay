@@ -16,11 +16,35 @@ public protocol CustomDesign {
 
 }
 
-/// A protocol that describes an `UIView` that its design will be customized using a closure.
-public protocol CustomViewDesign {
+/// A protocol that describes an `UIActivityIndicatorView` that its design will be customized using a closure.
+public protocol CustomActivityIndicatorViewDesign {
 
     /// The closure that customizes the design.
-    var design: (UIView) -> Void { get }
+    var design: (UIActivityIndicatorView) -> Void { get }
+
+}
+
+/// A protocol that describes an `UIBarButtonItem` that its design will be customized using a closure.
+public protocol CustomBarButtonItemDesign {
+
+    /// The closure that customizes the design.
+    var design: (UIBarButtonItem) -> Void { get }
+
+}
+
+/// A protocol that describes an `UIBarItem` that its design will be customized using a closure.
+public protocol CustomBarItemDesign {
+
+    /// The closure that customizes the design.
+    var design: (UIBarItem) -> Void { get }
+
+}
+
+/// A protocol that describes an `UIButton` that its design will be customized using a closure.
+public protocol CustomButtonDesign {
+
+    /// The closure that customizes the design.
+    var design: (UIButton) -> Void { get }
 
 }
 
@@ -32,35 +56,19 @@ public protocol CustomCollectionViewDesign {
 
 }
 
-/// A protocol that describes an `UITableView` that its design will be customized using a closure.
-public protocol CustomTableViewDesign {
+/// A protocol that describes an `UIControl` that its design will be customized using a closure.
+public protocol CustomControlDesign {
 
     /// The closure that customizes the design.
-    var design: (UITableView) -> Void { get }
+    var design: (UIControl) -> Void { get }
 
 }
 
-/// A protocol that describes an `UIStackView` that its design will be customized using a closure.
-public protocol CustomStackViewDesign {
+/// A protocol that describes an `UIDatePicker` that its design will be customized using a closure.
+public protocol CustomDatePickerDesign {
 
     /// The closure that customizes the design.
-    var design: (UIStackView) -> Void { get }
-
-}
-
-/// A protocol that describes an `UIScrollView` that its design will be customized using a closure.
-public protocol CustomScrollViewDesign {
-
-    /// The closure that customizes the design.
-    var design: (UIScrollView) -> Void { get }
-
-}
-
-/// A protocol that describes an `UIActivityIndicatorView` that its design will be customized using a closure.
-public protocol CustomActivityIndicatorViewDesign {
-
-    /// The closure that customizes the design.
-    var design: (UIActivityIndicatorView) -> Void { get }
+    var design: (UIDatePicker) -> Void { get }
 
 }
 
@@ -69,6 +77,30 @@ public protocol CustomImageViewDesign {
 
     /// The closure that customizes the design.
     var design: (UIImageView) -> Void { get }
+
+}
+
+/// A protocol that describes an `UILabel` that its design will be customized using a closure.
+public protocol CustomLabelDesign {
+
+    /// The closure that customizes the design.
+    var design: (UILabel) -> Void { get }
+
+}
+
+/// A protocol that describes an `UINavigationBar` that its design will be customized using a closure.
+public protocol CustomNavigationBarDesign {
+
+    /// The closure that customizes the design.
+    var design: (UINavigationBar) -> Void { get }
+
+}
+
+/// A protocol that describes an `UIPageControl` that its design will be customized using a closure.
+public protocol CustomPageControlDesign {
+
+    /// The closure that customizes the design.
+    var design: (UIPageControl) -> Void { get }
 
 }
 
@@ -88,43 +120,19 @@ public protocol CustomProgressViewDesign {
 
 }
 
-/// A protocol that describes an `UIWebView` that its design will be customized using a closure.
-public protocol CustomWebViewDesign {
+/// A protocol that describes an `UIScrollView` that its design will be customized using a closure.
+public protocol CustomScrollViewDesign {
 
     /// The closure that customizes the design.
-    var design: (UIWebView) -> Void { get }
+    var design: (UIScrollView) -> Void { get }
 
 }
 
-/// A protocol that describes an `UIControl` that its design will be customized using a closure.
-public protocol CustomControlDesign {
+/// A protocol that describes an `UISearchBar` that its design will be customized using a closure.
+public protocol CustomSearchBarDesign {
 
     /// The closure that customizes the design.
-    var design: (UIControl) -> Void { get }
-
-}
-
-/// A protocol that describes an `UIButton` that its design will be customized using a closure.
-public protocol CustomButtonDesign {
-
-    /// The closure that customizes the design.
-    var design: (UIButton) -> Void { get }
-
-}
-
-/// A protocol that describes an `UIDatePicker` that its design will be customized using a closure.
-public protocol CustomDatePickerDesign {
-
-    /// The closure that customizes the design.
-    var design: (UIDatePicker) -> Void { get }
-
-}
-
-/// A protocol that describes an `UIPageControl` that its design will be customized using a closure.
-public protocol CustomPageControlDesign {
-
-    /// The closure that customizes the design.
-    var design: (UIPageControl) -> Void { get }
+    var design: (UISearchBar) -> Void { get }
 
 }
 
@@ -144,6 +152,14 @@ public protocol CustomSliderDesign {
 
 }
 
+/// A protocol that describes an `UIStackView` that its design will be customized using a closure.
+public protocol CustomStackViewDesign {
+
+    /// The closure that customizes the design.
+    var design: (UIStackView) -> Void { get }
+
+}
+
 /// A protocol that describes an `UIStepper` that its design will be customized using a closure.
 public protocol CustomStepperDesign {
 
@@ -160,11 +176,27 @@ public protocol CustomSwitchDesign {
 
 }
 
-/// A protocol that describes an `UILabel` that its design will be customized using a closure.
-public protocol CustomLabelDesign {
+/// A protocol that describes an `UITabBar` that its design will be customized using a closure.
+public protocol CustomTabBarDesign {
 
     /// The closure that customizes the design.
-    var design: (UILabel) -> Void { get }
+    var design: (UITabBar) -> Void { get }
+
+}
+
+/// A protocol that describes an `UITabBarItem` that its design will be customized using a closure.
+public protocol CustomTabBarItemDesign {
+
+    /// The closure that customizes the design.
+    var design: (UITabBarItem) -> Void { get }
+
+}
+
+/// A protocol that describes an `UITableView` that its design will be customized using a closure.
+public protocol CustomTableViewDesign {
+
+    /// The closure that customizes the design.
+    var design: (UITableView) -> Void { get }
 
 }
 
@@ -184,38 +216,6 @@ public protocol CustomTextViewDesign {
 
 }
 
-/// A protocol that describes an `UIBarItem` that its design will be customized using a closure.
-public protocol CustomBarItemDesign {
-
-    /// The closure that customizes the design.
-    var design: (UIBarItem) -> Void { get }
-
-}
-
-/// A protocol that describes an `UIBarButtonItem` that its design will be customized using a closure.
-public protocol CustomBarButtonItemDesign {
-
-    /// The closure that customizes the design.
-    var design: (UIBarButtonItem) -> Void { get }
-
-}
-
-/// A protocol that describes an `UINavigationBar` that its design will be customized using a closure.
-public protocol CustomNavigationBarDesign {
-
-    /// The closure that customizes the design.
-    var design: (UINavigationBar) -> Void { get }
-
-}
-
-/// A protocol that describes an `UISearchBar` that its design will be customized using a closure.
-public protocol CustomSearchBarDesign {
-
-    /// The closure that customizes the design.
-    var design: (UISearchBar) -> Void { get }
-
-}
-
 /// A protocol that describes an `UIToolbar` that its design will be customized using a closure.
 public protocol CustomToolbarDesign {
 
@@ -224,19 +224,19 @@ public protocol CustomToolbarDesign {
 
 }
 
-/// A protocol that describes an `UITabBar` that its design will be customized using a closure.
-public protocol CustomTabBarDesign {
+/// A protocol that describes an `UIView` that its design will be customized using a closure.
+public protocol CustomViewDesign {
 
     /// The closure that customizes the design.
-    var design: (UITabBar) -> Void { get }
+    var design: (UIView) -> Void { get }
 
 }
 
-/// A protocol that describes an `UITabBarItem` that its design will be customized using a closure.
-public protocol CustomTabBarItemDesign {
+/// A protocol that describes an `UIWebView` that its design will be customized using a closure.
+public protocol CustomWebViewDesign {
 
     /// The closure that customizes the design.
-    var design: (UITabBarItem) -> Void { get }
+    var design: (UIWebView) -> Void { get }
 
 }
 

@@ -176,27 +176,34 @@ class BorderView: UIView, CustomDesign {
 #### Custom Design
 
 > - CustomDesign
+> - CustomViewDesign
+> - CustomCollectionViewDesign
+> - CustomTableViewDesign
 > - CustomStackViewDesign
 > - CustomScrollViewDesign
-> - CustomBarButtonItemDesign
-> - CustomTabBarItemDesign
-> - CustomViewDesign
 > - CustomActivityIndicatorViewDesign
+> - CustomImageViewDesign
+> - CustomPickerViewDesign
+> - CustomProgressViewDesign
+> - CustomWebViewDesign
+> - CustomControlDesign
 > - CustomButtonDesign
+> - CustomDatePickerDesign
+> - CustomPageControlDesign
 > - CustomSegmentedControlDesign
 > - CustomSliderDesign
 > - CustomStepperDesign
 > - CustomSwitchDesign
-> - CustomTextFieldDesign
-> - CustomImageViewDesign
 > - CustomLabelDesign
-> - CustomNavigationBarDesign
-> - CustomProgressViewDesign
-> - CustomTableViewDesign
+> - CustomTextFieldDesign
 > - CustomTextViewDesign
+> - CustomBarItemDesign
+> - CustomBarButtonItemDesign
+> - CustomNavigationBarDesign
 > - CustomSearchBarDesign
-> - CustomTabBarDesign
 > - CustomToolbarDesign
+> - CustomTabBarDesign
+> - CustomTabBarItemDesign
 
 #### Custom Layout
 
@@ -257,8 +264,8 @@ class BorderView: UIView, CustomDesign {
 
 > - CustomPlaceholder
 > - CustomPrompt
-> - CustomSegmentTitles
 > - CustomScopeButtonTitles
+> - CustomSegmentTitles
 > - CustomText
 > - CustomTitle
 

@@ -9,20 +9,6 @@
 import XCTest
 @testable import Overlay
 
-class CustomTableViewCell: UITableViewCell, CustomCell {
-
-    static let contentNib: UINib? = UINib(nibName: "CustomTableViewCell", bundle: Bundle(for: CustomTableViewCell.self))
-    static let suggestedIdentifier: String = "CustomTableViewCell"
-
-}
-
-class CustomEmptyTableViewCell: UITableViewCell, CustomCell {
-
-    static let contentNib: UINib? = nil
-    static let suggestedIdentifier: String = "CustomEmptyTableViewCell"
-
-}
-
 class CustomCollectionViewCell: UICollectionViewCell, CustomCell {
 
     static let contentNib: UINib? = UINib(nibName: "CustomCollectionViewCell", bundle: Bundle(for: CustomCollectionViewCell.self))
@@ -34,20 +20,6 @@ class CustomEmptyCollectionViewCell: UICollectionViewCell, CustomCell {
 
     static let contentNib: UINib? = nil
     static let suggestedIdentifier: String = "CustomEmptyCollectionViewCell"
-
-}
-
-class CustomTableViewHeaderFooterView: UITableViewHeaderFooterView, CustomHeaderFooterView {
-
-    static let contentNib: UINib? = UINib(nibName: "CustomTableViewHeaderFooterView", bundle: Bundle(for: CustomTableViewHeaderFooterView.self))
-    static let suggestedIdentifier: String = "CustomTableViewHeaderFooterView"
-
-}
-
-class CustomEmptyTableViewHeaderFooterView: UITableViewHeaderFooterView, CustomHeaderFooterView {
-
-    static let contentNib: UINib? = nil
-    static let suggestedIdentifier: String = "CustomEmptyTableViewHeaderFooterView"
 
 }
 
@@ -67,7 +39,55 @@ class CustomEmptyCollectionReusableView: UICollectionReusableView, CustomReusabl
 
 }
 
+class CustomTableViewCell: UITableViewCell, CustomCell {
+
+    static let contentNib: UINib? = UINib(nibName: "CustomTableViewCell", bundle: Bundle(for: CustomTableViewCell.self))
+    static let suggestedIdentifier: String = "CustomTableViewCell"
+
+}
+
+class CustomEmptyTableViewCell: UITableViewCell, CustomCell {
+
+    static let contentNib: UINib? = nil
+    static let suggestedIdentifier: String = "CustomEmptyTableViewCell"
+
+}
+
+class CustomTableViewHeaderFooterView: UITableViewHeaderFooterView, CustomHeaderFooterView {
+
+    static let contentNib: UINib? = UINib(nibName: "CustomTableViewHeaderFooterView", bundle: Bundle(for: CustomTableViewHeaderFooterView.self))
+    static let suggestedIdentifier: String = "CustomTableViewHeaderFooterView"
+
+}
+
+class CustomEmptyTableViewHeaderFooterView: UITableViewHeaderFooterView, CustomHeaderFooterView {
+
+    static let contentNib: UINib? = nil
+    static let suggestedIdentifier: String = "CustomEmptyTableViewHeaderFooterView"
+
+}
+
 class CustomizingCellsTests: XCTestCase {
+
+    func testCollectionViewCell() {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        collectionView.register(CustomCollectionViewCell.self)
+    }
+
+    func testEmptyCollectionViewCell() {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        collectionView.register(CustomEmptyCollectionViewCell.self)
+    }
+
+    func testCollectionViewReusableView() {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        collectionView.register(CustomCollectionReusableView.self)
+    }
+
+    func testEmptyCollectionViewReusableView() {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        collectionView.register(CustomEmptyCollectionReusableView.self)
+    }
 
     func testTableViewCell() {
         let tableView = UITableView()
@@ -99,16 +119,6 @@ class CustomizingCellsTests: XCTestCase {
         }
     }
 
-    func testCollectionViewCell() {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
-        collectionView.register(CustomCollectionViewCell.self)
-    }
-
-    func testEmptyCollectionViewCell() {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
-        collectionView.register(CustomEmptyCollectionViewCell.self)
-    }
-
     func testTableViewHeaderFooterView() {
         let tableView = UITableView()
         tableView.register(CustomTableViewHeaderFooterView.self)
@@ -125,16 +135,6 @@ class CustomizingCellsTests: XCTestCase {
         XCTAssert(firstView as Any is CustomEmptyTableViewHeaderFooterView)
         let secondView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CustomEmptyTableViewHeaderFooterView.suggestedIdentifier)
         XCTAssert(secondView as Any is CustomEmptyTableViewHeaderFooterView)
-    }
-
-    func testCollectionViewReusableView() {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
-        collectionView.register(CustomCollectionReusableView.self)
-    }
-
-    func testEmptyCollectionViewReusableView() {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
-        collectionView.register(CustomEmptyCollectionReusableView.self)
     }
 
 }

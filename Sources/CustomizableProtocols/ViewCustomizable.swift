@@ -48,119 +48,119 @@ extension ViewCustomizable {
     /// Customizes the view's design using a closure.
     func customizeViewDesign() {
         if let view = self as? CustomDesign {
-            view.design(view)
+            view.customizeDesign(using: view.design)
         }
 
-        if let view = self as? UIView & CustomViewDesign {
-            view.design(view)
+        if let view = self as? CustomActivityIndicatorViewDesign {
+            view.customizeActivityIndicatorViewDesign(using: view.design)
         }
 
-        if let view = self as? UICollectionView & CustomCollectionViewDesign {
-            view.design(view)
+        if let view = self as? CustomBarButtonItemDesign {
+            view.customizeBarButtonItemDesign(using: view.design)
         }
 
-        if let view = self as? UITableView & CustomTableViewDesign {
-            view.design(view)
+        if let view = self as? CustomBarItemDesign {
+            view.customizeBarItemDesign(using: view.design)
         }
 
-        if let view = self as? UIStackView & CustomStackViewDesign {
-            view.design(view)
+        if let view = self as? CustomButtonDesign {
+            view.customizeButtonDesign(using: view.design)
         }
 
-        if let view = self as? UIScrollView & CustomScrollViewDesign {
-            view.design(view)
+        if let view = self as? CustomCollectionViewDesign {
+            view.customizeCollectionViewDesign(using: view.design)
         }
 
-        if let view = self as? UIActivityIndicatorView & CustomActivityIndicatorViewDesign {
-            view.design(view)
+        if let view = self as? CustomControlDesign {
+            view.customizeControlDesign(using: view.design)
         }
 
-        if let view = self as? UIImageView & CustomImageViewDesign {
-            view.design(view)
+        if let view = self as? CustomDatePickerDesign {
+            view.customizeDatePickerDesign(using: view.design)
         }
 
-        if let view = self as? UIPickerView & CustomPickerViewDesign {
-            view.design(view)
+        if let view = self as? CustomImageViewDesign {
+            view.customizeImageViewDesign(using: view.design)
         }
 
-        if let view = self as? UIProgressView & CustomProgressViewDesign {
-            view.design(view)
+        if let view = self as? CustomLabelDesign {
+            view.customizeLabelDesign(using: view.design)
         }
 
-        if let view = self as? UIWebView & CustomWebViewDesign {
-            view.design(view)
+        if let view = self as? CustomNavigationBarDesign {
+            view.customizeNavigationBarDesign(using: view.design)
         }
 
-        if let view = self as? UIControl & CustomControlDesign {
-            view.design(view)
+        if let view = self as? CustomPageControlDesign {
+            view.customizePageControlDesign(using: view.design)
         }
 
-        if let view = self as? UIButton & CustomButtonDesign {
-            view.design(view)
+        if let view = self as? CustomPickerViewDesign {
+            view.customizePickerViewDesign(using: view.design)
         }
 
-        if let view = self as? UIDatePicker & CustomDatePickerDesign {
-            view.design(view)
+        if let view = self as? CustomProgressViewDesign {
+            view.customizeProgressViewDesign(using: view.design)
         }
 
-        if let view = self as? UIPageControl & CustomPageControlDesign {
-            view.design(view)
+        if let view = self as? CustomScrollViewDesign {
+            view.customizeScrollViewDesign(using: view.design)
         }
 
-        if let view = self as? UISegmentedControl & CustomSegmentedControlDesign {
-            view.design(view)
+        if let view = self as? CustomSearchBarDesign {
+            view.customizeSearchBarDesign(using: view.design)
         }
 
-        if let view = self as? UISlider & CustomSliderDesign {
-            view.design(view)
+        if let view = self as? CustomSegmentedControlDesign {
+            view.customizeSegmentedControlDesign(using: view.design)
         }
 
-        if let view = self as? UIStepper & CustomStepperDesign {
-            view.design(view)
+        if let view = self as? CustomSliderDesign {
+            view.customizeSliderDesign(using: view.design)
         }
 
-        if let view = self as? UISwitch & CustomSwitchDesign {
-            view.design(view)
+        if let view = self as? CustomStackViewDesign {
+            view.customizeStackViewDesign(using: view.design)
         }
 
-        if let view = self as? UILabel & CustomLabelDesign {
-            view.design(view)
+        if let view = self as? CustomStepperDesign {
+            view.customizeStepperDesign(using: view.design)
         }
 
-        if let view = self as? UITextField & CustomTextFieldDesign {
-            view.design(view)
+        if let view = self as? CustomSwitchDesign {
+            view.customizeSwitchDesign(using: view.design)
         }
 
-        if let view = self as? UITextView & CustomTextViewDesign {
-            view.design(view)
+        if let view = self as? CustomTabBarDesign {
+            view.customizeTabBarDesign(using: view.design)
         }
 
-        if let view = self as? UIBarItem & CustomBarItemDesign {
-            view.design(view)
+        if let view = self as? CustomTabBarItemDesign {
+            view.customizeTabBarItemDesign(using: view.design)
         }
 
-        if let view = self as? UIBarButtonItem & CustomBarButtonItemDesign {
-            view.design(view)
+        if let view = self as? CustomTableViewDesign {
+            view.customizeTableViewDesign(using: view.design)
         }
 
-        if let view = self as? UINavigationBar & CustomNavigationBarDesign {
-            view.design(view)
+        if let view = self as? CustomTextFieldDesign {
+            view.customizeTextFieldDesign(using: view.design)
         }
 
-        if let view = self as? UISearchBar & CustomSearchBarDesign {
-            view.design(view)
+        if let view = self as? CustomTextViewDesign {
+            view.customizeTextViewDesign(using: view.design)
         }
 
-        if let view = self as? UIToolbar & CustomToolbarDesign {
-            view.design(view)
+        if let view = self as? CustomToolbarDesign {
+            view.customizeToolbarDesign(using: view.design)
         }
 
-        if let view = self as? UITabBar & CustomTabBarDesign {
-            view.design(view)
+        if let view = self as? CustomViewDesign {
+            view.customizeViewDesign(using: view.design)
         }
 
-        if let view = self as? UITabBarItem & CustomTabBarItemDesign {
-            view.design(view)
+        if let view = self as? CustomWebViewDesign {
+            view.customizeWebViewDesign(using: view.design)
         }
     }
 

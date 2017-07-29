@@ -9,7 +9,7 @@
 import UIKit
 
 /// A protocol that describes an item that its design will be customized using a closure.
-public protocol CustomDesign {
+public protocol CustomDesign: DesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (Any) -> Void { get }
@@ -17,7 +17,7 @@ public protocol CustomDesign {
 }
 
 /// A protocol that describes an `UIActivityIndicatorView` that its design will be customized using a closure.
-public protocol CustomActivityIndicatorViewDesign {
+public protocol CustomActivityIndicatorViewDesign: ActivityIndicatorViewDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIActivityIndicatorView) -> Void { get }
@@ -25,7 +25,7 @@ public protocol CustomActivityIndicatorViewDesign {
 }
 
 /// A protocol that describes an `UIBarButtonItem` that its design will be customized using a closure.
-public protocol CustomBarButtonItemDesign {
+public protocol CustomBarButtonItemDesign: BarButtonItemDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIBarButtonItem) -> Void { get }
@@ -33,7 +33,7 @@ public protocol CustomBarButtonItemDesign {
 }
 
 /// A protocol that describes an `UIBarItem` that its design will be customized using a closure.
-public protocol CustomBarItemDesign {
+public protocol CustomBarItemDesign: BarItemDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIBarItem) -> Void { get }
@@ -41,7 +41,7 @@ public protocol CustomBarItemDesign {
 }
 
 /// A protocol that describes an `UIButton` that its design will be customized using a closure.
-public protocol CustomButtonDesign {
+public protocol CustomButtonDesign: ButtonDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIButton) -> Void { get }
@@ -49,7 +49,7 @@ public protocol CustomButtonDesign {
 }
 
 /// A protocol that describes an `UICollectionView` that its design will be customized using a closure.
-public protocol CustomCollectionViewDesign {
+public protocol CustomCollectionViewDesign: CollectionViewDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UICollectionView) -> Void { get }
@@ -57,7 +57,7 @@ public protocol CustomCollectionViewDesign {
 }
 
 /// A protocol that describes an `UIControl` that its design will be customized using a closure.
-public protocol CustomControlDesign {
+public protocol CustomControlDesign: ControlDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIControl) -> Void { get }
@@ -65,7 +65,7 @@ public protocol CustomControlDesign {
 }
 
 /// A protocol that describes an `UIDatePicker` that its design will be customized using a closure.
-public protocol CustomDatePickerDesign {
+public protocol CustomDatePickerDesign: DatePickerDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIDatePicker) -> Void { get }
@@ -73,7 +73,7 @@ public protocol CustomDatePickerDesign {
 }
 
 /// A protocol that describes an `UIImageView` that its design will be customized using a closure.
-public protocol CustomImageViewDesign {
+public protocol CustomImageViewDesign: ImageViewDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIImageView) -> Void { get }
@@ -81,7 +81,7 @@ public protocol CustomImageViewDesign {
 }
 
 /// A protocol that describes an `UILabel` that its design will be customized using a closure.
-public protocol CustomLabelDesign {
+public protocol CustomLabelDesign: LabelDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UILabel) -> Void { get }
@@ -89,7 +89,7 @@ public protocol CustomLabelDesign {
 }
 
 /// A protocol that describes an `UINavigationBar` that its design will be customized using a closure.
-public protocol CustomNavigationBarDesign {
+public protocol CustomNavigationBarDesign: NavigationBarDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UINavigationBar) -> Void { get }
@@ -97,7 +97,7 @@ public protocol CustomNavigationBarDesign {
 }
 
 /// A protocol that describes an `UIPageControl` that its design will be customized using a closure.
-public protocol CustomPageControlDesign {
+public protocol CustomPageControlDesign: PageControlDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIPageControl) -> Void { get }
@@ -105,7 +105,7 @@ public protocol CustomPageControlDesign {
 }
 
 /// A protocol that describes an `UIPickerView` that its design will be customized using a closure.
-public protocol CustomPickerViewDesign {
+public protocol CustomPickerViewDesign: PickerViewDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIPickerView) -> Void { get }
@@ -113,7 +113,7 @@ public protocol CustomPickerViewDesign {
 }
 
 /// A protocol that describes an `UIProgressView` that its design will be customized using a closure.
-public protocol CustomProgressViewDesign {
+public protocol CustomProgressViewDesign: ProgressViewDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIProgressView) -> Void { get }
@@ -121,7 +121,7 @@ public protocol CustomProgressViewDesign {
 }
 
 /// A protocol that describes an `UIScrollView` that its design will be customized using a closure.
-public protocol CustomScrollViewDesign {
+public protocol CustomScrollViewDesign: ScrollViewDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIScrollView) -> Void { get }
@@ -129,7 +129,7 @@ public protocol CustomScrollViewDesign {
 }
 
 /// A protocol that describes an `UISearchBar` that its design will be customized using a closure.
-public protocol CustomSearchBarDesign {
+public protocol CustomSearchBarDesign: SearchBarDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UISearchBar) -> Void { get }
@@ -137,7 +137,7 @@ public protocol CustomSearchBarDesign {
 }
 
 /// A protocol that describes an `UISegmentedControl` that its design will be customized using a closure.
-public protocol CustomSegmentedControlDesign {
+public protocol CustomSegmentedControlDesign: SegmentedControlDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UISegmentedControl) -> Void { get }
@@ -145,7 +145,7 @@ public protocol CustomSegmentedControlDesign {
 }
 
 /// A protocol that describes an `UISlider` that its design will be customized using a closure.
-public protocol CustomSliderDesign {
+public protocol CustomSliderDesign: SliderDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UISlider) -> Void { get }
@@ -153,7 +153,7 @@ public protocol CustomSliderDesign {
 }
 
 /// A protocol that describes an `UIStackView` that its design will be customized using a closure.
-public protocol CustomStackViewDesign {
+public protocol CustomStackViewDesign: StackViewDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIStackView) -> Void { get }
@@ -161,7 +161,7 @@ public protocol CustomStackViewDesign {
 }
 
 /// A protocol that describes an `UIStepper` that its design will be customized using a closure.
-public protocol CustomStepperDesign {
+public protocol CustomStepperDesign: StepperDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIStepper) -> Void { get }
@@ -169,7 +169,7 @@ public protocol CustomStepperDesign {
 }
 
 /// A protocol that describes an `UISwitch` that its design will be customized using a closure.
-public protocol CustomSwitchDesign {
+public protocol CustomSwitchDesign: SwitchDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UISwitch) -> Void { get }
@@ -177,7 +177,7 @@ public protocol CustomSwitchDesign {
 }
 
 /// A protocol that describes an `UITabBar` that its design will be customized using a closure.
-public protocol CustomTabBarDesign {
+public protocol CustomTabBarDesign: TabBarDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UITabBar) -> Void { get }
@@ -185,7 +185,7 @@ public protocol CustomTabBarDesign {
 }
 
 /// A protocol that describes an `UITabBarItem` that its design will be customized using a closure.
-public protocol CustomTabBarItemDesign {
+public protocol CustomTabBarItemDesign: TabBarItemDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UITabBarItem) -> Void { get }
@@ -193,7 +193,7 @@ public protocol CustomTabBarItemDesign {
 }
 
 /// A protocol that describes an `UITableView` that its design will be customized using a closure.
-public protocol CustomTableViewDesign {
+public protocol CustomTableViewDesign: TableViewDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UITableView) -> Void { get }
@@ -201,7 +201,7 @@ public protocol CustomTableViewDesign {
 }
 
 /// A protocol that describes an `UITextField` that its design will be customized using a closure.
-public protocol CustomTextFieldDesign {
+public protocol CustomTextFieldDesign: TextFieldDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UITextField) -> Void { get }
@@ -209,7 +209,7 @@ public protocol CustomTextFieldDesign {
 }
 
 /// A protocol that describes an `UITextView` that its design will be customized using a closure.
-public protocol CustomTextViewDesign {
+public protocol CustomTextViewDesign: TextViewDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UITextView) -> Void { get }
@@ -217,7 +217,7 @@ public protocol CustomTextViewDesign {
 }
 
 /// A protocol that describes an `UIToolbar` that its design will be customized using a closure.
-public protocol CustomToolbarDesign {
+public protocol CustomToolbarDesign: ToolbarDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIToolbar) -> Void { get }
@@ -225,7 +225,7 @@ public protocol CustomToolbarDesign {
 }
 
 /// A protocol that describes an `UIView` that its design will be customized using a closure.
-public protocol CustomViewDesign {
+public protocol CustomViewDesign: ViewDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIView) -> Void { get }
@@ -233,65 +233,233 @@ public protocol CustomViewDesign {
 }
 
 /// A protocol that describes an `UIWebView` that its design will be customized using a closure.
-public protocol CustomWebViewDesign {
+public protocol CustomWebViewDesign: WebViewDesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIWebView) -> Void { get }
 
 }
 
-extension UIView: ViewDesignCustomizable { }
+extension UIView: ViewDesignCustomizable {
 
-extension UICollectionView: CollectionViewDesignCustomizable { }
+    public func customizeViewDesign(using design: (UIView) -> Void) {
+        design(self)
+    }
 
-extension UITableView: TableViewDesignCustomizable { }
+}
 
-extension UIStackView: StackViewDesignCustomizable { }
+extension UICollectionView: CollectionViewDesignCustomizable {
 
-extension UIScrollView: ScrollViewDesignCustomizable { }
+    public func customizeCollectionViewDesign(using design: (UICollectionView) -> Void) {
+        design(self)
+    }
 
-extension UIActivityIndicatorView: ActivityIndicatorViewDesignCustomizable { }
+}
 
-extension UIImageView: ImageViewDesignCustomizable { }
+extension UITableView: TableViewDesignCustomizable {
 
-extension UIPickerView: PickerViewDesignCustomizable { }
+    public func customizeTableViewDesign(using design: (UITableView) -> Void) {
+        design(self)
+    }
 
-extension UIProgressView: ProgressViewDesignCustomizable { }
+}
 
-extension UIWebView: WebViewDesignCustomizable { }
+extension UIStackView: StackViewDesignCustomizable {
 
-extension UIControl: ControlDesignCustomizable { }
+    public func customizeStackViewDesign(using design: (UIStackView) -> Void) {
+        design(self)
+    }
 
-extension UIButton: ButtonDesignCustomizable { }
+}
 
-extension UIDatePicker: DatePickerDesignCustomizable { }
+extension UIScrollView: ScrollViewDesignCustomizable {
 
-extension UIPageControl: PageControlDesignCustomizable { }
+    public func customizeScrollViewDesign(using design: (UIScrollView) -> Void) {
+        design(self)
+    }
 
-extension UISegmentedControl: SegmentedControlDesignCustomizable { }
+}
 
-extension UISlider: SliderDesignCustomizable { }
+extension UIActivityIndicatorView: ActivityIndicatorViewDesignCustomizable {
 
-extension UIStepper: StepperDesignCustomizable { }
+    public func customizeActivityIndicatorViewDesign(using design: (UIActivityIndicatorView) -> Void) {
+        design(self)
+    }
 
-extension UISwitch: SwitchDesignCustomizable { }
+}
 
-extension UILabel: LabelDesignCustomizable { }
+extension UIImageView: ImageViewDesignCustomizable {
 
-extension UITextField: TextFieldDesignCustomizable { }
+    public func customizeImageViewDesign(using design: (UIImageView) -> Void) {
+        design(self)
+    }
 
-extension UITextView: TextViewDesignCustomizable { }
+}
 
-extension UIBarItem: BarItemDesignCustomizable { }
+extension UIPickerView: PickerViewDesignCustomizable {
 
-extension UIBarButtonItem: BarButtonItemDesignCustomizable { }
+    public func customizePickerViewDesign(using design: (UIPickerView) -> Void) {
+        design(self)
+    }
 
-extension UINavigationBar: NavigationBarDesignCustomizable { }
+}
 
-extension UISearchBar: SearchBarDesignCustomizable { }
+extension UIProgressView: ProgressViewDesignCustomizable {
 
-extension UIToolbar: ToolbarDesignCustomizable { }
+    public func customizeProgressViewDesign(using design: (UIProgressView) -> Void) {
+        design(self)
+    }
 
-extension UITabBar: TabBarDesignCustomizable { }
+}
 
-extension UITabBarItem: TabBarItemDesignCustomizable { }
+extension UIWebView: WebViewDesignCustomizable {
+
+    public func customizeWebViewDesign(using design: (UIWebView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIControl: ControlDesignCustomizable {
+
+    public func customizeControlDesign(using design: (UIControl) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIButton: ButtonDesignCustomizable {
+
+    public func customizeButtonDesign(using design: (UIButton) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIDatePicker: DatePickerDesignCustomizable {
+
+    public func customizeDatePickerDesign(using design: (UIDatePicker) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIPageControl: PageControlDesignCustomizable {
+
+    public func customizePageControlDesign(using design: (UIPageControl) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UISegmentedControl: SegmentedControlDesignCustomizable {
+
+    public func customizeSegmentedControlDesign(using design: (UISegmentedControl) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UISlider: SliderDesignCustomizable {
+
+    public func customizeSliderDesign(using design: (UISlider) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIStepper: StepperDesignCustomizable {
+
+    public func customizeStepperDesign(using design: (UIStepper) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UISwitch: SwitchDesignCustomizable {
+
+    public func customizeSwitchDesign(using design: (UISwitch) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UILabel: LabelDesignCustomizable {
+
+    public func customizeLabelDesign(using design: (UILabel) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UITextField: TextFieldDesignCustomizable {
+
+    public func customizeTextFieldDesign(using design: (UITextField) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UITextView: TextViewDesignCustomizable {
+
+    public func customizeTextViewDesign(using design: (UITextView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIBarItem: BarItemDesignCustomizable {
+
+    public func customizeBarItemDesign(using design: (UIBarItem) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIBarButtonItem: BarButtonItemDesignCustomizable {
+
+    public func customizeBarButtonItemDesign(using design: (UIBarButtonItem) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UINavigationBar: NavigationBarDesignCustomizable {
+
+    public func customizeNavigationBarDesign(using design: (UINavigationBar) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UISearchBar: SearchBarDesignCustomizable {
+
+    public func customizeSearchBarDesign(using design: (UISearchBar) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIToolbar: ToolbarDesignCustomizable {
+
+    public func customizeToolbarDesign(using design: (UIToolbar) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UITabBar: TabBarDesignCustomizable {
+
+    public func customizeTabBarDesign(using design: (UITabBar) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UITabBarItem: TabBarItemDesignCustomizable {
+
+    public func customizeTabBarItemDesign(using design: (UITabBarItem) -> Void) {
+        design(self)
+    }
+
+}

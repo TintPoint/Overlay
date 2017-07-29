@@ -9,7 +9,15 @@
 import XCTest
 @testable import Overlay
 
-class TestRefreshingView: UIView, CustomDesign {
+class RefreshingView: UIView, DesignCustomizable {
+
+    func customizeDesign(using design: (Any) -> Void) {
+        design(self)
+    }
+
+}
+
+class TestRefreshingView: RefreshingView, CustomDesign {
 
     var isRefreshed = false
 

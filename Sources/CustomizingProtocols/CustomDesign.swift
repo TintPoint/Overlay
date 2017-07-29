@@ -16,22 +16,6 @@ public protocol CustomDesign: DesignCustomizable {
 
 }
 
-/// A protocol that describes an `UIStackView` that its design will be customized using a closure.
-public protocol CustomStackViewDesign: DesignCustomizable {
-
-    /// The closure that customizes the design.
-    var design: (UIStackView) -> Void { get }
-
-}
-
-/// A protocol that describes an `UIScrollView` that its design will be customized using a closure.
-public protocol CustomScrollViewDesign: DesignCustomizable {
-
-    /// The closure that customizes the design.
-    var design: (UIScrollView) -> Void { get }
-
-}
-
 /// A protocol that describes an `UIBarButtonItem` that its design will be customized using a closure.
 public protocol CustomBarButtonItemDesign: DesignCustomizable {
 
@@ -53,6 +37,22 @@ public protocol CustomViewDesign: DesignCustomizable {
 
     /// The closure that customizes the design.
     var design: (UIView) -> Void { get }
+
+}
+
+/// A protocol that describes an `UIStackView` that its design will be customized using a closure.
+public protocol CustomStackViewDesign: DesignCustomizable {
+
+    /// The closure that customizes the design.
+    var design: (UIStackView) -> Void { get }
+
+}
+
+/// A protocol that describes an `UIScrollView` that its design will be customized using a closure.
+public protocol CustomScrollViewDesign: DesignCustomizable {
+
+    /// The closure that customizes the design.
+    var design: (UIScrollView) -> Void { get }
 
 }
 

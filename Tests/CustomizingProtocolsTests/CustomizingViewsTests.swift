@@ -9,18 +9,6 @@
 import XCTest
 @testable import Overlay
 
-class CustomStackView: UIStackView, CustomStackViewDesign {
-
-    let design: (UIStackView) -> Void = { $0.layer.cornerRadius = 5 }
-
-}
-
-class CustomScrollView: UIScrollView, CustomScrollViewDesign {
-
-    let design: (UIScrollView) -> Void = { $0.layer.cornerRadius = 5 }
-
-}
-
 class CustomBarButtonItem: UIBarButtonItem, CustomTintColor, CustomImage, CustomLandscapeImagePhone, CustomTitle, CustomBarButtonItemDesign {
 
     let tintColorStyle: ColorStyle = TestColor.first
@@ -49,6 +37,18 @@ class CustomView: UIView, CustomLayout, CustomTintColor, CustomBorderColor, Cust
     let borderColorStyle: ColorStyle = TestColor.second
     let backgroundColorStyle: ColorStyle = TestColor.third
     let design: (UIView) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
+class CustomStackView: UIStackView, CustomStackViewDesign {
+
+    let design: (UIStackView) -> Void = { $0.layer.cornerRadius = 5 }
+
+}
+
+class CustomScrollView: UIScrollView, CustomScrollViewDesign {
+
+    let design: (UIScrollView) -> Void = { $0.layer.cornerRadius = 5 }
 
 }
 
@@ -225,18 +225,6 @@ class CustomToolbar: UIToolbar, CustomBarTintColor, CustomToolbarDesign {
 
 class CustomizingViewsTests: XCTestCase {
 
-    func testStackView() {
-        let stackView = CustomStackView()
-        stackView.refresh()
-        XCTAssertEqual(stackView.layer.cornerRadius, 5)
-    }
-
-    func testScrollView() {
-        let scrollView = CustomScrollView()
-        scrollView.refresh()
-        XCTAssertEqual(scrollView.layer.cornerRadius, 5)
-    }
-
     func testBarButtonItem() {
         let barButtonItem = CustomBarButtonItem()
         barButtonItem.refresh()
@@ -267,6 +255,18 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(view.layer.borderColor, TestColor.second.cgColor)
         XCTAssertEqual(view.backgroundColor, TestColor.third)
         XCTAssertEqual(view.layer.cornerRadius, 5)
+    }
+
+    func testStackView() {
+        let stackView = CustomStackView()
+        stackView.refresh()
+        XCTAssertEqual(stackView.layer.cornerRadius, 5)
+    }
+
+    func testScrollView() {
+        let scrollView = CustomScrollView()
+        scrollView.refresh()
+        XCTAssertEqual(scrollView.layer.cornerRadius, 5)
     }
 
     func testActivityIndicatorView() {

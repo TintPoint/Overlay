@@ -176,6 +176,8 @@ class BorderView: UIView, CustomDesign {
 #### Custom Design
 
 > - CustomDesign
+> - CustomStackViewDesign
+> - CustomScrollViewDesign
 > - CustomBarButtonItemDesign
 > - CustomTabBarItemDesign
 > - CustomViewDesign

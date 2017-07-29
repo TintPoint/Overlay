@@ -55,6 +55,14 @@ extension ViewCustomizable {
             view.design(view)
         }
 
+        if let view = self as? UIStackView & CustomStackViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIScrollView & CustomScrollViewDesign {
+            view.design(view)
+        }
+
         if let view = self as? UIBarButtonItem & CustomBarButtonItemDesign {
             view.design(view)
         }

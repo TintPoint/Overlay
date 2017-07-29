@@ -136,19 +136,29 @@ extension TextGroup: TextStyleGroup {
 }
 
 /// A protocol that describes a view that its texts can be represented by `TextStyle`.
-public protocol TextStyleRepresentable { }
-
-extension TextStyleRepresentable {
+public protocol TextStyleRepresentable {
 
     /// Returns a `String` that will be used in current state.
     /// - Parameter style: A `TextStyle` that represents the text.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
     /// - Returns: A `String` that will be used in current state, or `nil` if no text is set.
+    func selectedText(from style: TextStyle, usingNormalFor states: [UIControlState]) -> String?
+
+    /// Customizes a text through a setter method.
+    /// - Parameter style: A `TextStyle` that represents a text.
+    /// - Parameter setter: A setter method that will customize a text in different states.
+    /// - Parameter text: A `String` that will be used.
+    /// - Parameter state: An `UIControlState` that will use the text.
+    func customizeText(using style: TextStyle, through setter: (_ text: String?, _ state: UIControlState) -> Void)
+
+}
+
+public extension TextStyleRepresentable {
+
     func selectedText(from style: TextStyle, usingNormalFor states: [UIControlState] = []) -> String? {
         guard let styleGroup = style as? TextStyleGroup else {
             return style.normal()
         }
-
         if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
             return styleGroup.highlighted()
         } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
@@ -162,11 +172,6 @@ extension TextStyleRepresentable {
         }
     }
 
-    /// Customizes a text through a setter method.
-    /// - Parameter style: A `TextStyle` that represents a text.
-    /// - Parameter setter: A setter method that will customize a text in different states.
-    /// - Parameter text: A `String` that will be used.
-    /// - Parameter state: An `UIControlState` that will use the text.
     func customizeText(using style: TextStyle, through setter: (_ text: String?, _ state: UIControlState) -> Void) {
         setter(style.normal(), .normal)
         if let styleGroup = style as? TextStyleGroup {

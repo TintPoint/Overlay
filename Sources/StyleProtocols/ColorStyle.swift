@@ -136,19 +136,29 @@ extension ColorGroup: ColorStyleGroup {
 }
 
 /// A protocol that describes a view that its colors can be represented by `ColorStyle`.
-public protocol ColorStyleRepresentable { }
-
-extension ColorStyleRepresentable {
+public protocol ColorStyleRepresentable {
 
     /// Returns an `UIColor` that will be used in current state.
     /// - Parameter style: A `ColorStyle` that represents the color.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
     /// - Returns: An `UIColor` that will be used in current state, or `nil` if no color is set.
+    func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControlState]) -> UIColor?
+
+    /// Customizes a color through a setter method.
+    /// - Parameter style: A `ColorStyle` that represents a color.
+    /// - Parameter setter: A setter method that will customize a color in different states.
+    /// - Parameter color: An `UIColor` that will be used.
+    /// - Parameter state: An `UIControlState` that will use the color.
+    func customizeColor(using style: ColorStyle, through setter: (_ color: UIColor?, _ state: UIControlState) -> Void)
+
+}
+
+public extension ColorStyleRepresentable {
+
     func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControlState] = []) -> UIColor? {
         guard let styleGroup = style as? ColorStyleGroup else {
             return style.normal()
         }
-
         if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
             return styleGroup.highlighted()
         } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
@@ -162,11 +172,6 @@ extension ColorStyleRepresentable {
         }
     }
 
-    /// Customizes a color through a setter method.
-    /// - Parameter style: A `ColorStyle` that represents a color.
-    /// - Parameter setter: A setter method that will customize a color in different states.
-    /// - Parameter color: An `UIColor` that will be used.
-    /// - Parameter state: An `UIControlState` that will use the color.
     func customizeColor(using style: ColorStyle, through setter: (_ color: UIColor?, _ state: UIControlState) -> Void) {
         setter(style.normal(), .normal)
         if let styleGroup = style as? ColorStyleGroup {

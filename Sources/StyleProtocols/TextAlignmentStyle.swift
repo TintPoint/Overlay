@@ -136,19 +136,22 @@ extension TextAlignmentGroup: TextAlignmentStyleGroup {
 }
 
 /// A protocol that describes a view that its alignments of texts can be represented by `TextAlignmentStyle`.
-public protocol TextAlignmentStyleRepresentable { }
-
-extension TextAlignmentStyleRepresentable {
+public protocol TextAlignmentStyleRepresentable {
 
     /// Returns a `NSTextAlignment` that will be used in current state.
     /// - Parameter style: A `TextAlignmentStyle` that represents the text.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
     /// - Returns: A `NSTextAlignment` that will be used in current state, or `nil` if no text is set.
+    func selectedTextAlignment(from style: TextAlignmentStyle, usingNormalFor states: [UIControlState]) -> NSTextAlignment?
+
+}
+
+public extension TextAlignmentStyleRepresentable {
+
     func selectedTextAlignment(from style: TextAlignmentStyle, usingNormalFor states: [UIControlState] = []) -> NSTextAlignment? {
         guard let styleGroup = style as? TextAlignmentStyleGroup else {
             return style.normal()
         }
-
         if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
             return styleGroup.highlighted()
         } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {

@@ -12,20 +12,16 @@ import UIKit
 public protocol ViewCustomizable {
 
     /// Refreshes the view's appearance.
-    /// You should call this method after:
-    /// a) creating a view programmatically
-    /// b) changing the state of a view
-    /// c) changing the style of a view.
-    ///
-    /// Your custom view can override this method to customize other properties.
-    /// You need to call the super implementation at some point during your own `refresh` method.
-    ///
-    /// - Parameter includingSubviews: A `Bool` value that indicates whether subviews of the view (and subviews' subviews...) should also be refreshed.
+    /// You should call this method after you:
+    /// 1. Created a view programmatically.
+    /// 2. Changed a view's states.
+    /// 3. Changed a view's styles.
+    /// - Parameter includingSubviews: A `Bool` that indicates whether the view's subviews (and subviews' subviews...) should also be refreshed.
     func refresh(includingSubviews: Bool)
 
 }
 
-extension ViewCustomizable {
+private extension ViewCustomizable {
 
     /// Customizes the view's appearance.
     func customizeView() {
@@ -45,7 +41,7 @@ extension ViewCustomizable {
         }
     }
 
-    /// Customizes the view's design using a closure.
+    /// Customizes the view's design.
     func customizeViewDesign() {
         if let view = self as? CustomDesign {
             view.customizeDesign(using: view.design)
@@ -401,24 +397,6 @@ extension ViewCustomizable {
 
 }
 
-extension UIBarItem: ViewCustomizable {
-
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        refresh()
-    }
-
-    open override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        refresh()
-    }
-
-    public func refresh(includingSubviews: Bool = false) {
-        customizeView()
-    }
-
-}
-
 extension UIView: ViewCustomizable {
 
     open override func awakeFromNib() {
@@ -438,6 +416,24 @@ extension UIView: ViewCustomizable {
                 subview.refresh(includingSubviews: true)
             }
         }
+    }
+
+}
+
+extension UIBarItem: ViewCustomizable {
+
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        refresh()
+    }
+
+    open override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        refresh()
+    }
+
+    public func refresh(includingSubviews: Bool = false) {
+        customizeView()
     }
 
 }

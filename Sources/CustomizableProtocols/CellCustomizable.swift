@@ -53,6 +53,60 @@ public protocol ReusableViewCustomizable {
 
 }
 
+extension UICollectionView: CellCustomizable {
+
+    public typealias Cell = UICollectionViewCell & CustomCell
+
+    public typealias CellClass = Cell.Type
+
+    public func register(_ cellClass: CellClass) {
+        if let contentNib = cellClass.contentNib {
+            register(contentNib, forCellWithReuseIdentifier: cellClass.suggestedIdentifier)
+        } else {
+            register(cellClass, forCellWithReuseIdentifier: cellClass.suggestedIdentifier)
+        }
+    }
+
+}
+
+extension UICollectionView: ReusableViewCustomizable {
+
+    public typealias ReusableView = UICollectionReusableView & CustomReusableView
+
+    public typealias ReusableViewClass = ReusableView.Type
+
+    public func register(_ reusableViewClass: ReusableViewClass) {
+        if let contentNib = reusableViewClass.contentNib {
+            register(contentNib, forSupplementaryViewOfKind: reusableViewClass.suggestedKind, withReuseIdentifier: reusableViewClass.suggestedIdentifier)
+        } else {
+            register(reusableViewClass, forSupplementaryViewOfKind: reusableViewClass.suggestedKind, withReuseIdentifier: reusableViewClass.suggestedIdentifier)
+        }
+    }
+
+}
+
+public extension UICollectionView {
+
+    /// Returns a reusable `Cell` located by its class.
+    /// Calls `dequeueReusableCell(withReuseIdentifier:for:)` method.
+    /// - Parameter cellClass: A `Cell.Type` that represents the class of a cell.
+    /// - Parameter indexPath: An `IndexPath` that represents the location of a cell.
+    /// - Returns: A reusable `Cell` located by its class.
+    func dequeueReusableCell<T: Cell>(_ cellClass: T.Type, for indexPath: IndexPath) -> T {
+        return dequeueReusableCell(withReuseIdentifier: cellClass.suggestedIdentifier, for: indexPath) as! T
+    }
+
+    /// Returns a supplementary `ReusableView` located by its class.
+    /// Calls `dequeueReusableSupplementaryView(ofKind:withReuseIdentifier:for:)` method.
+    /// - Parameter reusableViewClass: A `ReusableView.Type` that represents the class of a reusable view.
+    /// - Parameter indexPath: An `IndexPath` that represents the location of a reusable view.
+    /// - Returns: A supplementary `ReusableView` located by its class.
+    func dequeueReusableSupplementaryView<T: ReusableView>(_ reusableViewClass: T.Type, for indexPath: IndexPath) -> T {
+        return dequeueReusableSupplementaryView(ofKind: reusableViewClass.suggestedKind, withReuseIdentifier: reusableViewClass.suggestedIdentifier, for: indexPath) as! T
+    }
+
+}
+
 extension UITableView: CellCustomizable {
 
     public typealias Cell = UITableViewCell & CustomCell
@@ -64,6 +118,22 @@ extension UITableView: CellCustomizable {
             register(contentNib, forCellReuseIdentifier: cellClass.suggestedIdentifier)
         } else {
             register(cellClass, forCellReuseIdentifier: cellClass.suggestedIdentifier)
+        }
+    }
+
+}
+
+extension UITableView: HeaderFooterViewCustomizable {
+
+    public typealias HeaderFooterView = UITableViewHeaderFooterView & CustomHeaderFooterView
+
+    public typealias HeaderFooterViewClass = HeaderFooterView.Type
+
+    public func register(_ headerFooterViewClass: HeaderFooterViewClass) {
+        if let contentNib = headerFooterViewClass.contentNib {
+            register(contentNib, forHeaderFooterViewReuseIdentifier: headerFooterViewClass.suggestedIdentifier)
+        } else {
+            register(headerFooterViewClass, forHeaderFooterViewReuseIdentifier: headerFooterViewClass.suggestedIdentifier)
         }
     }
 
@@ -88,90 +158,12 @@ public extension UITableView {
         return dequeueReusableCell(withIdentifier: cellClass.suggestedIdentifier) as! T
     }
 
-}
-
-extension UICollectionView: CellCustomizable {
-
-    public typealias Cell = UICollectionViewCell & CustomCell
-
-    public typealias CellClass = Cell.Type
-
-    public func register(_ cellClass: CellClass) {
-        if let contentNib = cellClass.contentNib {
-            register(contentNib, forCellWithReuseIdentifier: cellClass.suggestedIdentifier)
-        } else {
-            register(cellClass, forCellWithReuseIdentifier: cellClass.suggestedIdentifier)
-        }
-    }
-
-}
-
-public extension UICollectionView {
-
-    /// Returns a reusable `Cell` located by its class.
-    /// Calls `dequeueReusableCell(withReuseIdentifier:for:)` method.
-    /// - Parameter cellClass: A `Cell.Type` that represents the class of a cell.
-    /// - Parameter indexPath: An `IndexPath` that represents the location of a cell.
-    /// - Returns: A reusable `Cell` located by its class.
-    func dequeueReusableCell<T: Cell>(_ cellClass: T.Type, for indexPath: IndexPath) -> T {
-        return dequeueReusableCell(withReuseIdentifier: cellClass.suggestedIdentifier, for: indexPath) as! T
-    }
-
-}
-
-extension UITableView: HeaderFooterViewCustomizable {
-
-    public typealias HeaderFooterView = UITableViewHeaderFooterView & CustomHeaderFooterView
-
-    public typealias HeaderFooterViewClass = HeaderFooterView.Type
-
-    public func register(_ headerFooterViewClass: HeaderFooterViewClass) {
-        if let contentNib = headerFooterViewClass.contentNib {
-            register(contentNib, forHeaderFooterViewReuseIdentifier: headerFooterViewClass.suggestedIdentifier)
-        } else {
-            register(headerFooterViewClass, forHeaderFooterViewReuseIdentifier: headerFooterViewClass.suggestedIdentifier)
-        }
-    }
-
-}
-
-public extension UITableView {
-
     /// Returns a reusable `HeaderFooterView` located by its class.
     /// Calls `dequeueReusableHeaderFooterView(withIdentifier:)` method.
     /// - Parameter headerFooterViewClass: A `HeaderFooterView.Type` that represents the class of a header footer view.
     /// Returns: A reusable `HeaderFooterView` located by its class.
     func dequeueReusableHeaderFooterView<T: HeaderFooterView>(_ headerFooterViewClass: T.Type) -> T {
         return dequeueReusableHeaderFooterView(withIdentifier: headerFooterViewClass.suggestedIdentifier) as! T
-    }
-
-}
-
-extension UICollectionView: ReusableViewCustomizable {
-
-    public typealias ReusableView = UICollectionReusableView & CustomReusableView
-
-    public typealias ReusableViewClass = ReusableView.Type
-
-    public func register(_ reusableViewClass: ReusableViewClass) {
-        if let contentNib = reusableViewClass.contentNib {
-            register(contentNib, forSupplementaryViewOfKind: reusableViewClass.suggestedKind, withReuseIdentifier: reusableViewClass.suggestedIdentifier)
-        } else {
-            register(reusableViewClass, forSupplementaryViewOfKind: reusableViewClass.suggestedKind, withReuseIdentifier: reusableViewClass.suggestedIdentifier)
-        }
-    }
-
-}
-
-public extension UICollectionView {
-
-    /// Returns a supplementary `ReusableView` located by its class.
-    /// Calls `dequeueReusableSupplementaryView(ofKind:withReuseIdentifier:for:)` method.
-    /// - Parameter reusableViewClass: A `ReusableView.Type` that represents the class of a reusable view.
-    /// - Parameter indexPath: An `IndexPath` that represents the location of a reusable view.
-    /// - Returns: A supplementary `ReusableView` located by its class.
-    func dequeueReusableSupplementaryView<T: ReusableView>(_ reusableViewClass: T.Type, for indexPath: IndexPath) -> T {
-        return dequeueReusableSupplementaryView(ofKind: reusableViewClass.suggestedKind, withReuseIdentifier: reusableViewClass.suggestedIdentifier, for: indexPath) as! T
     }
 
 }

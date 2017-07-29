@@ -466,9 +466,11 @@ class CustomizingViewsTests: XCTestCase {
     }
 
     func testBarItem() {
-        let barItem = CustomBarItem()
-        barItem.refresh()
-        XCTAssertEqual(barItem.tag, 5)
+        if #available(iOS 10.0, *) {
+            let barItem = CustomBarItem()
+            barItem.refresh()
+            XCTAssertEqual(barItem.tag, 5)
+        }
     }
 
     func testBarButtonItem() {

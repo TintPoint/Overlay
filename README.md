@@ -87,7 +87,7 @@ class CustomView: UIView, CustomBackgroundColor {
 
 ### Style Group
 
-For views that have more than one state (e.g. `UIButton`), their design usually needs to change if their state changes (list of available states can be found [here](#available-styles)). Style group can be used here. All custom style has a corresponding style group (list of available style groups can be found [here](#available-style-groups)).
+For views that have more than one state (e.g. `UIButton`), their design usually needs to change if their state changes (list of available states can be found [here](#available-states)). Style group can be used here. All custom style has a corresponding style group (list of available style groups can be found [here](#available-style-groups)).
 
 ```swift
 class CustomButton: UIButton, CustomBackgroundColor {
@@ -134,31 +134,31 @@ Define a custom class that conforms to `CustomLayout` protocol. Create a nib fil
 
 ```swift
 class ComplexView: UIView, CustomLayout {
-    var contentNib: UINib = UINib(nibName: "ComplexView", bundle: Bundle(for: ComplexView.self))
+    let contentNib: UINib = UINib(nibName: "ComplexView", bundle: Bundle(for: ComplexView.self))
 }
 ```
 
 The first root view inside `ComplexView.xib` will be loaded and added as a content view on top of `ComplexView`. Note: Content view's background color usually should be clear color.
 
-Create `IBOutlet` and connect them like usual if needed.
+Create `IBOutlet` and connect them like usual, if needed.
 
 ```swift
 class ComplexView: UIView, CustomLayout {
-    var contentNib: UINib = UINib(nibName: "ComplexView", bundle: Bundle(for: ComplexView.self))
+    let contentNib: UINib = UINib(nibName: "ComplexView", bundle: Bundle(for: ComplexView.self))
     @IBOutlet weak var button: CustomButton?
 }
 ```
 
-### Unsupported Attributes
+### Other Attributes
 
-Please fill an issue for feature requests. Pull requests are always welcomed!
+Overlay supports customizing views' colors, fonts, images, texts and text alignments.
 
-However, it is still possible to customize not-yet-supported attributes by adopting `CustomDesign` protocol.
+However, it is still possible to customize other attributes by adopting protocols with `Design` postfix.
 
 ```swift
-class BorderView: UIView, CustomDesign {
-    var design: (DesignCustomizable) -> () = { view in
-        (view as! UIView).layer.borderWidth = 1
+class BorderView: UIView, CustomViewDesign {
+    let design: (UIView) -> Void = { view in
+        view.layer.borderWidth = 1
     }
 }
 ```
@@ -175,7 +175,6 @@ class BorderView: UIView, CustomDesign {
 
 #### Custom Design
 
-> - CustomDesign
 > - CustomActivityIndicatorViewDesign
 > - CustomBarButtonItemDesign
 > - CustomBarItemDesign
@@ -183,6 +182,7 @@ class BorderView: UIView, CustomDesign {
 > - CustomCollectionViewDesign
 > - CustomControlDesign
 > - CustomDatePickerDesign
+> - CustomDesign
 > - CustomImageViewDesign
 > - CustomLabelDesign
 > - CustomNavigationBarDesign
@@ -277,25 +277,29 @@ class BorderView: UIView, CustomDesign {
 ### Available Styles
 
 > - ColorStyle
-> - FontStyle
-> - ImageStyle
-> - TextStyle
-> - TextAlignmentStyle
 > - ColorStyleGroup
+> - FontStyle
 > - FontStyleGroup
+> - ImageStyle
 > - ImageStyleGroup
-> - TextStyleGroup
+> - TextAlignmentStyle
 > - TextAlignmentStyleGroup
+> - TextStyle
+> - TextStyleGroup
 
 ### Available Style Groups
 
 > - ColorGroup
 > - FontGroup
 > - ImageGroup
-> - TextGroup
 > - TextAlignmentGroup
+> - TextGroup
 
 ### Available States
+
+#### ViewHideable
+
+> - UIView and its subclasses
 
 #### ViewFocusable
 
@@ -303,25 +307,25 @@ class BorderView: UIView, CustomDesign {
 
 #### ViewDisable
 
-> - UIBarItem
 > - UIBarButtonItem
-> - UITabBarItem
-> - UIControl
+> - UIBarItem
 > - UIButton
+> - UIControl
 > - UIDatePicker
+> - UILabel
 > - UIPageControl
 > - UIRefreshControl
 > - UISegmentedControl
 > - UISlider
 > - UIStepper
 > - UISwitch
+> - UITabBarItem
 > - UITextField
-> - UILabel
 
 #### ViewSelectable
 
-> - UIControl
 > - UIButton
+> - UIControl
 > - UIDatePicker
 > - UIPageControl
 > - UIRefreshControl
@@ -329,21 +333,21 @@ class BorderView: UIView, CustomDesign {
 > - UISlider
 > - UIStepper
 > - UISwitch
-> - UITextField
 > - UITableViewCell
+> - UITextField
 
 #### ViewHighlightable
 
-> - UIControl
 > - UIButton
+> - UIControl
 > - UIDatePicker
+> - UIImageView
+> - UILabel
 > - UIPageControl
 > - UIRefreshControl
 > - UISegmentedControl
 > - UISlider
 > - UIStepper
 > - UISwitch
-> - UITextField
 > - UITableViewCell
-> - UILabel
-> - UIImageView
+> - UITextField

@@ -197,24 +197,6 @@ public protocol UnselectedItemTintColorCustomizable: ColorStyleRepresentable {
 
 }
 
-extension UIBarButtonItem: TintColorCustomizable {
-
-    public func customizeTintColor(using style: ColorStyle) {
-        tintColor = selectedColor(from: style)
-    }
-
-}
-
-extension UITabBarItem: BadgeColorCustomizable {
-
-    public func customizeBadgeColor(using style: ColorStyle) {
-        if #available(iOS 10.0, *) {
-            badgeColor = selectedColor(from: style)
-        }
-    }
-
-}
-
 extension UIView: TintColorCustomizable, BackgroundColorCustomizable, BorderColorCustomizable {
 
     public func customizeTintColor(using style: ColorStyle) {
@@ -231,10 +213,42 @@ extension UIView: TintColorCustomizable, BackgroundColorCustomizable, BorderColo
 
 }
 
+extension UITableView: SeparatorColorCustomizable, SectionIndexColorCustomizable, SectionIndexBackgroundColorCustomizable, SectionIndexTrackingBackgroundColorCustomizable {
+
+    public func customizeSeparatorColor(using style: ColorStyle) {
+        separatorColor = selectedColor(from: style)
+    }
+
+    public func customizeSectionIndexColor(using style: ColorStyle) {
+        sectionIndexColor = selectedColor(from: style)
+    }
+
+    public func customizeSectionIndexBackgroundColor(using style: ColorStyle) {
+        sectionIndexBackgroundColor = selectedColor(from: style)
+    }
+
+    public func customizeSectionIndexTrackingBackgroundColor(using style: ColorStyle) {
+        sectionIndexTrackingBackgroundColor = selectedColor(from: style)
+    }
+
+}
+
 extension UIActivityIndicatorView: ColorCustomizable {
 
     public func customizeColor(using style: ColorStyle) {
         color = selectedColor(from: style)
+    }
+
+}
+
+extension UIProgressView: ProgressTintColorCustomizable, TrackTintColorCustomizable {
+
+    public func customizeProgressTintColor(using style: ColorStyle) {
+        progressTintColor = selectedColor(from: style)
+    }
+
+    public func customizeTrackTintColor(using style: ColorStyle) {
+        trackTintColor = selectedColor(from: style)
     }
 
 }
@@ -279,14 +293,6 @@ extension UISwitch: OnTintColorCustomizable, ThumbTintColorCustomizable {
 
 }
 
-extension UITextField: TextColorCustomizable {
-
-    public func customizeTextColor(using style: ColorStyle) {
-        textColor = selectedColor(from: style)
-    }
-
-}
-
 extension UILabel: TextColorCustomizable, ShadowColorCustomizable {
 
     public func customizeTextColor(using style: ColorStyle) {
@@ -302,42 +308,10 @@ extension UILabel: TextColorCustomizable, ShadowColorCustomizable {
 
 }
 
-extension UINavigationBar: BarTintColorCustomizable {
+extension UITextField: TextColorCustomizable {
 
-    public func customizeBarTintColor(using style: ColorStyle) {
-        barTintColor = selectedColor(from: style)
-    }
-
-}
-
-extension UIProgressView: ProgressTintColorCustomizable, TrackTintColorCustomizable {
-
-    public func customizeProgressTintColor(using style: ColorStyle) {
-        progressTintColor = selectedColor(from: style)
-    }
-
-    public func customizeTrackTintColor(using style: ColorStyle) {
-        trackTintColor = selectedColor(from: style)
-    }
-
-}
-
-extension UITableView: SeparatorColorCustomizable, SectionIndexColorCustomizable, SectionIndexBackgroundColorCustomizable, SectionIndexTrackingBackgroundColorCustomizable {
-
-    public func customizeSeparatorColor(using style: ColorStyle) {
-        separatorColor = selectedColor(from: style)
-    }
-
-    public func customizeSectionIndexColor(using style: ColorStyle) {
-        sectionIndexColor = selectedColor(from: style)
-    }
-
-    public func customizeSectionIndexBackgroundColor(using style: ColorStyle) {
-        sectionIndexBackgroundColor = selectedColor(from: style)
-    }
-
-    public func customizeSectionIndexTrackingBackgroundColor(using style: ColorStyle) {
-        sectionIndexTrackingBackgroundColor = selectedColor(from: style)
+    public func customizeTextColor(using style: ColorStyle) {
+        textColor = selectedColor(from: style)
     }
 
 }
@@ -350,7 +324,31 @@ extension UITextView: TextColorCustomizable {
 
 }
 
+extension UIBarButtonItem: TintColorCustomizable {
+
+    public func customizeTintColor(using style: ColorStyle) {
+        tintColor = selectedColor(from: style)
+    }
+
+}
+
+extension UINavigationBar: BarTintColorCustomizable {
+
+    public func customizeBarTintColor(using style: ColorStyle) {
+        barTintColor = selectedColor(from: style)
+    }
+
+}
+
 extension UISearchBar: BarTintColorCustomizable {
+
+    public func customizeBarTintColor(using style: ColorStyle) {
+        barTintColor = selectedColor(from: style)
+    }
+
+}
+
+extension UIToolbar: BarTintColorCustomizable {
 
     public func customizeBarTintColor(using style: ColorStyle) {
         barTintColor = selectedColor(from: style)
@@ -372,10 +370,12 @@ extension UITabBar: BarTintColorCustomizable, UnselectedItemTintColorCustomizabl
 
 }
 
-extension UIToolbar: BarTintColorCustomizable {
+extension UITabBarItem: BadgeColorCustomizable {
 
-    public func customizeBarTintColor(using style: ColorStyle) {
-        barTintColor = selectedColor(from: style)
+    public func customizeBadgeColor(using style: ColorStyle) {
+        if #available(iOS 10.0, *) {
+            badgeColor = selectedColor(from: style)
+        }
     }
 
 }

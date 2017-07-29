@@ -268,3 +268,227 @@ public protocol TabBarItemDesignCustomizable {
     func customizeTabBarItemDesign(using design: (UITabBarItem) -> Void)
 
 }
+
+extension UIView: ViewDesignCustomizable {
+
+    public func customizeViewDesign(using design: (UIView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UICollectionView: CollectionViewDesignCustomizable {
+
+    public func customizeCollectionViewDesign(using design: (UICollectionView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UITableView: TableViewDesignCustomizable {
+
+    public func customizeTableViewDesign(using design: (UITableView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIStackView: StackViewDesignCustomizable {
+
+    public func customizeStackViewDesign(using design: (UIStackView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIScrollView: ScrollViewDesignCustomizable {
+
+    public func customizeScrollViewDesign(using design: (UIScrollView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIActivityIndicatorView: ActivityIndicatorViewDesignCustomizable {
+
+    public func customizeActivityIndicatorViewDesign(using design: (UIActivityIndicatorView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIImageView: ImageViewDesignCustomizable {
+
+    public func customizeImageViewDesign(using design: (UIImageView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIPickerView: PickerViewDesignCustomizable {
+
+    public func customizePickerViewDesign(using design: (UIPickerView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIProgressView: ProgressViewDesignCustomizable {
+
+    public func customizeProgressViewDesign(using design: (UIProgressView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIWebView: WebViewDesignCustomizable {
+
+    public func customizeWebViewDesign(using design: (UIWebView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIControl: ControlDesignCustomizable {
+
+    public func customizeControlDesign(using design: (UIControl) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIButton: ButtonDesignCustomizable {
+
+    public func customizeButtonDesign(using design: (UIButton) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIDatePicker: DatePickerDesignCustomizable {
+
+    public func customizeDatePickerDesign(using design: (UIDatePicker) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIPageControl: PageControlDesignCustomizable {
+
+    public func customizePageControlDesign(using design: (UIPageControl) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UISegmentedControl: SegmentedControlDesignCustomizable {
+
+    public func customizeSegmentedControlDesign(using design: (UISegmentedControl) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UISlider: SliderDesignCustomizable {
+
+    public func customizeSliderDesign(using design: (UISlider) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIStepper: StepperDesignCustomizable {
+
+    public func customizeStepperDesign(using design: (UIStepper) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UISwitch: SwitchDesignCustomizable {
+
+    public func customizeSwitchDesign(using design: (UISwitch) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UILabel: LabelDesignCustomizable {
+
+    public func customizeLabelDesign(using design: (UILabel) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UITextField: TextFieldDesignCustomizable {
+
+    public func customizeTextFieldDesign(using design: (UITextField) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UITextView: TextViewDesignCustomizable {
+
+    public func customizeTextViewDesign(using design: (UITextView) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIBarItem: BarItemDesignCustomizable {
+
+    public func customizeBarItemDesign(using design: (UIBarItem) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIBarButtonItem: BarButtonItemDesignCustomizable {
+
+    public func customizeBarButtonItemDesign(using design: (UIBarButtonItem) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UINavigationBar: NavigationBarDesignCustomizable {
+
+    public func customizeNavigationBarDesign(using design: (UINavigationBar) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UISearchBar: SearchBarDesignCustomizable {
+
+    public func customizeSearchBarDesign(using design: (UISearchBar) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UIToolbar: ToolbarDesignCustomizable {
+
+    public func customizeToolbarDesign(using design: (UIToolbar) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UITabBar: TabBarDesignCustomizable {
+
+    public func customizeTabBarDesign(using design: (UITabBar) -> Void) {
+        design(self)
+    }
+
+}
+
+extension UITabBarItem: TabBarItemDesignCustomizable {
+
+    public func customizeTabBarItemDesign(using design: (UITabBarItem) -> Void) {
+        design(self)
+    }
+
+}

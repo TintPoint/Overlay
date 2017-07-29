@@ -34,7 +34,7 @@ extension UIButton: TitleFontCustomizable {
 
 }
 
-extension UITextField: FontCustomizable {
+extension UILabel: FontCustomizable {
 
     public func customizeFont(using style: FontStyle) {
         font = selectedFont(from: style)
@@ -42,7 +42,7 @@ extension UITextField: FontCustomizable {
 
 }
 
-extension UILabel: FontCustomizable {
+extension UITextField: FontCustomizable {
 
     public func customizeFont(using style: FontStyle) {
         font = selectedFont(from: style)

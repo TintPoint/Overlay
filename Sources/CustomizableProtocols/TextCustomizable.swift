@@ -65,22 +65,6 @@ public protocol TitleCustomizable: TextStyleRepresentable {
 
 }
 
-extension UIBarButtonItem: TitleCustomizable {
-
-    public func customizeTitle(using style: TextStyle) {
-        title = selectedText(from: style)
-    }
-
-}
-
-extension UITabBarItem: TitleCustomizable {
-
-    public func customizeTitle(using style: TextStyle) {
-        title = selectedText(from: style)
-    }
-
-}
-
 extension UIButton: TitleCustomizable {
 
     public func customizeTitle(using style: TextStyle) {
@@ -99,6 +83,14 @@ extension UISegmentedControl: SegmentTitlesCustomizable {
 
 }
 
+extension UILabel: TextCustomizable {
+
+    public func customizeText(using style: TextStyle) {
+        text = selectedText(from: style)
+    }
+
+}
+
 extension UITextField: TextCustomizable, PlaceholderCustomizable {
 
     public func customizeText(using style: TextStyle) {
@@ -111,7 +103,7 @@ extension UITextField: TextCustomizable, PlaceholderCustomizable {
 
 }
 
-extension UILabel: TextCustomizable {
+extension UITextView: TextCustomizable {
 
     public func customizeText(using style: TextStyle) {
         text = selectedText(from: style)
@@ -119,10 +111,10 @@ extension UILabel: TextCustomizable {
 
 }
 
-extension UITextView: TextCustomizable {
+extension UIBarButtonItem: TitleCustomizable {
 
-    public func customizeText(using style: TextStyle) {
-        text = selectedText(from: style)
+    public func customizeTitle(using style: TextStyle) {
+        title = selectedText(from: style)
     }
 
 }
@@ -143,6 +135,14 @@ extension UISearchBar: TextCustomizable, PlaceholderCustomizable, PromptCustomiz
 
     public func customizeScopeButtonTitles(using styles: [TextStyle]) {
         scopeButtonTitles = styles.map { selectedText(from: $0) ?? $0.normal() }
+    }
+
+}
+
+extension UITabBarItem: TitleCustomizable {
+
+    public func customizeTitle(using style: TextStyle) {
+        title = selectedText(from: style)
     }
 
 }

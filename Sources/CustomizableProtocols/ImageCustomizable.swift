@@ -179,26 +179,26 @@ public protocol TrackImageCustomizable: ImageStyleRepresentable {
 
 }
 
-extension UIBarButtonItem: ImageCustomizable, LandscapeImagePhoneCustomizable {
+extension UIImageView: ImageCustomizable, HighlightedImageCustomizable {
 
     public func customizeImage(using style: ImageStyle) {
         image = selectedImage(from: style)
     }
 
-    public func customizeLandscapeImagePhone(using style: ImageStyle) {
-        landscapeImagePhone = selectedImage(from: style)
+    public func customizeHighlightedImage(using style: ImageStyle) {
+        highlightedImage = selectedImage(from: style)
     }
 
 }
 
-extension UITabBarItem: ImageCustomizable, SelectedImageCustomizable {
+extension UIProgressView: ProgressImageCustomizable, TrackImageCustomizable {
 
-    public func customizeImage(using style: ImageStyle) {
-        image = selectedImage(from: style)
+    public func customizeProgressImage(using style: ImageStyle) {
+        progressImage = selectedImage(from: style)
     }
 
-    public func customizeSelectedImage(using style: ImageStyle) {
-        selectedImage = selectedImage(from: style)
+    public func customizeTrackImage(using style: ImageStyle) {
+        trackImage = selectedImage(from: style)
     }
 
 }
@@ -267,14 +267,14 @@ extension UISwitch: OffImageCustomizable, OnImageCustomizable {
 
 }
 
-extension UIImageView: ImageCustomizable, HighlightedImageCustomizable {
+extension UIBarButtonItem: ImageCustomizable, LandscapeImagePhoneCustomizable {
 
     public func customizeImage(using style: ImageStyle) {
         image = selectedImage(from: style)
     }
 
-    public func customizeHighlightedImage(using style: ImageStyle) {
-        highlightedImage = selectedImage(from: style)
+    public func customizeLandscapeImagePhone(using style: ImageStyle) {
+        landscapeImagePhone = selectedImage(from: style)
     }
 
 }
@@ -283,18 +283,6 @@ extension UINavigationBar: ShadowImageCustomizable {
 
     public func customizeShadowImage(using style: ImageStyle) {
         shadowImage = selectedImage(from: style)
-    }
-
-}
-
-extension UIProgressView: ProgressImageCustomizable, TrackImageCustomizable {
-
-    public func customizeProgressImage(using style: ImageStyle) {
-        progressImage = selectedImage(from: style)
-    }
-
-    public func customizeTrackImage(using style: ImageStyle) {
-        trackImage = selectedImage(from: style)
     }
 
 }
@@ -323,6 +311,18 @@ extension UITabBar: BackgroundImageCustomizable, ShadowImageCustomizable {
 
     public func customizeShadowImage(using style: ImageStyle) {
         shadowImage = selectedImage(from: style)
+    }
+
+}
+
+extension UITabBarItem: ImageCustomizable, SelectedImageCustomizable {
+
+    public func customizeImage(using style: ImageStyle) {
+        image = selectedImage(from: style)
+    }
+
+    public func customizeSelectedImage(using style: ImageStyle) {
+        selectedImage = selectedImage(from: style)
     }
 
 }

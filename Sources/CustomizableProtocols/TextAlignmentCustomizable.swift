@@ -34,7 +34,7 @@ extension UIButton: TitleTextAlignmentCustomizable {
 
 }
 
-extension UITextField: TextAlignmentCustomizable {
+extension UILabel: TextAlignmentCustomizable {
 
     public func customizeTextAlignment(using style: TextAlignmentStyle) {
         textAlignment = selectedTextAlignment(from: style) ?? .left
@@ -42,7 +42,7 @@ extension UITextField: TextAlignmentCustomizable {
 
 }
 
-extension UILabel: TextAlignmentCustomizable {
+extension UITextField: TextAlignmentCustomizable {
 
     public func customizeTextAlignment(using style: TextAlignmentStyle) {
         textAlignment = selectedTextAlignment(from: style) ?? .left

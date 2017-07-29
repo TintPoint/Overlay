@@ -47,23 +47,19 @@ extension ViewCustomizable {
 
     /// Customizes the view's design using a closure.
     func customizeViewDesign() {
-        guard self is DesignCustomizable else {
-            return
-        }
-
         if let view = self as? CustomDesign {
             view.design(view)
         }
 
-        if let view = self as? UIBarButtonItem & CustomBarButtonItemDesign {
-            view.design(view)
-        }
-
-        if let view = self as? UITabBarItem & CustomTabBarItemDesign {
-            view.design(view)
-        }
-
         if let view = self as? UIView & CustomViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UICollectionView & CustomCollectionViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UITableView & CustomTableViewDesign {
             view.design(view)
         }
 
@@ -79,7 +75,35 @@ extension ViewCustomizable {
             view.design(view)
         }
 
+        if let view = self as? UIImageView & CustomImageViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIPickerView & CustomPickerViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIProgressView & CustomProgressViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIWebView & CustomWebViewDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIControl & CustomControlDesign {
+            view.design(view)
+        }
+
         if let view = self as? UIButton & CustomButtonDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIDatePicker & CustomDatePickerDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIPageControl & CustomPageControlDesign {
             view.design(view)
         }
 
@@ -99,27 +123,11 @@ extension ViewCustomizable {
             view.design(view)
         }
 
-        if let view = self as? UITextField & CustomTextFieldDesign {
-            view.design(view)
-        }
-
-        if let view = self as? UIImageView & CustomImageViewDesign {
-            view.design(view)
-        }
-
         if let view = self as? UILabel & CustomLabelDesign {
             view.design(view)
         }
 
-        if let view = self as? UINavigationBar & CustomNavigationBarDesign {
-            view.design(view)
-        }
-
-        if let view = self as? UIProgressView & CustomProgressViewDesign {
-            view.design(view)
-        }
-
-        if let view = self as? UITableView & CustomTableViewDesign {
+        if let view = self as? UITextField & CustomTextFieldDesign {
             view.design(view)
         }
 
@@ -127,7 +135,23 @@ extension ViewCustomizable {
             view.design(view)
         }
 
+        if let view = self as? UIBarItem & CustomBarItemDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIBarButtonItem & CustomBarButtonItemDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UINavigationBar & CustomNavigationBarDesign {
+            view.design(view)
+        }
+
         if let view = self as? UISearchBar & CustomSearchBarDesign {
+            view.design(view)
+        }
+
+        if let view = self as? UIToolbar & CustomToolbarDesign {
             view.design(view)
         }
 
@@ -135,7 +159,7 @@ extension ViewCustomizable {
             view.design(view)
         }
 
-        if let view = self as? UIToolbar & CustomToolbarDesign {
+        if let view = self as? UITabBarItem & CustomTabBarItemDesign {
             view.design(view)
         }
     }

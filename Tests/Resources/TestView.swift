@@ -10,10 +10,10 @@ import Overlay
 
 class TestView: ViewDisable, ViewSelectable, ViewHighlightable, ViewFocusable {
 
-    let isEnabled: Bool
-    let isSelected: Bool
-    let isHighlighted: Bool
-    let isFocused: Bool
+    var isEnabled: Bool
+    var isSelected: Bool
+    var isHighlighted: Bool
+    var isFocused: Bool
 
     init(enabled: Bool = true, selected: Bool = false, highlighted: Bool = false, focused: Bool = false) {
         isEnabled = enabled
@@ -23,6 +23,7 @@ class TestView: ViewDisable, ViewSelectable, ViewHighlightable, ViewFocusable {
     }
 
     func refresh(includingSubviews: Bool = false) { }
+
 }
 
 class TestColorView: TestView, ColorStyleRepresentable {

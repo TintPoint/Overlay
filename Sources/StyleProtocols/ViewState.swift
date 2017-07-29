@@ -49,7 +49,7 @@ public protocol ViewHighlightable {
 public protocol ViewFocusable {
 
     /// A `Bool` that indicates whether the view is currently focused.
-    var isFocused: Bool { get set }
+    var isFocused: Bool { get }
 
 }
 

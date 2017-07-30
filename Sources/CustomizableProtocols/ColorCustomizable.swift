@@ -265,6 +265,14 @@ extension UIButton: TitleColorCustomizable, TitleShadowColorCustomizable {
 
 }
 
+extension UIDatePicker: TextColorCustomizable {
+
+    public func customizeTextColor(using style: ColorStyle) {
+        setValue(selectedColor(from: style), forKey: "textColor")
+    }
+
+}
+
 extension UISlider: MinimumTrackTintColorCustomizable, MaximumTrackTintColorCustomizable, ThumbTintColorCustomizable {
 
     public func customizeMinimumTrackTintColor(using style: ColorStyle) {

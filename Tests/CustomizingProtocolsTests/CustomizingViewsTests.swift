@@ -109,8 +109,9 @@ class CustomButton: UIButton, CustomTitleFont, CustomTitleColor, CustomTitleShad
 
 }
 
-class CustomDatePicker: UIDatePicker, CustomDatePickerDesign {
+class CustomDatePicker: UIDatePicker, CustomTextColor, CustomDatePickerDesign {
 
+    let textColorStyle: ColorStyle = TestColor.first
     let design: (UIDatePicker) -> Void = { $0.layer.cornerRadius = 5 }
 
 }
@@ -370,6 +371,7 @@ class CustomizingViewsTests: XCTestCase {
     func testDatePicker() {
         let datePicker = CustomDatePicker()
         datePicker.refresh()
+        XCTAssertEqual(datePicker.value(forKey: "textColor") as? UIColor, TestColor.first)
         XCTAssertEqual(datePicker.layer.cornerRadius, 5)
     }
 

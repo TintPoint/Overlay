@@ -348,10 +348,14 @@ extension UINavigationBar: BarTintColorCustomizable {
 
 }
 
-extension UISearchBar: BarTintColorCustomizable {
+extension UISearchBar: BarTintColorCustomizable, TextColorCustomizable {
 
     public func customizeBarTintColor(using style: ColorStyle) {
         barTintColor = selectedColor(from: style)
+    }
+
+    public func customizeTextColor(using style: ColorStyle) {
+        setValue(selectedColor(from: style), forKeyPath: "searchField.textColor")
     }
 
 }

@@ -216,9 +216,10 @@ class CustomBarButtonItem: UIBarButtonItem, CustomTintColor, CustomImage, Custom
 
 }
 
-class CustomNavigationBar: UINavigationBar, CustomBarTintColor, CustomShadowImage, CustomNavigationBarDesign {
+class CustomNavigationBar: UINavigationBar, CustomBarTintColor, CustomTitleColor, CustomShadowImage, CustomNavigationBarDesign {
 
     let barTintColorStyle: ColorStyle = TestColor.first
+    let titleColorStyle: ColorStyle = TestColor.second
     let shadowImageStyle: ImageStyle = TestImage.first
     let design: (UINavigationBar) -> Void = { $0.layer.cornerRadius = 5 }
 
@@ -490,6 +491,7 @@ class CustomizingViewsTests: XCTestCase {
         let navigationBar = CustomNavigationBar()
         navigationBar.refresh()
         XCTAssertEqual(navigationBar.barTintColor, TestColor.first)
+        XCTAssertEqual(navigationBar.titleTextAttributes?[.foregroundColor] as? UIColor, TestColor.second)
         XCTAssertNotNil(navigationBar.shadowImage) // Image is modified
         XCTAssertEqual(navigationBar.layer.cornerRadius, 5)
     }

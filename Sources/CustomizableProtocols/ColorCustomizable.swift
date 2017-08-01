@@ -340,10 +340,15 @@ extension UIBarButtonItem: TintColorCustomizable {
 
 }
 
-extension UINavigationBar: BarTintColorCustomizable {
+extension UINavigationBar: BarTintColorCustomizable, TitleColorCustomizable {
 
     public func customizeBarTintColor(using style: ColorStyle) {
         barTintColor = selectedColor(from: style)
+    }
+
+    public func customizeTitleColor(using style: ColorStyle) {
+        titleTextAttributes = titleTextAttributes ?? [:]
+        titleTextAttributes?[.foregroundColor] = selectedColor(from: style)
     }
 
 }

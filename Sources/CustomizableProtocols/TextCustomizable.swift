@@ -134,7 +134,7 @@ extension UISearchBar: TextCustomizable, PlaceholderCustomizable, PromptCustomiz
     }
 
     public func customizeScopeButtonTitles(using styles: [TextStyle]) {
-        scopeButtonTitles = styles.map { selectedText(from: $0) ?? $0.normal() }
+        scopeButtonTitles = styles.map { selectedText(from: $0) }
     }
 
 }

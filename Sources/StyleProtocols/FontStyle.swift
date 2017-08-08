@@ -141,25 +141,25 @@ public protocol FontStyleRepresentable {
     /// Returns an `UIFont` that will be used in current state.
     /// - Parameter style: A `FontStyle` that represents the font.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
-    /// - Returns: An `UIFont` that will be used in current state, or `nil` if no font is set.
-    func selectedFont(from style: FontStyle, usingNormalFor states: [UIControlState]) -> UIFont?
+    /// - Returns: An `UIFont` that will be used in current state, or normal font if no font is set.
+    func selectedFont(from style: FontStyle, usingNormalFor states: [UIControlState]) -> UIFont
 
 }
 
 public extension FontStyleRepresentable {
 
-    func selectedFont(from style: FontStyle, usingNormalFor states: [UIControlState] = []) -> UIFont? {
+    func selectedFont(from style: FontStyle, usingNormalFor states: [UIControlState] = []) -> UIFont {
         guard let styleGroup = style as? FontStyleGroup else {
             return style.normal()
         }
         if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
-            return styleGroup.highlighted()
+            return styleGroup.highlighted() ?? styleGroup.normal()
         } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
-            return styleGroup.selected()
+            return styleGroup.selected() ?? styleGroup.normal()
         } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
-            return styleGroup.disabled()
+            return styleGroup.disabled() ?? styleGroup.normal()
         } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
-            return styleGroup.focused()
+            return styleGroup.focused() ?? styleGroup.normal()
         } else {
             return styleGroup.normal()
         }

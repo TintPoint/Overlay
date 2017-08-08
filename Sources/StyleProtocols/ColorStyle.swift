@@ -141,8 +141,8 @@ public protocol ColorStyleRepresentable {
     /// Returns an `UIColor` that will be used in current state.
     /// - Parameter style: A `ColorStyle` that represents the color.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
-    /// - Returns: An `UIColor` that will be used in current state, or `nil` if no color is set.
-    func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControlState]) -> UIColor?
+    /// - Returns: An `UIColor` that will be used in current state, or normal color if no color is set.
+    func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControlState]) -> UIColor
 
     /// Customizes a color through a setter method.
     /// - Parameter style: A `ColorStyle` that represents a color.
@@ -155,18 +155,18 @@ public protocol ColorStyleRepresentable {
 
 public extension ColorStyleRepresentable {
 
-    func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControlState] = []) -> UIColor? {
+    func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControlState] = []) -> UIColor {
         guard let styleGroup = style as? ColorStyleGroup else {
             return style.normal()
         }
         if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
-            return styleGroup.highlighted()
+            return styleGroup.highlighted() ?? styleGroup.normal()
         } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
-            return styleGroup.selected()
+            return styleGroup.selected() ?? styleGroup.normal()
         } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
-            return styleGroup.disabled()
+            return styleGroup.disabled() ?? styleGroup.normal()
         } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
-            return styleGroup.focused()
+            return styleGroup.focused() ?? styleGroup.normal()
         } else {
             return styleGroup.normal()
         }

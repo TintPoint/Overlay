@@ -73,7 +73,7 @@ public protocol CustomOnTintColor: OnTintColorCustomizable {
 }
 
 /// A protocol that describes a view that its placeholder text color will be customized.
-public protocol CustomPlaceholderTextColor: ProgressTintColorCustomizable {
+public protocol CustomPlaceholderTextColor: PlaceholderTextColorCustomizable {
 
     /// The `ColorStyle` that represents the placeholder text color.
     var placeholderTextColorStyle: ColorStyle { get }

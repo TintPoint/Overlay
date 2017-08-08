@@ -179,10 +179,11 @@ class CustomLabel: UILabel, CustomFont, CustomTextColor, CustomShadowColor, Cust
 
 }
 
-class CustomTextField: UITextField, CustomFont, CustomTextColor, CustomText, CustomPlaceholder, CustomTextAlignment, CustomTextFieldDesign {
+class CustomTextField: UITextField, CustomFont, CustomTextColor, CustomPlaceholderTextColor, CustomText, CustomPlaceholder, CustomTextAlignment, CustomTextFieldDesign {
 
     let fontStyle: FontStyle = TestFont.first
     let textColorStyle: ColorStyle = TestColor.first
+    let placeholderTextColorStyle: ColorStyle = TestColor.second
     let textStyle: TextStyle = TestText.first
     let placeholderStyle: TextStyle = TestText.second
     let textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
@@ -452,6 +453,7 @@ class CustomizingViewsTests: XCTestCase {
         textField.refresh()
         XCTAssertEqual(textField.font, TestFont.first)
         XCTAssertEqual(textField.textColor, TestColor.first)
+        XCTAssertNotNil(textField.attributedPlaceholder) // color is modified
         XCTAssertEqual(textField.text, TestText.first)
         XCTAssertEqual(textField.placeholder, TestText.second)
         XCTAssertEqual(textField.textAlignment, TestTextAlignment.first)

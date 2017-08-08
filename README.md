@@ -214,6 +214,7 @@ class ComplexView: UIView, CustomLayout {
 > - CustomMaximumTrackTintColor
 > - CustomMinimumTrackTintColor
 > - CustomOnTintColor
+> - CustomPlaceholderTextColor
 > - CustomProgressTintColor
 > - CustomSectionIndexBackgroundColor
 > - CustomSectionIndexColor

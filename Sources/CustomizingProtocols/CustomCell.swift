@@ -58,24 +58,24 @@ public protocol CustomReusableView {
 
 public extension CustomCell {
 
-    static func loadCellFromNib() -> Self? {
-        return contentNib?.instantiate(withOwner: self).first as? Self
+    static func loadCellFromNib(owner: Any? = nil) -> Self? {
+        return contentNib?.instantiate(withOwner: owner).first as? Self
     }
 
 }
 
 public extension CustomHeaderFooterView {
 
-    static func loadHeaderFooterViewFromNib() -> Self? {
-        return contentNib?.instantiate(withOwner: self).first as? Self
+    static func loadHeaderFooterViewFromNib(owner: Any? = nil) -> Self? {
+        return contentNib?.instantiate(withOwner: owner).first as? Self
     }
 
 }
 
 public extension CustomReusableView {
 
-    static func loadReusableViewFromNib() -> Self? {
-        return contentNib?.instantiate(withOwner: self).first as? Self
+    static func loadReusableViewFromNib(owner: Any? = nil) -> Self? {
+        return contentNib?.instantiate(withOwner: owner).first as? Self
     }
 
 }

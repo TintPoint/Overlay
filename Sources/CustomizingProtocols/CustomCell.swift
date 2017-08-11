@@ -19,7 +19,7 @@ public protocol CustomCell {
 
     /// Returns a `CustomCell` loaded from the nib.
     /// - Returns: a `CustomCell` loaded from the nib, or `nil` if no nib is set.
-    static func loadCellFromNib() -> Self?
+    static func loadCellFromNib(owner: Any?) -> Self?
 
 }
 
@@ -34,7 +34,7 @@ public protocol CustomHeaderFooterView {
 
     /// Returns a `CustomHeaderFooterView` loaded from the nib.
     /// - Returns: a `CustomHeaderFooterView` loaded from the nib, or `nil` if no nib is set.
-    static func loadHeaderFooterViewFromNib() -> Self?
+    static func loadHeaderFooterViewFromNib(owner: Any?) -> Self?
 
 }
 
@@ -52,7 +52,7 @@ public protocol CustomReusableView {
 
     /// Returns a `CustomReusableView` loaded from the nib.
     /// - Returns: a `CustomReusableView` loaded from the nib, or `nil` if no nib is set.
-    static func loadReusableViewFromNib() -> Self?
+    static func loadReusableViewFromNib(owner: Any?) -> Self?
 
 }
 

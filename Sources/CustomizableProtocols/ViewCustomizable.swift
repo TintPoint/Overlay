@@ -198,6 +198,10 @@ private extension ViewCustomizable {
             view.customizeOnTintColor(using: view.onTintColorStyle)
         }
 
+        if let view = self as? CustomPlaceholderTextColor {
+            view.customizePlaceholderTextColor(using: view.placeholderTextColorStyle)
+        }
+
         if let view = self as? CustomProgressTintColor {
             view.customizeProgressTintColor(using: view.progressTintColorStyle)
         }

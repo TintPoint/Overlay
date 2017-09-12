@@ -139,27 +139,27 @@ extension TextAlignmentGroup: TextAlignmentStyleGroup {
 public protocol TextAlignmentStyleRepresentable {
 
     /// Returns a `NSTextAlignment` that will be used in current state.
-    /// - Parameter style: A `TextAlignmentStyle` that represents the text.
+    /// - Parameter style: A `TextAlignmentStyle` that represents the alignment.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
-    /// - Returns: A `NSTextAlignment` that will be used in current state, or `nil` if no text is set.
-    func selectedTextAlignment(from style: TextAlignmentStyle, usingNormalFor states: [UIControlState]) -> NSTextAlignment?
+    /// - Returns: A `NSTextAlignment` that will be used in current state, or normal alignment if no alignment is set.
+    func selectedTextAlignment(from style: TextAlignmentStyle, usingNormalFor states: [UIControlState]) -> NSTextAlignment
 
 }
 
 public extension TextAlignmentStyleRepresentable {
 
-    func selectedTextAlignment(from style: TextAlignmentStyle, usingNormalFor states: [UIControlState] = []) -> NSTextAlignment? {
+    func selectedTextAlignment(from style: TextAlignmentStyle, usingNormalFor states: [UIControlState] = []) -> NSTextAlignment {
         guard let styleGroup = style as? TextAlignmentStyleGroup else {
             return style.normal()
         }
         if let view = self as? ViewHighlightable, view.isHighlighted, !states.contains(.highlighted) {
-            return styleGroup.highlighted()
+            return styleGroup.highlighted() ?? styleGroup.normal()
         } else if let view = self as? ViewSelectable, view.isSelected, !states.contains(.selected) {
-            return styleGroup.selected()
+            return styleGroup.selected() ?? styleGroup.normal()
         } else if let view = self as? ViewDisable, !view.isEnabled, !states.contains(.disabled) {
-            return styleGroup.disabled()
+            return styleGroup.disabled() ?? styleGroup.normal()
         } else if let view = self as? ViewFocusable, view.isFocused, !states.contains(.focused) {
-            return styleGroup.focused()
+            return styleGroup.focused() ?? styleGroup.normal()
         } else {
             return styleGroup.normal()
         }

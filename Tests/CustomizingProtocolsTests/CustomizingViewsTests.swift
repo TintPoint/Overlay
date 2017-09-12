@@ -179,10 +179,11 @@ class CustomLabel: UILabel, CustomFont, CustomTextColor, CustomShadowColor, Cust
 
 }
 
-class CustomTextField: UITextField, CustomFont, CustomTextColor, CustomText, CustomPlaceholder, CustomTextAlignment, CustomTextFieldDesign {
+class CustomTextField: UITextField, CustomFont, CustomTextColor, CustomPlaceholderTextColor, CustomText, CustomPlaceholder, CustomTextAlignment, CustomTextFieldDesign {
 
     let fontStyle: FontStyle = TestFont.first
     let textColorStyle: ColorStyle = TestColor.first
+    let placeholderTextColorStyle: ColorStyle = TestColor.second
     let textStyle: TextStyle = TestText.first
     let placeholderStyle: TextStyle = TestText.second
     let textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
@@ -225,9 +226,10 @@ class CustomNavigationBar: UINavigationBar, CustomBarTintColor, CustomTitleColor
 
 }
 
-class CustomSearchBar: UISearchBar, CustomBarTintColor, CustomBackgroundImage, CustomSearchFieldBackgroundImage, CustomScopeBarButtonBackgroundImage, CustomText, CustomPlaceholder, CustomPrompt, CustomScopeButtonTitles, CustomSearchBarDesign {
+class CustomSearchBar: UISearchBar, CustomBarTintColor, CustomTextColor, CustomBackgroundImage, CustomSearchFieldBackgroundImage, CustomScopeBarButtonBackgroundImage, CustomText, CustomPlaceholder, CustomPrompt, CustomScopeButtonTitles, CustomSearchBarDesign {
 
     let barTintColorStyle: ColorStyle = TestColor.first
+    let textColorStyle: ColorStyle = TestColor.second
     let backgroundImageStyle: ImageStyle = TestImage.first
     let searchFieldBackgroundImageStyle: ImageStyle = TestImage.second
     let scopeBarButtonBackgroundImageStyle: ImageStyle = TestImage.third
@@ -452,6 +454,7 @@ class CustomizingViewsTests: XCTestCase {
         textField.refresh()
         XCTAssertEqual(textField.font, TestFont.first)
         XCTAssertEqual(textField.textColor, TestColor.first)
+        XCTAssertNotNil(textField.attributedPlaceholder) // color is modified
         XCTAssertEqual(textField.text, TestText.first)
         XCTAssertEqual(textField.placeholder, TestText.second)
         XCTAssertEqual(textField.textAlignment, TestTextAlignment.first)
@@ -499,6 +502,7 @@ class CustomizingViewsTests: XCTestCase {
         let searchBar = CustomSearchBar()
         searchBar.refresh()
         XCTAssertEqual(searchBar.barTintColor, TestColor.first)
+        XCTAssertEqual(searchBar.value(forKeyPath: "searchField.textColor") as? UIColor, TestColor.second)
         XCTAssertNotNil(searchBar.backgroundImage) // Image is scaled or tiled
         XCTAssertEqual(searchBar.searchFieldBackgroundImage(for: .normal), TestImage.second)
         XCTAssertEqual(searchBar.scopeBarButtonBackgroundImage(for: .normal), TestImage.third)

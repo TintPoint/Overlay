@@ -17,6 +17,10 @@ public protocol CustomCell {
     /// The `String` that represents the cell identifier.
     static var suggestedIdentifier: String { get }
 
+    /// Returns a `CustomCell` loaded from the nib.
+    /// - Returns: a `CustomCell` loaded from the nib, or `nil` if no nib is set.
+    static func loadCellFromNib(owner: Any?) -> Self?
+
 }
 
 /// A protocol that describes a header footer view that will be customized.
@@ -27,6 +31,10 @@ public protocol CustomHeaderFooterView {
 
     /// The `String` that represents the header footer view identifier.
     static var suggestedIdentifier: String { get }
+
+    /// Returns a `CustomHeaderFooterView` loaded from the nib.
+    /// - Returns: a `CustomHeaderFooterView` loaded from the nib, or `nil` if no nib is set.
+    static func loadHeaderFooterViewFromNib(owner: Any?) -> Self?
 
 }
 
@@ -41,5 +49,33 @@ public protocol CustomReusableView {
 
     /// The `String` that represents the reusable view identifier.
     static var suggestedIdentifier: String { get }
+
+    /// Returns a `CustomReusableView` loaded from the nib.
+    /// - Returns: a `CustomReusableView` loaded from the nib, or `nil` if no nib is set.
+    static func loadReusableViewFromNib(owner: Any?) -> Self?
+
+}
+
+public extension CustomCell {
+
+    static func loadCellFromNib(owner: Any? = nil) -> Self? {
+        return contentNib?.instantiate(withOwner: owner).first as? Self
+    }
+
+}
+
+public extension CustomHeaderFooterView {
+
+    static func loadHeaderFooterViewFromNib(owner: Any? = nil) -> Self? {
+        return contentNib?.instantiate(withOwner: owner).first as? Self
+    }
+
+}
+
+public extension CustomReusableView {
+
+    static func loadReusableViewFromNib(owner: Any? = nil) -> Self? {
+        return contentNib?.instantiate(withOwner: owner).first as? Self
+    }
 
 }

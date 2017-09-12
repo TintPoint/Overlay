@@ -29,7 +29,7 @@ public protocol TitleTextAlignmentCustomizable: TextAlignmentStyleRepresentable 
 extension UIButton: TitleTextAlignmentCustomizable {
 
     public func customizeTitleTextAlignment(using style: TextAlignmentStyle) {
-        titleLabel?.textAlignment = selectedTextAlignment(from: style) ?? .left
+        titleLabel?.textAlignment = selectedTextAlignment(from: style)
     }
 
 }
@@ -37,7 +37,7 @@ extension UIButton: TitleTextAlignmentCustomizable {
 extension UILabel: TextAlignmentCustomizable {
 
     public func customizeTextAlignment(using style: TextAlignmentStyle) {
-        textAlignment = selectedTextAlignment(from: style) ?? .left
+        textAlignment = selectedTextAlignment(from: style)
     }
 
 }
@@ -45,7 +45,7 @@ extension UILabel: TextAlignmentCustomizable {
 extension UITextField: TextAlignmentCustomizable {
 
     public func customizeTextAlignment(using style: TextAlignmentStyle) {
-        textAlignment = selectedTextAlignment(from: style) ?? .left
+        textAlignment = selectedTextAlignment(from: style)
     }
 
 }
@@ -53,7 +53,7 @@ extension UITextField: TextAlignmentCustomizable {
 extension UITextView: TextAlignmentCustomizable {
 
     public func customizeTextAlignment(using style: TextAlignmentStyle) {
-        textAlignment = selectedTextAlignment(from: style) ?? .left
+        textAlignment = selectedTextAlignment(from: style)
     }
 
 }

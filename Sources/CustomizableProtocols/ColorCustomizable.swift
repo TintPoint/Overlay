@@ -80,6 +80,15 @@ public protocol OnTintColorCustomizable: ColorStyleRepresentable {
 
 }
 
+/// A protocol that describes a view that its placeholder text color can be customized.
+public protocol PlaceholderTextColorCustomizable: ColorStyleRepresentable {
+
+    /// Customizes the placeholder text color.
+    /// - Parameter style: A `ColorStyle` that represents the placeholder text color.
+    func customizePlaceholderTextColor(using style: ColorStyle)
+
+}
+
 /// A protocol that describes a view that its progress tint color can be customized.
 public protocol ProgressTintColorCustomizable: ColorStyleRepresentable {
 
@@ -208,7 +217,7 @@ extension UIView: TintColorCustomizable, BackgroundColorCustomizable, BorderColo
     }
 
     public func customizeBorderColor(using style: ColorStyle) {
-        layer.borderColor = selectedColor(from: style)?.cgColor
+        layer.borderColor = selectedColor(from: style).cgColor
     }
 
 }
@@ -316,10 +325,18 @@ extension UILabel: TextColorCustomizable, ShadowColorCustomizable {
 
 }
 
-extension UITextField: TextColorCustomizable {
+extension UITextField: TextColorCustomizable, PlaceholderTextColorCustomizable {
 
     public func customizeTextColor(using style: ColorStyle) {
         textColor = selectedColor(from: style)
+    }
+
+    public func customizePlaceholderTextColor(using style: ColorStyle) {
+        if let placeholder = placeholder {
+            attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor: selectedColor(from: style)])
+        } else {
+            attributedPlaceholder = nil
+        }
     }
 
 }
@@ -353,10 +370,14 @@ extension UINavigationBar: BarTintColorCustomizable, TitleColorCustomizable {
 
 }
 
-extension UISearchBar: BarTintColorCustomizable {
+extension UISearchBar: BarTintColorCustomizable, TextColorCustomizable {
 
     public func customizeBarTintColor(using style: ColorStyle) {
         barTintColor = selectedColor(from: style)
+    }
+
+    public func customizeTextColor(using style: ColorStyle) {
+        setValue(selectedColor(from: style), forKeyPath: "searchField.textColor")
     }
 
 }

@@ -9,21 +9,21 @@
 import XCTest
 @testable import Overlay
 
-class CustomCollectionViewCell: UICollectionViewCell, CustomCell {
+final class CustomCollectionViewCell: UICollectionViewCell, CustomCell {
 
     static let contentNib: UINib? = UINib(nibName: "CustomCollectionViewCell", bundle: Bundle(for: CustomCollectionViewCell.self))
     static let suggestedIdentifier: String = "CustomCollectionViewCell"
 
 }
 
-class CustomEmptyCollectionViewCell: UICollectionViewCell, CustomCell {
+final class CustomEmptyCollectionViewCell: UICollectionViewCell, CustomCell {
 
     static let contentNib: UINib? = nil
     static let suggestedIdentifier: String = "CustomEmptyCollectionViewCell"
 
 }
 
-class CustomCollectionReusableView: UICollectionReusableView, CustomReusableView {
+final class CustomCollectionReusableView: UICollectionReusableView, CustomReusableView {
 
     static let contentNib: UINib? = UINib(nibName: "CustomCollectionReusableView", bundle: Bundle(for: CustomCollectionReusableView.self))
     static let suggestedKind: String = UICollectionElementKindSectionHeader
@@ -31,7 +31,7 @@ class CustomCollectionReusableView: UICollectionReusableView, CustomReusableView
 
 }
 
-class CustomEmptyCollectionReusableView: UICollectionReusableView, CustomReusableView {
+final class CustomEmptyCollectionReusableView: UICollectionReusableView, CustomReusableView {
 
     static let contentNib: UINib? = nil
     static let suggestedKind: String = UICollectionElementKindSectionFooter
@@ -39,28 +39,28 @@ class CustomEmptyCollectionReusableView: UICollectionReusableView, CustomReusabl
 
 }
 
-class CustomTableViewCell: UITableViewCell, CustomCell {
+final class CustomTableViewCell: UITableViewCell, CustomCell {
 
     static let contentNib: UINib? = UINib(nibName: "CustomTableViewCell", bundle: Bundle(for: CustomTableViewCell.self))
     static let suggestedIdentifier: String = "CustomTableViewCell"
 
 }
 
-class CustomEmptyTableViewCell: UITableViewCell, CustomCell {
+final class CustomEmptyTableViewCell: UITableViewCell, CustomCell {
 
     static let contentNib: UINib? = nil
     static let suggestedIdentifier: String = "CustomEmptyTableViewCell"
 
 }
 
-class CustomTableViewHeaderFooterView: UITableViewHeaderFooterView, CustomHeaderFooterView {
+final class CustomTableViewHeaderFooterView: UITableViewHeaderFooterView, CustomHeaderFooterView {
 
     static let contentNib: UINib? = UINib(nibName: "CustomTableViewHeaderFooterView", bundle: Bundle(for: CustomTableViewHeaderFooterView.self))
     static let suggestedIdentifier: String = "CustomTableViewHeaderFooterView"
 
 }
 
-class CustomEmptyTableViewHeaderFooterView: UITableViewHeaderFooterView, CustomHeaderFooterView {
+final class CustomEmptyTableViewHeaderFooterView: UITableViewHeaderFooterView, CustomHeaderFooterView {
 
     static let contentNib: UINib? = nil
     static let suggestedIdentifier: String = "CustomEmptyTableViewHeaderFooterView"

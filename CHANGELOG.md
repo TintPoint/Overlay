@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.7
+
+### Added
+
+- Add type safe custom design protocols.
+  - Added by [Justin Jia](http://github.com/JustinJiaDev).
+- Add custom cell protocols.
+  - Added by [Justin Jia](http://github.com/JustinJiaDev).
+
+### Changed
+
+- Update project to use `Swift 4.0`.
+  - Changed by [Justin Jia](http://github.com/JustinJiaDev).
+
 ## 0.6.2
 
 ### Added

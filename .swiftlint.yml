@@ -1,0 +1,33 @@
+disabled_rules:
+  - cyclomatic_complexity
+  - discarded_notification_center_observer
+  - file_length
+  - force_cast
+  - function_body_length
+  - identifier_name
+  - line_length
+  - type_body_length
+  - type_name
+
+opt_in_rules:
+  - closure_end_indentation
+  - closure_spacing
+  - explicit_init
+  - extension_access_modifier
+  - first_where
+  - implicit_return
+  - multiline_parameters
+  - nimble_operator
+  - number_separator
+  - object_literal
+  - operator_usage_whitespace
+  - overridden_super_call
+  - private_outlet
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - strict_fileprivate
+  - vertical_parameter_alignment_on_call
+
+included:
+  - Sources
+  - Tests

@@ -43,7 +43,7 @@ Define a custom class that conforms to protocols with `Custom` prefix (list of a
 
 ```swift
 class CustomView: UIView, CustomBackgroundColor {
-    var backgroundColorStyle: ColorStyle = UIColor.white
+    let backgroundColorStyle: ColorStyle = UIColor.white
 }
 ```
 

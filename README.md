@@ -64,7 +64,7 @@ customView.refresh() // make sure to call refresh() after initialization
 
 ### Custom Style
 
-In order to fully elaborate the power of Swift's type checker, it is recommended to define a custom enum that conforms to protocols with `Style` postfix (list of available styles can be found [here](#available-styles)).
+In order to fully take advantage of the power of Swift's type checker, it is recommended to define custom enums (or structs with private initializers) that conform to protocols with `Style` postfix (list of available styles can be found [here](#available-styles)).
 
 ```swift
 enum CustomColor: ColorStyle {

@@ -39,18 +39,15 @@ pod 'Overlay', '~> 0.7'
 
 ## Example
 
-Overlay allows one to write declarative yet type safe UI code, something looks like this:
+Overlay allows one to write declarative yet type-safe UI code, something looks like this:
 
 ```swift
 @IBDesignable
-class StandardTextField: UITextField, CustomTintColor, CustomTextColor, CustomPlaceholderTextColor, CustomFont, CustomTextAlignment {
-
-    let tintColorStyle: ColorStyle = Color.notify
+class StandardTextField: UITextField, CustomTextColor, CustomPlaceholderTextColor, CustomFont, CustomTextAlignment {
     let textColorStyle: ColorStyle = Color.primary
     let placeholderTextColorStyle: ColorStyle = Color.secondary
     let fontStyle: FontStyle = Font.default
     let textAlignmentStyle: TextAlignmentStyle = TextAlignment.body
-
 }
 ```
 

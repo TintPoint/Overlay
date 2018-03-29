@@ -37,13 +37,27 @@ github "TintPoint/Overlay" ~> 0.7
 pod 'Overlay', '~> 0.7'
 ```
 
+## Example
+
+Overlay allows one to write declarative yet type-safe UI code, something looks like this:
+
+```swift
+@IBDesignable
+class StandardTextField: UITextField, CustomTextColor, CustomPlaceholderTextColor, CustomFont, CustomTextAlignment {
+    let textColorStyle: ColorStyle = Color.primary
+    let placeholderTextColorStyle: ColorStyle = Color.secondary
+    let fontStyle: FontStyle = Font.default
+    let textAlignmentStyle: TextAlignmentStyle = TextAlignment.body
+}
+```
+
 ## Getting Started
 
 Define a custom class that conforms to protocols with `Custom` prefix (list of available protocols can be found [here](#available-protocols)). For example, to customize the background color attribute of a view, write the following code.
 
 ```swift
 class CustomView: UIView, CustomBackgroundColor {
-    var backgroundColorStyle: ColorStyle = UIColor.white
+    let backgroundColorStyle: ColorStyle = UIColor.white
 }
 ```
 
@@ -64,7 +78,7 @@ customView.refresh() // make sure to call refresh() after initialization
 
 ### Custom Style
 
-In order to fully elaborate the power of Swift's type checker, it is recommended to define a custom enum that conforms to protocols with `Style` postfix (list of available styles can be found [here](#available-styles)).
+In order to fully take advantage of the power of Swift's type checker, it is recommended to define custom enums (or structs with private initializers) that conform to protocols with `Style` postfix (list of available styles can be found [here](#available-styles)).
 
 ```swift
 enum CustomColor: ColorStyle {

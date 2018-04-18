@@ -5,14 +5,16 @@ branches:
     - master
 env:
   global:
+    - SCHEME="Overlay"
     - SDK="iphonesimulator"
   matrix:
-    - DESTINATION="OS=9.0,name=iPhone 6s" MODE="test" CONFIGURATION="Debug" SCHEME="Overlay"
-    - DESTINATION="OS=10.0,name=iPhone 7" MODE="test" CONFIGURATION="Debug" SCHEME="Overlay"
-    - DESTINATION="OS=11.0,name=iPhone 7" MODE="test" CONFIGURATION="Debug" SCHEME="Overlay"
-    - DESTINATION="OS=11.0,name=iPad Pro (10.5-inch)" MODE="test" CONFIGURATION="Debug" SCHEME="Overlay"
-    - DESTINATION="OS=11.0,name=iPhone 7" MODE="build" CONFIGURATION="Release" SCHEME="Overlay"
-    - DESTINATION="OS=11.0,name=iPad Pro (10.5-inch)" MODE="build" CONFIGURATION="Release" SCHEME="Overlay"
+    - DESTINATION="OS=9.0,name=iPhone 6s" MODE="test" CONFIGURATION="Debug"
+    - DESTINATION="OS=10.0,name=iPhone 7" MODE="test" CONFIGURATION="Debug"
+    - DESTINATION="OS=10.3,name=iPhone 8" MODE="test" CONFIGURATION="Debug"
+    - DESTINATION="OS=11.3,name=iPhone X" MODE="test" CONFIGURATION="Debug"
+    - DESTINATION="OS=11.3,name=iPhone X" MODE="build" CONFIGURATION="Release"
+    - DESTINATION="OS=11.3,name=iPad Pro (10.5-inch)" MODE="test" CONFIGURATION="Debug"
+    - DESTINATION="OS=11.3,name=iPad Pro (10.5-inch)" MODE="build" CONFIGURATION="Release"
 script:
   - set -o pipefail
   - xcodebuild "$MODE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration "$CONFIGURATION" | xcpretty

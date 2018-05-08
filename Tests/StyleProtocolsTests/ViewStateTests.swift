@@ -6,11 +6,10 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
-import XCTest
 @testable import Overlay
+import XCTest
 
 class ViewStateTest: XCTestCase {
-
     func testViewHideable() {
         XCTAssert(UIView() as Any is ViewHideable)
     }
@@ -36,5 +35,4 @@ class ViewStateTest: XCTestCase {
     func testViewFocusable() {
         XCTAssert(UIView() as Any is ViewFocusable)
     }
-
 }

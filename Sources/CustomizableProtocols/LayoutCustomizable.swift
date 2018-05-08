@@ -10,15 +10,12 @@ import UIKit
 
 /// A protocol that describes a view that its layout can be customized.
 public protocol LayoutCustomizable {
-
     /// Customizes the layout.
     /// - Parameter contentNib: An `UINib` that represents the layout.
     func customizeLayout(using contentNib: UINib)
-
 }
 
 extension UIView: LayoutCustomizable {
-
     public func customizeLayout(using contentNib: UINib) {
         if let contentView = contentNib.instantiate(withOwner: self).first as? UIView, !subviews.contains(contentView) {
             contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -29,5 +26,4 @@ extension UIView: LayoutCustomizable {
             contentView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         }
     }
-
 }

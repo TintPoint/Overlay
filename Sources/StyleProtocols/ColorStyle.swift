@@ -11,17 +11,14 @@ import UIKit
 /// A protocol that describes an item that can represent a color.
 /// - SeeAlso: `ColorStyleGroup`, `ColorGroup`
 public protocol ColorStyle {
-
     /// Returns an `UIColor` that will be used in normal state.
     /// - Returns: An `UIColor` that will be used in normal state.
     func normal() -> UIColor
-
 }
 
 /// A protocol that describes an item that can represent a color in different states (e.g. disabled).
 /// - SeeAlso: `ColorStyle`, `ColorGroup`
 public protocol ColorStyleGroup: ColorStyle {
-
     /// Returns an `UIColor` that will be used in disabled state.
     /// - Returns: An `UIColor` that will be used in disabled state, or `nil` if no color is set.
     func disabled() -> UIColor?
@@ -37,11 +34,9 @@ public protocol ColorStyleGroup: ColorStyle {
     /// Returns an `UIColor` that will be used in focused state.
     /// - Returns: An `UIColor` that will be used in focused state, or `nil` if no color is set.
     func focused() -> UIColor?
-
 }
 
 public extension ColorStyleGroup {
-
     /// Returns `nil` by default.
     /// - Returns: `nil` by default.
     func disabled() -> UIColor? {
@@ -65,21 +60,17 @@ public extension ColorStyleGroup {
     func focused() -> UIColor? {
         return nil
     }
-
 }
 
 extension UIColor: ColorStyle {
-
     public func normal() -> UIColor {
         return self
     }
-
 }
 
 /// A collection of `ColorStyle` that can represent a color in different states (e.g. disabled).
 /// - SeeAlso: `ColorStyle`, `ColorStyleGroup`
 public struct ColorGroup {
-
     /// The `ColorStyle` that will be used in normal state.
     private let normalStorage: ColorStyle
 
@@ -108,11 +99,9 @@ public struct ColorGroup {
         highlightedStorage = highlighted
         focusedStorage = focused
     }
-
 }
 
 extension ColorGroup: ColorStyleGroup {
-
     public func normal() -> UIColor {
         return normalStorage.normal()
     }
@@ -132,12 +121,10 @@ extension ColorGroup: ColorStyleGroup {
     public func focused() -> UIColor? {
         return focusedStorage?.normal()
     }
-
 }
 
 /// A protocol that describes a view that its colors can be represented by `ColorStyle`.
 public protocol ColorStyleRepresentable {
-
     /// Returns an `UIColor` that will be used in current state.
     /// - Parameter style: A `ColorStyle` that represents the color.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
@@ -150,11 +137,9 @@ public protocol ColorStyleRepresentable {
     /// - Parameter color: An `UIColor` that will be used.
     /// - Parameter state: An `UIControlState` that will use the color.
     func customizeColor(using style: ColorStyle, through setter: (_ color: UIColor?, _ state: UIControlState) -> Void)
-
 }
 
 public extension ColorStyleRepresentable {
-
     func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControlState] = []) -> UIColor {
         guard let styleGroup = style as? ColorStyleGroup else {
             return style.normal()
@@ -181,5 +166,4 @@ public extension ColorStyleRepresentable {
             setter(styleGroup.focused(), .focused)
         }
     }
-
 }

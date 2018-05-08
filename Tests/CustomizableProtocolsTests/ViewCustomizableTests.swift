@@ -6,30 +6,25 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
-import XCTest
 @testable import Overlay
+import XCTest
 
 class RefreshingView: UIView, DesignCustomizable {
-
     func customizeDesign(using design: (Any) -> Void) {
         design(self)
     }
-
 }
 
 class TestRefreshingView: RefreshingView, CustomDesign {
-
     var isRefreshed = false
 
     let design: (Any) -> Void = {
         let view = $0 as! TestRefreshingView
         view.isRefreshed = true
     }
-
 }
 
 class ViewCustomizableTests: XCTestCase {
-
     func testRefresh() {
         let view = TestRefreshingView()
         let subview = TestRefreshingView()
@@ -65,5 +60,4 @@ class ViewCustomizableTests: XCTestCase {
         XCTAssert(middle.isRefreshed)
         XCTAssert(lowest.isRefreshed)
     }
-
 }

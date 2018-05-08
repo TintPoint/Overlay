@@ -6,11 +6,10 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
-import XCTest
 @testable import Overlay
+import XCTest
 
 class FontStyleTests: XCTestCase {
-
     typealias Resource = TestFont
     typealias View = TestFontView
 
@@ -65,5 +64,4 @@ class FontStyleTests: XCTestCase {
         XCTAssertEqual(Resource.fourth, highlightedView.selectedFont(from: Resource.group, usingNormalFor: [.normal, .disabled, .selected, .focused]))
         XCTAssertEqual(Resource.fifth, focusedView.selectedFont(from: Resource.group, usingNormalFor: [.normal, .disabled, .selected, .highlighted]))
     }
-
 }

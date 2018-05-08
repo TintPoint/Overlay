@@ -10,7 +10,6 @@ import UIKit
 
 /// A protocol that describes a view that its cells can be customized.
 public protocol CellCustomizable {
-
     /// The type that represents cells of the view.
     associatedtype Cell
 
@@ -20,12 +19,10 @@ public protocol CellCustomizable {
     /// Registers a `CellClass` for use in creating new cells.
     /// - Parameter cellClass: A `CellClass` that represents the class of a cell.
     func register(_ cellClass: CellClass)
-
 }
 
 /// A protocol that describes a view that its header footer views can be customized.
 public protocol HeaderFooterViewCustomizable {
-
     /// The type that represents header footer views of the view.
     associatedtype HeaderFooterView
 
@@ -35,12 +32,10 @@ public protocol HeaderFooterViewCustomizable {
     /// Registers a `HeaderFooterViewClass` for use in creating new header footer views.
     /// - Parameter headerFooterViewClass: A `HeaderFooterViewClass` that represents the class of a header footer view.
     func register(_ headerFooterViewClass: HeaderFooterViewClass)
-
 }
 
 /// A protocol that describes a view that its reusable views can be customized.
 public protocol ReusableViewCustomizable {
-
     /// The type that represents reusable views of the view.
     associatedtype ReusableView
 
@@ -50,11 +45,9 @@ public protocol ReusableViewCustomizable {
     /// Registers a `ReusableViewClass` for use in creating new reusable views.
     /// - Parameter ReusableViewClass: A `ReusableViewClass` that represents the class of a reusable view.
     func register(_ reusableViewClass: ReusableViewClass)
-
 }
 
 extension UICollectionView: CellCustomizable {
-
     public typealias Cell = UICollectionViewCell & CustomCell
 
     public typealias CellClass = Cell.Type
@@ -66,11 +59,9 @@ extension UICollectionView: CellCustomizable {
             register(cellClass, forCellWithReuseIdentifier: cellClass.suggestedIdentifier)
         }
     }
-
 }
 
 extension UICollectionView: ReusableViewCustomizable {
-
     public typealias ReusableView = UICollectionReusableView & CustomReusableView
 
     public typealias ReusableViewClass = ReusableView.Type
@@ -82,11 +73,9 @@ extension UICollectionView: ReusableViewCustomizable {
             register(reusableViewClass, forSupplementaryViewOfKind: reusableViewClass.suggestedKind, withReuseIdentifier: reusableViewClass.suggestedIdentifier)
         }
     }
-
 }
 
 public extension UICollectionView {
-
     /// Returns a reusable `Cell` located by its class.
     /// Calls `dequeueReusableCell(withReuseIdentifier:for:)` method.
     /// - Parameter cellClass: A `Cell.Type` that represents the class of a cell.
@@ -104,11 +93,9 @@ public extension UICollectionView {
     func dequeueReusableSupplementaryView<T: ReusableView>(_ reusableViewClass: T.Type, for indexPath: IndexPath) -> T {
         return dequeueReusableSupplementaryView(ofKind: reusableViewClass.suggestedKind, withReuseIdentifier: reusableViewClass.suggestedIdentifier, for: indexPath) as! T
     }
-
 }
 
 extension UITableView: CellCustomizable {
-
     public typealias Cell = UITableViewCell & CustomCell
 
     public typealias CellClass = Cell.Type
@@ -120,11 +107,9 @@ extension UITableView: CellCustomizable {
             register(cellClass, forCellReuseIdentifier: cellClass.suggestedIdentifier)
         }
     }
-
 }
 
 extension UITableView: HeaderFooterViewCustomizable {
-
     public typealias HeaderFooterView = UITableViewHeaderFooterView & CustomHeaderFooterView
 
     public typealias HeaderFooterViewClass = HeaderFooterView.Type
@@ -136,11 +121,9 @@ extension UITableView: HeaderFooterViewCustomizable {
             register(headerFooterViewClass, forHeaderFooterViewReuseIdentifier: headerFooterViewClass.suggestedIdentifier)
         }
     }
-
 }
 
 public extension UITableView {
-
     /// Returns a reusable `Cell` located by its class and adds it to the table.
     /// Calls `dequeueReusableCell(withIdentifier:for:)` method.
     /// - Parameter cellClass: A `Cell.Type` that represents the class of a cell.
@@ -165,5 +148,4 @@ public extension UITableView {
     func dequeueReusableHeaderFooterView<T: HeaderFooterView>(_ headerFooterViewClass: T.Type) -> T {
         return dequeueReusableHeaderFooterView(withIdentifier: headerFooterViewClass.suggestedIdentifier) as! T
     }
-
 }

@@ -11,17 +11,14 @@ import UIKit
 /// A protocol that describes an item that can represent the alignment of a text.
 /// - SeeAlso: `TextAlignmentStyleGroup`, `TextAlignmentGroup`
 public protocol TextAlignmentStyle {
-
     /// Returns a `NSTextAlignment` that will be used in normal state.
     /// - Returns: A `NSTextAlignment` that will be used in normal state.
     func normal() -> NSTextAlignment
-
 }
 
 /// A protocol that describes an item that can represent the alignment of a text in different states (e.g. disabled).
 /// - SeeAlso: `TextAlignmentStyle`, `TextAlignmentGroup`
 public protocol TextAlignmentStyleGroup: TextAlignmentStyle {
-
     /// Returns a `NSTextAlignment` that will be used in disabled state.
     /// - Returns: A `NSTextAlignment` that will be used in disabled state, or `nil` if no text is set.
     func disabled() -> NSTextAlignment?
@@ -37,11 +34,9 @@ public protocol TextAlignmentStyleGroup: TextAlignmentStyle {
     /// Returns a `NSTextAlignment` that will be used in focused state.
     /// - Returns: A `NSTextAlignment` that will be used in focused state, or `nil` if no text is set.
     func focused() -> NSTextAlignment?
-
 }
 
 public extension TextAlignmentStyleGroup {
-
     /// Returns `nil` by default.
     /// - Returns: `nil` by default.
     func disabled() -> NSTextAlignment? {
@@ -65,21 +60,17 @@ public extension TextAlignmentStyleGroup {
     func focused() -> NSTextAlignment? {
         return nil
     }
-
 }
 
 extension NSTextAlignment: TextAlignmentStyle {
-
     public func normal() -> NSTextAlignment {
         return self
     }
-
 }
 
 /// A collection of `TextAlignmentStyle` that can represent the alignment of a text in different states (e.g. disabled).
 /// - SeeAlso: `TextAlignmentStyle`, `TextAlignmentStyleGroup`
 public struct TextAlignmentGroup {
-
     /// The `TextAlignmentStyle` that will be used in normal state.
     private let normalStorage: TextAlignmentStyle
 
@@ -108,11 +99,9 @@ public struct TextAlignmentGroup {
         highlightedStorage = highlighted
         focusedStorage = focused
     }
-
 }
 
 extension TextAlignmentGroup: TextAlignmentStyleGroup {
-
     public func normal() -> NSTextAlignment {
         return normalStorage.normal()
     }
@@ -132,22 +121,18 @@ extension TextAlignmentGroup: TextAlignmentStyleGroup {
     public func focused() -> NSTextAlignment? {
         return focusedStorage?.normal()
     }
-
 }
 
 /// A protocol that describes a view that its alignments of texts can be represented by `TextAlignmentStyle`.
 public protocol TextAlignmentStyleRepresentable {
-
     /// Returns a `NSTextAlignment` that will be used in current state.
     /// - Parameter style: A `TextAlignmentStyle` that represents the alignment.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
     /// - Returns: A `NSTextAlignment` that will be used in current state, or normal alignment if no alignment is set.
     func selectedTextAlignment(from style: TextAlignmentStyle, usingNormalFor states: [UIControlState]) -> NSTextAlignment
-
 }
 
 public extension TextAlignmentStyleRepresentable {
-
     func selectedTextAlignment(from style: TextAlignmentStyle, usingNormalFor states: [UIControlState] = []) -> NSTextAlignment {
         guard let styleGroup = style as? TextAlignmentStyleGroup else {
             return style.normal()
@@ -164,5 +149,4 @@ public extension TextAlignmentStyleRepresentable {
             return styleGroup.normal()
         }
     }
-
 }

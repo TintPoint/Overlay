@@ -11,17 +11,14 @@ import UIKit
 /// A protocol that describes an item that can represent an image.
 /// - SeeAlso: `ImageStyleGroup`, `ImageGroup`
 public protocol ImageStyle {
-
     /// Returns an `UIImage` that will be used in normal state.
     /// - Returns: An `UIImage` that will be used in normal state.
     func normal() -> UIImage
-
 }
 
 /// A protocol that describes an item that can represent an image in different states (e.g. disabled).
 /// - SeeAlso: `ImageStyle`, `ImageGroup`
 public protocol ImageStyleGroup: ImageStyle {
-
     /// Returns an `UIImage` that will be used in disabled state.
     /// - Returns: An `UIImage` that will be used in disabled state, or `nil` if no image is set.
     func disabled() -> UIImage?
@@ -37,11 +34,9 @@ public protocol ImageStyleGroup: ImageStyle {
     /// Returns an `UIImage` that will be used in focused state.
     /// - Returns: An `UIImage` that will be used in focused state, or `nil` if no image is set.
     func focused() -> UIImage?
-
 }
 
 public extension ImageStyleGroup {
-
     /// Returns `nil` by default.
     /// - Returns: `nil` by default.
     func disabled() -> UIImage? {
@@ -65,21 +60,17 @@ public extension ImageStyleGroup {
     func focused() -> UIImage? {
         return nil
     }
-
 }
 
 extension UIImage: ImageStyle {
-
     public func normal() -> UIImage {
         return self
     }
-
 }
 
 /// A collection of `ImageStyle` that can represent an image in different states (e.g. disabled).
 /// - SeeAlso: `ImageStyle`, `ImageStyleGroup`
 public struct ImageGroup {
-
     /// The `ImageStyle` that will be used in normal state.
     private let normalStorage: ImageStyle
 
@@ -108,11 +99,9 @@ public struct ImageGroup {
         highlightedStorage = highlighted
         focusedStorage = focused
     }
-
 }
 
 extension ImageGroup: ImageStyleGroup {
-
     public func normal() -> UIImage {
         return normalStorage.normal()
     }
@@ -132,12 +121,10 @@ extension ImageGroup: ImageStyleGroup {
     public func focused() -> UIImage? {
         return focusedStorage?.normal()
     }
-
 }
 
 /// A protocol that describes a view that its images can be represented by `ImageStyle`.
 public protocol ImageStyleRepresentable {
-
     /// Returns an `UIImage` that will be used in current state.
     /// - Parameter style: An `ImageStyle` that represents the image.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
@@ -150,11 +137,9 @@ public protocol ImageStyleRepresentable {
     /// - Parameter image: An `UIImage` that will be used.
     /// - Parameter state: An `UIControlState` that will use the image.
     func customizeImage(using style: ImageStyle, through setter: (_ image: UIImage?, _ state: UIControlState) -> Void)
-
 }
 
 public extension ImageStyleRepresentable {
-
     func selectedImage(from style: ImageStyle, usingNormalFor states: [UIControlState] = []) -> UIImage {
         guard let styleGroup = style as? ImageStyleGroup else {
             return style.normal()
@@ -181,5 +166,4 @@ public extension ImageStyleRepresentable {
             setter(styleGroup.focused(), .focused)
         }
     }
-
 }

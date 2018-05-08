@@ -6,11 +6,10 @@
 //  Copyright © 2017 TintPoint. MIT license.
 //
 
-import XCTest
 @testable import Overlay
+import XCTest
 
 class TextAlignmentStyleTests: XCTestCase {
-
     typealias Resource = TestTextAlignment
     typealias View = TestTextAlignmentView
 
@@ -65,5 +64,4 @@ class TextAlignmentStyleTests: XCTestCase {
         XCTAssertEqual(Resource.fourth, highlightedView.selectedTextAlignment(from: Resource.group, usingNormalFor: [.normal, .disabled, .selected, .focused]))
         XCTAssertEqual(Resource.fifth, focusedView.selectedTextAlignment(from: Resource.group, usingNormalFor: [.normal, .disabled, .selected, .highlighted]))
     }
-
 }

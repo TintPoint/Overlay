@@ -11,17 +11,14 @@ import UIKit
 /// A protocol that describes an item that can represent a text.
 /// - SeeAlso: `TextStyleGroup`, `TextGroup`
 public protocol TextStyle {
-
     /// Returns a `String` that will be used in normal state.
     /// - Returns: A `String` that will be used in normal state.
     func normal() -> String
-
 }
 
 /// A protocol that describes an item that can represent a text in different states (e.g. disabled).
 /// - SeeAlso: `TextStyle`, `TextGroup`
 public protocol TextStyleGroup: TextStyle {
-
     /// Returns a `String` that will be used in disabled state.
     /// - Returns: A `String` that will be used in disabled state, or `nil` if no text is set.
     func disabled() -> String?
@@ -37,11 +34,9 @@ public protocol TextStyleGroup: TextStyle {
     /// Returns a `String` that will be used in focused state.
     /// - Returns: A `String` that will be used in focused state, or `nil` if no text is set.
     func focused() -> String?
-
 }
 
 public extension TextStyleGroup {
-
     /// Returns `nil` by default.
     /// - Returns: `nil` by default.
     func disabled() -> String? {
@@ -65,21 +60,17 @@ public extension TextStyleGroup {
     func focused() -> String? {
         return nil
     }
-
 }
 
 extension String: TextStyle {
-
     public func normal() -> String {
         return self
     }
-
 }
 
 /// A collection of `TextStyle` that can represent a text in different states (e.g. disabled).
 /// - SeeAlso: `TextStyle`, `TextStyleGroup`
 public struct TextGroup {
-
     /// The `TextStyle` that will be used in normal state.
     private let normalStorage: TextStyle
 
@@ -108,11 +99,9 @@ public struct TextGroup {
         highlightedStorage = highlighted
         focusedStorage = focused
     }
-
 }
 
 extension TextGroup: TextStyleGroup {
-
     public func normal() -> String {
         return normalStorage.normal()
     }
@@ -132,12 +121,10 @@ extension TextGroup: TextStyleGroup {
     public func focused() -> String? {
         return focusedStorage?.normal()
     }
-
 }
 
 /// A protocol that describes a view that its texts can be represented by `TextStyle`.
 public protocol TextStyleRepresentable {
-
     /// Returns a `String` that will be used in current state.
     /// - Parameter style: A `TextStyle` that represents the text.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
@@ -150,11 +137,9 @@ public protocol TextStyleRepresentable {
     /// - Parameter text: A `String` that will be used.
     /// - Parameter state: An `UIControlState` that will use the text.
     func customizeText(using style: TextStyle, through setter: (_ text: String?, _ state: UIControlState) -> Void)
-
 }
 
 public extension TextStyleRepresentable {
-
     func selectedText(from style: TextStyle, usingNormalFor states: [UIControlState] = []) -> String {
         guard let styleGroup = style as? TextStyleGroup else {
             return style.normal()
@@ -181,5 +166,4 @@ public extension TextStyleRepresentable {
             setter(styleGroup.focused(), .focused)
         }
     }
-
 }

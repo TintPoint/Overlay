@@ -6,98 +6,73 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
-import XCTest
 @testable import Overlay
+import XCTest
 
 class CustomView: UIView, CustomLayout, CustomTintColor, CustomBorderColor, CustomBackgroundColor, CustomViewDesign {
-
     let contentNib: UINib = UINib(nibName: "TestLayout", bundle: Bundle(for: CustomView.self))
     let tintColorStyle: ColorStyle = TestColor.first
     let borderColorStyle: ColorStyle = TestColor.second
     let backgroundColorStyle: ColorStyle = TestColor.third
     let design: (UIView) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomCollectionView: UICollectionView, CustomCollectionViewDesign {
-
     let design: (UICollectionView) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomTableView: UITableView, CustomSeparatorColor, CustomSectionIndexColor, CustomSectionIndexBackgroundColor, CustomSectionIndexTrackingBackgroundColor, CustomTableViewDesign {
-
     let separatorColorStyle: ColorStyle = TestColor.first
     let sectionIndexColorStyle: ColorStyle = TestColor.second
     let sectionIndexBackgroundColorStyle: ColorStyle = TestColor.third
     let sectionIndexTrackingBackgroundColorStyle: ColorStyle = TestColor.fourth
     let design: (UITableView) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomStackView: UIStackView, CustomStackViewDesign {
-
     let design: (UIStackView) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomScrollView: UIScrollView, CustomScrollViewDesign {
-
     let design: (UIScrollView) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomActivityIndicatorView: UIActivityIndicatorView, CustomColor, CustomActivityIndicatorViewDesign {
-
     let colorStyle: ColorStyle = TestColor.first
     let design: (UIActivityIndicatorView) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomImageView: UIImageView, CustomImage, CustomHighlightedImage, CustomImageViewDesign {
-
     let imageStyle: ImageStyle = TestImage.first
     let highlightedImageStyle: ImageStyle = TestImage.second
     let design: (UIImageView) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomPickerView: UIPickerView, CustomPickerViewDesign {
-
     let design: (UIPickerView) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomProgressView: UIProgressView, CustomProgressTintColor, CustomTrackTintColor, CustomProgressViewDesign {
-
     let progressTintColorStyle: ColorStyle = TestColor.first
     let trackTintColorStyle: ColorStyle = TestColor.second
     let design: (UIProgressView) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomImageProgressView: UIProgressView, CustomProgressImage, CustomTrackImage, CustomProgressViewDesign {
-
     let progressImageStyle: ImageStyle = TestImage.first
     let trackImageStyle: ImageStyle = TestImage.second
     let design: (UIProgressView) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomWebView: UIWebView, CustomWebViewDesign {
-
     let design: (UIWebView) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomControl: UIControl, CustomControlDesign {
-
     let design: (UIControl) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomButton: UIButton, CustomTitleFont, CustomTitleColor, CustomTitleShadowColor, CustomImage, CustomBackgroundImage, CustomTitle, CustomTitleTextAlignment, CustomButtonDesign {
-
     let titleFontStyle: FontStyle = TestFont.first
     let titleColorStyle: ColorStyle = TestColor.first
     let titleShadowColorStyle: ColorStyle = TestColor.second
@@ -106,81 +81,63 @@ class CustomButton: UIButton, CustomTitleFont, CustomTitleColor, CustomTitleShad
     let titleStyle: TextStyle = TestText.first
     let titleTextAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
     let design: (UIButton) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomDatePicker: UIDatePicker, CustomTextColor, CustomDatePickerDesign {
-
     let textColorStyle: ColorStyle = TestColor.first
     let design: (UIDatePicker) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomPageControl: UIPageControl, CustomPageControlDesign {
-
     let design: (UIPageControl) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomSegmentedControl: UISegmentedControl, CustomSegmentTitles, CustomSegmentedControlDesign {
-
     let segmentTitleStyles: [TextStyle] = [TestText.first, TestText.second]
     let design: (UISegmentedControl) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomSlider: UISlider, CustomMinimumTrackTintColor, CustomMaximumTrackTintColor, CustomThumbTintColor, CustomMinimumValueImage, CustomMaximumValueImage, CustomSliderDesign {
-
     let minimumTrackTintColorStyle: ColorStyle = TestColor.first
     let maximumTrackTintColorStyle: ColorStyle = TestColor.second
     let thumbTintColorStyle: ColorStyle = TestColor.third
     let minimumValueImageStyle: ImageStyle = TestImage.first
     let maximumValueImageStyle: ImageStyle = TestImage.second
     let design: (UISlider) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomImageSlider: UISlider, CustomMinimumTrackImage, CustomMaximumTrackImage, CustomThumbImage, CustomSliderDesign {
-
     let minimumTrackImageStyle: ImageStyle = TestImage.first
     let maximumTrackImageStyle: ImageStyle = TestImage.second
     let thumbImageStyle: ImageStyle = TestImage.third
     let design: (UISlider) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomStepper: UIStepper, CustomBackgroundImage, CustomDecrementImage, CustomIncrementImage, CustomStepperDesign {
-
     let backgroundImageStyle: ImageStyle = TestImage.first
     let decrementImageStyle: ImageStyle = TestImage.second
     let incrementImageStyle: ImageStyle = TestImage.third
     let design: (UIStepper) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomSwitch: UISwitch, CustomOnTintColor, CustomThumbTintColor, CustomOnImage, CustomOffImage, CustomSwitchDesign {
-
     let onTintColorStyle: ColorStyle = TestColor.first
     let thumbTintColorStyle: ColorStyle = TestColor.second
     let onImageStyle: ImageStyle = TestImage.first
     let offImageStyle: ImageStyle = TestImage.second
     let design: (UISwitch) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomLabel: UILabel, CustomFont, CustomTextColor, CustomShadowColor, CustomText, CustomTextAlignment, CustomLabelDesign {
-
     let fontStyle: FontStyle = TestFont.first
     let textColorStyle: ColorStyle = TestColor.first
     let shadowColorStyle: ColorStyle = TestColor.second
     let textStyle: TextStyle = TestText.first
     let textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
     let design: (UILabel) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomTextField: UITextField, CustomFont, CustomTextColor, CustomPlaceholderTextColor, CustomText, CustomPlaceholder, CustomTextAlignment, CustomTextFieldDesign {
-
     let fontStyle: FontStyle = TestFont.first
     let textColorStyle: ColorStyle = TestColor.first
     let placeholderTextColorStyle: ColorStyle = TestColor.second
@@ -188,46 +145,36 @@ class CustomTextField: UITextField, CustomFont, CustomTextColor, CustomPlacehold
     let placeholderStyle: TextStyle = TestText.second
     let textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
     let design: (UITextField) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomTextView: UITextView, CustomFont, CustomTextColor, CustomText, CustomTextAlignment, CustomTextViewDesign {
-
     let fontStyle: FontStyle = TestFont.first
     let textColorStyle: ColorStyle = TestColor.first
     let textStyle: TextStyle = TestText.first
     let textAlignmentStyle: TextAlignmentStyle = TestTextAlignment.first
     let design: (UITextView) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomBarItem: UIBarItem, CustomBarItemDesign {
-
     let design: (UIBarItem) -> Void = { $0.tag = 5 }
-
 }
 
 class CustomBarButtonItem: UIBarButtonItem, CustomTintColor, CustomImage, CustomLandscapeImagePhone, CustomTitle, CustomBarButtonItemDesign {
-
     let tintColorStyle: ColorStyle = TestColor.first
     let imageStyle: ImageStyle = TestImage.first
     let landscapeImagePhoneStyle: ImageStyle = TestImage.second
     let titleStyle: TextStyle = TestText.first
     let design: (UIBarButtonItem) -> Void = { $0.tag = 5 }
-
 }
 
 class CustomNavigationBar: UINavigationBar, CustomBarTintColor, CustomTitleColor, CustomShadowImage, CustomNavigationBarDesign {
-
     let barTintColorStyle: ColorStyle = TestColor.first
     let titleColorStyle: ColorStyle = TestColor.second
     let shadowImageStyle: ImageStyle = TestImage.first
     let design: (UINavigationBar) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomSearchBar: UISearchBar, CustomBarTintColor, CustomTextColor, CustomBackgroundImage, CustomSearchFieldBackgroundImage, CustomScopeBarButtonBackgroundImage, CustomText, CustomPlaceholder, CustomPrompt, CustomScopeButtonTitles, CustomSearchBarDesign {
-
     let barTintColorStyle: ColorStyle = TestColor.first
     let textColorStyle: ColorStyle = TestColor.second
     let backgroundImageStyle: ImageStyle = TestImage.first
@@ -238,39 +185,31 @@ class CustomSearchBar: UISearchBar, CustomBarTintColor, CustomTextColor, CustomB
     let promptStyle: TextStyle = TestText.third
     let scopeButtonTitleStyles: [TextStyle] = [TestText.fourth, TestText.fifth]
     let design: (UISearchBar) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomToolbar: UIToolbar, CustomBarTintColor, CustomToolbarDesign {
-
     let barTintColorStyle: ColorStyle = TestColor.first
     let design: (UIToolbar) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomTabBar: UITabBar, CustomBarTintColor, CustomUnselectedItemTintColor, CustomShadowImage, CustomBackgroundImage, CustomTabBarDesign {
-
     let barTintColorStyle: ColorStyle = TestColor.first
     let unselectedItemTintColorStyle: ColorStyle = TestColor.second
     let shadowImageStyle: ImageStyle = TestImage.first
     let backgroundImageStyle: ImageStyle = TestImage.second
     let design: (UITabBar) -> Void = { $0.layer.cornerRadius = 5 }
-
 }
 
 class CustomTabBarItem: UITabBarItem, CustomBadgeColor, CustomImage, CustomSelectedImage, CustomTitle, CustomTabBarItemDesign {
-
     let badgeColorStyle: ColorStyle = TestColor.first
     let imageStyle: ImageStyle = TestImage.first
     let landscapeImagePhoneStyle: ImageStyle = TestImage.second
     let selectedImageStyle: ImageStyle = TestImage.third
     let titleStyle: TextStyle = TestText.first
     let design: (UITabBarItem) -> Void = { $0.badgeValue = TestText.second }
-
 }
 
 class CustomizingViewsTests: XCTestCase {
-
     func testView() {
         let view = CustomView()
         view.refresh()
@@ -543,5 +482,4 @@ class CustomizingViewsTests: XCTestCase {
         XCTAssertEqual(tabBarItem.title, TestText.first)
         XCTAssertEqual(tabBarItem.badgeValue, TestText.second)
     }
-
 }

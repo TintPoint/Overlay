@@ -9,7 +9,6 @@
 import Overlay
 
 class TestFont {
-
     static let first = UIFont.preferredFont(forTextStyle: .body)
     static let second = UIFont.preferredFont(forTextStyle: .callout)
     static let third = UIFont.preferredFont(forTextStyle: .caption1)
@@ -18,5 +17,4 @@ class TestFont {
 
     static let group = FontGroup(normal: first, disabled: second, selected: third, highlighted: fourth, focused: fifth)
     static let minimalGroup = FontGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
-
 }

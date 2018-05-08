@@ -9,7 +9,6 @@
 import Overlay
 
 class TestColor {
-
     static let first = UIColor.white
     static let second = UIColor.black
     static let third = UIColor.blue
@@ -18,5 +17,4 @@ class TestColor {
 
     static let group = ColorGroup(normal: first, disabled: second, selected: third, highlighted: fourth, focused: fifth)
     static let minimalGroup = ColorGroup(normal: first, disabled: nil, selected: nil, highlighted: nil, focused: nil)
-
 }

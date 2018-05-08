@@ -415,7 +415,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint is not installed\"\nfi";
+			shellScript = "if which swiftformat >/dev/null; then\nswiftformat . --stripunusedargs closure-only\nelse\necho \"warning: SwiftFormat is not installed\"\nfi";
 		};
 		D020EB011F108D3E005D4AF9 /* Run Linter */ = {
 			isa = PBXShellScriptBuildPhase;

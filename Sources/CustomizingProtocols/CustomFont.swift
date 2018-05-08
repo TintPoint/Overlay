@@ -10,16 +10,12 @@ import UIKit
 
 /// A protocol that describes a view that its font will be customized.
 public protocol CustomFont: FontCustomizable {
-
     /// The `FontStyle` that represents the font.
     var fontStyle: FontStyle { get }
-
 }
 
 /// A protocol that describes a view that its title font will be customized.
 public protocol CustomTitleFont: TitleFontCustomizable {
-
     /// The `FontStyle` that represents the title font.
     var titleFontStyle: FontStyle { get }
-
 }

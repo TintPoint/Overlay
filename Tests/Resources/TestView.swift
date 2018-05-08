@@ -9,7 +9,6 @@
 import Overlay
 
 class TestView: ViewDisable, ViewSelectable, ViewHighlightable, ViewFocusable {
-
     var isEnabled: Bool
     var isSelected: Bool
     var isHighlighted: Bool
@@ -22,12 +21,10 @@ class TestView: ViewDisable, ViewSelectable, ViewHighlightable, ViewFocusable {
         isFocused = focused
     }
 
-    func refresh(includingSubviews: Bool = false) { }
-
+    func refresh(includingSubviews: Bool = false) {}
 }
 
 class TestColorView: TestView, ColorStyleRepresentable {
-
     var normal: UIColor?
     var disabled: UIColor?
     var selected: UIColor?
@@ -44,13 +41,11 @@ class TestColorView: TestView, ColorStyleRepresentable {
         default: return
         }
     }
-
 }
 
-class TestFontView: TestView, FontStyleRepresentable { }
+class TestFontView: TestView, FontStyleRepresentable {}
 
 class TestImageView: TestView, ImageStyleRepresentable {
-
     var normal: UIImage?
     var disabled: UIImage?
     var selected: UIImage?
@@ -67,11 +62,9 @@ class TestImageView: TestView, ImageStyleRepresentable {
         default: return
         }
     }
-
 }
 
 class TestTextView: TestView, TextStyleRepresentable {
-
     var normal: String?
     var disabled: String?
     var selected: String?
@@ -88,11 +81,9 @@ class TestTextView: TestView, TextStyleRepresentable {
         default: return
         }
     }
-
 }
 
 class TestTextAlignmentView: TestView, TextAlignmentStyleRepresentable {
-
     var normal: NSTextAlignment?
     var disabled: NSTextAlignment?
     var selected: NSTextAlignment?
@@ -109,5 +100,4 @@ class TestTextAlignmentView: TestView, TextAlignmentStyleRepresentable {
         default: return
         }
     }
-
 }

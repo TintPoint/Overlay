@@ -11,17 +11,14 @@ import UIKit
 /// A protocol that describes an item that can represent a font.
 /// - SeeAlso: `FontStyleGroup`, `FontGroup`
 public protocol FontStyle {
-
     /// Returns an `UIFont` that will be used in normal state.
     /// - Returns: An `UIFont` that will be used in normal state.
     func normal() -> UIFont
-
 }
 
 /// A protocol that describes an item that can represent a font in different states (e.g. disabled).
 /// - SeeAlso: `FontStyle`, `FontGroup`
 public protocol FontStyleGroup: FontStyle {
-
     /// Returns an `UIFont` that will be used in disabled state.
     /// - Returns: An `UIFont` that will be used in disabled state, or `nil` if no font is set.
     func disabled() -> UIFont?
@@ -37,11 +34,9 @@ public protocol FontStyleGroup: FontStyle {
     /// Returns an `UIFont` that will be used in focused state.
     /// - Returns: An `UIFont` that will be used in focused state, or `nil` if no font is set.
     func focused() -> UIFont?
-
 }
 
 public extension FontStyleGroup {
-
     /// Returns `nil` by default.
     /// - Returns: `nil` by default.
     func disabled() -> UIFont? {
@@ -65,21 +60,17 @@ public extension FontStyleGroup {
     func focused() -> UIFont? {
         return nil
     }
-
 }
 
 extension UIFont: FontStyle {
-
     public func normal() -> UIFont {
         return self
     }
-
 }
 
 /// A collection of `FontStyle` that can represent a font in different states (e.g. disabled).
 /// - SeeAlso: `FontStyle`, `FontStyleGroup`
 public struct FontGroup {
-
     /// The `FontStyle` that will be used in normal state.
     private let normalStorage: FontStyle
 
@@ -108,11 +99,9 @@ public struct FontGroup {
         highlightedStorage = highlighted
         focusedStorage = focused
     }
-
 }
 
 extension FontGroup: FontStyleGroup {
-
     public func normal() -> UIFont {
         return normalStorage.normal()
     }
@@ -132,22 +121,18 @@ extension FontGroup: FontStyleGroup {
     public func focused() -> UIFont? {
         return focusedStorage?.normal()
     }
-
 }
 
 /// A protocol that describes a view that its fonts can be represented by `FontStyle`.
 public protocol FontStyleRepresentable {
-
     /// Returns an `UIFont` that will be used in current state.
     /// - Parameter style: A `FontStyle` that represents the font.
     /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
     /// - Returns: An `UIFont` that will be used in current state, or normal font if no font is set.
     func selectedFont(from style: FontStyle, usingNormalFor states: [UIControlState]) -> UIFont
-
 }
 
 public extension FontStyleRepresentable {
-
     func selectedFont(from style: FontStyle, usingNormalFor states: [UIControlState] = []) -> UIFont {
         guard let styleGroup = style as? FontStyleGroup else {
             return style.normal()
@@ -164,5 +149,4 @@ public extension FontStyleRepresentable {
             return styleGroup.normal()
         }
     }
-
 }

@@ -6,11 +6,10 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
-import XCTest
 @testable import Overlay
+import XCTest
 
 class TextStyleTests: XCTestCase {
-
     typealias Resource = TestText
     typealias View = TestTextView
 
@@ -87,5 +86,4 @@ class TextStyleTests: XCTestCase {
         XCTAssertNil(view.highlighted)
         XCTAssertNil(view.focused)
     }
-
 }

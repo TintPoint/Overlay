@@ -6,11 +6,10 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
-import XCTest
 @testable import Overlay
+import XCTest
 
 class ColorStyleTests: XCTestCase {
-
     typealias Resource = TestColor
     typealias View = TestColorView
 
@@ -87,5 +86,4 @@ class ColorStyleTests: XCTestCase {
         XCTAssertNil(view.highlighted)
         XCTAssertNil(view.focused)
     }
-
 }

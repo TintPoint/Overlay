@@ -10,7 +10,6 @@ import UIKit
 
 /// A protocol that describes a view that can be customized.
 public protocol ViewCustomizable {
-
     /// Refreshes the view's appearance.
     /// You should call this method after you:
     /// 1. Created a view programmatically.
@@ -18,11 +17,9 @@ public protocol ViewCustomizable {
     /// 3. Changed a view's styles.
     /// - Parameter includingSubviews: A `Bool` that indicates whether the view's subviews (and subviews' subviews...) should also be refreshed.
     func refresh(includingSubviews: Bool)
-
 }
 
 private extension ViewCustomizable {
-
     /// Customizes the view's appearance.
     func customizeView() {
         customizeViewLayout()
@@ -398,11 +395,9 @@ private extension ViewCustomizable {
             view.customizeTextAlignment(using: view.textAlignmentStyle)
         }
     }
-
 }
 
 extension UIView: ViewCustomizable {
-
     open override func awakeFromNib() {
         super.awakeFromNib()
         refresh()
@@ -421,11 +416,9 @@ extension UIView: ViewCustomizable {
             }
         }
     }
-
 }
 
 extension UIBarItem: ViewCustomizable {
-
     open override func awakeFromNib() {
         super.awakeFromNib()
         refresh()
@@ -439,5 +432,4 @@ extension UIBarItem: ViewCustomizable {
     public func refresh(includingSubviews: Bool = false) {
         customizeView()
     }
-
 }

@@ -1,6 +1,6 @@
 # Overlay
 
-[![Build Status](https://img.shields.io/travis/TintPoint/Overlay.svg)](https://travis-ci.org/TintPoint/Overlay)
+[![Build Status](https://travis-ci.com/TintPoint/Overlay.svg?branch=master)](https://travis-ci.com/TintPoint/Overlay)
 [![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Overlay.svg)](https://cocoapods.org)
 

@@ -21,13 +21,13 @@ final class CustomEmptyCollectionViewCell: UICollectionViewCell, CustomCell {
 
 final class CustomCollectionReusableView: UICollectionReusableView, CustomReusableView {
     static let contentNib: UINib? = UINib(nibName: "CustomCollectionReusableView", bundle: Bundle(for: CustomCollectionReusableView.self))
-    static let suggestedKind: String = UICollectionElementKindSectionHeader
+    static let suggestedKind: String = UICollectionView.elementKindSectionHeader
     static let suggestedIdentifier: String = "CustomCollectionReusableView"
 }
 
 final class CustomEmptyCollectionReusableView: UICollectionReusableView, CustomReusableView {
     static let contentNib: UINib? = nil
-    static let suggestedKind: String = UICollectionElementKindSectionFooter
+    static let suggestedKind: String = UICollectionView.elementKindSectionFooter
     static let suggestedIdentifier: String = "CustomEmptyCollectionReusableView"
 }
 

@@ -127,20 +127,20 @@ extension ImageGroup: ImageStyleGroup {
 public protocol ImageStyleRepresentable {
     /// Returns an `UIImage` that will be used in current state.
     /// - Parameter style: An `ImageStyle` that represents the image.
-    /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
+    /// - Parameter states: An array of `UIControl.State` that should be treated as normal state.
     /// - Returns: An `UIImage` that will be used in current state, or normal image if no image is set.
-    func selectedImage(from style: ImageStyle, usingNormalFor states: [UIControlState]) -> UIImage
+    func selectedImage(from style: ImageStyle, usingNormalFor states: [UIControl.State]) -> UIImage
 
     /// Customizes an image through a setter method.
     /// - Parameter style: An `ImageStyle` that represents an image.
     /// - Parameter setter: A setter method that will customize an image in different states.
     /// - Parameter image: An `UIImage` that will be used.
-    /// - Parameter state: An `UIControlState` that will use the image.
-    func customizeImage(using style: ImageStyle, through setter: (_ image: UIImage?, _ state: UIControlState) -> Void)
+    /// - Parameter state: An `UIControl.State` that will use the image.
+    func customizeImage(using style: ImageStyle, through setter: (_ image: UIImage?, _ state: UIControl.State) -> Void)
 }
 
 public extension ImageStyleRepresentable {
-    func selectedImage(from style: ImageStyle, usingNormalFor states: [UIControlState] = []) -> UIImage {
+    func selectedImage(from style: ImageStyle, usingNormalFor states: [UIControl.State] = []) -> UIImage {
         guard let styleGroup = style as? ImageStyleGroup else {
             return style.normal()
         }
@@ -157,7 +157,7 @@ public extension ImageStyleRepresentable {
         }
     }
 
-    func customizeImage(using style: ImageStyle, through setter: (_ image: UIImage?, _ state: UIControlState) -> Void) {
+    func customizeImage(using style: ImageStyle, through setter: (_ image: UIImage?, _ state: UIControl.State) -> Void) {
         setter(style.normal(), .normal)
         if let styleGroup = style as? ImageStyleGroup {
             setter(styleGroup.highlighted(), .highlighted)

@@ -127,20 +127,20 @@ extension ColorGroup: ColorStyleGroup {
 public protocol ColorStyleRepresentable {
     /// Returns an `UIColor` that will be used in current state.
     /// - Parameter style: A `ColorStyle` that represents the color.
-    /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
+    /// - Parameter states: An array of `UIControl.State` that should be treated as normal state.
     /// - Returns: An `UIColor` that will be used in current state, or normal color if no color is set.
-    func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControlState]) -> UIColor
+    func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControl.State]) -> UIColor
 
     /// Customizes a color through a setter method.
     /// - Parameter style: A `ColorStyle` that represents a color.
     /// - Parameter setter: A setter method that will customize a color in different states.
     /// - Parameter color: An `UIColor` that will be used.
-    /// - Parameter state: An `UIControlState` that will use the color.
-    func customizeColor(using style: ColorStyle, through setter: (_ color: UIColor?, _ state: UIControlState) -> Void)
+    /// - Parameter state: An `UIControl.State` that will use the color.
+    func customizeColor(using style: ColorStyle, through setter: (_ color: UIColor?, _ state: UIControl.State) -> Void)
 }
 
 public extension ColorStyleRepresentable {
-    func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControlState] = []) -> UIColor {
+    func selectedColor(from style: ColorStyle, usingNormalFor states: [UIControl.State] = []) -> UIColor {
         guard let styleGroup = style as? ColorStyleGroup else {
             return style.normal()
         }
@@ -157,7 +157,7 @@ public extension ColorStyleRepresentable {
         }
     }
 
-    func customizeColor(using style: ColorStyle, through setter: (_ color: UIColor?, _ state: UIControlState) -> Void) {
+    func customizeColor(using style: ColorStyle, through setter: (_ color: UIColor?, _ state: UIControl.State) -> Void) {
         setter(style.normal(), .normal)
         if let styleGroup = style as? ColorStyleGroup {
             setter(styleGroup.highlighted(), .highlighted)

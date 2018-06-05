@@ -127,13 +127,13 @@ extension FontGroup: FontStyleGroup {
 public protocol FontStyleRepresentable {
     /// Returns an `UIFont` that will be used in current state.
     /// - Parameter style: A `FontStyle` that represents the font.
-    /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
+    /// - Parameter states: An array of `UIControl.State` that should be treated as normal state.
     /// - Returns: An `UIFont` that will be used in current state, or normal font if no font is set.
-    func selectedFont(from style: FontStyle, usingNormalFor states: [UIControlState]) -> UIFont
+    func selectedFont(from style: FontStyle, usingNormalFor states: [UIControl.State]) -> UIFont
 }
 
 public extension FontStyleRepresentable {
-    func selectedFont(from style: FontStyle, usingNormalFor states: [UIControlState] = []) -> UIFont {
+    func selectedFont(from style: FontStyle, usingNormalFor states: [UIControl.State] = []) -> UIFont {
         guard let styleGroup = style as? FontStyleGroup else {
             return style.normal()
         }

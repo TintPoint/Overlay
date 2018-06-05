@@ -31,13 +31,13 @@ class TestColorView: TestView, ColorStyleRepresentable {
     var highlighted: UIColor?
     var focused: UIColor?
 
-    func setColor(_ color: UIColor?, for state: UIControlState) {
-        switch state.rawValue {
-        case UIControlState.normal.rawValue: normal = color
-        case UIControlState.disabled.rawValue: disabled = color
-        case UIControlState.selected.rawValue: selected = color
-        case UIControlState.highlighted.rawValue: highlighted = color
-        case UIControlState.focused.rawValue: focused = color
+    func setColor(_ color: UIColor?, for state: UIControl.State) {
+        switch state {
+        case .normal: normal = color
+        case .disabled: disabled = color
+        case .selected: selected = color
+        case .highlighted: highlighted = color
+        case .focused: focused = color
         default: return
         }
     }
@@ -52,13 +52,13 @@ class TestImageView: TestView, ImageStyleRepresentable {
     var highlighted: UIImage?
     var focused: UIImage?
 
-    func setImage(_ image: UIImage?, for state: UIControlState) {
-        switch state.rawValue {
-        case UIControlState.normal.rawValue: normal = image
-        case UIControlState.disabled.rawValue: disabled = image
-        case UIControlState.selected.rawValue: selected = image
-        case UIControlState.highlighted.rawValue: highlighted = image
-        case UIControlState.focused.rawValue: focused = image
+    func setImage(_ image: UIImage?, for state: UIControl.State) {
+        switch state {
+        case .normal: normal = image
+        case .disabled: disabled = image
+        case .selected: selected = image
+        case .highlighted: highlighted = image
+        case .focused: focused = image
         default: return
         }
     }
@@ -71,13 +71,13 @@ class TestTextView: TestView, TextStyleRepresentable {
     var highlighted: String?
     var focused: String?
 
-    func setText(_ text: String?, for state: UIControlState) {
-        switch state.rawValue {
-        case UIControlState.normal.rawValue: normal = text
-        case UIControlState.disabled.rawValue: disabled = text
-        case UIControlState.selected.rawValue: selected = text
-        case UIControlState.highlighted.rawValue: highlighted = text
-        case UIControlState.focused.rawValue: focused = text
+    func setText(_ text: String?, for state: UIControl.State) {
+        switch state {
+        case .normal: normal = text
+        case .disabled: disabled = text
+        case .selected: selected = text
+        case .highlighted: highlighted = text
+        case .focused: focused = text
         default: return
         }
     }
@@ -90,13 +90,13 @@ class TestTextAlignmentView: TestView, TextAlignmentStyleRepresentable {
     var highlighted: NSTextAlignment?
     var focused: NSTextAlignment?
 
-    func setTextAlignment(_ textAlignment: NSTextAlignment?, for state: UIControlState) {
-        switch state.rawValue {
-        case UIControlState.normal.rawValue: normal = textAlignment
-        case UIControlState.disabled.rawValue: disabled = textAlignment
-        case UIControlState.selected.rawValue: selected = textAlignment
-        case UIControlState.highlighted.rawValue: highlighted = textAlignment
-        case UIControlState.focused.rawValue: focused = textAlignment
+    func setTextAlignment(_ textAlignment: NSTextAlignment?, for state: UIControl.State) {
+        switch state {
+        case .normal: normal = textAlignment
+        case .disabled: disabled = textAlignment
+        case .selected: selected = textAlignment
+        case .highlighted: highlighted = textAlignment
+        case .focused: focused = textAlignment
         default: return
         }
     }

@@ -127,20 +127,20 @@ extension TextGroup: TextStyleGroup {
 public protocol TextStyleRepresentable {
     /// Returns a `String` that will be used in current state.
     /// - Parameter style: A `TextStyle` that represents the text.
-    /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
+    /// - Parameter states: An array of `UIControl.State` that should be treated as normal state.
     /// - Returns: A `String` that will be used in current state, or normal text if no text is set.
-    func selectedText(from style: TextStyle, usingNormalFor states: [UIControlState]) -> String
+    func selectedText(from style: TextStyle, usingNormalFor states: [UIControl.State]) -> String
 
     /// Customizes a text through a setter method.
     /// - Parameter style: A `TextStyle` that represents a text.
     /// - Parameter setter: A setter method that will customize a text in different states.
     /// - Parameter text: A `String` that will be used.
-    /// - Parameter state: An `UIControlState` that will use the text.
-    func customizeText(using style: TextStyle, through setter: (_ text: String?, _ state: UIControlState) -> Void)
+    /// - Parameter state: An `UIControl.State` that will use the text.
+    func customizeText(using style: TextStyle, through setter: (_ text: String?, _ state: UIControl.State) -> Void)
 }
 
 public extension TextStyleRepresentable {
-    func selectedText(from style: TextStyle, usingNormalFor states: [UIControlState] = []) -> String {
+    func selectedText(from style: TextStyle, usingNormalFor states: [UIControl.State] = []) -> String {
         guard let styleGroup = style as? TextStyleGroup else {
             return style.normal()
         }
@@ -157,7 +157,7 @@ public extension TextStyleRepresentable {
         }
     }
 
-    func customizeText(using style: TextStyle, through setter: (_ text: String?, _ state: UIControlState) -> Void) {
+    func customizeText(using style: TextStyle, through setter: (_ text: String?, _ state: UIControl.State) -> Void) {
         setter(style.normal(), .normal)
         if let styleGroup = style as? TextStyleGroup {
             setter(styleGroup.highlighted(), .highlighted)

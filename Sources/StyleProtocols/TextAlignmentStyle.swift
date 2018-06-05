@@ -127,13 +127,13 @@ extension TextAlignmentGroup: TextAlignmentStyleGroup {
 public protocol TextAlignmentStyleRepresentable {
     /// Returns a `NSTextAlignment` that will be used in current state.
     /// - Parameter style: A `TextAlignmentStyle` that represents the alignment.
-    /// - Parameter states: An array of `UIControlState` that should be treated as normal state.
+    /// - Parameter states: An array of `UIControl.State` that should be treated as normal state.
     /// - Returns: A `NSTextAlignment` that will be used in current state, or normal alignment if no alignment is set.
-    func selectedTextAlignment(from style: TextAlignmentStyle, usingNormalFor states: [UIControlState]) -> NSTextAlignment
+    func selectedTextAlignment(from style: TextAlignmentStyle, usingNormalFor states: [UIControl.State]) -> NSTextAlignment
 }
 
 public extension TextAlignmentStyleRepresentable {
-    func selectedTextAlignment(from style: TextAlignmentStyle, usingNormalFor states: [UIControlState] = []) -> NSTextAlignment {
+    func selectedTextAlignment(from style: TextAlignmentStyle, usingNormalFor states: [UIControl.State] = []) -> NSTextAlignment {
         guard let styleGroup = style as? TextAlignmentStyleGroup else {
             return style.normal()
         }

@@ -17,7 +17,7 @@ Overlay is a very flexible UI framework designed for Swift.
 
 ## Requirements
 
-iOS 9+ / Xcode 9+ / Swift 4+
+iOS 9+ / Xcode 10+ / Swift 4.2+
 
 ## Installation
 
@@ -26,7 +26,7 @@ iOS 9+ / Xcode 9+ / Swift 4+
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager. To install Overlay, add the following line to your `Cartfile`:
 
 ```ogdl
-github "TintPoint/Overlay" ~> 0.7
+github "TintPoint/Overlay" ~> 0.8
 ```
 
 ### CocoaPods
@@ -34,7 +34,7 @@ github "TintPoint/Overlay" ~> 0.7
 [CocoaPods](https://cocoapods.org) is a centralized dependency manager. To install Overlay, add the following line to your `Podfile`:
 
 ```ruby
-pod 'Overlay', '~> 0.7'
+pod 'Overlay', '~> 0.8'
 ```
 
 ## Example
